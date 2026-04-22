@@ -7,180 +7,267 @@ import 'package:zamerkn_englisch/telak/Talek_China/recources/color_managr.dart';
 
 
 ////1
+////1
 class SupermarketSentencesScreen extends StatelessWidget {
   final List<ItemCard> sentences = [
     ItemCard(
       english: "Saturday morning, Ali pushed his empty trolley into the supermarket.",
+      german: "Samstagmorgen schob Ali seinen leeren Einkaufswagen in den Supermarkt.",
+      spanish: "El sábado por la mañana, Ali empujó su carrito vacío dentro del supermercado.",
       arabic: "صباح السبت، دفع علي عربته الفارغة إلى السوبرماركت.",
     ),
     ItemCard(
       english: "Sunday afternoon, Sara pushed her heavy trolley out of the mall.",
+      german: "Sonntagnachmittag schob Sara ihren schweren Einkaufswagen aus dem Einkaufszentrum.",
+      spanish: "El domingo por la tarde, Sara empujó su pesado carrito fuera del centro comercial.",
       arabic: "بعد ظهر الأحد، دفعت سارة عربتها الثقيلة خارج المول.",
     ),
     ItemCard(
       english: "He had written a long grocery list, but he was already distracted by the smell of bread from the bakery.",
+      german: "Er hatte eine lange Einkaufsliste geschrieben, aber er war bereits vom Duft des Brotes aus der Bäckerei abgelenkt.",
+      spanish: "Había escrito una larga lista de la compra, pero ya estaba distraído por el olor a pan de la panadería.",
       arabic: "كان قد كتب قائمة مشتريات طويلة، لكنه تشتت بالفعل بسبب رائحة الخبز من المخبز.",
     ),
     ItemCard(
       english: "She had made a detailed plan, but she was distracted by the beautiful view.",
+      german: "Sie hatte einen detaillierten Plan gemacht, aber sie war von der schönen Aussicht abgelenkt.",
+      spanish: "Había hecho un plan detallado, pero se distrajo con la hermosa vista.",
       arabic: "كانت قد وضعت خطة مفصلة، لكنها تشتتت بسبب المنظر الجميل.",
     ),
     ItemCard(
       english: "Maybe I’ll just buy everything here, he laughed to himself.",
+      german: "Vielleicht kaufe ich einfach alles hier, lachte er sich innerlich.",
+      spanish: "Quizás compraré todo aquí mismo, se rió para sí mismo.",
       arabic: "ربما سأشتري كل شيء هنا فقط، ضحك في نفسه.",
     ),
     ItemCard(
       english: "Maybe I'll stay home today, she whispered to herself.",
+      german: "Vielleicht bleibe ich heute zu Hause, flüsterte sie sich selbst zu.",
+      spanish: "Quizás me quede en casa hoy, se susurró a sí misma.",
       arabic: "ربما سأبقى في البيت اليوم، همست لنفسها.",
     ),
     ItemCard(
       english: "He picked up fresh produce, bananas, tomatoes, and some organic apples.",
+      german: "Er nahm frisches Obst und Gemüse, Bananen, Tomaten und einige Bio-Äpfel.",
+      spanish: "Cogió productos frescos, plátanos, tomates y algunas manzanas ecológicas.",
       arabic: "التقط خضار وفواكه طازجة، موز، طماطم، وبعض التفاح العضوي.",
     ),
     ItemCard(
       english: "She picked up dairy products, milk, cheese, and some yogurt.",
+      german: "Sie nahm Milchprodukte, Milch, Käse und etwas Joghurt.",
+      spanish: "Cogió productos lácteos, leche, queso y un poco de yogur.",
       arabic: "التقطت منتجات ألبان، حليب، جبن، وبعض الزبادي.",
     ),
     ItemCard(
       english: "They picked up cleaning supplies, soap, air freshener, and paper towels.",
+      german: "Sie nahmen Reinigungsmittel, Seife, Lufterfrischer und Papierhandtücher.",
+      spanish: "Cogieron suministros de limpieza, jabón, ambientador y toallas de papel.",
       arabic: "التقطوا مواد تنظيف، صابون، معطر جو، وبعض المناشف الورقية.",
     ),
     ItemCard(
       english: "In the dairy products aisle, he argued with another customer about the last bottle of imported milk.",
+      german: "Im Milchprodukte-Gang stritt er sich mit einem anderen Kunden um die letzte Flasche importierte Milch.",
+      spanish: "En el pasillo de productos lácteos, discutió con otro cliente por la última botella de leche importada.",
       arabic: "في ممر منتجات الألبان، تجادل مع زبون آخر حول آخر زجاجة حليب مستورد.",
     ),
     ItemCard(
       english: "In the frozen food aisle, she chatted with a friend about the best pizza brand.",
+      german: "Im Tiefkühlkost-Gang plauderte sie mit einer Freundin über die beste Pizzamarke.",
+      spanish: "En el pasillo de comida congelada, charló con una amiga sobre la mejor marca de pizza.",
       arabic: "في ممر الطعام المجمد، تحدثت مع صديقة لها عن أفضل ماركة بيتزا.",
     ),
     ItemCard(
       english: "Don’t worry, said James the cashier, we still have it in stock.",
+      german: "Keine Sorge, sagte James der Kassierer, wir haben es noch auf Lager.",
+      spanish: "No te preocupes, dijo James el cajero, todavía lo tenemos en existencia.",
       arabic: "لا تقلق، قال جيمس أمين الصندوق، لا يزال لدينا منه في المخزون.",
     ),
     ItemCard(
       english: "Don't hurry, said the teacher, we still have time.",
+      german: "Keine Eile, sagte der Lehrer, wir haben noch Zeit.",
+      spanish: "No te apresures, dijo el profesor, todavía tenemos tiempo.",
       arabic: "لا تتعجل، قال المعلم، لا يزال لدينا وقت.",
     ),
     ItemCard(
       english: "Ali hurried to the frozen food section.",
+      german: "Ali eilte zur Tiefkühlkostabteilung.",
+      spanish: "Ali se apresuró a la sección de comida congelada.",
       arabic: "أسرع علي إلى قسم الطعام المجمد.",
     ),
     ItemCard(
       english: "She hurried to the express checkout lane.",
+      german: "Sie eilte zur Express-Kasse.",
+      spanish: "Se apresuró al carril de pago rápido.",
       arabic: "أسرعت إلى الممر السريع للدفع.",
     ),
     ItemCard(
       english: "He grabbed a pizza with a bright discount sticker, but when he checked the expiry date, it was tomorrow!",
+      german: "Er griff nach einer Pizza mit einem leuchtenden Rabattaufkleber, aber als er das Verfallsdatum überprüfte, war es morgen!",
+      spanish: "Agarró una pizza con una pegatina de descuento brillante, pero cuando revisó la fecha de caducidad, ¡era mañana!",
       arabic: "أمسك ببيتزا عليها ملصق خصم لامع، ولكن عندما فحص تاريخ انتهاء الصلاحية، كان غدًا!",
     ),
     ItemCard(
       english: "She grabbed a can with a shiny label, but the expiry date had passed.",
+      german: "Sie griff nach einer Dose mit einem glänzenden Etikett, aber das Verfallsdatum war überschritten.",
+      spanish: "Agarró una lata con una etiqueta brillante, pero la fecha de caducidad había pasado.",
       arabic: "أمسكت بعلبة عليها ملصق لامع، لكن تاريخ الانتهاء كان قد مر.",
     ),
     ItemCard(
       english: "At the checkout, the queue was long, but Ali sneaked into the express lane with his small basket.",
+      german: "An der Kasse war die Schlange lang, aber Ali schlich sich mit seinem kleinen Korb in die Express-Spur.",
+      spanish: "En la caja, la cola era larga, pero Ali se coló en el carril rápido con su cesta pequeña.",
       arabic: "عند مكان الدفع، كان الطابور طويلاً، لكن علي تسلل إلى الممر السريع مع سلته الصغيرة.",
     ),
     ItemCard(
       english: "At the bank, the queue was short, but he waited patiently.",
+      german: "In der Bank war die Schlange kurz, aber er wartete geduldig.",
+      spanish: "En el banco, la cola era corta, pero esperó pacientemente.",
       arabic: "في البنك، كان الطابور قصيرًا، لكنه انتظر بصبر.",
     ),
     ItemCard(
       english: "James scanned his items quickly.",
+      german: "James scannte seine Artikel schnell.",
+      spanish: "James escaneó sus artículos rápidamente.",
       arabic: "قام جيمس بمسح مشترياته بسرعة.",
     ),
     ItemCard(
       english: "The machine scanned the barcode automatically.",
+      german: "Das Gerät scannte den Barcode automatisch.",
+      spanish: "La máquina escaneó el código de barras automáticamente.",
       arabic: "قام الجهاز بمسح الباركود تلقائيًا.",
     ),
     ItemCard(
       english: "Ali refused a plastic bag and showed off his new reusable bag.",
+      german: "Ali lehnte eine Plastiktüte ab und präsentierte stolz seine neue wiederverwendbare Tasche.",
+      spanish: "Ali rechazó una bolsa de plástico y presumió su nueva bolsa reutilizable.",
       arabic: "رفض علي كيسًا بلاستيكيًا واستعرض كيسه القابل لإعادة الاستخدام الجديد.",
     ),
     ItemCard(
       english: "She refused a receipt to save paper.",
+      german: "Sie lehnte einen Kassenbon ab, um Papier zu sparen.",
+      spanish: "Rechazó un recibo para ahorrar papel.",
       arabic: "رفضت الإيصال لتوفير الورق.",
     ),
     ItemCard(
       english: "When he paid, he swiped his loyalty card proudly and received a long receipt.",
+      german: "Als er bezahlte, zog er stolz seine Kundenkarte durch und erhielt einen langen Kassenbon.",
+      spanish: "Cuando pagó, pasó su tarjeta de fidelidad con orgullo y recibió un recibo largo.",
       arabic: "عندما دفع، مرر بطاقة الولاء بفخر وتلقى إيصالاً طويلاً.",
     ),
     ItemCard(
       english: "When she checked out, she used her credit card and got a digital receipt.",
+      german: "Als sie an der Kasse war, benutzte sie ihre Kreditkarte und erhielt einen digitalen Kassenbon.",
+      spanish: "Cuando pagó, usó su tarjeta de crédito y obtuvo un recibo digital.",
       arabic: "عندما أنهت الشراء، استخدمت بطاقتها الائتمانية وحصلت على إيصال رقمي.",
     ),
     ItemCard(
       english: "That’s fast food in a different way, he joked.",
+      german: "Das ist Fast Food auf eine andere Art, scherzte er.",
+      spanish: "Eso es comida rápida de una manera diferente, bromeó.",
       arabic: "هذا طعام سريع بطريقة مختلفة، مازح.",
     ),
     ItemCard(
       english: "At the shelves, he saw canned food, all neatly arranged with shiny price tags and barcodes.",
+      german: "An den Regalen sah er Konserven, alle ordentlich angeordnet mit glänzenden Preisschildern und Barcodes.",
+      spanish: "En los estantes, vio comida enlatada, todo ordenadamente dispuesto con etiquetas de precio brillantes y códigos de barras.",
       arabic: "عند الرفوف، رأى طعامًا معلبًا، مرتبًا بأناقة مع بطاقات أسعار لامعة وأرقام باركود.",
     ),
     ItemCard(
       english: "He chose his favorite brand of beans.",
+      german: "Er wählte seine Lieblingsmarke von Bohnen.",
+      spanish: "Eligió su marca favorita de frijoles.",
       arabic: "اختار علامته التجارية المفضلة من الفاصوليا.",
     ),
     ItemCard(
       english: "She chose the imported brand of coffee.",
+      german: "Sie wählte die importierte Kaffeemarke.",
+      spanish: "Eligió la marca importada de café.",
       arabic: "اختارت الماركة المستوردة من القهوة.",
     ),
     ItemCard(
       english: "Ali left smiling, certain he had found the best bargain of the week.",
+      german: "Ali ging lächelnd hinaus, überzeugt, dass er das beste Schnäppchen der Woche gefunden hatte.",
+      spanish: "Ali salió sonriendo, seguro de que había encontrado la mejor ganga de la semana.",
       arabic: "غادر علي مبتسمًا، واثقًا أنه وجد أفضل صفقة في الأسبوع.",
     ),
     ItemCard(
       english: "She left happy, sure she had saved a lot of money.",
+      german: "Sie ging glücklich hinaus, sicher, dass sie viel Geld gespart hatte.",
+      spanish: "Salió feliz, segura de que había ahorrado mucho dinero.",
       arabic: "غادرت سعيدة، متأكدة أنها وفرت الكثير من المال.",
     ),
     ItemCard(
       english: "But when he opened the bag outside, he realized he forgot the bread. Again.",
+      german: "Aber als er draußen die Tüte öffnete, stellte er fest, dass er das Brot vergessen hatte. Schon wieder.",
+      spanish: "Pero cuando abrió la bolsa afuera, se dio cuenta de que olvidó el pan. Otra vez.",
       arabic: "ولكن عندما فتح الكيس خارجًا، أدرك أنه نسي الخبز. مرة أخرى.",
     ),
     ItemCard(
       english: "But when she got home, she realized she forgot her keys. Again.",
+      german: "Aber als sie nach Hause kam, stellte sie fest, dass sie ihre Schlüssel vergessen hatte. Schon wieder.",
+      spanish: "Pero cuando llegó a casa, se dio cuenta de que olvidó sus llaves. Otra vez.",
       arabic: "ولكن عندما وصلت إلى البيت، أدركت أنها نسيت مفاتيحها. مرة أخرى.",
     ),
 
-    // إضافات جديدة
+    // Neue Ergänzungen / Nuevas adiciones / إضافات جديدة
     ItemCard(
       english: "The cashier asked if he needed a plastic bag.",
+      german: "Der Kassierer fragte, ob er eine Plastiktüte brauche.",
+      spanish: "El cajero le preguntó si necesitaba una bolsa de plástico.",
       arabic: "سأل أمين الصندوق إذا كان يحتاج إلى كيس بلاستيكي.",
     ),
     ItemCard(
       english: "He checked the price tag before buying the chocolate.",
+      german: "Er überprüfte das Preisschild, bevor er die Schokolade kaufte.",
+      spanish: "Revisó la etiqueta del precio antes de comprar el chocolate.",
       arabic: "فحص بطاقة السعر قبل شراء الشوكولاتة.",
     ),
     ItemCard(
       english: "The customer complained about the long queue.",
+      german: "Der Kunde beschwerte sich über die lange Schlange.",
+      spanish: "El cliente se quejó de la larga cola.",
       arabic: "اشتكى الزبون من الطابور الطويل.",
     ),
     ItemCard(
       english: "The bakery was full of fresh bread and cakes.",
+      german: "Die Bäckerei war voller frischem Brot und Kuchen.",
+      spanish: "La panadería estaba llena de pan fresco y pasteles.",
       arabic: "كان المخبز مليئًا بالخبز الطازج والكعك.",
     ),
     ItemCard(
       english: "She always brings her reusable bag to the supermarket.",
+      german: "Sie bringt immer ihre wiederverwendbare Tasche mit in den Supermarkt.",
+      spanish: "Ella siempre trae su bolsa reutilizable al supermercado.",
       arabic: "هي دائمًا تحضر كيسها القابل لإعادة الاستخدام إلى السوبرماركت.",
     ),
     ItemCard(
       english: "He found the item, but it was out of stock.",
+      german: "Er fand den Artikel, aber er war nicht auf Lager.",
+      spanish: "Encontró el artículo, pero estaba agotado.",
       arabic: "وجد المنتج، لكنه كان غير متوفر في المخزون.",
     ),
     ItemCard(
       english: "They compared brands to find the best bargain.",
+      german: "Sie verglichen Marken, um das beste Schnäppchen zu finden.",
+      spanish: "Compararon marcas para encontrar la mejor ganga.",
       arabic: "قارنوا بين العلامات التجارية ليجدوا أفضل صفقة.",
     ),
     ItemCard(
       english: "The express lane is only for ten items or less.",
+      german: "Die Express-Spur ist nur für zehn Artikel oder weniger.",
+      spanish: "El carril rápido es solo para diez artículos o menos.",
       arabic: "الممر السريع مخصص لعشر منتجات أو أقل.",
     ),
     ItemCard(
       english: "She put the frozen food in a separate bag.",
+      german: "Sie legte das Tiefkühlgut in eine separate Tüte.",
+      spanish: "Puso la comida congelada en una bolsa separada.",
       arabic: "وضعت الطعام المجمد في كيس منفصل.",
     ),
     ItemCard(
       english: "He forgot the grocery list at home.",
+      german: "Er vergaß die Einkaufsliste zu Hause.",
+      spanish: "Olvidó la lista de la compra en casa.",
       arabic: "نسي قائمة المشتريات في البيت.",
     ),
   ];
@@ -196,55 +283,54 @@ class SupermarketSentencesScreen extends StatelessWidget {
   }
 }
 
-
 class SupermarketWordsScreen extends StatelessWidget {
   final List<LearningCard> cards = [
-    LearningCard(primaryText: "aisle", secondaryText: "ممر المتجر"),
-    LearningCard(primaryText: "basket", secondaryText: "سلة"),
-    LearningCard(primaryText: "checkout", secondaryText: "مكان الدفع"),
-    LearningCard(primaryText: "cashier", secondaryText: "أمين الصندوق"),
-    LearningCard(primaryText: "receipt", secondaryText: "إيصال"),
-    LearningCard(primaryText: "shelf", secondaryText: "رف"),
-    LearningCard(primaryText: "trolley / cart", secondaryText: "عربة التسوق"),
-    LearningCard(primaryText: "discount", secondaryText: "خصم"),
-    LearningCard(primaryText: "brand", secondaryText: "علامة تجارية"),
-    LearningCard(primaryText: "frozen food", secondaryText: "طعام مجمد"),
-    LearningCard(primaryText: "fresh produce", secondaryText: "خضار وفواكه طازجة"),
-    LearningCard(primaryText: "dairy products", secondaryText: "منتجات ألبان"),
-    LearningCard(primaryText: "bakery", secondaryText: "مخبز"),
-    LearningCard(primaryText: "canned food", secondaryText: "طعام معلب"),
-    LearningCard(primaryText: "bargain", secondaryText: "صفقة رابحة"),
-    LearningCard(primaryText: "grocery list", secondaryText: "قائمة مشتريات"),
-    LearningCard(primaryText: "customer", secondaryText: "زبون"),
-    LearningCard(primaryText: "packaging", secondaryText: "تغليف"),
-    LearningCard(primaryText: "plastic bag", secondaryText: "كيس بلاستيك"),
-    LearningCard(primaryText: "reusable bag", secondaryText: "كيس قابل لإعادة الاستخدام"),
-    LearningCard(primaryText: "organic", secondaryText: "عضوي"),
-    LearningCard(primaryText: "imported goods", secondaryText: "بضائع مستوردة"),
-    LearningCard(primaryText: "price tag", secondaryText: "بطاقة السعر"),
-    LearningCard(primaryText: "barcode", secondaryText: "باركود"),
-    LearningCard(primaryText: "queue", secondaryText: "طابور"),
-    LearningCard(primaryText: "express lane", secondaryText: "ممر سريع للدفع"),
-    LearningCard(primaryText: "stock", secondaryText: "مخزون"),
-    LearningCard(primaryText: "expiry date", secondaryText: "تاريخ انتهاء الصلاحية"),
-    LearningCard(primaryText: "loyalty card", secondaryText: "بطاقة ولاء"),
+    LearningCard(primaryText: "aisle", secondaryText: "ممر المتجر", german: "Gang", spanish: "pasillo"),
+    LearningCard(primaryText: "basket", secondaryText: "سلة", german: "Korb", spanish: "cesta"),
+    LearningCard(primaryText: "checkout", secondaryText: "مكان الدفع", german: "Kasse", spanish: "caja"),
+    LearningCard(primaryText: "cashier", secondaryText: "أمين الصندوق", german: "Kassierer", spanish: "cajero"),
+    LearningCard(primaryText: "receipt", secondaryText: "إيصال", german: "Kassenbon", spanish: "recibo"),
+    LearningCard(primaryText: "shelf", secondaryText: "رف", german: "Regal", spanish: "estante"),
+    LearningCard(primaryText: "trolley / cart", secondaryText: "عربة التسوق", german: "Einkaufswagen", spanish: "carrito de la compra"),
+    LearningCard(primaryText: "discount", secondaryText: "خصم", german: "Rabatt", spanish: "descuento"),
+    LearningCard(primaryText: "brand", secondaryText: "علامة تجارية", german: "Marke", spanish: "marca"),
+    LearningCard(primaryText: "frozen food", secondaryText: "طعام مجمد", german: "Tiefkühlkost", spanish: "comida congelada"),
+    LearningCard(primaryText: "fresh produce", secondaryText: "خضار وفواكه طازجة", german: "frisches Obst und Gemüse", spanish: "productos frescos"),
+    LearningCard(primaryText: "dairy products", secondaryText: "منتجات ألبان", german: "Milchprodukte", spanish: "productos lácteos"),
+    LearningCard(primaryText: "bakery", secondaryText: "مخبز", german: "Bäckerei", spanish: "panadería"),
+    LearningCard(primaryText: "canned food", secondaryText: "طعام معلب", german: "Konserven", spanish: "comida enlatada"),
+    LearningCard(primaryText: "bargain", secondaryText: "صفقة رابحة", german: "Schnäppchen", spanish: "ganga"),
+    LearningCard(primaryText: "grocery list", secondaryText: "قائمة مشتريات", german: "Einkaufsliste", spanish: "lista de la compra"),
+    LearningCard(primaryText: "customer", secondaryText: "زبون", german: "Kunde", spanish: "cliente"),
+    LearningCard(primaryText: "packaging", secondaryText: "تغليف", german: "Verpackung", spanish: "envase"),
+    LearningCard(primaryText: "plastic bag", secondaryText: "كيس بلاستيك", german: "Plastiktüte", spanish: "bolsa de plástico"),
+    LearningCard(primaryText: "reusable bag", secondaryText: "كيس قابل لإعادة الاستخدام", german: "wiederverwendbare Tasche", spanish: "bolsa reutilizable"),
+    LearningCard(primaryText: "organic", secondaryText: "عضوي", german: "bio", spanish: "ecológico"),
+    LearningCard(primaryText: "imported goods", secondaryText: "بضائع مستوردة", german: "importierte Waren", spanish: "productos importados"),
+    LearningCard(primaryText: "price tag", secondaryText: "بطاقة السعر", german: "Preisschild", spanish: "etiqueta de precio"),
+    LearningCard(primaryText: "barcode", secondaryText: "باركود", german: "Strichcode", spanish: "código de barras"),
+    LearningCard(primaryText: "queue", secondaryText: "طابور", german: "Schlange", spanish: "cola"),
+    LearningCard(primaryText: "express lane", secondaryText: "ممر سريع للدفع", german: "Express-Spur", spanish: "carril rápido"),
+    LearningCard(primaryText: "stock", secondaryText: "مخزون", german: "Lagerbestand", spanish: "existencia"),
+    LearningCard(primaryText: "expiry date", secondaryText: "تاريخ انتهاء الصلاحية", german: "Verfallsdatum", spanish: "fecha de caducidad"),
+    LearningCard(primaryText: "loyalty card", secondaryText: "بطاقة ولاء", german: "Kundenkarte", spanish: "tarjeta de fidelidad"),
 
-    // إضافات جديدة
-    LearningCard(primaryText: "credit card", secondaryText: "بطاقة ائتمان"),
-    LearningCard(primaryText: "debit card", secondaryText: "بطاقة خصم"),
-    LearningCard(primaryText: "self-service checkout", secondaryText: "دفع ذاتي"),
-    LearningCard(primaryText: "shopping bag", secondaryText: "كيس تسوق"),
-    LearningCard(primaryText: "cleaning supplies", secondaryText: "مواد تنظيف"),
-    LearningCard(primaryText: "air freshener", secondaryText: "معطر جو"),
-    LearningCard(primaryText: "paper towels", secondaryText: "مناشف ورقية"),
-    LearningCard(primaryText: "label", secondaryText: "ملصق"),
-    LearningCard(primaryText: "offer", secondaryText: "عرض"),
-    LearningCard(primaryText: "special price", secondaryText: "سعر خاص"),
-    LearningCard(primaryText: "out of stock", secondaryText: "غير متوفر"),
-    LearningCard(primaryText: "in stock", secondaryText: "متوفر"),
-    LearningCard(primaryText: "refund", secondaryText: "استرجاع المال"),
-    LearningCard(primaryText: "exchange", secondaryText: "استبدال"),
-    LearningCard(primaryText: "total price", secondaryText: "السعر الإجمالي"),
+    // Neue Ergänzungen / Nuevas adiciones / إضافات جديدة
+    LearningCard(primaryText: "credit card", secondaryText: "بطاقة ائتمان", german: "Kreditkarte", spanish: "tarjeta de crédito"),
+    LearningCard(primaryText: "debit card", secondaryText: "بطاقة خصم", german: "EC-Karte", spanish: "tarjeta de débito"),
+    LearningCard(primaryText: "self-service checkout", secondaryText: "دفع ذاتي", german: "Selbstbedienungskasse", spanish: "caja de autoservicio"),
+    LearningCard(primaryText: "shopping bag", secondaryText: "كيس تسوق", german: "Einkaufstasche", spanish: "bolsa de compras"),
+    LearningCard(primaryText: "cleaning supplies", secondaryText: "مواد تنظيف", german: "Reinigungsmittel", spanish: "suministros de limpieza"),
+    LearningCard(primaryText: "air freshener", secondaryText: "معطر جو", german: "Lufterfrischer", spanish: "ambientador"),
+    LearningCard(primaryText: "paper towels", secondaryText: "مناشف ورقية", german: "Papierhandtücher", spanish: "toallas de papel"),
+    LearningCard(primaryText: "label", secondaryText: "ملصق", german: "Etikett", spanish: "etiqueta"),
+    LearningCard(primaryText: "offer", secondaryText: "عرض", german: "Angebot", spanish: "oferta"),
+    LearningCard(primaryText: "special price", secondaryText: "سعر خاص", german: "Sonderpreis", spanish: "precio especial"),
+    LearningCard(primaryText: "out of stock", secondaryText: "غير متوفر", german: "nicht auf Lager", spanish: "agotado"),
+    LearningCard(primaryText: "in stock", secondaryText: "متوفر", german: "auf Lager", spanish: "en existencia"),
+    LearningCard(primaryText: "refund", secondaryText: "استرجاع المال", german: "Rückerstattung", spanish: "reembolso"),
+    LearningCard(primaryText: "exchange", secondaryText: "استبدال", german: "Umtausch", spanish: "cambio"),
+    LearningCard(primaryText: "total price", secondaryText: "السعر الإجمالي", german: "Gesamtpreis", spanish: "precio total"),
   ];
 
   @override
@@ -255,7 +341,6 @@ class SupermarketWordsScreen extends StatelessWidget {
     );
   }
 }
-
 
 
 
