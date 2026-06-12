@@ -3,6 +3,164 @@ import 'package:flutter/material.dart';
 
 /*
 
+
+class AdjectivesScreen extends StatelessWidget {
+  const AdjectivesScreen({Key? key}) : super(key: key});
+
+  // ✅ جميع الصفات (Adjectives) من الصور
+  final List<LearningCard> words = const [
+    // ========== الصورة 6 - أهم الصفات ==========
+    LearningCard(primaryText: "Fine", translations: {"ar": "حسن", "de": "fein", "es": "fino", "fr": "bien", "it": "bello", "ru": "хороший", "zh": "好的", "tr": "güzel"}),
+    LearningCard(primaryText: "Late", translations: {"ar": "متأخر", "de": "spät", "es": "tarde", "fr": "tard", "it": "tardi", "ru": "поздний", "zh": "晚的", "tr": "geç"}),
+    LearningCard(primaryText: "High", translations: {"ar": "عالي", "de": "hoch", "es": "alto", "fr": "haut", "it": "alto", "ru": "высокий", "zh": "高的", "tr": "yüksek"}),
+    LearningCard(primaryText: "Low", translations: {"ar": "منخفض", "de": "niedrig", "es": "bajo", "fr": "bas", "it": "basso", "ru": "низкий", "zh": "低的", "tr": "düşük"}),
+    LearningCard(primaryText: "New", translations: {"ar": "جديد", "de": "neu", "es": "nuevo", "fr": "nouveau", "it": "nuovo", "ru": "новый", "zh": "新的", "tr": "yeni"}),
+    LearningCard(primaryText: "Social", translations: {"ar": "اجتماعي", "de": "sozial", "es": "social", "fr": "social", "it": "sociale", "ru": "социальный", "zh": "社会的", "tr": "sosyal"}),
+    LearningCard(primaryText: "Public", translations: {"ar": "عام", "de": "öffentlich", "es": "público", "fr": "public", "it": "pubblico", "ru": "общественный", "zh": "公共的", "tr": "halka açık"}),
+    LearningCard(primaryText: "Easy", translations: {"ar": "سهل", "de": "einfach", "es": "fácil", "fr": "facile", "it": "facile", "ru": "легкий", "zh": "容易的", "tr": "kolay"}),
+    LearningCard(primaryText: "Hard", translations: {"ar": "صعب", "de": "schwer", "es": "duro", "fr": "dur", "it": "duro", "ru": "трудный", "zh": "困难的", "tr": "zor"}),
+    LearningCard(primaryText: "Clear", translations: {"ar": "واضح", "de": "klar", "es": "claro", "fr": "clair", "it": "chiaro", "ru": "ясный", "zh": "清楚的", "tr": "net"}),
+    LearningCard(primaryText: "Wrong", translations: {"ar": "خاطئ", "de": "falsch", "es": "incorrecto", "fr": "faux", "it": "sbagliato", "ru": "неправильный", "zh": "错误的", "tr": "yanlış"}),
+    LearningCard(primaryText: "Right", translations: {"ar": "صحيح", "de": "richtig", "es": "correcto", "fr": "correct", "it": "giusto", "ru": "правильный", "zh": "正确的", "tr": "doğru"}),
+    LearningCard(primaryText: "Strong", translations: {"ar": "قوي", "de": "stark", "es": "fuerte", "fr": "fort", "it": "forte", "ru": "сильный", "zh": "强壮的", "tr": "güçlü"}),
+    LearningCard(primaryText: "Possible", translations: {"ar": "ممكن", "de": "möglich", "es": "posible", "fr": "possible", "it": "possibile", "ru": "возможный", "zh": "可能的", "tr": "mümkün"}),
+    LearningCard(primaryText: "Final", translations: {"ar": "نهائي", "de": "final", "es": "final", "fr": "final", "it": "finale", "ru": "финальный", "zh": "最终的", "tr": "final"}),
+    LearningCard(primaryText: "Great", translations: {"ar": "عظيم", "de": "großartig", "es": "genial", "fr": "génial", "it": "grande", "ru": "великий", "zh": "伟大的", "tr": "harika"}),
+    LearningCard(primaryText: "Simple", translations: {"ar": "بسيط", "de": "einfach", "es": "simple", "fr": "simple", "it": "semplice", "ru": "простой", "zh": "简单的", "tr": "basit"}),
+    LearningCard(primaryText: "Popular", translations: {"ar": "شائع", "de": "populär", "es": "popular", "fr": "populaire", "it": "popolare", "ru": "популярный", "zh": "流行的", "tr": "popüler"}),
+    LearningCard(primaryText: "Ready", translations: {"ar": "جاهز", "de": "bereit", "es": "listo", "fr": "prêt", "it": "pronto", "ru": "готовый", "zh": "准备好的", "tr": "hazır"}),
+    LearningCard(primaryText: "Closed", translations: {"ar": "مغلق", "de": "geschlossen", "es": "cerrado", "fr": "fermé", "it": "chiuso", "ru": "закрытый", "zh": "关闭的", "tr": "kapalı"}),
+    LearningCard(primaryText: "Open", translations: {"ar": "مفتوح", "de": "offen", "es": "abierto", "fr": "ouvert", "it": "aperto", "ru": "открытый", "zh": "打开的", "tr": "açık"}),
+    LearningCard(primaryText: "Poor", translations: {"ar": "فقير", "de": "arm", "es": "pobre", "fr": "pauvre", "it": "povero", "ru": "бедный", "zh": "贫穷的", "tr": "fakir"}),
+    LearningCard(primaryText: "Difficult", translations: {"ar": "صعب", "de": "schwierig", "es": "difícil", "fr": "difficile", "it": "difficile", "ru": "трудный", "zh": "困难的", "tr": "zor"}),
+    LearningCard(primaryText: "Rich", translations: {"ar": "غني", "de": "reich", "es": "rico", "fr": "riche", "it": "ricco", "ru": "богатый", "zh": "富有的", "tr": "zengin"}),
+    LearningCard(primaryText: "Dead", translations: {"ar": "ميت", "de": "tot", "es": "muerto", "fr": "mort", "it": "morto", "ru": "мертвый", "zh": "死的", "tr": "ölü"}),
+    
+    // ========== الصورة 7 - الصفات و عكسها ==========
+    LearningCard(primaryText: "Good", translations: {"ar": "جيد", "de": "gut", "es": "bueno", "fr": "bon", "it": "buono", "ru": "хороший", "zh": "好的", "tr": "iyi"}),
+    LearningCard(primaryText: "Bad", translations: {"ar": "سيئ", "de": "schlecht", "es": "malo", "fr": "mauvais", "it": "cattivo", "ru": "плохой", "zh": "坏的", "tr": "kötü"}),
+    LearningCard(primaryText: "Tall", translations: {"ar": "طويل", "de": "groß", "es": "alto", "fr": "grand", "it": "alto", "ru": "высокий", "zh": "高的", "tr": "uzun"}),
+    LearningCard(primaryText: "Short", translations: {"ar": "قصير", "de": "kurz", "es": "bajo", "fr": "court", "it": "basso", "ru": "короткий", "zh": "短的", "tr": "kısa"}),
+    LearningCard(primaryText: "Fast", translations: {"ar": "سريع", "de": "schnell", "es": "rápido", "fr": "rapide", "it": "veloce", "ru": "быстрый", "zh": "快的", "tr": "hızlı"}),
+    LearningCard(primaryText: "Slow", translations: {"ar": "بطيء", "de": "langsam", "es": "lento", "fr": "lent", "it": "lento", "ru": "медленный", "zh": "慢的", "tr": "yavaş"}),
+    LearningCard(primaryText: "Intelligent", translations: {"ar": "ذكي", "de": "intelligent", "es": "inteligente", "fr": "intelligent", "it": "intelligente", "ru": "умный", "zh": "聪明的", "tr": "zeki"}),
+    LearningCard(primaryText: "Stupid", translations: {"ar": "غبي", "de": "dumm", "es": "estúpido", "fr": "stupide", "it": "stupido", "ru": "глупый", "zh": "愚蠢的", "tr": "aptal"}),
+    LearningCard(primaryText: "Happy", translations: {"ar": "سعيد", "de": "glücklich", "es": "feliz", "fr": "heureux", "it": "felice", "ru": "счастливый", "zh": "快乐的", "tr": "mutlu"}),
+    LearningCard(primaryText: "Sad", translations: {"ar": "حزين", "de": "traurig", "es": "triste", "fr": "triste", "it": "triste", "ru": "грустный", "zh": "悲伤的", "tr": "üzgün"}),
+    LearningCard(primaryText: "Clean", translations: {"ar": "نظيف", "de": "sauber", "es": "limpio", "fr": "propre", "it": "pulito", "ru": "чистый", "zh": "干净的", "tr": "temiz"}),
+    LearningCard(primaryText: "Dirty", translations: {"ar": "قذر", "de": "schmutzig", "es": "sucio", "fr": "sale", "it": "sporco", "ru": "грязный", "zh": "脏的", "tr": "kirli"}),
+    
+    // ========== الصورة 8 - صفات متضادة ==========
+    LearningCard(primaryText: "Generous", translations: {"ar": "كريم", "de": "großzügig", "es": "generoso", "fr": "généreux", "it": "generoso", "ru": "щедрый", "zh": "慷慨的", "tr": "cömert"}),
+    LearningCard(primaryText: "Mean", translations: {"ar": "بخيل", "de": "geizig", "es": "tacaño", "fr": "avare", "it": "avaro", "ru": "жадный", "zh": "吝啬的", "tr": "cimri"}),
+    LearningCard(primaryText: "Active", translations: {"ar": "نشيط", "de": "aktiv", "es": "activo", "fr": "actif", "it": "attivo", "ru": "активный", "zh": "活跃的", "tr": "aktif"}),
+    LearningCard(primaryText: "Lazy", translations: {"ar": "كسول", "de": "faul", "es": "perezoso", "fr": "paresseux", "it": "pigro", "ru": "ленивый", "zh": "懒惰的", "tr": "tembel"}),
+    LearningCard(primaryText: "Expensive", translations: {"ar": "غالي", "de": "teuer", "es": "caro", "fr": "cher", "it": "costoso", "ru": "дорогой", "zh": "昂贵的", "tr": "pahalı"}),
+    LearningCard(primaryText: "Cheap", translations: {"ar": "رخيص", "de": "billig", "es": "barato", "fr": "bon marché", "it": "economico", "ru": "дешевый", "zh": "便宜的", "tr": "ucuz"}),
+    LearningCard(primaryText: "Heavy", translations: {"ar": "ثقيل", "de": "schwer", "es": "pesado", "fr": "lourd", "it": "pesante", "ru": "тяжелый", "zh": "重的", "tr": "ağır"}),
+    LearningCard(primaryText: "Light", translations: {"ar": "خفيف", "de": "leicht", "es": "ligero", "fr": "léger", "it": "leggero", "ru": "легкий", "zh": "轻的", "tr": "hafif"}),
+    
+    // ========== الصورة 9 - Stop Using "Very" ==========
+    LearningCard(primaryText: "Delighted", translations: {"ar": "مسرور", "de": "erfreut", "es": "encantado", "fr": "ravi", "it": "contento", "ru": "восхищенный", "zh": "高兴的", "tr": "memnun"}),
+    LearningCard(primaryText: "Delicious", translations: {"ar": "لذيذ", "de": "köstlich", "es": "delicioso", "fr": "délicieux", "it": "delizioso", "ru": "вкусный", "zh": "美味的", "tr": "lezzetli"}),
+    LearningCard(primaryText: "Exhausted", translations: {"ar": "مرهق", "de": "erschöpft", "es": "agotado", "fr": "épuisé", "it": "esausto", "ru": "измученный", "zh": "筋疲力尽的", "tr": "bitkin"}),
+    LearningCard(primaryText: "Soaked", translations: {"ar": "منقوع/مبلل", "de": "durchnässt", "es": "empapado", "fr": "trempé", "it": "inzuppato", "ru": "промокший", "zh": "湿透的", "tr": "sırılsıklam"}),
+    LearningCard(primaryText: "Freezing", translations: {"ar": "متجمد", "de": "eisig", "es": "congelado", "fr": "glacial", "it": "gelido", "ru": "ледяной", "zh": "冰冻的", "tr": "dondurucu"}),
+    LearningCard(primaryText: "Proficient", translations: {"ar": "ماهر", "de": "kompetent", "es": "competente", "fr": "compétent", "it": "competente", "ru": "умелый", "zh": "熟练的", "tr": "usta"}),
+    LearningCard(primaryText: "Devastated", translations: {"ar": "مدمر", "de": "verwüstet", "es": "devastado", "fr": "dévasté", "it": "devastato", "ru": "опустошенный", "zh": " devastated", "tr": "yıkılmış"}),
+    LearningCard(primaryText: "Packed", translations: {"ar": "مزدحم", "de": "überfüllt", "es": "atestado", "fr": "bondé", "it": "affollato", "ru": "переполненный", "zh": "拥挤的", "tr": "dolu"}),
+    LearningCard(primaryText: "Hilarious", translations: {"ar": "مضحك جدا", "de": "sehr lustig", "es": "muy divertido", "fr": "hilarant", "it": "esilarante", "ru": "очень смешной", "zh": "非常好笑的", "tr": "çok komik"}),
+    LearningCard(primaryText: "Parched", translations: {"ar": "جاف جدا", "de": "ausgedörrt", "es": "muy seco", "fr": "très sec", "it": "molto secco", "ru": "пересохший", "zh": "焦干的", "tr": "çok kuru"}),
+    LearningCard(primaryText: "Furious", translations: {"ar": "غاضب جدا", "de": "wütend", "es": "furioso", "fr": "furieux", "it": "furioso", "ru": "разъяренный", "zh": "大怒的", "tr": "öfkeli"}),
+    LearningCard(primaryText: "Terrified", translations: {"ar": "مرعوب", "de": "verängstigt", "es": "aterrorizado", "fr": "terrifié", "it": "terrorizzato", "ru": "испуганный", "zh": "恐惧的", "tr": "dehşete kapılmış"}),
+    LearningCard(primaryText: "Tiny", translations: {"ar": "صغير جدا", "de": "winzig", "es": "minúsculo", "fr": "minuscule", "it": "minuscolo", "ru": "крошечный", "zh": "微小的", "tr": "minicik"}),
+    LearningCard(primaryText: "Huge", translations: {"ar": "ضخم", "de": "riesig", "es": "enorme", "fr": "énorme", "it": "enorme", "ru": "огромный", "zh": "巨大的", "tr": "devasa"}),
+    LearningCard(primaryText: "Boiling", translations: {"ar": "غليان/حار جدا", "de": "kochend", "es": "hirviendo", "fr": "bouillant", "it": "bollente", "ru": "кипящий", "zh": "沸腾的", "tr": "kaynayan"}),
+    LearningCard(primaryText: "Starving", translations: {"ar": "جائع جدا", "de": "verhungernd", "es": "muerto de hambre", "fr": "affamé", "it": "affamato", "ru": "голодный", "zh": "饥饿的", "tr": "açlıktan ölmek üzere"}),
+    LearningCard(primaryText: "Spotless", translations: {"ar": "نظيف جدا", "de": "makellos", "es": "impecable", "fr": "impeccable", "it": "immacolato", "ru": "безупречный", "zh": "一尘不染的", "tr": "lekesiz"}),
+    LearningCard(primaryText: "Filthy", translations: {"ar": "قذر جدا", "de": "schmutzig", "es": "asqueroso", "fr": "sale", "it": "sporco", "ru": "грязный", "zh": "肮脏的", "tr": "pis"}),
+    LearningCard(primaryText: "Fascinating", translations: {"ar": "رائع جدا", "de": "faszinierend", "es": "fascinante", "fr": "fascinant", "it": "affascinante", "ru": "увлекательный", "zh": "迷人的", "tr": "büyüleyici"}),
+    LearningCard(primaryText: "Dreadful", translations: {"ar": "فظيع", "de": "schrecklich", "es": "terrible", "fr": "terrible", "it": "terribile", "ru": "ужасный", "zh": "可怕的", "tr": "korkunç"}),
+    LearningCard(primaryText: "Gorgeous", translations: {"ar": "جميل جدا", "de": "wunderschön", "es": "precioso", "fr": "magnifique", "it": "splendido", "ru": "великолепный", "zh": "华丽的", "tr": "muhteşem"}),
+    LearningCard(primaryText: "Ancient", translations: {"ar": "قديم جدا", "de": "uralt", "es": "antiguo", "fr": "ancien", "it": "antico", "ru": "древний", "zh": "古老的", "tr": "eski"}),
+    LearningCard(primaryText: "Gaunt", translations: {"ar": "نحيل جدا", "de": "abgemagert", "es": "demacrado", "fr": "décharné", "it": "emaciato", "ru": "изможденный", "zh": "消瘦的", "tr": "çok zayıf"}),
+  ];
+
+  // ✅ جميع الظروف (Adverbs) من الصورة 12
+  final List<LearningCard> adverbs = const [
+    LearningCard(primaryText: "Nicely", translations: {"ar": "بلطف", "de": "nett", "es": "amablemente", "fr": "gentiment", "it": "gentilmente", "ru": "мило", "zh": "好地", "tr": "güzelce"}),
+    LearningCard(primaryText: "Well", translations: {"ar": "جيدا", "de": "gut", "es": "bien", "fr": "bien", "it": "bene", "ru": "хорошо", "zh": "很好地", "tr": "iyice"}),
+    LearningCard(primaryText: "Carefully", translations: {"ar": "بعناية", "de": "vorsichtig", "es": "cuidadosamente", "fr": "soigneusement", "it": "attentamente", "ru": "осторожно", "zh": "小心地", "tr": "dikkatlice"}),
+    LearningCard(primaryText: "Carelessly", translations: {"ar": "بإهمال", "de": "nachlässig", "es": "descuidadamente", "fr": "négligemment", "it": "con noncuranza", "ru": "небрежно", "zh": "粗心地", "tr": "dikkatsizce"}),
+    LearningCard(primaryText: "Easily", translations: {"ar": "بسهولة", "de": "einfach", "es": "fácilmente", "fr": "facilement", "it": "facilmente", "ru": "легко", "zh": "容易地", "tr": "kolayca"}),
+    LearningCard(primaryText: "Quickly", translations: {"ar": "بسرعة", "de": "schnell", "es": "rápidamente", "fr": "rapidement", "it": "rapidamente", "ru": "быстро", "zh": "快速地", "tr": "hızlıca"}),
+    LearningCard(primaryText: "Slowly", translations: {"ar": "ببطء", "de": "langsam", "es": "lentamente", "fr": "lentement", "it": "lentamente", "ru": "медленно", "zh": "慢慢地", "tr": "yavaşça"}),
+    LearningCard(primaryText: "Happily", translations: {"ar": "بسعادة", "de": "glücklich", "es": "felizmente", "fr": "heureusement", "it": "felicemente", "ru": "счастливо", "zh": "快乐地", "tr": "mutlu bir şekilde"}),
+    LearningCard(primaryText: "Shyly", translations: {"ar": "بخجل", "de": "schüchtern", "es": "tímidamente", "fr": "timidement", "it": "timidamente", "ru": "застенчиво", "zh": "害羞地", "tr": "utangaçça"}),
+    LearningCard(primaryText: "Safely", translations: {"ar": "بأمان", "de": "sicher", "es": "seguramente", "fr": "sûrement", "it": "sicuramente", "ru": "безопасно", "zh": "安全地", "tr": "güvenli bir şekilde"}),
+    LearningCard(primaryText: "Kindly", translations: {"ar": "بلطف", "de": "freundlich", "es": "amablemente", "fr": "aimablement", "it": "gentilmente", "ru": "добро", "zh": "和蔼地", "tr": "nazikçe"}),
+    LearningCard(primaryText: "Hungrily", translations: {"ar": "بجوع", "de": "hungrig", "es": "hambrientamente", "fr": "affamément", "it": "affamato", "ru": "голодно", "zh": "饥饿地", "tr": "açlıkla"}),
+    LearningCard(primaryText: "Clearly", translations: {"ar": "بوضوح", "de": "klar", "es": "claramente", "fr": "clairement", "it": "chiaramente", "ru": "ясно", "zh": "清楚地", "tr": "açıkça"}),
+    LearningCard(primaryText: "Electronically", translations: {"ar": "إلكترونيا", "de": "elektronisch", "es": "electrónicamente", "fr": "électroniquement", "it": "elettronicamente", "ru": "электронно", "zh": "电子地", "tr": "elektronik olarak"}),
+    LearningCard(primaryText: "Loudly", translations: {"ar": "بصوت عالي", "de": "laut", "es": "ruidosamente", "fr": "fort", "it": "forte", "ru": "громко", "zh": "大声地", "tr": "yüksek sesle"}),
+    LearningCard(primaryText: "Officially", translations: {"ar": "بشكل رسمي", "de": "offiziell", "es": "oficialmente", "fr": "officiellement", "it": "ufficialmente", "ru": "официально", "zh": "正式地", "tr": "resmi olarak"}),
+    LearningCard(primaryText: "Naturally", translations: {"ar": "بشكل طبيعي", "de": "natürlich", "es": "naturalmente", "fr": "naturellement", "it": "naturalmente", "ru": "естественно", "zh": "自然地", "tr": "doğal olarak"}),
+    LearningCard(primaryText: "Partially", translations: {"ar": "بشكل جزئي", "de": "teilweise", "es": "parcialmente", "fr": "partiellement", "it": "parzialmente", "ru": "частично", "zh": "部分地", "tr": "kısmen"}),
+    LearningCard(primaryText: "Deeply", translations: {"ar": "بعمق", "de": "tief", "es": "profundamente", "fr": "profondément", "it": "profondamente", "ru": "глубоко", "zh": "深深地", "tr": "derinlemesine"}),
+    LearningCard(primaryText: "Definitely", translations: {"ar": "بالتأكيد", "de": "definitiv", "es": "definitivamente", "fr": "définitivement", "it": "definitivamente", "ru": "определенно", "zh": "肯定地", "tr": "kesinlikle"}),
+    LearningCard(primaryText: "Positively", translations: {"ar": "بشكل إيجابي", "de": "positiv", "es": "positivamente", "fr": "positivement", "it": "positivamente", "ru": "положительно", "zh": "积极地", "tr": "olumlu bir şekilde"}),
+    LearningCard(primaryText: "Rarely", translations: {"ar": "بشكل نادر", "de": "selten", "es": "raramente", "fr": "rarement", "it": "raramente", "ru": "редко", "zh": "很少地", "tr": "nadiren"}),
+    LearningCard(primaryText: "Powerfully", translations: {"ar": "بقوة", "de": "kräftig", "es": "poderosamente", "fr": "puissamment", "it": "potentemente", "ru": "мощно", "zh": "强大地", "tr": "güçlü bir şekilde"}),
+    LearningCard(primaryText: "Hard", translations: {"ar": "بصعوبة", "de": "schwer", "es": "difícilmente", "fr": "difficilement", "it": "duramente", "ru": "трудно", "zh": "努力地", "tr": "zorla"}),
+    LearningCard(primaryText: "Daily", translations: {"ar": "يوميا", "de": "täglich", "es": "diariamente", "fr": "quotidiennement", "it": "quotidianamente", "ru": "ежедневно", "zh": "每天地", "tr": "günlük olarak"}),
+  ];
+
+  // ✅ جميع الجمل من الصور 10 و 13
+  final List<ItemCard> sentences = const [
+    // جمل من الصورة 13
+    ItemCard(english: "You must drive carefully.", translations: {"ar": "انت لازم تسوق بحذر", "de": "Sie müssen vorsichtig fahren", "es": "Debes conducir con cuidado", "fr": "Tu dois conduire prudemment", "it": "Devi guidare con attenzione", "ru": "Ты должен водить осторожно", "zh": "你必须小心驾驶", "tr": "Dikkatli araba kullanmalısın"}),
+    ItemCard(english: "He swam well despite being tired.", translations: {"ar": "هو سبح كويس على الرغم أنه تعبان", "de": "Er schwamm gut, obwohl er müde war", "es": "Nadó bien a pesar de estar cansado", "fr": "Il a bien nagé malgré sa fatigue", "it": "Ha nuotato bene nonostante fosse stanco", "ru": "Он хорошо плавал, несмотря на усталость", "zh": "尽管累了，他游得很好", "tr": "Yorgun olmasına rağmen iyi yüzdü"}),
+    ItemCard(english: "The child ran happily towards his mother.", translations: {"ar": "الطفل جرى بسعادة ناحية مامته", "de": "Das Kind rannte glücklich auf seine Mutter zu", "es": "El niño corrió feliz hacia su madre", "fr": "L'enfant a couru joyeusement vers sa mère", "it": "Il bambino corse felice verso sua madre", "ru": "Ребенок счастливо побежал к матери", "zh": "孩子快乐地跑向他的母亲", "tr": "Çocuk mutlu bir şekilde annesine doğru koştu"}),
+    ItemCard(english: "The rain fell powerfully during the storm.", translations: {"ar": "المطر نزل بقوة وقت العاصفة", "de": "Der Regen fiel während des Sturms heftig", "es": "La lluvia cayó con fuerza durante la tormenta", "fr": "La pluie est tombée puissamment pendant la tempête", "it": "La pioggia cadde potentemente durante la tempesta", "ru": "Дождь сильно шел во время шторма", "zh": "暴风雨期间雨下得很大", "tr": "Fırtına sırasında yağmur güçlü bir şekilde yağdı"}),
+    ItemCard(english: "He finished his homework quickly.", translations: {"ar": "هو خلص واجبه بسرعة", "de": "Er beendete seine Hausaufgaben schnell", "es": "Terminó su tarea rápidamente", "fr": "Il a fini ses devoirs rapidement", "it": "Ha finito i compiti rapidamente", "ru": "Он быстро закончил домашнюю работу", "zh": "他很快完成了作业", "tr": "Ödevini hızlıca bitirdi"}),
+    ItemCard(english: "The tortoise walks very slowly.", translations: {"ar": "السلحفاء بتمشي ببطء جدا", "de": "Die Schildkröte läuft sehr langsam", "es": "La tortuga camina muy lentamente", "fr": "La tortue marche très lentement", "it": "La tartaruga cammina molto lentamente", "ru": "Черепаха ходит очень медленно", "zh": "乌龟走得很慢", "tr": "Kaplumbağa çok yavaş yürür"}),
+    ItemCard(english: "She passed the exam easily.", translations: {"ar": "هي نجحت في الامتحان بسهولة", "de": "Sie bestand die Prüfung leicht", "es": "Ella aprobó el examen fácilmente", "fr": "Elle a réussi l'examen facilement", "it": "Ha superato l'esame facilmente", "ru": "Она легко сдала экзамен", "zh": "她轻松通过了考试", "tr": "Sınavı kolayca geçti"}),
+    ItemCard(english: "She treats her children kindly.", translations: {"ar": "هي بتعامل أطفالها بلطف", "de": "Sie behandelt ihre Kinder freundlich", "es": "Ella trata a sus hijos amablemente", "fr": "Elle traite ses enfants gentiment", "it": "Tratta i suoi figli gentilmente", "ru": "Она доброжелательно относится к своим детям", "zh": "她善待她的孩子", "tr": "Çocuklarına nazik davranır"}),
+    ItemCard(english: "He listens to the song loudly.", translations: {"ar": "هو يسمع الأغنية بصوت عالي", "de": "Er hört das Lied laut", "es": "Él escucha la canción en voz alta", "fr": "Il écoute la chanson fort", "it": "Ascolta la canzone ad alto volume", "ru": "Он слушает песню громко", "zh": "他大声听这首歌", "tr": "Şarkıyı yüksek sesle dinliyor"}),
+    ItemCard(english: "Think deeply, and you will find the answer.", translations: {"ar": "فكر بعمق وهتلاقي الإجابة", "de": "Denke tief nach, und du wirst die Antwort finden", "es": "Piensa profundamente y encontrarás la respuesta", "fr": "Pense profondément et tu trouveras la réponse", "it": "Pensa profondamente e troverai la risposta", "ru": "Подумай глубоко, и ты найдешь ответ", "zh": "深入思考，你会找到答案", "tr": "Derinlemesine düşün ve cevabı bulacaksın"}),
+    ItemCard(english: "You should think positively.", translations: {"ar": "المفروض تفكر بشكل إيجابي", "de": "Du solltest positiv denken", "es": "Deberías pensar positivamente", "fr": "Tu devrais penser positivement", "it": "Dovresti pensare positivamente", "ru": "Ты должен мыслить позитивно", "zh": "你应该积极思考", "tr": "Olumlu düşünmelisin"}),
+    ItemCard(english: "They answered the questions carelessly.", translations: {"ar": "هما جاوبوا على الأسئلة بإهمال", "de": "Sie beantworteten die Fragen nachlässig", "es": "Ellos respondieron las preguntas descuidadamente", "fr": "Ils ont répondu aux questions négligemment", "it": "Hanno risposto alle domande con noncuranza", "ru": "Они небрежно ответили на вопросы", "zh": "他们粗心地回答了问题", "tr": "Soruları dikkatsizce cevapladılar"}),
+    ItemCard(english: "They are officially husband and wife.", translations: {"ar": "هما زوج وزوجة بشكل رسمي", "de": "Sie sind offiziell Mann und Frau", "es": "Son oficialmente marido y mujer", "fr": "Ils sont officiellement mari et femme", "it": "Sono ufficialmente marito e moglie", "ru": "Они официально муж и жена", "zh": "他们正式成为夫妻", "tr": "Resmi olarak karı koca oldular"}),
+    
+    // جمل من الصورة 10
+    ItemCard(english: "She is an intelligent lawyer.", translations: {"ar": "هي محامية ذكية جدا", "de": "Sie ist eine intelligente Anwältin", "es": "Ella es una abogada inteligente", "fr": "C'est une avocate intelligente", "it": "È un'avvocatessa intelligente", "ru": "Она умный адвокат", "zh": "她是一位聪明的律师", "tr": "O zeki bir avukat"}),
+    ItemCard(english: "He always gives stupid ideas.", translations: {"ar": "هو دائماً يقول أفكار غبية", "de": "Er gibt immer dumme Ideen", "es": "Él siempre da ideas estúpidas", "fr": "Il donne toujours des idées stupides", "it": "Dà sempre idee stupide", "ru": "Он всегда дает глупые идеи", "zh": "他总是给出愚蠢的想法", "tr": "Her zaman aptalca fikirler verir"}),
+    ItemCard(english: "Housing in this part of the town is very expensive.", translations: {"ar": "المعيشة في الجزء ده من المدينة غالية جدا", "de": "Das Wohnen in diesem Teil der Stadt ist sehr teuer", "es": "La vivienda en esta parte de la ciudad es muy cara", "fr": "Le logement dans cette partie de la ville est très cher", "it": "L'alloggio in questa parte della città è molto costoso", "ru": "Жилье в этой части города очень дорогое", "zh": "城镇这个地区的住房非常昂贵", "tr": "Şehrin bu bölgesinde yaşamak çok pahalı"}),
+    ItemCard(english: "He's too lazy to walk to work.", translations: {"ar": "هو كسول جدا انه يمشي للشغل", "de": "Er ist zu faul, um zur Arbeit zu gehen", "es": "Es demasiado perezoso para caminar al trabajo", "fr": "Il est trop paresseux pour marcher jusqu'au travail", "it": "È troppo pigro per andare al lavoro a piedi", "ru": "Он слишком ленив, чтобы идти на работу пешком", "zh": "他太懒了，不愿意走路去上班", "tr": "İşe yürümek için çok tembel"}),
+    ItemCard(english: "I can't carry heavy bags; they hurt my arms.", translations: {"ar": "أنا مقدرش اشيل شنط تقيلة لانهم يوجعوا دراعي", "de": "Ich kann keine schweren Taschen tragen; sie tun meinen Armen weh", "es": "No puedo llevar bolsas pesadas; me duelen los brazos", "fr": "Je ne peux pas porter de sacs lourds; ils me font mal aux bras", "it": "Non posso portare borse pesanti; mi fanno male le braccia", "ru": "Я не могу носить тяжелые сумки; они болят мои руки", "zh": "我拿不动重袋子；它们弄疼我的胳膊", "tr": "Ağır çantaları taşıyamıyorum; kollarımı acıtıyorlar"}),
+    ItemCard(english: "The exam was so difficult.", translations: {"ar": "الامتحان كان صعب اوى", "de": "Die Prüfung war so schwierig", "es": "El examen fue muy difícil", "fr": "L'examen était très difficile", "it": "L'esame era così difficile", "ru": "Экзамен был таким трудным", "zh": "考试太难了", "tr": "Sınav çok zordu"}),
+    ItemCard(english: "You have to clean your room because it is very dirty.", translations: {"ar": "انت لازم تنضف اوضتك لانها قذرة جدا", "de": "Du musst dein Zimmer putzen, weil es sehr schmutzig ist", "es": "Tienes que limpiar tu habitación porque está muy sucia", "fr": "Tu dois nettoyer ta chambre parce qu'elle est très sale", "it": "Devi pulire la tua stanza perché è molto sporca", "ru": "Ты должен убрать свою комнату, потому что она очень грязная", "zh": "你必须打扫你的房间，因为它很脏", "tr": "Odanı temizlemelisin çünkü çok kirli"}),
+    ItemCard(english: "I am sad because you can't come to my birthday party.", translations: {"ar": "أنا زعلان لأنك مش هتقدم تيجي حفلة عيد ميلادي", "de": "Ich bin traurig, weil du nicht zu meiner Geburtstagsfeier kommen kannst", "es": "Estoy triste porque no puedes venir a mi fiesta de cumpleaños", "fr": "Je suis triste parce que tu ne peux pas venir à ma fête d'anniversaire", "it": "Sono triste perché non puoi venire alla mia festa di compleanno", "ru": "Мне грустно, потому что ты не можешь прийти на мой день рождения", "zh": "我很伤心，因为你不能来参加我的生日派对", "tr": "Doğum günü partime gelemeyeceğin için üzgünüm"}),
+    ItemCard(english: "The doctor said that she had to eat because she was so thin.", translations: {"ar": "الدكتور قال انها لازم تاكل كويس لانها رفيعة جدا", "de": "Der Arzt sagte, dass sie essen müsse, weil sie so dünn sei", "es": "El médico dijo que tenía que comer porque estaba muy delgada", "fr": "Le médecin a dit qu'elle devait manger parce qu'elle était trop mince", "it": "Il dottore ha detto che doveva mangiare perché era troppo magra", "ru": "Врач сказал, что она должна есть, потому что она слишком худая", "zh": "医生说她必须吃东西，因为她太瘦了", "tr": "Doktor yemek yemesi gerektiğini söyledi çünkü çok zayıftı"}),
+    ItemCard(english: "I'm short, but my brother is very tall.", translations: {"ar": "أنا قصير بس أخويا طويل جدا", "de": "Ich bin klein, aber mein Bruder ist sehr groß", "es": "Soy bajo, pero mi hermano es muy alto", "fr": "Je suis petit, mais mon frère est très grand", "it": "Sono basso, ma mio fratello è molto alto", "ru": "Я низкий, но мой брат очень высокий", "zh": "我很矮，但我哥哥很高", "tr": "Ben kısayım ama erkek kardeşim çok uzun"}),
+    ItemCard(english: "He is a very handsome doctor.", translations: {"ar": "الدكتور ده وسيم اوى", "de": "Er ist ein sehr gutaussehender Arzt", "es": "Es un médico muy guapo", "fr": "C'est un très beau médecin", "it": "È un medico molto bello", "ru": "Он очень красивый врач", "zh": "他是一个非常帅的医生", "tr": "Çok yakışıklı bir doktor"}),
+    ItemCard(english: "This restaurant is very expensive; we can't afford it.", translations: {"ar": "المطعم ده غالي اوى منقدرش نقعد فيه", "de": "Dieses Restaurant ist sehr teuer; wir können es uns nicht leisten", "es": "Este restaurante es muy caro; no podemos permitírnoslo", "fr": "Ce restaurant est très cher; nous ne pouvons pas nous le permettre", "it": "Questo ristorante è molto costoso; non possiamo permettercelo", "ru": "Этот ресторан очень дорогой; мы не можем себе его позволить", "zh": "这家餐厅很贵；我们负担不起", "tr": "Bu restoran çok pahalı; bunu karşılayamayız"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // دمج الصفات والظروف في قائمة واحدة للكلمات
+    final allWords = [...words, ...adverbs];
+    
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: allWords,
+      sentences: sentences,
+      title: "الصفات والظروف - Adjectives & Adverbs",
+    );
+  }
+}
+
 class VerbsScreen extends StatelessWidget {
   const VerbsScreen({Key? key}) : super(key: key);
 
