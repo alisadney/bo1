@@ -1,0 +1,550 @@
+class AlphabetWordScreen extends StatelessWidget {
+  // ✅ 27 كلمة - الحروف الإنجليزية مع النطق العربي والترجمات المتعددة
+  final List<LearningCard> cards = const [
+    LearningCard(primaryText: "A", translations: {"ar": "أي (ألف)", "de": "A", "es": "A", "fr": "A", "it": "A", "ru": "А", "zh": "A", "tr": "A"}),
+    LearningCard(primaryText: "B", translations: {"ar": "بي (باء)", "de": "B", "es": "B", "fr": "B", "it": "B", "ru": "Б", "zh": "B", "tr": "B"}),
+    LearningCard(primaryText: "C", translations: {"ar": "سي (جيم)", "de": "C", "es": "C", "fr": "C", "it": "C", "ru": "Ц", "zh": "C", "tr": "C"}),
+    LearningCard(primaryText: "D", translations: {"ar": "دي (دال)", "de": "D", "es": "D", "fr": "D", "it": "D", "ru": "Д", "zh": "D", "tr": "D"}),
+    LearningCard(primaryText: "E", translations: {"ar": "إي (إي)", "de": "E", "es": "E", "fr": "E", "it": "E", "ru": "Е", "zh": "E", "tr": "E"}),
+    LearningCard(primaryText: "F", translations: {"ar": "إف (فا)", "de": "F", "es": "F", "fr": "F", "it": "F", "ru": "Ф", "zh": "F", "tr": "F"}),
+    LearningCard(primaryText: "G", translations: {"ar": "جي (جيم)", "de": "G", "es": "G", "fr": "G", "it": "G", "ru": "Г", "zh": "G", "tr": "G"}),
+    LearningCard(primaryText: "H", translations: {"ar": "إتش (ها)", "de": "H", "es": "H", "fr": "H", "it": "H", "ru": "Х", "zh": "H", "tr": "H"}),
+    LearningCard(primaryText: "I", translations: {"ar": "آي (ياء)", "de": "I", "es": "I", "fr": "I", "it": "I", "ru": "И", "zh": "I", "tr": "I"}),
+    LearningCard(primaryText: "J", translations: {"ar": "جي (جي)", "de": "J", "es": "J", "fr": "J", "it": "J", "ru": "Й", "zh": "J", "tr": "J"}),
+    LearningCard(primaryText: "K", translations: {"ar": "كي (كاف)", "de": "K", "es": "K", "fr": "K", "it": "K", "ru": "К", "zh": "K", "tr": "K"}),
+    LearningCard(primaryText: "L", translations: {"ar": "إل (لام)", "de": "L", "es": "L", "fr": "L", "it": "L", "ru": "Л", "zh": "L", "tr": "L"}),
+    LearningCard(primaryText: "M", translations: {"ar": "إم (ميم)", "de": "M", "es": "M", "fr": "M", "it": "M", "ru": "М", "zh": "M", "tr": "M"}),
+    LearningCard(primaryText: "N", translations: {"ar": "إن (نون)", "de": "N", "es": "N", "fr": "N", "it": "N", "ru": "Н", "zh": "N", "tr": "N"}),
+    LearningCard(primaryText: "O", translations: {"ar": "أو (واو)", "de": "O", "es": "O", "fr": "O", "it": "O", "ru": "О", "zh": "O", "tr": "O"}),
+    LearningCard(primaryText: "P", translations: {"ar": "بي (باء)", "de": "P", "es": "P", "fr": "P", "it": "P", "ru": "П", "zh": "P", "tr": "P"}),
+    LearningCard(primaryText: "Q", translations: {"ar": "كيو (قاف)", "de": "Q", "es": "Q", "fr": "Q", "it": "Q", "ru": "К", "zh": "Q", "tr": "Q"}),
+    LearningCard(primaryText: "R", translations: {"ar": "آر (راء)", "de": "R", "es": "R", "fr": "R", "it": "R", "ru": "Р", "zh": "R", "tr": "R"}),
+    LearningCard(primaryText: "S", translations: {"ar": "إس (سين)", "de": "S", "es": "S", "fr": "S", "it": "S", "ru": "С", "zh": "S", "tr": "S"}),
+    LearningCard(primaryText: "T", translations: {"ar": "تي (تاء)", "de": "T", "es": "T", "fr": "T", "it": "T", "ru": "Т", "zh": "T", "tr": "T"}),
+    LearningCard(primaryText: "U", translations: {"ar": "يو (واو)", "de": "U", "es": "U", "fr": "U", "it": "U", "ru": "У", "zh": "U", "tr": "U"}),
+    LearningCard(primaryText: "V", translations: {"ar": "في (فاء)", "de": "V", "es": "V", "fr": "V", "it": "V", "ru": "В", "zh": "V", "tr": "V"}),
+    LearningCard(primaryText: "W", translations: {"ar": "دبليو (واو)", "de": "W", "es": "W", "fr": "W", "it": "W", "ru": "В", "zh": "W", "tr": "W"}),
+    LearningCard(primaryText: "X", translations: {"ar": "إكس (إكس)", "de": "X", "es": "X", "fr": "X", "it": "X", "ru": "КС", "zh": "X", "tr": "X"}),
+    LearningCard(primaryText: "Y", translations: {"ar": "واي (ياء)", "de": "Y", "es": "Y", "fr": "Y", "it": "Y", "ru": "У", "zh": "Y", "tr": "Y"}),
+    LearningCard(primaryText: "Z", translations: {"ar": "زِد (زاي)", "de": "Z", "es": "Z", "fr": "Z", "it": "Z", "ru": "З", "zh": "Z", "tr": "Z"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "الحروف الإنجليزية - English Alphabet",
+      cards: cards,
+    );
+  }
+}
+
+class AlphabetSentencesScreen extends StatelessWidget {
+  // ✅ 26 جملة - كلمات تبدأ بكل حرف
+  final List<ItemCard> sentences = const [
+    ItemCard(english: "A is for Apple", translations: {"ar": "A لتقابل تفاحة", "de": "A steht für Apfel", "es": "A es por Manzana", "fr": "A pour Pomme", "it": "A sta per Mela", "ru": "А - это Яблоко", "zh": "A代表苹果", "tr": "A elma demektir"}),
+    ItemCard(english: "B is for Ball", translations: {"ar": "B لتقابل كرة", "de": "B steht für Ball", "es": "B es por Pelota", "fr": "B pour Balle", "it": "B sta per Palla", "ru": "Б - это Мяч", "zh": "B代表球", "tr": "B top demektir"}),
+    ItemCard(english: "C is for Cat", translations: {"ar": "C لتقابل قطة", "de": "C steht für Katze", "es": "C es por Gato", "fr": "C pour Chat", "it": "C sta per Gatto", "ru": "Ц - это Кошка", "zh": "C代表猫", "tr": "C kedi demektir"}),
+    ItemCard(english: "D is for Dog", translations: {"ar": "D لتقابل كلب", "de": "D steht für Hund", "es": "D es por Perro", "fr": "D pour Chien", "it": "D sta per Cane", "ru": "Д - это Собака", "zh": "D代表狗", "tr": "D köpek demektir"}),
+    ItemCard(english: "E is for Elephant", translations: {"ar": "E لتقابل فيل", "de": "E steht für Elefant", "es": "E es por Elefante", "fr": "E pour Éléphant", "it": "E sta per Elefante", "ru": "Е - это Слон", "zh": "E代表大象", "tr": "E fil demektir"}),
+    ItemCard(english: "F is for Fish", translations: {"ar": "F لتقابل سمكة", "de": "F steht für Fisch", "es": "F es por Pez", "fr": "F pour Poisson", "it": "F sta per Pesce", "ru": "Ф - это Рыба", "zh": "F代表鱼", "tr": "F balık demektir"}),
+    ItemCard(english: "G is for Giraffe", translations: {"ar": "G لتقابل زرافة", "de": "G steht für Giraffe", "es": "G es por Jirafa", "fr": "G pour Girafe", "it": "G sta per Giraffa", "ru": "Г - это Жираф", "zh": "G代表长颈鹿", "tr": "G zürafa demektir"}),
+    ItemCard(english: "H is for House", translations: {"ar": "H لتقابل منزل", "de": "H steht für Haus", "es": "H es por Casa", "fr": "H pour Maison", "it": "H sta per Casa", "ru": "Х - это Дом", "zh": "H代表房子", "tr": "H ev demektir"}),
+    ItemCard(english: "I is for Ice", translations: {"ar": "I لتقابل ثلج", "de": "I steht für Eis", "es": "I es por Hielo", "fr": "I pour Glace", "it": "I sta per Ghiaccio", "ru": "И - это Лед", "zh": "I代表冰", "tr": "I buz demektir"}),
+    ItemCard(english: "J is for Jelly", translations: {"ar": "J لتقابل جيلي", "de": "J steht für Gelee", "es": "J es por Gelatina", "fr": "J pour Gelée", "it": "J sta per Gelatina", "ru": "Й - это Желе", "zh": "J代表果冻", "tr": "J jöle demektir"}),
+    ItemCard(english: "K is for Kangaroo", translations: {"ar": "K لتقابل كنغر", "de": "K steht für Känguru", "es": "K es por Canguro", "fr": "K pour Kangourou", "it": "K sta per Canguro", "ru": "К - это Кенгуру", "zh": "K代表袋鼠", "tr": "K kanguru demektir"}),
+    ItemCard(english: "L is for Lion", translations: {"ar": "L لتقابل أسد", "de": "L steht für Löwe", "es": "L es por León", "fr": "L pour Lion", "it": "L sta per Leone", "ru": "Л - это Лев", "zh": "L代表狮子", "tr": "L aslan demektir"}),
+    ItemCard(english: "M is for Monkey", translations: {"ar": "M لتقابل قرد", "de": "M steht für Affe", "es": "M es por Mono", "fr": "M pour Singe", "it": "M sta per Scimmia", "ru": "М - это Обезьяна", "zh": "M代表猴子", "tr": "M maymun demektir"}),
+    ItemCard(english: "N is for Nose", translations: {"ar": "N لتقابل أنف", "de": "N steht für Nase", "es": "N es por Nariz", "fr": "N pour Nez", "it": "N sta per Naso", "ru": "Н - это Нос", "zh": "N代表鼻子", "tr": "N burun demektir"}),
+    ItemCard(english: "O is for Orange", translations: {"ar": "O لتقابل برتقال", "de": "O steht für Orange", "es": "O es por Naranja", "fr": "O pour Orange", "it": "O sta per Arancia", "ru": "О - это Апельсин", "zh": "O代表橙子", "tr": "O portakal demektir"}),
+    ItemCard(english: "P is for Panda", translations: {"ar": "P لتقابل باندا", "de": "P steht für Panda", "es": "P es por Panda", "fr": "P pour Panda", "it": "P sta per Panda", "ru": "П - это Панда", "zh": "P代表熊猫", "tr": "P panda demektir"}),
+    ItemCard(english: "Q is for Queen", translations: {"ar": "Q لتقابل ملكة", "de": "Q steht für Königin", "es": "Q es por Reina", "fr": "Q pour Reine", "it": "Q sta per Regina", "ru": "К - это Королева", "zh": "Q代表女王", "tr": "Q kraliçe demektir"}),
+    ItemCard(english: "R is for Rabbit", translations: {"ar": "R لتقابل أرنب", "de": "R steht für Kaninchen", "es": "R es por Conejo", "fr": "R pour Lapin", "it": "R sta per Coniglio", "ru": "Р - это Кролик", "zh": "R代表兔子", "tr": "R tavşan demektir"}),
+    ItemCard(english: "S is for Sun", translations: {"ar": "S لتقابل شمس", "de": "S steht für Sonne", "es": "S es por Sol", "fr": "S pour Soleil", "it": "S sta per Sole", "ru": "С - это Солнце", "zh": "S代表太阳", "tr": "S güneş demektir"}),
+    ItemCard(english: "T is for Tree", translations: {"ar": "T لتقابل شجرة", "de": "T steht für Baum", "es": "T es por Árbol", "fr": "T pour Arbre", "it": "T sta per Albero", "ru": "Т - это Дерево", "zh": "T代表树", "tr": "T ağaç demektir"}),
+    ItemCard(english: "U is for Umbrella", translations: {"ar": "U لتقابل مظلة", "de": "U steht für Regenschirm", "es": "U es por Paraguas", "fr": "U pour Parapluie", "it": "U sta per Ombrello", "ru": "У - это Зонт", "zh": "U代表雨伞", "tr": "U şemsiye demektir"}),
+    ItemCard(english: "V is for Violin", translations: {"ar": "V لتقابل كمان", "de": "V steht für Geige", "es": "V es por Violín", "fr": "V pour Violon", "it": "V sta per Violino", "ru": "В - это Скрипка", "zh": "V代表小提琴", "tr": "V keman demektir"}),
+    ItemCard(english: "W is for Whale", translations: {"ar": "W لتقابل حوت", "de": "W steht für Wal", "es": "W es por Ballena", "fr": "W pour Baleine", "it": "W sta per Balena", "ru": "В - это Кит", "zh": "W代表鲸鱼", "tr": "W balina demektir"}),
+    ItemCard(english: "X is for Xylophone", translations: {"ar": "X لتقابل زايلوفون", "de": "X steht für Xylophon", "es": "X es por Xilófono", "fr": "X pour Xylophone", "it": "X sta per Xilofono", "ru": "КС - это Ксилофон", "zh": "X代表木琴", "tr": "X Ksilofon demektir"}),
+    ItemCard(english: "Y is for Yellow", translations: {"ar": "Y لتقابل أصفر", "de": "Y steht für Gelb", "es": "Y es por Amarillo", "fr": "Y pour Jaune", "it": "Y sta per Giallo", "ru": "У - это Желтый", "zh": "Y代表黄色", "tr": "Y sarı demektir"}),
+    ItemCard(english: "Z is for Zebra", translations: {"ar": "Z لتقابل حمار وحشي", "de": "Z steht für Zebra", "es": "Z es por Cebra", "fr": "Z pour Zèbre", "it": "Z sta per Zebra", "ru": "З - это Зебра", "zh": "Z代表斑马", "tr": "Z zebra demektir"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "الحروف الإنجليزية - كلمات تعليمية",
+      items: sentences,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/////////////
+
+
+
+
+
+
+
+class CompoundLettersScreen extends StatelessWidget {
+  // ✅ 35+ كلمة - الحروف المركبة مع الأمثلة والترجمات المتعددة
+  final List<LearningCard> cards = const [
+    LearningCard(primaryText: "ph (ف)", translations: {"ar": "تنطق ف - مثال: phone", "de": "wird wie F ausgesprochen - z.B: phone", "es": "se pronuncia F - ej: phone", "fr": "se prononce F - ex: phone", "it": "si pronuncia F - es: phone", "ru": "произносится как Ф - напр: phone", "zh": "发音为 F - 例如: phone", "tr": "F olarak telaffuz edilir - örn: phone"}),
+    LearningCard(primaryText: "ch (تش)", translations: {"ar": "تنطق تش - مثال: chair", "de": "wird wie Tsch ausgesprochen - z.B: chair", "es": "se pronuncia CH - ej: chair", "fr": "se prononce TCH - ex: chair", "it": "si pronuncia C - es: chair", "ru": "произносится как Ч - напр: chair", "zh": "发音为 CH - 例如: chair", "tr": "Ç olarak telaffuz edilir - örn: chair"}),
+    LearningCard(primaryText: "sh (ش)", translations: {"ar": "تنطق ش - مثال: ship", "de": "wird wie Sch ausgesprochen - z.B: ship", "es": "se pronuncia SH - ej: ship", "fr": "se prononce CH - ex: ship", "it": "si pronuncia SC - es: ship", "ru": "произносится как Ш - напр: ship", "zh": "发音为 SH - 例如: ship", "tr": "Ş olarak telaffuz edilir - örn: ship"}),
+    LearningCard(primaryText: "th (ث/ذ)", translations: {"ar": "تنطق ث أو ذ - مثال: think / this", "de": "wird wie TH ausgesprochen - z.B: think / this", "es": "se pronuncia Z o D - ej: think / this", "fr": "se prononce TH - ex: think / this", "it": "si pronuncia TH - es: think / this", "ru": "произносится как ТХ/З - напр: think / this", "zh": "发音为 TH - 例如: think / this", "tr": "TH olarak telaffuz edilir - örn: think / this"}),
+    LearningCard(primaryText: "wh (و)", translations: {"ar": "تنطق و - مثال: what", "de": "wird wie W ausgesprochen - z.B: what", "es": "se pronuncia U - ej: what", "fr": "se prononce W - ex: what", "it": "si pronuncia U - es: what", "ru": "произносится как У - напр: what", "zh": "发音为 W - 例如: what", "tr": "V olarak telaffuz edilir - örn: what"}),
+    LearningCard(primaryText: "ck (ك)", translations: {"ar": "تنطق ك - مثال: black", "de": "wird wie K ausgesprochen - z.B: black", "es": "se pronuncia K - ej: black", "fr": "se prononce K - ex: black", "it": "si pronuncia C - es: black", "ru": "произносится как К - напр: black", "zh": "发音为 K - 例如: black", "tr": "K olarak telaffuz edilir - örn: black"}),
+    LearningCard(primaryText: "kn (ن)", translations: {"ar": "تنطق ن - مثال: knife", "de": "wird wie N ausgesprochen - z.B: knife", "es": "se pronuncia N - ej: knife", "fr": "se prononce N - ex: knife", "it": "si pronuncia N - es: knife", "ru": "произносится как Н - напр: knife", "zh": "发音为 N - 例如: knife", "tr": "N olarak telaffuz edilir - örn: knife"}),
+    LearningCard(primaryText: "wr (ر)", translations: {"ar": "تنطق ر - مثال: write", "de": "wird wie R ausgesprochen - z.B: write", "es": "se pronuncia R - ej: write", "fr": "se prononce R - ex: write", "it": "si pronuncia R - es: write", "ru": "произносится как Р - напр: write", "zh": "发音为 R - 例如: write", "tr": "R olarak telaffuz edilir - örn: write"}),
+    LearningCard(primaryText: "gn (ن)", translations: {"ar": "تنطق ن - مثال: sign", "de": "wird wie N ausgesprochen - z.B: sign", "es": "se pronuncia N - ej: sign", "fr": "se prononce N - ex: sign", "it": "si pronuncia N - es: sign", "ru": "произносится как Н - напр: sign", "zh": "发音为 N - 例如: sign", "tr": "N olarak telaffuz edilir - örn: sign"}),
+    LearningCard(primaryText: "qu (كو)", translations: {"ar": "تنطق كو - مثال: queen", "de": "wird wie KW ausgesprochen - z.B: queen", "es": "se pronuncia KU - ej: queen", "fr": "se prononce KU - ex: queen", "it": "si pronuncia KU - es: queen", "ru": "произносится как КУ - напр: queen", "zh": "发音为 KU - 例如: queen", "tr": "KU olarak telaffuz edilir - örn: queen"}),
+    LearningCard(primaryText: "tch (تش)", translations: {"ar": "تنطق تش - مثال: watch", "de": "wird wie Tsch ausgesprochen - z.B: watch", "es": "se pronuncia CH - ej: watch", "fr": "se prononce TCH - ex: watch", "it": "si pronuncia C - es: watch", "ru": "произносится как Ч - напр: watch", "zh": "发音为 CH - 例如: watch", "tr": "Ç olarak telaffuz edilir - örn: watch"}),
+    LearningCard(primaryText: "dge (ج)", translations: {"ar": "تنطق ج - مثال: bridge", "de": "wird wie Dsch ausgesprochen - z.B: bridge", "es": "se pronuncia Y - ej: bridge", "fr": "se prononce DJ - ex: bridge", "it": "si pronuncia G - es: bridge", "ru": "произносится как ДЖ - напр: bridge", "zh": "发音为 J - 例如: bridge", "tr": "C olarak telaffuz edilir - örn: bridge"}),
+    LearningCard(primaryText: "tion (شن)", translations: {"ar": "تنطق شن - مثال: station", "de": "wird wie Sch-n ausgesprochen - z.B: station", "es": "se pronuncia SION - ej: station", "fr": "se prononce SION - ex: station", "it": "si pronuncia ZIONE - es: station", "ru": "произносится как ШН - напр: station", "zh": "发音为 SHEN - 例如: station", "tr": "ŞIN olarak telaffuz edilir - örn: station"}),
+    LearningCard(primaryText: "sion (جن)", translations: {"ar": "تنطق جن - مثال: television", "de": "wird wie Sch-n ausgesprochen - z.B: television", "es": "se pronuncia SION - ej: television", "fr": "se prononce SION - ex: télévision", "it": "si pronuncia ZIONE - es: televisione", "ru": "произносится как ЖН - напр: television", "zh": "发音为 ZHEN - 例如: television", "tr": "JIN olarak telaffuz edilir - örn: television"}),
+    LearningCard(primaryText: "ough (أو/أف)", translations: {"ar": "تنطق بعدة طرق - rough, though, through", "de": "wird unterschiedlich ausgesprochen - rough, though, through", "es": "se pronuncia de varias maneras - rough, though, through", "fr": "se prononce de différentes manières - rough, though, through", "it": "si pronuncia in diversi modi - rough, though, through", "ru": "произносится по-разному - rough, though, through", "zh": "有多种发音 - rough, though, through", "tr": "farklı şekillerde telaffuz edilir - rough, though, through"}),
+    LearningCard(primaryText: "igh (آي)", translations: {"ar": "تنطق آي - مثال: night", "de": "wird wie AI ausgesprochen - z.B: night", "es": "se pronuncia AI - ej: night", "fr": "se prononce AI - ex: night", "it": "si pronuncia AI - es: night", "ru": "произносится как АЙ - напр: night", "zh": "发音为 AI - 例如: night", "tr": "AY olarak telaffuz edilir - örn: night"}),
+    LearningCard(primaryText: "au (أو)", translations: {"ar": "تنطق أو - مثال: author", "de": "wird wie AU ausgesprochen - z.B: author", "es": "se pronuncia AU - ej: author", "fr": "se prononce AU - ex: auteur", "it": "si pronuncia AU - es: autore", "ru": "произносится как АУ - напр: author", "zh": "发音为 AU - 例如: author", "tr": "AU olarak telaffuz edilir - örn: author"}),
+    LearningCard(primaryText: "aw (أو)", translations: {"ar": "تنطق أو - مثال: saw", "de": "wird wie AU ausgesprochen - z.B: saw", "es": "se pronuncia AU - ej: saw", "fr": "se prononce AU - ex: scie", "it": "si pronuncia AU - es: sega", "ru": "произносится как АУ - напр: saw", "zh": "发音为 AU - 例如: saw", "tr": "AU olarak telaffuz edilir - örn: saw"}),
+    LearningCard(primaryText: "ow (أو/أوو)", translations: {"ar": "تنطق أو أو أوو - مثل: cow / snow", "de": "wird wie AU oder O ausgesprochen - z.B: cow / snow", "es": "se pronuncia AU o O - ej: cow / snow", "fr": "se prononce AU ou O - ex: vache / neige", "it": "si pronuncia AU o O - es: mucca / neve", "ru": "произносится как АУ или ОУ - напр: cow / snow", "zh": "发音为 AU 或 O - 例如: cow / snow", "tr": "AV veya O olarak telaffuz edilir - örn: cow / snow"}),
+    LearningCard(primaryText: "oi (أوي)", translations: {"ar": "تنطق أوي - مثال: boil", "de": "wird wie OI ausgesprochen - z.B: boil", "es": "se pronuncia OI - ej: hervir", "fr": "se prononce OI - ex: bouillir", "it": "si pronuncia OI - es: bollire", "ru": "произносится как ОЙ - напр: boil", "zh": "发音为 OI - 例如: boil", "tr": "OY olarak telaffuz edilir - örn: boil"}),
+    LearningCard(primaryText: "oy (أوي)", translations: {"ar": "تنطق أوي - مثال: toy", "de": "wird wie OI ausgesprochen - z.B: toy", "es": "se pronuncia OI - ej: juguete", "fr": "se prononce OI - ex: jouet", "it": "si pronuncia OI - es: giocattolo", "ru": "произносится как ОЙ - напр: toy", "zh": "发音为 OI - 例如: toy", "tr": "OY olarak telaffuz edilir - örn: toy"}),
+    LearningCard(primaryText: "ea (إي/إه)", translations: {"ar": "تنطق إي أو إيه - مثل: eat / head", "de": "wird wie I oder E ausgesprochen - z.B: eat / head", "es": "se pronuncia I o E - ej: eat / head", "fr": "se prononce I ou È - ex: manger / tête", "it": "si pronuncia I o E - es: mangiare / testa", "ru": "произносится как И или Э - напр: eat / head", "zh": "发音为 I 或 E - 例如: eat / head", "tr": "İ veya E olarak telaffuz edilir - örn: eat / head"}),
+    LearningCard(primaryText: "ee (إي)", translations: {"ar": "تنطق إي طويلة - مثال: tree", "de": "wird wie langes I ausgesprochen - z.B: tree", "es": "se pronuncia I larga - ej: árbol", "fr": "se prononce I long - ex: arbre", "it": "si pronuncia I lunga - es: albero", "ru": "произносится как долгая И - напр: tree", "zh": "发音为长 I - 例如: tree", "tr": "Uzun İ olarak telaffuz edilir - örn: tree"}),
+    LearningCard(primaryText: "ie (آي/إي)", translations: {"ar": "تنطق آي أو إي - مثل: pie / chief", "de": "wird wie AI oder I ausgesprochen - z.B: pie / chief", "es": "se pronuncia AI o I - ej: pie / jefe", "fr": "se prononce AI ou I - ex: tarte / chef", "it": "si pronuncia AI o I - es: torta / capo", "ru": "произносится как АЙ или И - напр: pie / chief", "zh": "发音为 AI 或 I - 例如: pie / chief", "tr": "AY veya İ olarak telaffuz edilir - örn: pie / chief"}),
+    LearningCard(primaryText: "ei (إي/آي)", translations: {"ar": "تنطق إي أو آي - مثل: receive / height", "de": "wird wie I oder AI ausgesprochen - z.B: receive / height", "es": "se pronuncia I o AI - ej: recibir / altura", "fr": "se prononce I ou AI - ex: recevoir / hauteur", "it": "si pronuncia I o AI - es: ricevere / altezza", "ru": "произносится как И или АЙ - напр: receive / height", "zh": "发音为 I 或 AI - 例如: receive / height", "tr": "İ veya AY olarak telaffuz edilir - örn: receive / height"}),
+    LearningCard(primaryText: "ai (إيه)", translations: {"ar": "تنطق إيه - مثال: rain", "de": "wird wie EI ausgesprochen - z.B: rain", "es": "se pronuncia EI - ej: lluvia", "fr": "se prononce EI - ex: pluie", "it": "si pronuncia AI - es: pioggia", "ru": "произносится как ЭЙ - напр: rain", "zh": "发音为 EI - 例如: rain", "tr": "EY olarak telaffuz edilir - örn: rain"}),
+    LearningCard(primaryText: "ay (إيه)", translations: {"ar": "تنطق إيه - مثال: day", "de": "wird wie EI ausgesprochen - z.B: day", "es": "se pronuncia EI - ej: día", "fr": "se prononce EI - ex: jour", "it": "si pronuncia AI - es: giorno", "ru": "произносится как ЭЙ - напр: day", "zh": "发音为 EI - 例如: day", "tr": "EY olarak telaffuz edilir - örn: day"}),
+    LearningCard(primaryText: "oa (أو)", translations: {"ar": "تنطق أو - مثال: boat", "de": "wird wie O ausgesprochen - z.B: boat", "es": "se pronuncia O - ej: barco", "fr": "se prononce O - ex: bateau", "it": "si pronuncia O - es: barca", "ru": "произносится как ОУ - напр: boat", "zh": "发音为 O - 例如: boat", "tr": "O olarak telaffuz edilir - örn: boat"}),
+    LearningCard(primaryText: "oe (أو)", translations: {"ar": "تنطق أو - مثال: toe", "de": "wird wie O ausgesprochen - z.B: toe", "es": "se pronuncia O - ej: dedo del pie", "fr": "se prononce O - ex: orteil", "it": "si pronuncia O - es: dito del piede", "ru": "произносится как ОУ - напр: toe", "zh": "发音为 O - 例如: toe", "tr": "O olarak telaffuz edilir - örn: toe"}),
+    LearningCard(primaryText: "ue (يو)", translations: {"ar": "تنطق يو - مثال: blue", "de": "wird wie U ausgesprochen - z.B: blue", "es": "se pronuncia U - ej: azul", "fr": "se prononce U - ex: bleu", "it": "si pronuncia U - es: blu", "ru": "произносится как Ю - напр: blue", "zh": "发音为 U - 例如: blue", "tr": "U olarak telaffuz edilir - örn: blue"}),
+    LearningCard(primaryText: "ui (وي/يو)", translations: {"ar": "تنطق وي أو يو - مثال: fruit", "de": "wird wie UI ausgesprochen - z.B: fruit", "es": "se pronuncia UI - ej: fruta", "fr": "se prononce UI - ex: fruit", "it": "si pronuncia UI - es: frutta", "ru": "произносится как УИ - напр: fruit", "zh": "发音为 UI - 例如: fruit", "tr": "Uİ olarak telaffuz edilir - örn: fruit"}),
+    LearningCard(primaryText: "du (جو)", translations: {"ar": "تنطق جو - مثال: education", "de": "wird wie Dschu ausgesprochen - z.B: education", "es": "se pronuncia YU - ej: educación", "fr": "se prononce DJU - ex: éducation", "it": "si pronuncia GIU - es: educazione", "ru": "произносится как ДЖУ - напр: education", "zh": "发音为 JU - 例如: education", "tr": "CU olarak telaffuz edilir - örn: education"}),
+    LearningCard(primaryText: "sc (س)", translations: {"ar": "تنطق س - مثال: science", "de": "wird wie S ausgesprochen - z.B: science", "es": "se pronuncia S - ej: ciencia", "fr": "se prononce S - ex: science", "it": "si pronuncia S - es: scienza", "ru": "произносится как С - напр: science", "zh": "发音为 S - 例如: science", "tr": "S olarak telaffuz edilir - örn: science"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "الحروف المركبة - Compound Letters",
+      cards: cards,
+    );
+  }
+}
+
+class CompoundLettersSentencesScreen extends StatelessWidget {
+  // ✅ 35+ جملة - أمثلة على الحروف المركبة
+  final List<ItemCard> sentences = const [
+    ItemCard(english: "ph as in Phone (ف)", translations: {"ar": "ph كما في Phone (هاتف)", "de": "ph wie in Phone (Telefon)", "es": "ph como en Phone (Teléfono)", "fr": "ph comme dans Phone (Téléphone)", "it": "ph come in Phone (Telefono)", "ru": "ph как в Phone (Телефон)", "zh": "ph 如 Phone (电话)", "tr": "ph Phone'daki gibi (Telefon)"}),
+    ItemCard(english: "ch as in Chair (تش)", translations: {"ar": "ch كما في Chair (كرسي)", "de": "ch wie in Chair (Stuhl)", "es": "ch como en Chair (Silla)", "fr": "ch comme dans Chair (Chaise)", "it": "ch come in Chair (Sedia)", "ru": "ch как в Chair (Стул)", "zh": "ch 如 Chair (椅子)", "tr": "ch Chair'daki gibi (Sandalye)"}),
+    ItemCard(english: "sh as in Ship (ش)", translations: {"ar": "sh كما في Ship (سفينة)", "de": "sh wie in Ship (Schiff)", "es": "sh como en Ship (Barco)", "fr": "sh comme dans Ship (Bateau)", "it": "sh come in Ship (Nave)", "ru": "sh как в Ship (Корабль)", "zh": "sh 如 Ship (船)", "tr": "sh Ship'teki gibi (Gemi)"}),
+    ItemCard(english: "th as in Think (ث)", translations: {"ar": "th كما في Think (يفكر)", "de": "th wie in Think (Denken)", "es": "th como en Think (Pensar)", "fr": "th comme dans Think (Penser)", "it": "th come in Think (Pensare)", "ru": "th как в Think (Думать)", "zh": "th 如 Think (想)", "tr": "th Think'teki gibi (Düşünmek)"}),
+    ItemCard(english: "wh as in What (و)", translations: {"ar": "wh كما في What (ماذا)", "de": "wh wie in What (Was)", "es": "wh como en What (Qué)", "fr": "wh comme dans What (Quoi)", "it": "wh come in What (Cosa)", "ru": "wh как в What (Что)", "zh": "wh 如 What (什么)", "tr": "wh What'taki gibi (Ne)"}),
+    ItemCard(english: "ck as in Black (ك)", translations: {"ar": "ck كما في Black (أسود)", "de": "ck wie in Black (Schwarz)", "es": "ck como en Black (Negro)", "fr": "ck comme dans Black (Noir)", "it": "ck come in Black (Nero)", "ru": "ck как в Black (Черный)", "zh": "ck 如 Black (黑色)", "tr": "ck Black'teki gibi (Siyah)"}),
+    ItemCard(english: "kn as in Knife (ن)", translations: {"ar": "kn كما في Knife (سكين)", "de": "kn wie in Knife (Messer)", "es": "kn como en Knife (Cuchillo)", "fr": "kn comme dans Knife (Couteau)", "it": "kn come in Knife (Coltello)", "ru": "kn как в Knife (Нож)", "zh": "kn 如 Knife (刀)", "tr": "kn Knife'taki gibi (Bıçak)"}),
+    ItemCard(english: "wr as in Write (ر)", translations: {"ar": "wr كما في Write (يكتب)", "de": "wr wie in Write (Schreiben)", "es": "wr como en Write (Escribir)", "fr": "wr comme dans Write (Écrire)", "it": "wr come in Write (Scrivere)", "ru": "wr как в Write (Писать)", "zh": "wr 如 Write (写)", "tr": "wr Write'taki gibi (Yazmak)"}),
+    ItemCard(english: "gn as in Sign (ن)", translations: {"ar": "gn كما في Sign (علامة)", "de": "gn wie in Sign (Zeichen)", "es": "gn como en Sign (Señal)", "fr": "gn comme dans Sign (Signe)", "it": "gn come in Sign (Segno)", "ru": "gn как в Sign (Знак)", "zh": "gn 如 Sign (标志)", "tr": "gn Sign'daki gibi (İşaret)"}),
+    ItemCard(english: "qu as in Queen (كو)", translations: {"ar": "qu كما في Queen (ملكة)", "de": "qu wie in Queen (Königin)", "es": "qu como en Queen (Reina)", "fr": "qu comme dans Queen (Reine)", "it": "qu come in Queen (Regina)", "ru": "qu как в Queen (Королева)", "zh": "qu 如 Queen (女王)", "tr": "qu Queen'deki gibi (Kraliçe)"}),
+    ItemCard(english: "tch as in Watch (تش)", translations: {"ar": "tch كما في Watch (ساعة)", "de": "tch wie in Watch (Uhr)", "es": "tch como en Watch (Reloj)", "fr": "tch comme dans Watch (Montre)", "it": "tch come in Watch (Orologio)", "ru": "tch как в Watch (Часы)", "zh": "tch 如 Watch (手表)", "tr": "tch Watch'taki gibi (Saat)"}),
+    ItemCard(english: "dge as in Bridge (ج)", translations: {"ar": "dge كما في Bridge (جسر)", "de": "dge wie in Bridge (Brücke)", "es": "dge como en Bridge (Puente)", "fr": "dge comme dans Bridge (Pont)", "it": "dge come in Bridge (Ponte)", "ru": "dge как в Bridge (Мост)", "zh": "dge 如 Bridge (桥)", "tr": "dge Bridge'teki gibi (Köprü)"}),
+    ItemCard(english: "tion as in Station (شن)", translations: {"ar": "tion كما في Station (محطة)", "de": "tion wie in Station (Bahnhof)", "es": "tion como en Station (Estación)", "fr": "tion comme dans Station (Gare)", "it": "tion come in Station (Stazione)", "ru": "tion как в Station (Станция)", "zh": "tion 如 Station (车站)", "tr": "tion Station'daki gibi (İstasyon)"}),
+    ItemCard(english: "sion as in Television (جن)", translations: {"ar": "sion كما في Television (تلفزيون)", "de": "sion wie in Television (Fernsehen)", "es": "sion como en Television (Televisión)", "fr": "sion comme dans Télévision", "it": "sion come in Television (Televisione)", "ru": "sion как в Television (Телевизор)", "zh": "sion 如 Television (电视)", "tr": "sion Television'daki gibi (Televizyon)"}),
+    ItemCard(english: "igh as in Night (آي)", translations: {"ar": "igh كما في Night (ليل)", "de": "igh wie in Night (Nacht)", "es": "igh como en Night (Noche)", "fr": "igh comme dans Night (Nuit)", "it": "igh come in Night (Notte)", "ru": "igh как в Night (Ночь)", "zh": "igh 如 Night (夜晚)", "tr": "igh Night'taki gibi (Gece)"}),
+    ItemCard(english: "au as in Author (أو)", translations: {"ar": "au كما في Author (مؤلف)", "de": "au wie in Author (Autor)", "es": "au como en Author (Autor)", "fr": "au comme dans Auteur", "it": "au come in Author (Autore)", "ru": "au как в Author (Автор)", "zh": "au 如 Author (作者)", "tr": "au Author'daki gibi (Yazar)"}),
+    ItemCard(english: "aw as in Saw (أو)", translations: {"ar": "aw كما في Saw (منشار)", "de": "aw wie in Saw (Säge)", "es": "aw como en Saw (Sierra)", "fr": "aw comme dans Scie", "it": "aw come in Saw (Sega)", "ru": "aw как в Saw (Пила)", "zh": "aw 如 Saw (锯子)", "tr": "aw Saw'daki gibi (Testere)"}),
+    ItemCard(english: "oi as in Boil (أوي)", translations: {"ar": "oi كما في Boil (يغلي)", "de": "oi wie in Boil (Kochen)", "es": "oi como en Boil (Hervir)", "fr": "oi comme dans Bouillir", "it": "oi come in Boil (Bollire)", "ru": "oi как в Boil (Кипеть)", "zh": "oi 如 Boil (煮沸)", "tr": "oi Boil'daki gibi (Kaynamak)"}),
+    ItemCard(english: "oy as in Toy (أوي)", translations: {"ar": "oy كما في Toy (لعبة)", "de": "oy wie in Toy (Spielzeug)", "es": "oy como en Toy (Juguete)", "fr": "oy comme dans Jouet", "it": "oy come in Toy (Giocattolo)", "ru": "oy как в Toy (Игрушка)", "zh": "oy 如 Toy (玩具)", "tr": "oy Toy'daki gibi (Oyuncak)"}),
+    ItemCard(english: "ea as in Eat (إي)", translations: {"ar": "ea كما في Eat (يأكل)", "de": "ea wie in Eat (Essen)", "es": "ea como en Eat (Comer)", "fr": "ea comme dans Manger", "it": "ea come in Eat (Mangiare)", "ru": "ea как в Eat (Есть)", "zh": "ea 如 Eat (吃)", "tr": "ea Eat'teki gibi (Yemek)"}),
+    ItemCard(english: "ee as in Tree (إي)", translations: {"ar": "ee كما في Tree (شجرة)", "de": "ee wie in Tree (Baum)", "es": "ee como en Tree (Árbol)", "fr": "ee comme dans Arbre", "it": "ee come in Tree (Albero)", "ru": "ee как в Tree (Дерево)", "zh": "ee 如 Tree (树)", "tr": "ee Tree'deki gibi (Ağaç)"}),
+    ItemCard(english: "ai as in Rain (إيه)", translations: {"ar": "ai كما في Rain (مطر)", "de": "ai wie in Rain (Regen)", "es": "ai como en Rain (Lluvia)", "fr": "ai comme dans Pluie", "it": "ai come in Rain (Pioggia)", "ru": "ai как в Rain (Дождь)", "zh": "ai 如 Rain (雨)", "tr": "ai Rain'deki gibi (Yağmur)"}),
+    ItemCard(english: "ay as in Day (إيه)", translations: {"ar": "ay كما في Day (يوم)", "de": "ay wie in Day (Tag)", "es": "ay como en Day (Día)", "fr": "ay comme dans Jour", "it": "ay come in Day (Giorno)", "ru": "ay как в Day (День)", "zh": "ay 如 Day (天)", "tr": "ay Day'deki gibi (Gün)"}),
+    ItemCard(english: "oa as in Boat (أو)", translations: {"ar": "oa كما في Boat (قارب)", "de": "oa wie in Boat (Boot)", "es": "oa como en Boat (Barco)", "fr": "oa comme dans Bateau", "it": "oa come in Boat (Barca)", "ru": "oa как в Boat (Лодка)", "zh": "oa 如 Boat (船)", "tr": "oa Boat'taki gibi (Tekne)"}),
+    ItemCard(english: "ue as in Blue (يو)", translations: {"ar": "ue كما في Blue (أزرق)", "de": "ue wie in Blue (Blau)", "es": "ue como en Blue (Azul)", "fr": "ue comme dans Bleu", "it": "ue come in Blue (Blu)", "ru": "ue как в Blue (Синий)", "zh": "ue 如 Blue (蓝色)", "tr": "ue Blue'daki gibi (Mavi)"}),
+    ItemCard(english: "ui as in Fruit (وي)", translations: {"ar": "ui كما في Fruit (فاكهة)", "de": "ui wie in Fruit (Obst)", "es": "ui como en Fruit (Fruta)", "fr": "ui comme dans Fruit", "it": "ui come in Fruit (Frutta)", "ru": "ui как в Fruit (Фрукт)", "zh": "ui 如 Fruit (水果)", "tr": "ui Fruit'teki gibi (Meyve)"}),
+    ItemCard(english: "du as in Education (جو)", translations: {"ar": "du كما في Education (تعليم)", "de": "du wie in Education (Bildung)", "es": "du como en Education (Educación)", "fr": "du comme dans Éducation", "it": "du come in Education (Istruzione)", "ru": "du как в Education (Образование)", "zh": "du 如 Education (教育)", "tr": "du Education'daki gibi (Eğitim)"}),
+    ItemCard(english: "sc as in Science (س)", translations: {"ar": "sc كما في Science (علوم)", "de": "sc wie in Science (Wissenschaft)", "es": "sc como en Science (Ciencia)", "fr": "sc comme dans Science", "it": "sc come in Science (Scienza)", "ru": "sc как в Science (Наука)", "zh": "sc 如 Science (科学)", "tr": "sc Science'taki gibi (Bilim)"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "الحروف المركبة - أمثلة تعليمية",
+      items: sentences,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
+
+
+class ObjectPronounsScreen extends StatelessWidget {
+  // ✅ 14 كلمة - ضمائر المفعول به مع الترجمات المتعددة
+  final List<LearningCard> cards = const [
+    LearningCard(primaryText: "Me", translations: {"ar": "أنا (مفعول به)", "de": "mich/mir", "es": "me", "fr": "me/moi", "it": "mi", "ru": "меня/мне", "zh": "我", "tr": "beni/bana"}),
+    LearningCard(primaryText: "You", translations: {"ar": "أنتَ/أنتِ (مفعول به)", "de": "dich/dir", "es": "te", "fr": "te/toi", "it": "ti", "ru": "тебя/тебе", "zh": "你", "tr": "seni/sana"}),
+    LearningCard(primaryText: "Him", translations: {"ar": "هو (مفعول به)", "de": "ihn/ihm", "es": "lo/le", "fr": "le/lui", "it": "lo/gli", "ru": "его/ему", "zh": "他", "tr": "onu/ona"}),
+    LearningCard(primaryText: "Her", translations: {"ar": "هي (مفعول به)", "de": "sie/ihr", "es": "la/le", "fr": "la/lui", "it": "la/le", "ru": "её/ей", "zh": "她", "tr": "onu/ona"}),
+    LearningCard(primaryText: "It", translations: {"ar": "هو/هي (لغير العاقل)", "de": "es/ihm", "es": "lo/le", "fr": "le/lui", "it": "lo/gli", "ru": "его/ему", "zh": "它", "tr": "onu/ona"}),
+    LearningCard(primaryText: "Us", translations: {"ar": "نحن (مفعول به)", "de": "uns", "es": "nos", "fr": "nous", "it": "ci", "ru": "нас/нам", "zh": "我们", "tr": "bizi/bize"}),
+    LearningCard(primaryText: "You (plural)", translations: {"ar": "أنتم/أنتن (مفعول به)", "de": "euch", "es": "os", "fr": "vous", "it": "vi", "ru": "вас/вам", "zh": "你们", "tr": "sizi/size"}),
+    LearningCard(primaryText: "Them", translations: {"ar": "هم/هن (مفعول به)", "de": "sie/ihnen", "es": "los/las/les", "fr": "les/leur", "it": "li/le/gli", "ru": "их/им", "zh": "他们/她们/它们", "tr": "onları/onlara"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "ضمائر المفعول به - Object Pronouns",
+      cards: cards,
+    );
+  }
+}
+
+class ObjectPronounSentencesScreen extends StatelessWidget {
+  // ✅ 20 جملة - تمارين على ضمائر المفعول به مع ترجمات متعددة
+  final List<ItemCard> sentences = const [
+    ItemCard(english: "I saw him yesterday.", translations: {"ar": "رأيته بالأمس.", "de": "Ich habe ihn gestern gesehen.", "es": "Lo vi ayer.", "fr": "Je l'ai vu hier.", "it": "L'ho visto ieri.", "ru": "Я видел его вчера.", "zh": "我昨天看见他了。", "tr": "Onu dün gördüm."}),
+    ItemCard(english: "She invited me to the party.", translations: {"ar": "دعتني إلى الحفلة.", "de": "Sie lud mich zur Party ein.", "es": "Ella me invitó a la fiesta.", "fr": "Elle m'a invité à la fête.", "it": "Mi ha invitato alla festa.", "ru": "Она пригласила меня на вечеринку.", "zh": "她邀请我参加聚会。", "tr": "Beni partiye davet etti."}),
+    ItemCard(english: "He gave us a gift.", translations: {"ar": "أعطانا هدية.", "de": "Er gab uns ein Geschenk.", "es": "Él nos dio un regalo.", "fr": "Il nous a offert un cadeau.", "it": "Ci ha fatto un regalo.", "ru": "Он дал нам подарок.", "zh": "他给了我们一份礼物。", "tr": "Bize bir hediye verdi."}),
+    ItemCard(english: "They called you last night.", translations: {"ar": "اتصلوا بك الليلة الماضية.", "de": "Sie haben dich gestern Abend angerufen.", "es": "Te llamaron anoche.", "fr": "Ils t'ont appelé hier soir.", "it": "Ti hanno chiamato ieri sera.", "ru": "Они звонили тебе вчера вечером.", "zh": "他们昨晚给你打电话了。", "tr": "Dün gece seni aradılar."}),
+    ItemCard(english: "We helped them with the homework.", translations: {"ar": "ساعدناهم في الواجب.", "de": "Wir halfen ihnen bei den Hausaufgaben.", "es": "Les ayudamos con la tarea.", "fr": "Nous les avons aidés avec les devoirs.", "it": "Li abbiamo aiutati con i compiti.", "ru": "Мы помогли им с домашним заданием.", "zh": "我们帮他们做作业。", "tr": "Ödevlerinde onlara yardım ettik."}),
+    ItemCard(english: "You sent me an email.", translations: {"ar": "أرسلت لي بريدًا إلكترونيًا.", "de": "Du hast mir eine E-Mail geschickt.", "es": "Me enviaste un correo electrónico.", "fr": "Tu m'as envoyé un e-mail.", "it": "Mi hai inviato un'email.", "ru": "Ты отправил мне электронное письмо.", "zh": "你给我发了一封电子邮件。", "tr": "Bana bir e-posta gönderdin."}),
+    ItemCard(english: "It surprised her.", translations: {"ar": "فاجأها.", "de": "Es überraschte sie.", "es": "La sorprendió.", "fr": "Cela l'a surprise.", "it": "L'ha sorpresa.", "ru": "Это удивило её.", "zh": "这让她很惊讶。", "tr": "Onu şaşırttı."}),
+    ItemCard(english: "I told him the secret.", translations: {"ar": "أخبرته بالسر.", "de": "Ich erzählte ihm das Geheimnis.", "es": "Le conté el secreto.", "fr": "Je lui ai dit le secret.", "it": "Gli ho detto il segreto.", "ru": "Я рассказал ему секрет.", "zh": "我告诉了他这个秘密。", "tr": "Ona sırrı anlattım."}),
+    ItemCard(english: "She gave it to me.", translations: {"ar": "أعطتني إياه.", "de": "Sie gab es mir.", "es": "Ella me lo dio.", "fr": "Elle me l'a donné.", "it": "Me l'ha dato.", "ru": "Она дала это мне.", "zh": "她把它给了我。", "tr": "Onu bana verdi."}),
+    ItemCard(english: "We will visit you tomorrow.", translations: {"ar": "سوف نزورك غدًا.", "de": "Wir werden dich morgen besuchen.", "es": "Te visitaremos mañana.", "fr": "Nous te rendrons visite demain.", "it": "Ti visiteremo domani.", "ru": "Мы навестим тебя завтра.", "zh": "我们明天去看你。", "tr": "Seni yarın ziyaret edeceğiz."}),
+    ItemCard(english: "I saw them at the mall.", translations: {"ar": "رأيتهم في المركز التجاري.", "de": "Ich sah sie im Einkaufszentrum.", "es": "Los vi en el centro comercial.", "fr": "Je les ai vus au centre commercial.", "it": "Li ho visti al centro commerciale.", "ru": "Я видел их в торговом центре.", "zh": "我在商场看见他们了。", "tr": "Onları alışveriş merkezinde gördüm."}),
+    ItemCard(english: "He called me yesterday.", translations: {"ar": "اتصل بي أمس.", "de": "Er hat mich gestern angerufen.", "es": "Él me llamó ayer.", "fr": "Il m'a appelé hier.", "it": "Mi ha chiamato ieri.", "ru": "Он позвонил мне вчера.", "zh": "他昨天给我打电话了。", "tr": "Dün beni aradı."}),
+    ItemCard(english: "I heard her voice.", translations: {"ar": "سمعت صوتها.", "de": "Ich hörte ihre Stimme.", "es": "Escuché su voz.", "fr": "J'ai entendu sa voix.", "it": "Ho sentito la sua voce.", "ru": "Я слышал её голос.", "zh": "我听到了她的声音。", "tr": "Sesini duydum."}),
+    ItemCard(english: "They invited us to their wedding.", translations: {"ar": "دعونا إلى زفافهم.", "de": "Sie luden uns zu ihrer Hochzeit ein.", "es": "Nos invitaron a su boda.", "fr": "Ils nous ont invités à leur mariage.", "it": "Ci hanno invitati al loro matrimonio.", "ru": "Они пригласили нас на свою свадьбу.", "zh": "他们邀请我们参加他们的婚礼。", "tr": "Bizi düğünlerine davet ettiler."}),
+    ItemCard(english: "We bought it at the store.", translations: {"ar": "اشتريناه من المتجر.", "de": "Wir kauften es im Laden.", "es": "Lo compramos en la tienda.", "fr": "Nous l'avons acheté au magasin.", "it": "L'abbiamo comprato al negozio.", "ru": "Мы купили это в магазине.", "zh": "我们在商店买的。", "tr": "Onu mağazadan aldık."}),
+    ItemCard(english: "Please call us when you arrive.", translations: {"ar": "يرجى الاتصال بنا عند وصولك.", "de": "Bitte ruf uns an, wenn du ankommst.", "es": "Por favor, llámanos cuando llegues.", "fr": "Appelle-nous quand tu arrives.", "it": "Per favore, chiamaci quando arrivi.", "ru": "Пожалуйста, позвони нам, когда приедешь.", "zh": "到达时请给我们打电话。", "tr": "Lütfen vardığında bizi ara."}),
+    ItemCard(english: "The teacher explained the lesson to us.", translations: {"ar": "شرح لنا المعلم الدرس.", "de": "Der Lehrer erklärte uns die Lektion.", "es": "El profesor nos explicó la lección.", "fr": "Le professeur nous a expliqué la leçon.", "it": "L'insegnante ci ha spiegato la lezione.", "ru": "Учитель объяснил нам урок.", "zh": "老师给我们解释了这节课。", "tr": "Öğretmen dersi bize anlattı."}),
+    ItemCard(english: "I can't hear you. Please speak louder.", translations: {"ar": "لا أستطيع سماعك. من فضلك تحدث بصوت أعلى.", "de": "Ich kann dich nicht hören. Bitte sprich lauter.", "es": "No puedo oírte. Por favor, habla más fuerte.", "fr": "Je ne t'entends pas. Parle plus fort, s'il te plaît.", "it": "Non ti sento. Per favore, parla più forte.", "ru": "Я не слышу тебя. Пожалуйста, говори громче.", "zh": "我听不见你。请大声点说。", "tr": "Seni duyamıyorum. Lütfen daha yüksek sesle konuş."}),
+    ItemCard(english: "My mother loves me very much.", translations: {"ar": "أمي تحبني كثيرًا.", "de": "Meine Mutter liebt mich sehr.", "es": "Mi madre me quiere mucho.", "fr": "Ma mère m'aime beaucoup.", "it": "Mia madre mi ama molto.", "ru": "Моя мама очень любит меня.", "zh": "我妈妈非常爱我。", "tr": "Annem beni çok seviyor."}),
+    ItemCard(english: "We should respect them and their culture.", translations: {"ar": "يجب أن نحترمهم وثقافتهم.", "de": "Wir sollten sie und ihre Kultur respektieren.", "es": "Debemos respetarlos a ellos y a su cultura.", "fr": "Nous devons les respecter, eux et leur culture.", "it": "Dovremmo rispettare loro e la loro cultura.", "ru": "Мы должны уважать их и их культуру.", "zh": "我们应该尊重他们和他们的文化。", "tr": "Onlara ve kültürlerine saygı duymalıyız."}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "جمل ضمائر المفعول به - Object Pronouns Examples",
+      items: sentences,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+class PossessivePronounsScreen extends StatelessWidget {
+  // ✅ 8 كلمات - الضمائر الملكية مع الترجمات المتعددة
+  final List<LearningCard> cards = const [
+    LearningCard(primaryText: "My", translations: {"ar": "لي (ملك لي)", "de": "mein", "es": "mi", "fr": "mon/ma", "it": "mio/mia", "ru": "мой", "zh": "我的", "tr": "benim"}),
+    LearningCard(primaryText: "Your", translations: {"ar": "لك (ملك لك)", "de": "dein", "es": "tu", "fr": "ton/ta", "it": "tuo/tua", "ru": "твой", "zh": "你的", "tr": "senin"}),
+    LearningCard(primaryText: "His", translations: {"ar": "له (ملك له)", "de": "sein", "es": "su (de él)", "fr": "son/sa (à lui)", "it": "suo/sua (di lui)", "ru": "его", "zh": "他的", "tr": "onun (erkek)"}),
+    LearningCard(primaryText: "Her", translations: {"ar": "لها (ملك لها)", "de": "ihr", "es": "su (de ella)", "fr": "son/sa (à elle)", "it": "suo/sua (di lei)", "ru": "её", "zh": "她的", "tr": "onun (kadın)"}),
+    LearningCard(primaryText: "Its", translations: {"ar": "له/لها (لغير العاقل)", "de": "sein", "es": "su (de ello)", "fr": "son/sa (à lui/elle)", "it": "suo/sua", "ru": "его/её", "zh": "它的", "tr": "onun"}),
+    LearningCard(primaryText: "Our", translations: {"ar": "لنا (ملك لنا)", "de": "unser", "es": "nuestro/a", "fr": "notre", "it": "nostro/nostra", "ru": "наш", "zh": "我们的", "tr": "bizim"}),
+    LearningCard(primaryText: "Your (plural)", translations: {"ar": "لكم/لكن (ملك لكم)", "de": "euer", "es": "vuestro/a", "fr": "votre", "it": "vostro/vostra", "ru": "ваш", "zh": "你们的", "tr": "sizin"}),
+    LearningCard(primaryText: "Their", translations: {"ar": "لهم/لهن (ملك لهم)", "de": "ihr", "es": "su (de ellos/as)", "fr": "leur", "it": "loro", "ru": "их", "zh": "他们的/她们的", "tr": "onların"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "الضمائر الملكية - Possessive Pronouns",
+      cards: cards,
+    );
+  }
+}
+
+class PossessivePronounSentencesScreen extends StatelessWidget {
+  // ✅ 20 جملة - تمارين على الضمائر الملكية مع ترجمات متعددة
+  final List<ItemCard> sentences = const [
+    ItemCard(english: "This is my book.", translations: {"ar": "هذا هو كتابي.", "de": "Das ist mein Buch.", "es": "Este es mi libro.", "fr": "C'est mon livre.", "it": "Questo è il mio libro.", "ru": "Это моя книга.", "zh": "这是我的书。", "tr": "Bu benim kitabım."}),
+    ItemCard(english: "This is your car.", translations: {"ar": "هذه هي سيارتك.", "de": "Das ist dein Auto.", "es": "Este es tu coche.", "fr": "C'est ta voiture.", "it": "Questa è la tua macchina.", "ru": "Это твоя машина.", "zh": "这是你的车。", "tr": "Bu senin araban."}),
+    ItemCard(english: "This is his house.", translations: {"ar": "هذا هو منزله.", "de": "Das ist sein Haus.", "es": "Esta es su casa (de él).", "fr": "C'est sa maison (à lui).", "it": "Questa è la sua casa (di lui).", "ru": "Это его дом.", "zh": "这是他的房子。", "tr": "Bu onun evi."}),
+    ItemCard(english: "This is her dress.", translations: {"ar": "هذا هو فستانها.", "de": "Das ist ihr Kleid.", "es": "Este es su vestido (de ella).", "fr": "C'est sa robe (à elle).", "it": "Questo è il suo vestito (di lei).", "ru": "Это её платье.", "zh": "这是她的裙子。", "tr": "Bu onun elbisesi."}),
+    ItemCard(english: "Its tail is long.", translations: {"ar": "ذيله طويل.", "de": "Sein Schwanz ist lang.", "es": "Su cola es larga.", "fr": "Sa queue est longue.", "it": "La sua coda è lunga.", "ru": "Его хвост длинный.", "zh": "它的尾巴很长。", "tr": "Onun kuyruğu uzundur."}),
+    ItemCard(english: "This is our school.", translations: {"ar": "هذه مدرستنا.", "de": "Das ist unsere Schule.", "es": "Esta es nuestra escuela.", "fr": "C'est notre école.", "it": "Questa è la nostra scuola.", "ru": "Это наша школа.", "zh": "这是我们的学校。", "tr": "Bu bizim okulumuz."}),
+    ItemCard(english: "This is your pen (plural).", translations: {"ar": "هذه هي قلمكم.", "de": "Das ist euer Stift.", "es": "Este es vuestro bolígrafo.", "fr": "C'est votre stylo.", "it": "Questa è la vostra penna.", "ru": "Это ваша ручка.", "zh": "这是你们的笔。", "tr": "Bu sizin kaleminiz."}),
+    ItemCard(english: "This is their house.", translations: {"ar": "هذا هو منزلهم.", "de": "Das ist ihr Haus.", "es": "Esta es su casa (de ellos/as).", "fr": "C'est leur maison.", "it": "Questa è la loro casa.", "ru": "Это их дом.", "zh": "这是他们的房子。", "tr": "Bu onların evi."}),
+    ItemCard(english: "My mother is a teacher.", translations: {"ar": "أمي معلمة.", "de": "Meine Mutter ist Lehrerin.", "es": "Mi madre es profesora.", "fr": "Ma mère est enseignante.", "it": "Mia madre è un'insegnante.", "ru": "Моя мама учительница.", "zh": "我的妈妈是一名老师。", "tr": "Benim annem bir öğretmendir."}),
+    ItemCard(english: "Your brother is very kind.", translations: {"ar": "أخوك لطيف جدًا.", "de": "Dein Bruder ist sehr nett.", "es": "Tu hermano es muy amable.", "fr": "Ton frère est très gentil.", "it": "Tuo fratello è molto gentile.", "ru": "Твой брат очень добрый.", "zh": "你的哥哥非常善良。", "tr": "Senin erkek kardeşin çok nazik."}),
+    ItemCard(english: "His idea was brilliant.", translations: {"ar": "كانت فكرته رائعة.", "de": "Seine Idee war brillant.", "es": "Su idea fue brillante.", "fr": "Son idée était brillante.", "it": "La sua idea era brillante.", "ru": "Его идея была блестящей.", "zh": "他的想法很棒。", "tr": "Onun fikri harikaydı."}),
+    ItemCard(english: "Her voice is beautiful.", translations: {"ar": "صوتها جميل.", "de": "Ihre Stimme ist schön.", "es": "Su voz es hermosa.", "fr": "Sa voix est belle.", "it": "La sua voce è bella.", "ru": "Её голос красив.", "zh": "她的声音很美。", "tr": "Onun sesi güzeldir."}),
+    ItemCard(english: "Our team won the match.", translations: {"ar": "فاز فريقنا بالمباراة.", "de": "Unser Team hat das Spiel gewonnen.", "es": "Nuestro equipo ganó el partido.", "fr": "Notre équipe a gagné le match.", "it": "La nostra squadra ha vinto la partita.", "ru": "Наша команда выиграла матч.", "zh": "我们的队赢了比赛。", "tr": "Bizim takımımız maçı kazandı."}),
+    ItemCard(english: "Their garden is full of flowers.", translations: {"ar": "حديقتهم مليئة بالزهور.", "de": "Ihr Garten ist voller Blumen.", "es": "Su jardín está lleno de flores.", "fr": "Leur jardin est plein de fleurs.", "it": "Il loro giardino è pieno di fiori.", "ru": "Их сад полон цветов.", "zh": "他们的花园里开满了花。", "tr": "Onların bahçesi çiçeklerle dolu."}),
+    ItemCard(english: "I love my new phone.", translations: {"ar": "أنا أحب هاتفي الجديد.", "de": "Ich liebe mein neues Telefon.", "es": "Amo mi nuevo teléfono.", "fr": "J'aime mon nouveau téléphone.", "it": "Amo il mio nuovo telefono.", "ru": "Я люблю свой новый телефон.", "zh": "我喜欢我的新手机。", "tr": "Yeni telefonumu seviyorum."}),
+    ItemCard(english: "She forgot her keys at home.", translations: {"ar": "نسيت مفاتيحها في المنزل.", "de": "Sie vergaß ihre Schlüssel zu Hause.", "es": "Olvidó sus llaves en casa.", "fr": "Elle a oublié ses clés à la maison.", "it": "Ha dimenticato le sue chiavi a casa.", "ru": "Она забыла свои ключи дома.", "zh": "她把钥匙忘在家里了。", "tr": "Anahtarlarını evde unuttu."}),
+    ItemCard(english: "Please give me your email address.", translations: {"ar": "من فضلك أعطني عنوان بريدك الإلكتروني.", "de": "Bitte gib mir deine E-Mail-Adresse.", "es": "Por favor, dame tu dirección de correo electrónico.", "fr": "Donne-moi ton adresse e-mail, s'il te plaît.", "it": "Per favore, dammi il tuo indirizzo email.", "ru": "Пожалуйста, дайте мне ваш адрес электронной почты.", "zh": "请给我你的电子邮件地址。", "tr": "Lütfen bana e-posta adresini ver."}),
+    ItemCard(english: "The cat is licking its paws.", translations: {"ar": "القطة تلعق كفوفها.", "de": "Die Katze leckt ihre Pfoten.", "es": "El gato se lame las patas.", "fr": "Le chat lèche ses pattes.", "it": "Il gatto si lecca le zampe.", "ru": "Кошка лижет свои лапы.", "zh": "猫在舔它的爪子。", "tr": "Kedi patilerini yalıyor."}),
+    ItemCard(english: "Our responsibility is to protect the environment.", translations: {"ar": "مسؤوليتنا هي حماية البيئة.", "de": "Unsere Verantwortung ist es, die Umwelt zu schützen.", "es": "Nuestra responsabilidad es proteger el medio ambiente.", "fr": "Notre responsabilité est de protéger l'environnement.", "it": "La nostra responsabilità è proteggere l'ambiente.", "ru": "Наша ответственность - защищать окружающую среду.", "zh": "我们的责任是保护环境。", "tr": "Bizim sorumluluğumuz çevreyi korumaktır."}),
+    ItemCard(english: "Their happiness was obvious to everyone.", translations: {"ar": "كانت سعادتهم واضحة للجميع.", "de": "Ihr Glück war allen offensichtlich.", "es": "Su felicidad era obvia para todos.", "fr": "Leur bonheur était évident pour tous.", "it": "La loro felicità era evidente a tutti.", "ru": "Их счастье было очевидно для всех.", "zh": "他们的幸福对每个人来说都是显而易见的。", "tr": "Onların mutluluğu herkes için açıktı."}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "جمل الضمائر الملكية - Possessive Pronouns Examples",
+      items: sentences,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
+class QuestionWordsScreen extends StatelessWidget {
+  // ✅ 14 كلمة - أدوات الاستفهام مع الترجمات المتعددة
+  final List<LearningCard> cards = const [
+    LearningCard(primaryText: "What", translations: {"ar": "ماذا / ما", "de": "was", "es": "qué", "fr": "quoi/que", "it": "cosa", "ru": "что", "zh": "什么", "tr": "ne"}),
+    LearningCard(primaryText: "Who", translations: {"ar": "من", "de": "wer", "es": "quién", "fr": "qui", "it": "chi", "ru": "кто", "zh": "谁", "tr": "kim"}),
+    LearningCard(primaryText: "Where", translations: {"ar": "أين", "de": "wo", "es": "dónde", "fr": "où", "it": "dove", "ru": "где", "zh": "哪里", "tr": "nerede"}),
+    LearningCard(primaryText: "When", translations: {"ar": "متى", "de": "wann", "es": "cuándo", "fr": "quand", "it": "quando", "ru": "когда", "zh": "什么时候", "tr": "ne zaman"}),
+    LearningCard(primaryText: "Why", translations: {"ar": "لماذا", "de": "warum", "es": "por qué", "fr": "pourquoi", "it": "perché", "ru": "почему", "zh": "为什么", "tr": "neden"}),
+    LearningCard(primaryText: "How", translations: {"ar": "كيف", "de": "wie", "es": "cómo", "fr": "comment", "it": "come", "ru": "как", "zh": "如何", "tr": "nasıl"}),
+    LearningCard(primaryText: "Which", translations: {"ar": "أي", "de": "welcher/welche/welches", "es": "cuál", "fr": "quel/quelle", "it": "quale", "ru": "который", "zh": "哪个", "tr": "hangi"}),
+    LearningCard(primaryText: "Whose", translations: {"ar": "لمن", "de": "wessen", "es": "de quién", "fr": "à qui", "it": "di chi", "ru": "чей", "zh": "谁的", "tr": "kimin"}),
+    LearningCard(primaryText: "How many", translations: {"ar": "كم عدد", "de": "wie viele", "es": "cuántos", "fr": "combien de", "it": "quanti", "ru": "сколько (для исчисляемых)", "zh": "多少 (可数)", "tr": "kaç tane"}),
+    LearningCard(primaryText: "How much", translations: {"ar": "كم الثمن", "de": "wie viel", "es": "cuánto", "fr": "combien", "it": "quanto", "ru": "сколько (для неисчисляемых/цены)", "zh": "多少 (价格/不可数)", "tr": "ne kadar"}),
+    LearningCard(primaryText: "How far", translations: {"ar": "كم المسافة", "de": "wie weit", "es": "qué tan lejos", "fr": "à quelle distance", "it": "quanto distante", "ru": "как далеко", "zh": "多远", "tr": "ne kadar uzak"}),
+    LearningCard(primaryText: "How long", translations: {"ar": "كم المدة", "de": "wie lange", "es": "cuánto tiempo", "fr": "combien de temps", "it": "quanto tempo", "ru": "как долго", "zh": "多长时间", "tr": "ne kadar süre"}),
+    LearningCard(primaryText: "How tall", translations: {"ar": "كم الطول", "de": "wie groß", "es": "qué tan alto", "fr": "quelle taille", "it": "quanto alto", "ru": "какого роста", "zh": "多高", "tr": "ne kadar uzun"}),
+    LearningCard(primaryText: "How often", translations: {"ar": "كم مرة", "de": "wie oft", "es": "con qué frecuencia", "fr": "à quelle fréquence", "it": "quante volte", "ru": "как часто", "zh": "多久一次", "tr": "ne sıklıkta"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "أدوات الاستفهام - Question Words",
+      cards: cards,
+    );
+  }
+}
+
+class QuestionSentencesScreen extends StatelessWidget {
+  // ✅ 35 جملة - أمثلة على أدوات الاستفهام مع ترجمات متعددة
+  final List<ItemCard> sentences = const [
+    // What (ماذا / ما)
+    ItemCard(english: "What is your name?", translations: {"ar": "ما اسمك؟", "de": "Wie heißt du?", "es": "¿Cómo te llamas?", "fr": "Quel est ton nom?", "it": "Come ti chiami?", "ru": "Как тебя зовут?", "zh": "你叫什么名字？", "tr": "Adın ne?"}),
+    ItemCard(english: "What time is it?", translations: {"ar": "كم الساعة؟", "de": "Wie spät ist es?", "es": "¿Qué hora es?", "fr": "Quelle heure est-il?", "it": "Che ore sono?", "ru": "Который час?", "zh": "几点了？", "tr": "Saat kaç?"}),
+    ItemCard(english: "What do you want for dinner?", translations: {"ar": "ماذا تريد على العشاء؟", "de": "Was möchtest du zum Abendessen?", "es": "¿Qué quieres para cenar?", "fr": "Qu'est-ce que tu veux pour dîner?", "it": "Cosa vuoi per cena?", "ru": "Что ты хочешь на ужин?", "zh": "你晚餐想吃什么？", "tr": "Akşam yemeğinde ne istiyorsun?"}),
+    ItemCard(english: "What is the weather like today?", translations: {"ar": "كيف هو الطقس اليوم؟", "de": "Wie ist das Wetter heute?", "es": "¿Cómo está el clima hoy?", "fr": "Quel temps fait-il aujourd'hui?", "it": "Che tempo fa oggi?", "ru": "Какая сегодня погода?", "zh": "今天天气怎么样？", "tr": "Bugün hava nasıl?"}),
+    ItemCard(english: "What are you doing right now?", translations: {"ar": "ماذا تفعل الآن؟", "de": "Was machst du gerade?", "es": "¿Qué estás haciendo ahora?", "fr": "Qu'est-ce que tu fais maintenant?", "it": "Cosa stai facendo ora?", "ru": "Что ты сейчас делаешь?", "zh": "你现在在做什么？", "tr": "Şu anda ne yapıyorsun?"}),
+    
+    // Who (من)
+    ItemCard(english: "Who is your best friend?", translations: {"ar": "من هو أفضل صديق لك؟", "de": "Wer ist dein bester Freund?", "es": "¿Quién es tu mejor amigo?", "fr": "Qui est ton meilleur ami?", "it": "Chi è il tuo migliore amico?", "ru": "Кто твой лучший друг?", "zh": "谁是你最好的朋友？", "tr": "En iyi arkadaşın kim?"}),
+    ItemCard(english: "Who are you talking to?", translations: {"ar": "مع من تتحدث؟", "de": "Mit wem sprichst du?", "es": "¿Con quién estás hablando?", "fr": "À qui parles-tu?", "it": "Con chi stai parlando?", "ru": "С кем ты разговариваешь?", "zh": "你在和谁说话？", "tr": "Kiminle konuşuyorsun?"}),
+    ItemCard(english: "Who made this cake?", translations: {"ar": "من صنع هذه الكعكة؟", "de": "Wer hat diesen Kuchen gemacht?", "es": "¿Quién hizo esta torta?", "fr": "Qui a fait ce gâteau?", "it": "Chi ha fatto questa torta?", "ru": "Кто сделал этот торт?", "zh": "谁做的这个蛋糕？", "tr": "Bu pastayı kim yaptı?"}),
+    ItemCard(english: "Who is coming to the party?", translations: {"ar": "من سيأتي إلى الحفلة؟", "de": "Wer kommt zur Party?", "es": "¿Quién viene a la fiesta?", "fr": "Qui vient à la fête?", "it": "Chi viene alla festa?", "ru": "Кто придет на вечеринку?", "zh": "谁会来参加派对？", "tr": "Partiye kim geliyor?"}),
+    
+    // Where (أين)
+    ItemCard(english: "Where do you live?", translations: {"ar": "أين تعيش؟", "de": "Wo wohnst du?", "es": "¿Dónde vives?", "fr": "Où habites-tu?", "it": "Dove vivi?", "ru": "Где ты живешь?", "zh": "你住在哪里？", "tr": "Nerede yaşıyorsun?"}),
+    ItemCard(english: "Where is the nearest store?", translations: {"ar": "أين أقرب متجر؟", "de": "Wo ist der nächste Laden?", "es": "¿Dónde está la tienda más cercana?", "fr": "Où se trouve le magasin le plus proche?", "it": "Dov'è il negozio più vicino?", "ru": "Где ближайший магазин?", "zh": "最近的商店在哪里？", "tr": "En yakın mağaza nerede?"}),
+    ItemCard(english: "Where can I find a taxi?", translations: {"ar": "أين يمكنني العثور على تاكسي؟", "de": "Wo finde ich ein Taxi?", "es": "¿Dónde puedo encontrar un taxi?", "fr": "Où puis-je trouver un taxi?", "it": "Dove posso trovare un taxi?", "ru": "Где я могу найти такси?", "zh": "我在哪里可以找到出租车？", "tr": "Nerede taksi bulabilirim?"}),
+    ItemCard(english: "Where did you go last night?", translations: {"ar": "أين ذهبت الليلة الماضية؟", "de": "Wo warst du letzte Nacht?", "es": "¿A dónde fuiste anoche?", "fr": "Où es-tu allé hier soir?", "it": "Dove sei andato ieri sera?", "ru": "Куда ты ходил вчера вечером?", "zh": "你昨晚去哪儿了？", "tr": "Dün gece nereye gittin?"}),
+    
+    // When (متى)
+    ItemCard(english: "When is your birthday?", translations: {"ar": "متى عيد ميلادك؟", "de": "Wann hast du Geburtstag?", "es": "¿Cuándo es tu cumpleaños?", "fr": "Quand est ton anniversaire?", "it": "Quando è il tuo compleanno?", "ru": "Когда у тебя день рождения?", "zh": "你的生日是什么时候？", "tr": "Doğum günün ne zaman?"}),
+    ItemCard(english: "When does the train leave?", translations: {"ar": "متى يغادر القطار؟", "de": "Wann fährt der Zug ab?", "es": "¿Cuándo sale el tren?", "fr": "Quand part le train?", "it": "Quando parte il treno?", "ru": "Когда отправляется поезд?", "zh": "火车什么时候离开？", "tr": "Tren ne zaman kalkıyor?"}),
+    ItemCard(english: "When are you coming back?", translations: {"ar": "متى ستعود؟", "de": "Wann kommst du zurück?", "es": "¿Cuándo vuelves?", "fr": "Quand reviens-tu?", "it": "Quando torni?", "ru": "Когда ты вернешься?", "zh": "你什么时候回来？", "tr": "Ne zaman dönüyorsun?"}),
+    ItemCard(english: "When do you finish work?", translations: {"ar": "متى تنتهي من العمل؟", "de": "Wann hast du Feierabend?", "es": "¿Cuándo terminas de trabajar?", "fr": "Quand finis-tu le travail?", "it": "Quando finisci di lavorare?", "ru": "Когда ты заканчиваешь работу?", "zh": "你什么时候下班？", "tr": "İşten ne zaman çıkıyorsun?"}),
+    
+    // Why (لماذا)
+    ItemCard(english: "Why are you upset?", translations: {"ar": "لماذا أنت مستاء؟", "de": "Warum bist du verärgert?", "es": "¿Por qué estás molesto?", "fr": "Pourquoi es-tu contrarié?", "it": "Perché sei arrabbiato?", "ru": "Почему ты расстроен?", "zh": "你为什么难过？", "tr": "Neden üzgünsün?"}),
+    ItemCard(english: "Why did you leave early?", translations: {"ar": "لماذا غادرت مبكرًا؟", "de": "Warum bist du früh gegangen?", "es": "¿Por qué te fuiste temprano?", "fr": "Pourquoi es-tu parti tôt?", "it": "Perché sei andato via presto?", "ru": "Почему ты ушел рано?", "zh": "你为什么早走了？", "tr": "Neden erken ayrıldın?"}),
+    ItemCard(english: "Why is she crying?", translations: {"ar": "لماذا هي تبكي؟", "de": "Warum weint sie?", "es": "¿Por qué está llorando?", "fr": "Pourquoi pleure-t-elle?", "it": "Perché sta piangendo?", "ru": "Почему она плачет?", "zh": "她为什么哭？", "tr": "Neden ağlıyor?"}),
+    ItemCard(english: "Why are we waiting?", translations: {"ar": "لماذا نحن ننتظر؟", "de": "Warum warten wir?", "es": "¿Por qué estamos esperando?", "fr": "Pourquoi attendons-nous?", "it": "Perché stiamo aspettando?", "ru": "Почему мы ждем?", "zh": "我们为什么在等？", "tr": "Neden bekliyoruz?"}),
+    
+    // How (كيف)
+    ItemCard(english: "How are you?", translations: {"ar": "كيف حالك؟", "de": "Wie geht es dir?", "es": "¿Cómo estás?", "fr": "Comment vas-tu?", "it": "Come stai?", "ru": "Как дела?", "zh": "你好吗？", "tr": "Nasılsın?"}),
+    ItemCard(english: "How do you make this dish?", translations: {"ar": "كيف تصنع هذا الطبق؟", "de": "Wie machst du dieses Gericht?", "es": "¿Cómo haces este plato?", "fr": "Comment prépares-tu ce plat?", "it": "Come prepari questo piatto?", "ru": "Как ты готовишь это блюдо?", "zh": "你怎么做这道菜？", "tr": "Bu yemeği nasıl yapıyorsun?"}),
+    ItemCard(english: "How was your day?", translations: {"ar": "كيف كان يومك؟", "de": "Wie war dein Tag?", "es": "¿Cómo fue tu día?", "fr": "Comment s'est passé ta journée?", "it": "Com'è stata la tua giornata?", "ru": "Как прошел твой день?", "zh": "你今天过得怎么样？", "tr": "Günün nasıldı?"}),
+    
+    // How many / How much (كم عدد / كم الثمن)
+    ItemCard(english: "How many people are coming?", translations: {"ar": "كم عدد الأشخاص الذين سيأتون؟", "de": "Wie viele Leute kommen?", "es": "¿Cuántas personas vienen?", "fr": "Combien de personnes viennent?", "it": "Quante persone vengono?", "ru": "Сколько людей придет?", "zh": "有多少人会来？", "tr": "Kaç kişi geliyor?"}),
+    ItemCard(english: "How much does this cost?", translations: {"ar": "كم يكلف هذا؟", "de": "Wie viel kostet das?", "es": "¿Cuánto cuesta esto?", "fr": "Combien ça coûte?", "it": "Quanto costa?", "ru": "Сколько это стоит?", "zh": "这个多少钱？", "tr": "Bu ne kadar?"}),
+    
+    // Which (أي)
+    ItemCard(english: "Which color do you prefer?", translations: {"ar": "أي لون تفضل؟", "de": "Welche Farbe bevorzugst du?", "es": "¿Qué color prefieres?", "fr": "Quelle couleur préfères-tu?", "it": "Quale colore preferisci?", "ru": "Какой цвет ты предпочитаешь?", "zh": "你喜欢什么颜色？", "tr": "Hangi rengi tercih edersin?"}),
+    ItemCard(english: "Which movie do you want to watch?", translations: {"ar": "أي فيلم تريد مشاهدته؟", "de": "Welchen Film möchtest du sehen?", "es": "¿Qué película quieres ver?", "fr": "Quel film veux-tu regarder?", "it": "Quale film vuoi guardare?", "ru": "Какой фильм ты хочешь посмотреть?", "zh": "你想看哪部电影？", "tr": "Hangi filmi izlemek istiyorsun?"}),
+    ItemCard(english: "Which restaurant should we go to?", translations: {"ar": "أي مطعم يجب أن نذهب إليه؟", "de": "In welches Restaurant sollen wir gehen?", "es": "¿A qué restaurante deberíamos ir?", "fr": "À quel restaurant devrions-nous aller?", "it": "In quale ristorante dovremmo andare?", "ru": "В какой ресторан нам пойти?", "zh": "我们应该去哪家餐厅？", "tr": "Hangi restorana gitmeliyiz?"}),
+    ItemCard(english: "Which book are you reading?", translations: {"ar": "أي كتاب تقرأ؟", "de": "Welches Buch liest du?", "es": "¿Qué libro estás leyendo?", "fr": "Quel livre lis-tu?", "it": "Quale libro stai leggendo?", "ru": "Какую книгу ты читаешь?", "zh": "你在读哪本书？", "tr": "Hangi kitabı okuyorsun?"}),
+    
+    // Whose (لمن)
+    ItemCard(english: "Whose phone is this?", translations: {"ar": "لمن هذا الهاتف؟", "de": "Wessen Telefon ist das?", "es": "¿De quién es este teléfono?", "fr": "À qui est ce téléphone?", "it": "Di chi è questo telefono?", "ru": "Чей это телефон?", "zh": "这是谁的手机？", "tr": "Bu telefon kimin?"}),
+    ItemCard(english: "Whose idea was it?", translations: {"ar": "من كانت هذه الفكرة؟", "de": "Wessen Idee war das?", "es": "¿De quién fue esta idea?", "fr": "À qui était cette idée?", "it": "Di chi era questa idea?", "ru": "Чья это была идея?", "zh": "这是谁的主意？", "tr": "Bu fikir kimindi?"}),
+    ItemCard(english: "Whose turn is it?", translations: {"ar": "دور من هو الآن؟", "de": "Wessen Runde ist es?", "es": "¿De quién es el turno?", "fr": "À qui le tour?", "it": "Di chi è il turno?", "ru": "Чья очередь?", "zh": "轮到谁了？", "tr": "Sıra kimde?"}),
+    ItemCard(english: "Whose house are we going to?", translations: {"ar": "إلى منزل من نحن ذاهبون؟", "de": "Zu wessen Haus gehen wir?", "es": "¿A la casa de quién vamos?", "fr": "À la maison de qui allons-nous?", "it": "A casa di chi andiamo?", "ru": "К кому домой мы идем?", "zh": "我们要去谁的家？", "tr": "Kimin evine gidiyoruz?"}),
+    
+    // How far / How long / How tall / How often
+    ItemCard(english: "How far is the airport from here?", translations: {"ar": "كم تبعد المطار من هنا؟", "de": "Wie weit ist der Flughafen von hier?", "es": "¿Qué tan lejos está el aeropuerto de aquí?", "fr": "À quelle distance est l'aéroport d'ici?", "it": "Quanto dista l'aeroporto da qui?", "ru": "Как далеко отсюда аэропорт?", "zh": "机场离这里多远？", "tr": "Havalimanı buradan ne kadar uzak?"}),
+    ItemCard(english: "How long does it take to get there?", translations: {"ar": "كم من الوقت يستغرق للوصول إلى هناك؟", "de": "Wie lange dauert es, dorthin zu gelangen?", "es": "¿Cuánto tiempo se tarda en llegar allí?", "fr": "Combien de temps faut-il pour y arriver?", "it": "Quanto tempo ci vuole per arrivarci?", "ru": "Сколько времени нужно, чтобы туда добраться?", "zh": "到那里需要多长时间？", "tr": "Oraya gitmek ne kadar sürer?"}),
+    ItemCard(english: "How tall is your brother?", translations: {"ar": "كم طول أخيك؟", "de": "Wie groß ist dein Bruder?", "es": "¿Qué tan alto es tu hermano?", "fr": "Quelle taille a ton frère?", "it": "Quanto è alto tuo fratello?", "ru": "Какого роста твой брат?", "zh": "你哥哥多高？", "tr": "Erkek kardeşin ne kadar uzun?"}),
+    ItemCard(english: "How often do you exercise?", translations: {"ar": "كم مرة تمارس الرياضة؟", "de": "Wie oft treibst du Sport?", "es": "¿Con qué frecuencia haces ejercicio?", "fr": "À quelle fréquence fais-tu de l'exercice?", "it": "Quanto spesso fai esercizio?", "ru": "Как часто ты занимаешься спортом?", "zh": "你多久锻炼一次？", "tr": "Ne sıklıkla egzersiz yaparsın?"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "جمل أدوات الاستفهام - Question Words Examples",
+      items: sentences,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
+
+
+class AdverbsScreen extends StatelessWidget {
+  // ✅ 32 كلمة - الظروف (Adverbs) مع الترجمات المتعددة
+  final List<LearningCard> cards = const [
+    // ظروف التكرار - Frequency
+    LearningCard(primaryText: "Always", translations: {"ar": "دائمًا", "de": "immer", "es": "siempre", "fr": "toujours", "it": "sempre", "ru": "всегда", "zh": "总是", "tr": "her zaman"}),
+    LearningCard(primaryText: "Usually", translations: {"ar": "عادةً", "de": "normalerweise", "es": "normalmente", "fr": "habituellement", "it": "di solito", "ru": "обычно", "zh": "通常", "tr": "genellikle"}),
+    LearningCard(primaryText: "Often", translations: {"ar": "غالبًا", "de": "oft", "es": "a menudo", "fr": "souvent", "it": "spesso", "ru": "часто", "zh": "经常", "tr": "sık sık"}),
+    LearningCard(primaryText: "Sometimes", translations: {"ar": "أحيانًا", "de": "manchmal", "es": "a veces", "fr": "parfois", "it": "a volte", "ru": "иногда", "zh": "有时", "tr": "bazen"}),
+    LearningCard(primaryText: "Rarely", translations: {"ar": "نادرًا", "de": "selten", "es": "rara vez", "fr": "rarement", "it": "raramente", "ru": "редко", "zh": "很少", "tr": "nadiren"}),
+    LearningCard(primaryText: "Never", translations: {"ar": "أبدًا", "de": "nie", "es": "nunca", "fr": "jamais", "it": "mai", "ru": "никогда", "zh": "从不", "tr": "asla"}),
+    
+    // ظروف المكان - Place
+    LearningCard(primaryText: "Here", translations: {"ar": "هنا", "de": "hier", "es": "aquí", "fr": "ici", "it": "qui", "ru": "здесь", "zh": "这里", "tr": "burada"}),
+    LearningCard(primaryText: "There", translations: {"ar": "هناك", "de": "dort", "es": "allí", "fr": "là", "it": "lì", "ru": "там", "zh": "那里", "tr": "orada"}),
+    LearningCard(primaryText: "Everywhere", translations: {"ar": "في كل مكان", "de": "überall", "es": "en todas partes", "fr": "partout", "it": "dappertutto", "ru": "везде", "zh": "到处", "tr": "her yerde"}),
+    LearningCard(primaryText: "Nowhere", translations: {"ar": "لا مكان", "de": "nirgendwo", "es": "en ningún lugar", "fr": "nulle part", "it": "da nessuna parte", "ru": "нигде", "zh": "无处", "tr": "hiçbir yerde"}),
+    LearningCard(primaryText: "Inside", translations: {"ar": "في الداخل", "de": "drinnen", "es": "adentro", "fr": "à l'intérieur", "it": "dentro", "ru": "внутри", "zh": "在里面", "tr": "içeride"}),
+    LearningCard(primaryText: "Outside", translations: {"ar": "في الخارج", "de": "draußen", "es": "afuera", "fr": "dehors", "it": "fuori", "ru": "снаружи", "zh": "在外面", "tr": "dışarıda"}),
+    
+    // ظروف الزمان - Time
+    LearningCard(primaryText: "Now", translations: {"ar": "الآن", "de": "jetzt", "es": "ahora", "fr": "maintenant", "it": "adesso", "ru": "сейчас", "zh": "现在", "tr": "şimdi"}),
+    LearningCard(primaryText: "Soon", translations: {"ar": "قريبًا", "de": "bald", "es": "pronto", "fr": "bientôt", "it": "presto", "ru": "скоро", "zh": "很快", "tr": "yakında"}),
+    LearningCard(primaryText: "Today", translations: {"ar": "اليوم", "de": "heute", "es": "hoy", "fr": "aujourd'hui", "it": "oggi", "ru": "сегодня", "zh": "今天", "tr": "bugün"}),
+    LearningCard(primaryText: "Yesterday", translations: {"ar": "أمس", "de": "gestern", "es": "ayer", "fr": "hier", "it": "ieri", "ru": "вчера", "zh": "昨天", "tr": "dün"}),
+    LearningCard(primaryText: "Tomorrow", translations: {"ar": "غدًا", "de": "morgen", "es": "mañana", "fr": "demain", "it": "domani", "ru": "завтра", "zh": "明天", "tr": "yarın"}),
+    LearningCard(primaryText: "Already", translations: {"ar": "بالفعل", "de": "bereits", "es": "ya", "fr": "déjà", "it": "già", "ru": "уже", "zh": "已经", "tr": "zaten"}),
+    LearningCard(primaryText: "Yet", translations: {"ar": "حتى الآن", "de": "noch", "es": "todavía", "fr": "encore", "it": "ancora", "ru": "еще", "zh": "还", "tr": "henüz"}),
+    LearningCard(primaryText: "Lately", translations: {"ar": "مؤخرًا", "de": "kürzlich", "es": "últimamente", "fr": "récemment", "it": "ultimamente", "ru": "в последнее время", "zh": "最近", "tr": "son zamanlarda"}),
+    LearningCard(primaryText: "Recently", translations: {"ar": "مؤخرًا", "de": "neulich", "es": "recientemente", "fr": "récemment", "it": "recentemente", "ru": "недавно", "zh": "最近", "tr": "son günlerde"}),
+    
+    // ظروف الطريقة - Manner
+    LearningCard(primaryText: "Quickly", translations: {"ar": "بسرعة", "de": "schnell", "es": "rápidamente", "fr": "rapidement", "it": "velocemente", "ru": "быстро", "zh": "快速地", "tr": "hızlıca"}),
+    LearningCard(primaryText: "Slowly", translations: {"ar": "ببطء", "de": "langsam", "es": "lentamente", "fr": "lentement", "it": "lentamente", "ru": "медленно", "zh": "慢慢地", "tr": "yavaşça"}),
+    LearningCard(primaryText: "Carefully", translations: {"ar": "بحذر", "de": "vorsichtig", "es": "cuidadosamente", "fr": "prudemment", "it": "attentamente", "ru": "осторожно", "zh": "小心地", "tr": "dikkatlice"}),
+    LearningCard(primaryText: "Well", translations: {"ar": "بشكل جيد", "de": "gut", "es": "bien", "fr": "bien", "it": "bene", "ru": "хорошо", "zh": "好地", "tr": "iyi"}),
+    LearningCard(primaryText: "Badly", translations: {"ar": "بشكل سيء", "de": "schlecht", "es": "mal", "fr": "mal", "it": "male", "ru": "плохо", "zh": "糟糕地", "tr": "kötü"}),
+    LearningCard(primaryText: "Easily", translations: {"ar": "بسهولة", "de": "einfach", "es": "fácilmente", "fr": "facilement", "it": "facilmente", "ru": "легко", "zh": "容易地", "tr": "kolayca"}),
+    LearningCard(primaryText: "Quietly", translations: {"ar": "بهدوء", "de": "leise", "es": "tranquilamente", "fr": "silencieusement", "it": "silenziosamente", "ru": "тихо", "zh": "安静地", "tr": "sessizce"}),
+    LearningCard(primaryText: "Happily", translations: {"ar": "بسعادة", "de": "glücklich", "es": "felizmente", "fr": "heureusement", "it": "felicemente", "ru": "счастливо", "zh": "快乐地", "tr": "mutlu bir şekilde"}),
+    
+    // ظروف الدرجة - Degree
+    LearningCard(primaryText: "Very", translations: {"ar": "جدًا", "de": "sehr", "es": "muy", "fr": "très", "it": "molto", "ru": "очень", "zh": "非常", "tr": "çok"}),
+    LearningCard(primaryText: "Too", translations: {"ar": "جدًا / أكثر من اللازم", "de": "zu", "es": "demasiado", "fr": "trop", "it": "troppo", "ru": "слишком", "zh": "太", "tr": "çok"}),
+    LearningCard(primaryText: "Quite", translations: {"ar": "تمامًا", "de": "ziemlich", "es": "bastante", "fr": "assez", "it": "abbastanza", "ru": "довольно", "zh": "相当", "tr": "oldukça"}),
+    LearningCard(primaryText: "Almost", translations: {"ar": "تقريبًا", "de": "fast", "es": "casi", "fr": "presque", "it": "quasi", "ru": "почти", "zh": "几乎", "tr": "neredeyse"}),
+    LearningCard(primaryText: "Enough", translations: {"ar": "بما فيه الكفاية", "de": "genug", "es": "suficiente", "fr": "assez", "it": "abbastanza", "ru": "достаточно", "zh": "足够", "tr": "yeterli"}),
+    LearningCard(primaryText: "Just", translations: {"ar": "فقط / للتو", "de": "gerade", "es": "justo", "fr": "juste", "it": "appena", "ru": "только что", "zh": "刚刚", "tr": "henüz"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "الظروف - Adverbs",
+      cards: cards,
+    );
+  }
+}
+
+class AdverbsSentencesScreen extends StatelessWidget {
+  // ✅ 40 جملة - أمثلة على الظروف مع ترجمات متعددة
+  final List<ItemCard> sentences = const [
+    // ظروف التكرار - Frequency
+    ItemCard(english: "She always wakes up early.", translations: {"ar": "هي دائمًا تستيقظ مبكرًا.", "de": "Sie wacht immer früh auf.", "es": "Ella siempre se despierta temprano.", "fr": "Elle se réveille toujours tôt.", "it": "Si sveglia sempre presto.", "ru": "Она всегда просыпается рано.", "zh": "她总是早起。", "tr": "Her zaman erken kalkar."}),
+    ItemCard(english: "I usually drink coffee in the morning.", translations: {"ar": "أنا عادةً أشرب القهوة في الصباح.", "de": "Ich trinke normalerweise morgens Kaffee.", "es": "Normalmente tomo café por la mañana.", "fr": "Je bois habituellement du café le matin.", "it": "Di solito bevo caffè al mattino.", "ru": "Я обычно пью кофе по утрам.", "zh": "我通常早上喝咖啡。", "tr": "Genellikle sabahları kahve içerim."}),
+    ItemCard(english: "They often go to the gym.", translations: {"ar": "هم غالبًا يذهبون إلى صالة الألعاب الرياضية.", "de": "Sie gehen oft ins Fitnessstudio.", "es": "A menudo van al gimnasio.", "fr": "Ils vont souvent à la salle de sport.", "it": "Vanno spesso in palestra.", "ru": "Они часто ходят в спортзал.", "zh": "他们经常去健身房。", "tr": "Sık sık spor salonuna giderler."}),
+    ItemCard(english: "He sometimes plays football.", translations: {"ar": "هو أحيانًا يلعب كرة القدم.", "de": "Er spielt manchmal Fußball.", "es": "A veces juega al fútbol.", "fr": "Il joue parfois au football.", "it": "A volte gioca a calcio.", "ru": "Он иногда играет в футбол.", "zh": "他有时踢足球。", "tr": "Bazen futbol oynar."}),
+    ItemCard(english: "We rarely watch TV.", translations: {"ar": "نحن نادرًا ما نشاهد التلفاز.", "de": "Wir sehen selten fern.", "es": "Rara vez vemos la televisión.", "fr": "Nous regardons rarement la télévision.", "it": "Guardiamo raramente la TV.", "ru": "Мы редко смотрим телевизор.", "zh": "我们很少看电视。", "tr": "Nadiren televizyon izleriz."}),
+    ItemCard(english: "She never eats fast food.", translations: {"ar": "هي لا تأكل الوجبات السريعة أبدًا.", "de": "Sie isst nie Fast Food.", "es": "Ella nunca come comida rápida.", "fr": "Elle ne mange jamais de fast-food.", "it": "Non mangia mai fast food.", "ru": "Она никогда не ест фастфуд.", "zh": "她从不吃快餐。", "tr": "Asla fast food yemez."}),
+    
+    // ظروف المكان - Place
+    ItemCard(english: "Come here!", translations: {"ar": "تعال هنا!", "de": "Komm her!", "es": "¡Ven aquí!", "fr": "Viens ici!", "it": "Vieni qui!", "ru": "Иди сюда!", "zh": "过来！", "tr": "Buraya gel!"}),
+    ItemCard(english: "He is standing there.", translations: {"ar": "هو يقف هناك.", "de": "Er steht dort.", "es": "Él está parado allí.", "fr": "Il se tient là.", "it": "È in piedi lì.", "ru": "Он стоит там.", "zh": "他站在那里。", "tr": "Orada duruyor."}),
+    ItemCard(english: "I looked everywhere.", translations: {"ar": "بحثت في كل مكان.", "de": "Ich habe überall gesucht.", "es": "Busqué por todas partes.", "fr": "J'ai cherché partout.", "it": "Ho cercato dappertutto.", "ru": "Я искал везде.", "zh": "我到处找过了。", "tr": "Her yerde aradım."}),
+    ItemCard(english: "I found it nowhere.", translations: {"ar": "لم أجده في أي مكان.", "de": "Ich habe es nirgendwo gefunden.", "es": "No lo encontré en ningún lugar.", "fr": "Je ne l'ai trouvé nulle part.", "it": "Non l'ho trovato da nessuna parte.", "ru": "Я нигде его не нашел.", "zh": "我哪里都没找到它。", "tr": "Hiçbir yerde bulamadım."}),
+    ItemCard(english: "Please come inside.", translations: {"ar": "من فضلك تعال إلى الداخل.", "de": "Bitte komm herein.", "es": "Por favor, entra.", "fr": "Entre, s'il te plaît.", "it": "Per favore, entra.", "ru": "Пожалуйста, заходи.", "zh": "请进来。", "tr": "Lütfen içeri gel."}),
+    ItemCard(english: "The kids are playing outside.", translations: {"ar": "الأطفال يلعبون في الخارج.", "de": "Die Kinder spielen draußen.", "es": "Los niños están jugando afuera.", "fr": "Les enfants jouent dehors.", "it": "I bambini giocano fuori.", "ru": "Дети играют на улице.", "zh": "孩子们在外面玩。", "tr": "Çocuklar dışarıda oynuyor."}),
+    
+    // ظروف الزمان - Time
+    ItemCard(english: "I need it now.", translations: {"ar": "أحتاجه الآن.", "de": "Ich brauche es jetzt.", "es": "Lo necesito ahora.", "fr": "J'en ai besoin maintenant.", "it": "Ne ho bisogno ora.", "ru": "Мне это нужно сейчас.", "zh": "我现在就需要它。", "tr": "Şimdi ihtiyacım var."}),
+    ItemCard(english: "He will arrive soon.", translations: {"ar": "سيصل قريبًا.", "de": "Er wird bald ankommen.", "es": "Llegará pronto.", "fr": "Il arrivera bientôt.", "it": "Arriverà presto.", "ru": "Он скоро прибудет.", "zh": "他很快就到。", "tr": "Yakında varacak."}),
+    ItemCard(english: "We met yesterday.", translations: {"ar": "تقابلنا أمس.", "de": "Wir haben uns gestern getroffen.", "es": "Nos conocimos ayer.", "fr": "Nous nous sommes rencontrés hier.", "it": "Ci siamo incontrati ieri.", "ru": "Мы встретились вчера.", "zh": "我们昨天见面了。", "tr": "Dün buluştuk."}),
+    ItemCard(english: "They are coming tomorrow.", translations: {"ar": "هم قادمون غدًا.", "de": "Sie kommen morgen.", "es": "Ellos vienen mañana.", "fr": "Ils viennent demain.", "it": "Vengono domani.", "ru": "Они приходят завтра.", "zh": "他们明天来。", "tr": "Yarın geliyorlar."}),
+    ItemCard(english: "He has already left.", translations: {"ar": "هو غادر بالفعل.", "de": "Er ist bereits gegangen.", "es": "Él ya se ha ido.", "fr": "Il est déjà parti.", "it": "È già partito.", "ru": "Он уже ушел.", "zh": "他已经离开了。", "tr": "Zaten gitti."}),
+    ItemCard(english: "Have you finished yet?", translations: {"ar": "هل انتهيت حتى الآن؟", "de": "Bist du schon fertig?", "es": "¿Ya has terminado?", "fr": "As-tu fini?", "it": "Hai già finito?", "ru": "Ты уже закончил?", "zh": "你还没完成吗？", "tr": "Henüz bitirdin mi?"}),
+    ItemCard(english: "I've seen him recently.", translations: {"ar": "رأيته مؤخرًا.", "de": "Ich habe ihn kürzlich gesehen.", "es": "Lo he visto recientemente.", "fr": "Je l'ai vu récemment.", "it": "L'ho visto recentemente.", "ru": "Я видел его недавно.", "zh": "我最近见过他。", "tr": "Onu son zamanlarda gördüm."}),
+    
+    // ظروف الطريقة - Manner
+    ItemCard(english: "She sings well.", translations: {"ar": "هي تغني بشكل جيد.", "de": "Sie singt gut.", "es": "Ella canta bien.", "fr": "Elle chante bien.", "it": "Canta bene.", "ru": "Она хорошо поет.", "zh": "她唱歌唱得好。", "tr": "İyi şarkı söyler."}),
+    ItemCard(english: "He drives carefully.", translations: {"ar": "هو يقود بحذر.", "de": "Er fährt vorsichtig.", "es": "Él conduce con cuidado.", "fr": "Il conduit prudemment.", "it": "Guida con attenzione.", "ru": "Он водит осторожно.", "zh": "他开车很小心。", "tr": "Dikkatli araba kullanır."}),
+    ItemCard(english: "They answered quickly.", translations: {"ar": "أجابوا بسرعة.", "de": "Sie antworteten schnell.", "es": "Ellos respondieron rápidamente.", "fr": "Ils ont répondu rapidement.", "it": "Hanno risposto rapidamente.", "ru": "Они быстро ответили.", "zh": "他们回答得很快。", "tr": "Hızlıca cevap verdiler."}),
+    ItemCard(english: "Please speak slowly.", translations: {"ar": "من فضلك تحدث ببطء.", "de": "Bitte sprich langsam.", "es": "Por favor, habla lentamente.", "fr": "Parle lentement, s'il te plaît.", "it": "Per favore, parla lentamente.", "ru": "Пожалуйста, говори медленно.", "zh": "请慢点说。", "tr": "Lütfen yavaş konuş."}),
+    ItemCard(english: "She easily passed the test.", translations: {"ar": "هي اجتازت الاختبار بسهولة.", "de": "Sie bestand den Test leicht.", "es": "Ella pasó la prueba fácilmente.", "fr": "Elle a facilement réussi le test.", "it": "Ha superato facilmente il test.", "ru": "Она легко сдала тест.", "zh": "她轻松通过了考试。", "tr": "Testi kolayca geçti."}),
+    ItemCard(english: "He quietly closed the door.", translations: {"ar": "هو أغلق الباب بهدوء.", "de": "Er schloss leise die Tür.", "es": "Cerró la puerta en silencio.", "fr": "Il a fermé la porte tranquillement.", "it": "Ha chiuso silenziosamente la porta.", "ru": "Он тихо закрыл дверь.", "zh": "他轻轻地关上了门。", "tr": "Sessizce kapıyı kapattı."}),
+    
+    // ظروف الدرجة - Degree
+    ItemCard(english: "He ran very fast.", translations: {"ar": "هو ركض بسرعة جدًا.", "de": "Er rannte sehr schnell.", "es": "Corrió muy rápido.", "fr": "Il a couru très vite.", "it": "Correva molto velocemente.", "ru": "Он бежал очень быстро.", "zh": "他跑得非常快。", "tr": "Çok hızlı koştu."}),
+    ItemCard(english: "It's too hot today.", translations: {"ar": "الجو حار جدًا اليوم.", "de": "Es ist zu heiß heute.", "es": "Hace demasiado calor hoy.", "fr": "Il fait trop chaud aujourd'hui.", "it": "Fa troppo caldo oggi.", "ru": "Сегодня слишком жарко.", "zh": "今天太热了。", "tr": "Bugün çok sıcak."}),
+    ItemCard(english: "I am quite tired.", translations: {"ar": "أنا متعب تمامًا.", "de": "Ich bin ziemlich müde.", "es": "Estoy bastante cansado.", "fr": "Je suis assez fatigué.", "it": "Sono abbastanza stanco.", "ru": "Я довольно устал.", "zh": "我相当累。", "tr": "Oldukça yorgunum."}),
+    ItemCard(english: "I almost missed the bus.", translations: {"ar": "كدت أن أضيع الحافلة.", "de": "Ich habe fast den Bus verpasst.", "es": "Casi pierdo el autobús.", "fr": "J'ai presque raté le bus.", "it": "Ho quasi perso l'autobus.", "ru": "Я чуть не опоздал на автобус.", "zh": "我差点错过公交车。", "tr": "Otobüsü neredeyse kaçırıyordum."}),
+    ItemCard(english: "Is this dress big enough?", translations: {"ar": "هل هذا الفستان كبير بما فيه الكفاية؟", "de": "Ist dieses Kleid groß genug?", "es": "¿Este vestido es lo suficientemente grande?", "fr": "Cette robe est-elle assez grande?", "it": "Questo vestito è abbastanza grande?", "ru": "Это платье достаточно большое?", "zh": "这件裙子够大吗？", "tr": "Bu elbise yeterince büyük mü?"}),
+    ItemCard(english: "I've just arrived.", translations: {"ar": "لقد وصلت للتو.", "de": "Ich bin gerade angekommen.", "es": "Acabo de llegar.", "fr": "Je viens d'arriver.", "it": "Sono appena arrivato.", "ru": "Я только что прибыл.", "zh": "我刚到。", "tr": "Henüz geldim."}),
+    
+    // ظروف إضافية
+    ItemCard(english: "They happily accepted the invitation.", translations: {"ar": "قبلوا الدعوة بسعادة.", "de": "Sie nahmen die Einladung glücklich an.", "es": "Aceptaron la invitación felizmente.", "fr": "Ils ont accepté l'invitation avec joie.", "it": "Hanno accettato l'invito felicemente.", "ru": "Они с радостью приняли приглашение.", "zh": "他们高兴地接受了邀请。", "tr": "Daveti mutlu bir şekilde kabul ettiler."}),
+    ItemCard(english: "She performed badly in the exam.", translations: {"ar": "أدت بشكل سيء في الامتحان.", "de": "Sie schnitt schlecht in der Prüfung ab.", "es": "Ella se desempeñó mal en el examen.", "fr": "Elle a mal performé à l'examen.", "it": "Ha avuto una brutta performance all'esame.", "ru": "Она плохо справилась с экзаменом.", "zh": "她考试考得很糟糕。", "tr": "Sınavda kötü performans gösterdi."}),
+    ItemCard(english: "I will call you later.", translations: {"ar": "سأتصل بك لاحقًا.", "de": "Ich rufe dich später an.", "es": "Te llamaré más tarde.", "fr": "Je t'appellerai plus tard.", "it": "Ti chiamerò più tardi.", "ru": "Я позвоню тебе позже.", "zh": "我稍后给你打电话。", "tr": "Seni daha sonra ararım."}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "جمل الظروف - Adverbs Examples",
+      items: sentences,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
