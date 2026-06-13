@@ -4653,6 +4653,85 @@ class PlacesScreen extends StatelessWidget {
 
 
 
+             class ReptilesScreen extends StatelessWidget {
+  const ReptilesScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الزواحف (Reptiles)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 122 ==========
+    LearningCard(primaryText: "Snake", translations: {"ar": "ثعبان", "de": "Schlange", "es": "Serpiente", "fr": "Serpent", "it": "Serpente", "ru": "Змея", "zh": "蛇", "tr": "Yılan"}),
+    LearningCard(primaryText: "Viper", translations: {"ar": "أفعى", "de": "Viper", "es": "Víbora", "fr": "Vipère", "it": "Vipera", "ru": "Гадюка", "zh": "毒蛇", "tr": "Engerek"}),
+    LearningCard(primaryText: "Crocodile", translations: {"ar": "تمساح", "de": "Krokodil", "es": "Cocodrilo", "fr": "Crocodile", "it": "Coccodrillo", "ru": "Крокодил", "zh": "鳄鱼", "tr": "Timsah"}),
+    LearningCard(primaryText: "Chameleon", translations: {"ar": "حرباية", "de": "Chamäleon", "es": "Camaleón", "fr": "Caméléon", "it": "Camaleonte", "ru": "Хамелеон", "zh": "变色龙", "tr": "Bukalemun"}),
+    LearningCard(primaryText: "Cobra", translations: {"ar": "كوبرا", "de": "Kobra", "es": "Cobra", "fr": "Cobra", "it": "Cobra", "ru": "Кобра", "zh": "眼镜蛇", "tr": "Kobra"}),
+    LearningCard(primaryText: "Constrictor", translations: {"ar": "الحية العاصرة", "de": "Würgeschlange", "es": "Boa constrictora", "fr": "Constricteur", "it": "Costrittore", "ru": "Удав", "zh": "蟒蛇", "tr": "Boa yılanı"}),
+    LearningCard(primaryText: "Lizard", translations: {"ar": "سحلية", "de": "Eidechse", "es": "Lagarto", "fr": "Lézard", "it": "Lucertola", "ru": "Ящерица", "zh": "蜥蜴", "tr": "Kertenkele"}),
+    LearningCard(primaryText: "Turtle", translations: {"ar": "سلحفاة", "de": "Schildkröte", "es": "Tortuga", "fr": "Tortue", "it": "Tartaruga", "ru": "Черепаха", "zh": "海龟", "tr": "Deniz kaplumbağası"}),
+    LearningCard(primaryText: "Tortoise", translations: {"ar": "سلحفاة برية", "de": "Landschildkröte", "es": "Tortuga terrestre", "fr": "Tortue terrestre", "it": "Testuggine", "ru": "Сухопутная черепаха", "zh": "陆龟", "tr": "Kara kaplumbağası"}),
+    LearningCard(primaryText: "Anaconda", translations: {"ar": "أناكوندا", "de": "Anakonda", "es": "Anaconda", "fr": "Anaconda", "it": "Anaconda", "ru": "Анаконда", "zh": "水蟒", "tr": "Anakonda"}),
+    
+    // ========== أفعال خاصة بالزواحف ==========
+    LearningCard(primaryText: "Hop", translations: {"ar": "يقفز", "de": "Hüpfen", "es": "Saltar", "fr": "Sauter", "it": "Saltare", "ru": "Прыгать", "zh": "跳跃", "tr": "Sıçramak"}),
+    LearningCard(primaryText: "Bite", translations: {"ar": "يعض", "de": "Beißen", "es": "Morder", "fr": "Mordre", "it": "Mordere", "ru": "Кусать", "zh": "咬", "tr": "Isırmak"}),
+    LearningCard(primaryText: "Crawl", translations: {"ar": "يزحف", "de": "Kriechen", "es": "Arrastrarse", "fr": "Ramper", "it": "Strisciare", "ru": "Ползать", "zh": "爬行", "tr": "Emeklemek"}),
+    LearningCard(primaryText: "Chirp", translations: {"ar": "يغرد", "de": "Zwitschern", "es": "Piarse", "fr": "Gazouiller", "it": "Cinguettare", "ru": "Щебетать", "zh": "鸣叫", "tr": "Cıvıldamak"}),
+    LearningCard(primaryText: "Sting", translations: {"ar": "يلسع", "de": "Stechen", "es": "Picar", "fr": "Piquer", "it": "Pungere", "ru": "Жалить", "zh": "蜇", "tr": "Sokmak"}),
+    
+    // ========== أجزاء جسم الزواحف ==========
+    LearningCard(primaryText: "Back", translations: {"ar": "ظهر", "de": "Rücken", "es": "Espalda", "fr": "Dos", "it": "Schiena", "ru": "Спина", "zh": "背部", "tr": "Sırt"}),
+    LearningCard(primaryText: "Nostril", translations: {"ar": "فتحة الأنف", "de": "Nasenloch", "es": "Nariz", "fr": "Narine", "it": "Narice", "ru": "Ноздря", "zh": "鼻孔", "tr": "Burun deliği"}),
+    LearningCard(primaryText: "Tail", translations: {"ar": "ذيل", "de": "Schwanz", "es": "Cola", "fr": "Queue", "it": "Coda", "ru": "Хвост", "zh": "尾巴", "tr": "Kuyruk"}),
+    LearningCard(primaryText: "Fang", translations: {"ar": "ناب", "de": "Giftzahn", "es": "Colmillo", "fr": "Croc", "it": "Zanna", "ru": "Клык", "zh": "毒牙", "tr": "Zehir dişi"}),
+    LearningCard(primaryText: "Leg", translations: {"ar": "رجل", "de": "Bein", "es": "Pata", "fr": "Pattes", "it": "Zampa", "ru": "Нога", "zh": "腿", "tr": "Bacak"}),
+    
+    // ========== زواحف إضافية ==========
+    LearningCard(primaryText: "Gecko", translations: {"ar": "وزغ", "de": "Gecko", "es": "Geco", "fr": "Gecko", "it": "Geco", "ru": "Геккон", "zh": "壁虎", "tr": "Geko"}),
+    LearningCard(primaryText: "Iguana", translations: {"ar": "إغوانا", "de": "Iguana", "es": "Iguana", "fr": "Iguane", "it": "Iguana", "ru": "Игуана", "zh": "鬣蜥", "tr": "İguana"}),
+    LearningCard(primaryText: "Komodo Dragon", translations: {"ar": "تنين كومودو", "de": "Komodowaran", "es": "Dragón de Komodo", "fr": "Dragon de Komodo", "it": "Drago di Komodo", "ru": "Комодский варан", "zh": "科莫多龙", "tr": "Komodo ejderi"}),
+    LearningCard(primaryText: "Python", translations: {"ar": "بايثون", "de": "Python", "es": "Pitón", "fr": "Python", "it": "Pitone", "ru": "Питон", "zh": "蟒蛇", "tr": "Piton yılanı"}),
+    LearningCard(primaryText: "Rattlesnake", translations: {"ar": "أفعى الجلجلة", "de": "Klapperschlange", "es": "Serpiente de cascabel", "fr": "Serpent à sonnette", "it": "Serpente a sonagli", "ru": "Гремучая змея", "zh": "响尾蛇", "tr": "Çıngıraklı yılan"}),
+    LearningCard(primaryText: "Skink", translations: {"ar": "سقنقورية", "de": "Skink", "es": "Eslizón", "fr": "Scinque", "it": "Scinco", "ru": "Сцинк", "zh": "石龙子", "tr": "Deri kertenkelesi"}),
+    LearningCard(primaryText: "Gila Monster", translations: {"ar": "وحش جيلا", "de": "Gila-Krustenechse", "es": "Monstruo de Gila", "fr": "Monstre de Gila", "it": "Mostro di Gila", "ru": "Жила-монстр", "zh": "吉拉毒蜥", "tr": "Gila canavarı"}),
+    LearningCard(primaryText: "Alligator", translations: {"ar": "قاطور", "de": "Alligator", "es": "Caimán", "fr": "Alligator", "it": "Alligatore", "ru": "Аллигатор", "zh": "短吻鳄", "tr": "Kayman"}),
+    LearningCard(primaryText: "Caiman", translations: {"ar": "كايمان", "de": "Kaiman", "es": "Caimán", "fr": "Caïman", "it": "Caimano", "ru": "Кайман", "zh": "凯门鳄", "tr": "Kayman"}),
+  ];
+
+  // ✅ 50+ جملة - عن الزواحف
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 123 (12 جملة) ==========
+    ItemCard(english: "There are many kinds of reptiles.", translations: {"ar": "في أنواع كثيرة من الزواحف", "de": "Es gibt viele Arten von Reptilien", "es": "Hay muchos tipos de reptiles", "fr": "Il existe de nombreuses sortes de reptiles", "it": "Ci sono molti tipi di rettili", "ru": "Существует много видов рептилий", "zh": "有许多种类的爬行动物", "tr": "Birçok sürüngen türü vardır"}),
+    ItemCard(english: "She screamed when she saw the snake.", translations: {"ar": "هي صرخت لما شافت الثعبان", "de": "Sie schrie, als sie die Schlange sah", "es": "Ella gritó cuando vio la serpiente", "fr": "Elle a crié quand elle a vu le serpent", "it": "Ha urlato quando ha visto il serpente", "ru": "Она закричала, когда увидела змею", "zh": "她看到蛇时尖叫了起来", "tr": "Yılanı görünce çığlık attı"}),
+    ItemCard(english: "A lizard can regenerate its tail if it's cut.", translations: {"ar": "السحلية تقدر تجدد ديلها لو اتقطع", "de": "Eine Eidechse kann ihren Schwanz regenerieren, wenn er abgeschnitten wird", "es": "Un lagarto puede regenerar su cola si se corta", "fr": "Un lézard peut régénérer sa queue si elle est coupée", "it": "Una lucertola può rigenerare la coda se viene tagliata", "ru": "Ящерица может восстановить хвост, если он отрезан", "zh": "蜥蜴如果尾巴被切掉可以再生", "tr": "Bir kertenkele kesilirse kuyruğunu yenileyebilir"}),
+    ItemCard(english: "It was a picture of a boa constrictor swallowing an animal.", translations: {"ar": "دي كانت صورة لثعبان عاصر بتبلع حيوان", "de": "Es war ein Bild einer Abgottschlange, die ein Tier verschluckt", "es": "Era una imagen de una boa constrictora tragándose un animal", "fr": "C'était une image d'un boa constricteur avalant un animal", "it": "Era un'immagine di un boa costrittore che ingoiava un animale", "ru": "Это была картина удава, проглатывающего животное", "zh": "这是一张蟒蛇吞食动物的照片", "tr": "Bu, bir boa yılanının bir hayvanı yuttuğu bir resimdi"}),
+    ItemCard(english: "Unlike land snakes, sea snakes have flattened tails which help them swim.", translations: {"ar": "على عكس الثعابين البرية، ثعابين البحر ليهم ذيول مفلطحة بتساعدهم على السباحة", "de": "Im Gegensatz zu Landschlangen haben Seeschlangen abgeflachte Schwänze, die ihnen beim Schwimmen helfen", "es": "A diferencia de las serpientes terrestres, las serpientes marinas tienen colas aplanadas que les ayudan a nadar", "fr": "Contrairement aux serpents terrestres, les serpents de mer ont des queues aplaties qui les aident à nager", "it": "A differenza dei serpenti terrestri, i serpenti marini hanno code appiattite che li aiutano a nuotare", "ru": "В отличие от наземных змей, морские змеи имеют уплощенные хвосты, которые помогают им плавать", "zh": "与陆蛇不同，海蛇有扁平的尾巴帮助它们游泳", "tr": "Kara yılanlarının aksine, deniz yılanları yüzmelerine yardımcı olan yassı kuyruklara sahiptir"}),
+    ItemCard(english: "The cobra is one of the world's deadliest snakes.", translations: {"ar": "الكوبرا من أكثر الثعابين المميتة في العالم", "de": "Die Kobra ist eine der tödlichsten Schlangen der Welt", "es": "La cobra es una de las serpientes más mortíferas del mundo", "fr": "Le cobra est l'un des serpents les plus meurtriers du monde", "it": "Il cobra è uno dei serpenti più letali del mondo", "ru": "Кобра - одна из самых смертоносных змей в мире", "zh": "眼镜蛇是世界上最致命的蛇之一", "tr": "Kobra dünyanın en ölümcül yılanlarından biridir"}),
+    ItemCard(english: "The chameleon can change its color to protect itself.", translations: {"ar": "الحرباية تقدر تغير لونها عشان تحمي نفسها", "de": "Das Chamäleon kann seine Farbe ändern, um sich zu schützen", "es": "El camaleón puede cambiar su color para protegerse", "fr": "Le caméléon peut changer sa couleur pour se protéger", "it": "Il camaleonte può cambiare il suo colore per proteggersi", "ru": "Хамелеон может менять цвет, чтобы защитить себя", "zh": "变色龙可以改变颜色来保护自己", "tr": "Bukalemun kendini korumak için rengini değiştirebilir"}),
+    ItemCard(english: "Anacondas are the largest snakes of South America.", translations: {"ar": "الاناكوندا هي أكبر ثعابين أمريكا الجنوبية", "de": "Anakondas sind die größten Schlangen Südamerikas", "es": "Las anacondas son las serpientes más grandes de Sudamérica", "fr": "Les anacondas sont les plus grands serpents d'Amérique du Sud", "it": "Gli anaconda sono i serpenti più grandi del Sud America", "ru": "Анаконды - самые большие змеи Южной Америки", "zh": "水蟒是南美洲最大的蛇", "tr": "Anakondalar Güney Amerika'nın en büyük yılanlarıdır"}),
+    ItemCard(english: "Is it a viper?", translations: {"ar": "دي أفعى؟", "de": "Ist es eine Viper?", "es": "¿Es una víbora?", "fr": "Est-ce une vipère?", "it": "È una vipera?", "ru": "Это гадюка?", "zh": "是毒蛇吗？", "tr": "Bu bir engerek mi?"}),
+    ItemCard(english: "Crocodiles are strange looking creatures living in rivers.", translations: {"ar": "التماسيح مخلوقات غريبة الشكل بتعيش في الأنهار", "de": "Krokodile sind seltsam aussehende Kreaturen, die in Flüssen leben", "es": "Los cocodrilos son criaturas de aspecto extraño que viven en ríos", "fr": "Les crocodiles sont des créatures étranges vivant dans les rivières", "it": "I coccodrilli sono creature dall'aspetto strano che vivono nei fiumi", "ru": "Крокодилы - странные существа, живущие в реках", "zh": "鳄鱼是生活在河流中的长相奇怪的生物", "tr": "Timsahlar nehirlerde yaşayan garip görünümlü yaratıklardır"}),
+    ItemCard(english: "The birds were chirping merrily at the top of the tree.", translations: {"ar": "الطيور كانت بتزقزق بمرح على الشجرة", "de": "Die Vögel zwitscherten fröhlich auf der Spitze des Baumes", "es": "Los pájaros cantaban alegremente en la copa del árbol", "fr": "Les oiseaux gazouillaient joyeusement au sommet de l'arbre", "it": "Gli uccelli cinguettavano allegramente sulla cima dell'albero", "ru": "Птицы весело щебетали на вершине дерева", "zh": "鸟儿在树顶上欢快地鸣叫", "tr": "Kuşlar ağacın tepesinde neşeyle cıvıldıyordu"}),
+    ItemCard(english: "Do turtles hop?", translations: {"ar": "السلاحف بتنطق؟", "de": "Hüpfen Schildkröten?", "es": "¿Las tortugas saltan?", "fr": "Est-ce que les tortues sautent?", "it": "Le tartarughe saltano?", "ru": "Черепахи прыгают?", "zh": "乌龟会跳吗？", "tr": "Kaplumbağalar sıçrar mı?"}),
+    ItemCard(english: "Have you ever seen a chameleon?", translations: {"ar": "عمرك شوفت حرباية؟", "de": "Hast du jemals ein Chamäleon gesehen?", "es": "¿Alguna vez has visto un camaleón?", "fr": "Avez-vous déjà vu un caméléon?", "it": "Hai mai visto un camaleonte?", "ru": "Ты когда-нибудь видел хамелеона?", "zh": "你见过变色龙吗？", "tr": "Hiç bukalemun gördün mü?"}),
+    
+    // ========== 38 جملة إضافية عن الزواحف ==========
+    ItemCard(english: "The viper has a venomous bite.", translations: {"ar": "للأفعى لدغة سامة", "de": "Die Viper hat einen giftigen Biss", "es": "La víbora tiene una mordedura venenosa", "fr": "La vipère a une morsure venimeuse", "it": "La vipera ha un morso velenoso", "ru": "У гадюки ядовитый укус", "zh": "毒蛇有有毒的咬伤", "tr": "Engerek zehirli bir ısırığa sahiptir"}),
+    ItemCard(english: "Turtles can live both on land and in water.", translations: {"ar": "السلاحف تقدر تعيش على البر وفي الميه", "de": "Schildkröten können sowohl an Land als auch im Wasser leben", "es": "Las tortugas pueden vivir tanto en la tierra como en el agua", "fr": "Les tortues peuvent vivre à la fois sur terre et dans l'eau", "it": "Le tartarughe possono vivere sia sulla terra che nell'acqua", "ru": "Черепахи могут жить как на суше, так и в воде", "zh": "海龟可以在陆地和水中生活", "tr": "Kaplumbağalar hem karada hem de suda yaşayabilir"}),
+    ItemCard(english: "The crocodile's bite is extremely powerful.", translations: {"ar": "لدغة التمساح قوية جدًا", "de": "Der Biss des Krokodils ist extrem stark", "es": "La mordedura del cocodrilo es extremadamente poderosa", "fr": "La morsure du crocodile est extrêmement puissante", "it": "Il morso del coccodrillo è estremamente potente", "ru": "Укус крокодила чрезвычайно силен", "zh": "鳄鱼的咬合力非常强大", "tr": "Timsahın ısırığı son derece güçlüdür"}),
+    ItemCard(english: "The Komodo dragon is the largest lizard in the world.", translations: {"ar": "تنين كومودو هو أكبر سحلية في العالم", "de": "Der Komodowaran ist die größte Eidechse der Welt", "es": "El dragón de Komodo es el lagarto más grande del mundo", "fr": "Le dragon de Komodo est le plus grand lézard du monde", "it": "Il drago di Komodo è la lucertola più grande del mondo", "ru": "Комодский варан - самая большая ящерица в мире", "zh": "科莫多龙是世界上最大的蜥蜴", "tr": "Komodo ejderi dünyanın en büyük kertenkelesidir"}),
+    ItemCard(english: "The python kills its prey by squeezing it.", translations: {"ar": "البايثون بيقتل فريسته بخنقها", "de": "Der Python tötet seine Beute, indem er sie zusammendrückt", "es": "La pitón mata a su presa apretándola", "fr": "Le python tue sa proie en l'écrasant", "it": "Il pitone uccide la sua preda schiacciandola", "ru": "Питон убивает свою добычу, сжимая ее", "zh": "蟒蛇通过挤压杀死猎物", "tr": "Piton yılanı avını sıkarak öldürür"}),
+    ItemCard(english: "The lizard's tongue is used to catch insects.", translations: {"ar": "لسان السحلية بيستخدم عشان يمسك الحشرات", "de": "Die Zunge der Eidechse wird verwendet, um Insekten zu fangen", "es": "La lengua del lagarto se usa para atrapar insectos", "fr": "La langue du lézard sert à attraper les insectes", "it": "La lingua della lucertola viene utilizzata per catturare gli insetti", "ru": "Язык ящерицы используется для ловли насекомых", "zh": "蜥蜴的舌头用来捕捉昆虫", "tr": "Kertenkelenin dili böcekleri yakalamak için kullanılır"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الزواحف - Reptiles",
+    );
+  }
+}
              
 
              
