@@ -3009,6 +3009,1652 @@ class JobsScreen extends StatelessWidget {
 
 
              
+             //////////
+/////////////
+
+
+
+
+class InsectsScreen extends StatelessWidget {
+  const InsectsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الحشرات (Insects)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 126 ==========
+    LearningCard(primaryText: "Bee", translations: {"ar": "نحلة", "de": "Biene", "es": "Abeja", "fr": "Abeille", "it": "Ape", "ru": "Пчела", "zh": "蜜蜂", "tr": "Arı"}),
+    LearningCard(primaryText: "Ant", translations: {"ar": "نملة", "de": "Ameise", "es": "Hormiga", "fr": "Fourmi", "it": "Formica", "ru": "Муравей", "zh": "蚂蚁", "tr": "Karınca"}),
+    LearningCard(primaryText: "Lice", translations: {"ar": "قملة", "de": "Laus", "es": "Piojo", "fr": "Pou", "it": "Pidocchio", "ru": "Вошь", "zh": "虱子", "tr": "Bit"}),
+    LearningCard(primaryText: "Wasp", translations: {"ar": "دبور", "de": "Wespe", "es": "Avispa", "fr": "Guêpe", "it": "Vespa", "ru": "Оса", "zh": "黄蜂", "tr": "Yaban arısı"}),
+    LearningCard(primaryText: "Butterfly", translations: {"ar": "فراشة", "de": "Schmetterling", "es": "Mariposa", "fr": "Papillon", "it": "Farfalla", "ru": "Бабочка", "zh": "蝴蝶", "tr": "Kelebek"}),
+    LearningCard(primaryText: "Spider", translations: {"ar": "عنكبوت", "de": "Spinne", "es": "Araña", "fr": "Araignée", "it": "Ragno", "ru": "Паук", "zh": "蜘蛛", "tr": "Örümcek"}),
+    LearningCard(primaryText: "Cockroach", translations: {"ar": "صرصور", "de": "Kakerlake", "es": "Cucaracha", "fr": "Cafard", "it": "Scarafaggio", "ru": "Таракан", "zh": "蟑螂", "tr": "Hamamböceği"}),
+    LearningCard(primaryText: "Worm", translations: {"ar": "دودة", "de": "Wurm", "es": "Gusano", "fr": "Ver", "it": "Verme", "ru": "Червь", "zh": "蠕虫", "tr": "Solucan"}),
+    LearningCard(primaryText: "Silkworm", translations: {"ar": "دودة القز", "de": "Seidenraupe", "es": "Gusano de seda", "fr": "Ver à soie", "it": "Baco da seta", "ru": "Шелкопряд", "zh": "蚕", "tr": "İpek böceği"}),
+    LearningCard(primaryText: "Fly", translations: {"ar": "ذبابة", "de": "Fliege", "es": "Mosca", "fr": "Mouche", "it": "Mosca", "ru": "Муха", "zh": "苍蝇", "tr": "Sinek"}),
+    LearningCard(primaryText: "Mosquito", translations: {"ar": "ناموسة", "de": "Mücke", "es": "Mosquito", "fr": "Moustique", "it": "Zanzara", "ru": "Комар", "zh": "蚊子", "tr": "Sivrisinek"}),
+    LearningCard(primaryText: "Scorpion", translations: {"ar": "عقرب", "de": "Skorpion", "es": "Escorpión", "fr": "Scorpion", "it": "Scorpione", "ru": "Скорпион", "zh": "蝎子", "tr": "Akrep"}),
+    LearningCard(primaryText: "Snail", translations: {"ar": "حلزون", "de": "Schnecke", "es": "Caracol", "fr": "Escargot", "it": "Lumaca", "ru": "Улитка", "zh": "蜗牛", "tr": "Salyangoz"}),
+    LearningCard(primaryText: "Flea", translations: {"ar": "برغوث", "de": "Floh", "es": "Pulga", "fr": "Puce", "it": "Pulce", "ru": "Блоха", "zh": "跳蚤", "tr": "Pire"}),
+    LearningCard(primaryText: "Ladybug", translations: {"ar": "دعسوقة", "de": "Marienkäfer", "es": "Mariquita", "fr": "Coccinelle", "it": "Coccinella", "ru": "Божья коровка", "zh": "瓢虫", "tr": "Uğur böceği"}),
+    LearningCard(primaryText: "Beetle", translations: {"ar": "خنفساء", "de": "Käfer", "es": "Escarabajo", "fr": "Scarabée", "it": "Scarabeo", "ru": "Жук", "zh": "甲虫", "tr": "Böcek"}),
+    LearningCard(primaryText: "Centipede", translations: {"ar": "أم أربعة وأربعين", "de": "Hundertfüßer", "es": "Ciempiés", "fr": "Mille-pattes", "it": "Centopiedi", "ru": "Сороконожка", "zh": "蜈蚣", "tr": "Kırkayak"}),
+    LearningCard(primaryText: "Locust", translations: {"ar": "جراد", "de": "Heuschrecke", "es": "Langosta", "fr": "Criquet", "it": "Locusta", "ru": "Саранча", "zh": "蝗虫", "tr": "Çekirge"}),
+    LearningCard(primaryText: "Millipede", translations: {"ar": "دودة الألف رجل", "de": "Tausendfüßer", "es": "Milpiés", "fr": "Mille-pattes", "it": "Millepiedi", "ru": "Многоножка", "zh": "千足虫", "tr": "Kırkayak"}),
+    LearningCard(primaryText: "Cricket", translations: {"ar": "صرصور الليل", "de": "Grille", "es": "Grillo", "fr": "Grillon", "it": "Grillo", "ru": "Сверчок", "zh": "蟋蟀", "tr": "Cırcır böceği"}),
+    
+    // ========== حشرات إضافية ==========
+    LearningCard(primaryText: "Grasshopper", translations: {"ar": "جندب", "de": "Grashüpfer", "es": "Saltamontes", "fr": "Sauterelle", "it": "Cavalletta", "ru": "Кузнечик", "zh": "蚱蜢", "tr": "Çekirge"}),
+    LearningCard(primaryText: "Dragonfly", translations: {"ar": "يعسوب", "de": "Libelle", "es": "Libélula", "fr": "Libellule", "it": "Libellula", "ru": "Стрекоза", "zh": "蜻蜓", "tr": "Yusufçuk"}),
+    LearningCard(primaryText: "Firefly", translations: {"ar": "يراعة", "de": "Glühwürmchen", "es": "Luciérnaga", "fr": "Luciole", "it": "Lucciola", "ru": "Светлячок", "zh": "萤火虫", "tr": "Ateş böceği"}),
+    LearningCard(primaryText: "Moth", translations: {"ar": "فراشة ليلية", "de": "Motte", "es": "Polilla", "fr": "Papillon de nuit", "it": "Falena", "ru": "Моль", "zh": "飞蛾", "tr": "Güve"}),
+    LearningCard(primaryText: "Termite", translations: {"ar": "أرضة", "de": "Termite", "es": "Termita", "fr": "Termite", "it": "Termite", "ru": "Термит", "zh": "白蚁", "tr": "Termit"}),
+    LearningCard(primaryText: "Hornet", translations: {"ar": "دبور كبير", "de": "Hornisse", "es": "Avispón", "fr": "Frelon", "it": "Calabrone", "ru": "Шершень", "zh": "大黄蜂", "tr": "Eşek arısı"}),
+    LearningCard(primaryText: "Tick", translations: {"ar": "قرادة", "de": "Zecke", "es": "Garrapata", "fr": "Tique", "it": "Zecca", "ru": "Клещ", "zh": "蜱", "tr": "Kene"}),
+  ];
+
+  // ✅ 50+ جملة - عن الحشرات
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 127 (13 جملة) ==========
+    ItemCard(english: "Do these insects sting?", translations: {"ar": "هي الحشرات دي بتلسع؟", "de": "Stechen diese Insekten?", "es": "¿Pican estos insectos?", "fr": "Est-ce que ces insectes piquent?", "it": "Questi insetti pungono?", "ru": "Эти насекомые кусаются?", "zh": "这些昆虫会蜇人吗？", "tr": "Bu böcekler sokar mı?"}),
+    ItemCard(english: "Among all insects, the bee and the silkworm are the most useful.", translations: {"ar": "من بين كل الحشرات، النحلة ودودة القز هم الأكثر إفادة", "de": "Unter allen Insekten sind die Biene und die Seidenraupe am nützlichsten", "es": "Entre todos los insectos, la abeja y el gusano de seda son los más útiles", "fr": "Parmi tous les insectes, l'abeille et le ver à soie sont les plus utiles", "it": "Tra tutti gli insetti, l'ape e il baco da seta sono i più utili", "ru": "Среди всех насекомых пчела и шелкопряд самые полезные", "zh": "在所有昆虫中，蜜蜂和蚕是最有用的", "tr": "Tüm böcekler arasında, arı ve ipek böceği en faydalı olanlardır"}),
+    ItemCard(english: "Have you ever seen a purple butterfly?", translations: {"ar": "عمرك شوفت فراشة لونها بنفسجي قبل كده؟", "de": "Hast du jemals einen violetten Schmetterling gesehen?", "es": "¿Alguna vez has visto una mariposa morada?", "fr": "Avez-vous déjà vu un papillon violet?", "it": "Hai mai visto una farfalla viola?", "ru": "Ты когда-нибудь видел фиолетовую бабочку?", "zh": "你见过紫色的蝴蝶吗？", "tr": "Hiç mor bir kelebek gördün mü?"}),
+    ItemCard(english: "While I was playing with my friends, a wasp stung me.", translations: {"ar": "وأنا بلعب مع أصحابي، دبور لسعني", "de": "Während ich mit meinen Freunden spielte, hat mich eine Wespe gestochen", "es": "Mientras jugaba con mis amigos, una avispa me picó", "fr": "Pendant que je jouais avec mes amis, une guêpe m'a piqué", "it": "Mentre giocavo con i miei amici, una vespa mi ha punto", "ru": "Пока я играл с друзьями, меня укусила оса", "zh": "当我和朋友们玩耍时，一只黄蜂蜇了我", "tr": "Arkadaşlarımla oynarken bir yaban arısı beni soktu"}),
+    ItemCard(english: "Spiders are so dangerous.", translations: {"ar": "العناكب خطيرة جدا", "de": "Spinnen sind so gefährlich", "es": "Las arañas son muy peligrosas", "fr": "Les araignées sont si dangereuses", "it": "I ragni sono così pericolosi", "ru": "Пауки такие опасные", "zh": "蜘蛛非常危险", "tr": "Örümcekler çok tehlikelidir"}),
+    ItemCard(english: "Look at this beautiful beetle!", translations: {"ar": "بص على الخنفسة الجميلة دي", "de": "Sieh dir diesen schönen Käfer an!", "es": "¡Mira este hermoso escarabajo!", "fr": "Regarde ce beau scarabée!", "it": "Guarda questo bellissimo scarabeo!", "ru": "Посмотри на этого красивого жука!", "zh": "看这漂亮的甲虫！", "tr": "Şu güzel böceğe bak!"}),
+    ItemCard(english: "The bird had a worm in its beak.", translations: {"ar": "الطائر كان معاه دودة في منقاره", "de": "Der Vogel hatte einen Wurm in seinem Schnabel", "es": "El pájaro tenía un gusano en su pico", "fr": "L'oiseau avait un ver dans son bec", "it": "L'uccello aveva un verme nel becco", "ru": "У птицы был червь в клюве", "zh": "鸟的嘴里有一条虫子", "tr": "Kuşun gagasında bir solucan vardı"}),
+    ItemCard(english: "Look! There is a big cockroach on your desk.", translations: {"ar": "بص! في صرصور كبير على المكتب بتاعك", "de": "Sieh mal! Da ist eine große Kakerlake auf deinem Schreibtisch", "es": "¡Mira! Hay una cucaracha grande en tu escritorio", "fr": "Regarde! Il y a un gros cafard sur ton bureau", "it": "Guarda! C'è uno scarafaggio grande sulla tua scrivania", "ru": "Смотри! На твоем столе большой таракан", "zh": "看！你桌子上有一只大蟑螂", "tr": "Bak! Masanızda büyük bir hamamböceği var"}),
+    ItemCard(english: "Honey is sweet, but the bees sting.", translations: {"ar": "العسل حلو، بس النحل بيلسع", "de": "Honig ist süß, aber die Bienen stechen", "es": "La miel es dulce, pero las abejas pican", "fr": "Le miel est doux, mais les abeilles piquent", "it": "Il miele è dolce, ma le api pungono", "ru": "Мед сладкий, но пчелы кусаются", "zh": "蜂蜜是甜的，但蜜蜂会蜇人", "tr": "Bal tatlıdır, ancak arılar sokar"}),
+    ItemCard(english: "Do you think the butterfly is an insect?", translations: {"ar": "تفكر الفراشة حشرة؟", "de": "Glaubst du, dass der Schmetterling ein Insekt ist?", "es": "¿Crees que la mariposa es un insecto?", "fr": "Penses-tu que le papillon est un insecte?", "it": "Pensi che la farfalla sia un insetto?", "ru": "Ты думаешь, бабочка - это насекомое?", "zh": "你认为蝴蝶是昆虫吗？", "tr": "Kelebek bir böcek mi düşünüyorsun?"}),
+    ItemCard(english: "I hate mosquitoes; they made me angry.", translations: {"ar": "أنا بكره الناموس عشان بيغضبني", "de": "Ich hasse Mücken; sie machen mich wütend", "es": "Odio los mosquitos; me enojan", "fr": "Je déteste les moustiques; ils me mettent en colère", "it": "Odio le zanzare; mi fanno arrabbiare", "ru": "Я ненавижу комаров; они меня бесят", "zh": "我讨厌蚊子；它们让我生气", "tr": "Sivrisineklerden nefret ederim; beni kızdırırlar"}),
+    ItemCard(english: "Do not eat your cake; there was a fly on it.", translations: {"ar": "متأكلش الكيك بتاعك كان فيه دبانة عليه", "de": "Iss deinen Kuchen nicht; da war eine Fliege drauf", "es": "No comas tu pastel; había una mosca encima", "fr": "Ne mange pas ton gâteau; il y avait une mouche dessus", "it": "Non mangiare la tua torta; c'era una mosca sopra", "ru": "Не ешь свой торт; на нем была муха", "zh": "别吃你的蛋糕；上面有苍蝇", "tr": "Pastanı yeme; üzerinde sinek vardı"}),
+    ItemCard(english: "I have a phobia of cockroaches.", translations: {"ar": "أنا عندي فوبيا من الصراصير", "de": "Ich habe eine Phobie vor Kakerlaken", "es": "Tengo fobia a las cucarachas", "fr": "J'ai une phobie des cafards", "it": "Ho una fobia degli scarafaggi", "ru": "У меня фобия тараканов", "zh": "我有蟑螂恐惧症", "tr": "Hamamböceği fobim var"}),
+    
+    // ========== 37 جملة إضافية عن الحشرات ==========
+    ItemCard(english: "Ants work together in colonies.", translations: {"ar": "النمل بيشتغل مع بعض في مستعمرات", "de": "Ameisen arbeiten zusammen in Kolonien", "es": "Las hormigas trabajan juntas en colonias", "fr": "Les fourmis travaillent ensemble en colonies", "it": "Le formiche lavorano insieme in colonie", "ru": "Муравьи работают вместе в колониях", "zh": "蚂蚁在群体中一起工作", "tr": "Karıncalar koloniler halinde birlikte çalışır"}),
+    ItemCard(english: "The butterfly has beautiful colorful wings.", translations: {"ar": "الفراشة عندها أجنحة جميلة ملونة", "de": "Der Schmetterling hat schöne bunte Flügel", "es": "La mariposa tiene alas hermosas y coloridas", "fr": "Le papillon a de belles ailes colorées", "it": "La farfalla ha belle ali colorate", "ru": "У бабочки красивые разноцветные крылья", "zh": "蝴蝶有美丽的彩色翅膀", "tr": "Kelebeğin güzel renkli kanatları vardır"}),
+    ItemCard(english: "The scorpion has a venomous stinger.", translations: {"ar": "العقرب عنده إبرة سامة", "de": "Der Skorpion hat einen giftigen Stachel", "es": "El escorpión tiene un aguijón venenoso", "fr": "Le scorpion a un dard venimeux", "it": "Lo scorpione ha un pungiglione velenoso", "ru": "У скорпиона есть ядовитое жало", "zh": "蝎子有毒刺", "tr": "Akrep zehirli bir iğneye sahiptir"}),
+    ItemCard(english: "The snail carries its shell on its back.", translations: {"ar": "الحلزون بيحمل قوقعته على ضهره", "de": "Die Schnecke trägt ihr Gehäuse auf dem Rücken", "es": "El caracol lleva su concha en la espalda", "fr": "L'escargot porte sa coquille sur son dos", "it": "La lumaca porta il suo guscio sulla schiena", "ru": "Улитка носит свою раковину на спине", "zh": "蜗牛把壳背在背上", "tr": "Salyangoz kabuğunu sırtında taşır"}),
+    ItemCard(english: "The firefly glows in the dark.", translations: {"ar": "اليراعة بتضى في الظلام", "de": "Das Glühwürmchen leuchtet im Dunkeln", "es": "La luciérnaga brilla en la oscuridad", "fr": "La luciole brille dans l'obscurité", "it": "La lucciola brilla al buio", "ru": "Светлячок светится в темноте", "zh": "萤火虫在黑暗中发光", "tr": "Ateş böceği karanlıkta parlar"}),
+    ItemCard(english: "The grasshopper jumps high.", translations: {"ar": "الجندب بينط عالي", "de": "Die Heuschrecke springt hoch", "es": "El saltamontes salta alto", "fr": "La sauterelle saute haut", "it": "La cavalletta salta in alto", "ru": "Кузнечик высоко прыгает", "zh": "蚱蜢跳得很高", "tr": "Çekirge yükseğe zıplar"}),
+    ItemCard(english: "The dragonfly is a fast flyer.", translations: {"ar": "اليعسوب بيطير بسرعة", "de": "Die Libelle ist ein schneller Flieger", "es": "La libélula vuela rápido", "fr": "La libellule vole vite", "it": "La libellula vola veloce", "ru": "Стрекоза быстро летает", "zh": "蜻蜓飞得很快", "tr": "Yusufçuk hızlı uçar"}),
+    ItemCard(english: "The cricket chirps at night.", translations: {"ar": "صرصور الليل بيزقزق في الليل", "de": "Die Grille zirpt nachts", "es": "El grillo canta por la noche", "fr": "Le grillon chante la nuit", "it": "Il grillo canta di notte", "ru": "Сверчок стрекочет ночью", "zh": "蟋蟀在夜间鸣叫", "tr": "Cırcır böceği gece cırcırlar"}),
+    ItemCard(english: "The termite can damage wooden furniture.", translations: {"ar": "الأرضة ممكن تدمر الأثاث الخشب", "de": "Die Termite kann Holzmöbel beschädigen", "es": "La termita puede dañar los muebles de madera", "fr": "La termite peut endommager les meubles en bois", "it": "La termite può danneggiare i mobili in legno", "ru": "Термит может повредить деревянную мебель", "zh": "白蚁会损坏木制家具", "tr": "Termit ahşap mobilyalara zarar verebilir"}),
+    ItemCard(english: "The ladybug is a beneficial insect for gardens.", translations: {"ar": "الدعسوقة حشرة مفيدة للحدايق", "de": "Der Marienkäfer ist ein nützliches Insekt für Gärten", "es": "La mariquita es un insecto beneficioso para los jardines", "fr": "La coccinelle est un insecte bénéfique pour les jardins", "it": "La coccinella è un insetto benefico per i giardini", "ru": "Божья коровка - полезное насекомое для садов", "zh": "瓢虫是花园的有益昆虫", "tr": "Uğur böceği bahçeler için faydalı bir böcektir"}),
+    ItemCard(english: "The moth is attracted to light.", translations: {"ar": "الفراشة الليلية بتنجذب للضوء", "de": "Die Motte wird vom Licht angezogen", "es": "La polilla se siente atraída por la luz", "fr": "La mite est attirée par la lumière", "it": "La falena è attratta dalla luce", "ru": "Моль привлекает свет", "zh": "飞蛾被光吸引", "tr": "Güve ışığa çekilir"}),
+    ItemCard(english: "The centipede has many legs.", translations: {"ar": "أم أربعة وأربعين عندها رجلين كتير", "de": "Der Hundertfüßer hat viele Beine", "es": "El ciempiés tiene muchas patas", "fr": "Le mille-pattes a beaucoup de pattes", "it": "Il centopiedi ha molte zampe", "ru": "У сороконожки много ног", "zh": "蜈蚣有很多条腿", "tr": "Kırkayağın birçok bacağı vardır"}),
+    ItemCard(english: "The flea jumps from one host to another.", translations: {"ar": "البرغوث بينط من مضيف للتاني", "de": "Der Floh springt von einem Wirt zum anderen", "es": "La pulga salta de un huésped a otro", "fr": "La puce saute d'un hôte à l'autre", "it": "La pulce salta da un ospite all'altro", "ru": "Блоха прыгает с одного хозяина на другого", "zh": "跳蚤从一个宿主跳到另一个宿主", "tr": "Pire bir konakçıdan diğerine atlar"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الحشرات - Insects",
+    );
+  }
+}
+
+
+
+
+class FruitsScreen extends StatelessWidget {
+  const FruitsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الفواكه (Fruits)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 142 ==========
+    LearningCard(primaryText: "Apple", translations: {"ar": "تفاحة", "de": "Apfel", "es": "Manzana", "fr": "Pomme", "it": "Mela", "ru": "Яблоко", "zh": "苹果", "tr": "Elma"}),
+    LearningCard(primaryText: "Orange", translations: {"ar": "برتقال", "de": "Orange", "es": "Naranja", "fr": "Orange", "it": "Arancia", "ru": "Апельсин", "zh": "橙子", "tr": "Portakal"}),
+    LearningCard(primaryText: "Kiwi", translations: {"ar": "كيوي", "de": "Kiwi", "es": "Kiwi", "fr": "Kiwi", "it": "Kiwi", "ru": "Киви", "zh": "猕猴桃", "tr": "Kivi"}),
+    LearningCard(primaryText: "Mango", translations: {"ar": "مانجو", "de": "Mango", "es": "Mango", "fr": "Mangue", "it": "Mango", "ru": "Манго", "zh": "芒果", "tr": "Mango"}),
+    LearningCard(primaryText: "Apricot", translations: {"ar": "مشمش", "de": "Aprikose", "es": "Albaricoque", "fr": "Abricot", "it": "Albicocca", "ru": "Абрикос", "zh": "杏", "tr": "Kayısı"}),
+    LearningCard(primaryText: "Figs", translations: {"ar": "تين", "de": "Feigen", "es": "Higos", "fr": "Figues", "it": "Fichi", "ru": "Инжир", "zh": "无花果", "tr": "İncir"}),
+    LearningCard(primaryText: "Peach", translations: {"ar": "خوخ", "de": "Pfirsich", "es": "Melocotón", "fr": "Pêche", "it": "Pesca", "ru": "Персик", "zh": "桃子", "tr": "Şeftali"}),
+    LearningCard(primaryText: "Banana", translations: {"ar": "موز", "de": "Banane", "es": "Plátano", "fr": "Banane", "it": "Banana", "ru": "Банан", "zh": "香蕉", "tr": "Muz"}),
+    LearningCard(primaryText: "Grapes", translations: {"ar": "عنب", "de": "Trauben", "es": "Uvas", "fr": "Raisins", "it": "Uva", "ru": "Виноград", "zh": "葡萄", "tr": "Üzüm"}),
+    LearningCard(primaryText: "Strawberry", translations: {"ar": "فراولة", "de": "Erdbeere", "es": "Fresa", "fr": "Fraise", "it": "Fragola", "ru": "Клубника", "zh": "草莓", "tr": "Çilek"}),
+    LearningCard(primaryText: "Pomegranate", translations: {"ar": "رمان", "de": "Granatapfel", "es": "Granada", "fr": "Grenade", "it": "Melograno", "ru": "Гранат", "zh": "石榴", "tr": "Nar"}),
+    LearningCard(primaryText: "Pear", translations: {"ar": "كمثرى", "de": "Birne", "es": "Pera", "fr": "Poire", "it": "Pera", "ru": "Груша", "zh": "梨", "tr": "Armut"}),
+    LearningCard(primaryText: "Watermelon", translations: {"ar": "بطيخ", "de": "Wassermelone", "es": "Sandía", "fr": "Pastèque", "it": "Anguria", "ru": "Арбуз", "zh": "西瓜", "tr": "Karpuz"}),
+    LearningCard(primaryText: "Mandarin", translations: {"ar": "يوسفي", "de": "Mandarine", "es": "Mandarina", "fr": "Mandarine", "it": "Mandarino", "ru": "Мандарин", "zh": "橘子", "tr": "Mandalina"}),
+    LearningCard(primaryText: "Plum", translations: {"ar": "برقوق", "de": "Pflaume", "es": "Ciruela", "fr": "Prune", "it": "Prugna", "ru": "Слива", "zh": "李子", "tr": "Erik"}),
+    LearningCard(primaryText: "Pineapple", translations: {"ar": "أناناس", "de": "Ananas", "es": "Piña", "fr": "Ananas", "it": "Ananas", "ru": "Ананас", "zh": "菠萝", "tr": "Ananas"}),
+    LearningCard(primaryText: "Cherry", translations: {"ar": "كرز", "de": "Kirsche", "es": "Cereza", "fr": "Cerise", "it": "Ciliegia", "ru": "Вишня", "zh": "樱桃", "tr": "Kiraz"}),
+    LearningCard(primaryText: "Blueberry", translations: {"ar": "توت أزرق", "de": "Blaubeere", "es": "Arándano", "fr": "Myrtille", "it": "Mirtillo", "ru": "Черника", "zh": "蓝莓", "tr": "Yaban mersini"}),
+    LearningCard(primaryText: "Papaya", translations: {"ar": "بابايا", "de": "Papaya", "es": "Papaya", "fr": "Papaye", "it": "Papaia", "ru": "Папайя", "zh": "木瓜", "tr": "Papaya"}),
+    LearningCard(primaryText: "Melon", translations: {"ar": "شمام", "de": "Melone", "es": "Melón", "fr": "Melon", "it": "Melone", "ru": "Дыня", "zh": "甜瓜", "tr": "Kavun"}),
+    LearningCard(primaryText: "Coconut", translations: {"ar": "جوز هند", "de": "Kokosnuss", "es": "Coco", "fr": "Noix de coco", "it": "Noce di cocco", "ru": "Кокос", "zh": "椰子", "tr": "Hindistan cevizi"}),
+    LearningCard(primaryText: "Avocado", translations: {"ar": "أفوكادو", "de": "Avocado", "es": "Aguacate", "fr": "Avocat", "it": "Avocado", "ru": "Авокадо", "zh": "牛油果", "tr": "Avokado"}),
+    LearningCard(primaryText: "Dragon Fruit", translations: {"ar": "فاكهة التنين", "de": "Drachenfrucht", "es": "Fruta del dragón", "fr": "Fruit du dragon", "it": "Frutto del drago", "ru": "Дракон фрукт", "zh": "火龙果", "tr": "Ejder meyvesi"}),
+    LearningCard(primaryText: "Lemon", translations: {"ar": "ليمون", "de": "Zitrone", "es": "Limón", "fr": "Citron", "it": "Limone", "ru": "Лимон", "zh": "柠檬", "tr": "Limon"}),
+    LearningCard(primaryText: "Raspberry", translations: {"ar": "توت", "de": "Himbeere", "es": "Frambuesa", "fr": "Framboise", "it": "Lampone", "ru": "Малина", "zh": "覆盆子", "tr": "Ahududu"}),
+    
+    // ========== فواكه إضافية ==========
+    LearningCard(primaryText: "Lime", translations: {"ar": "ليمون أخضر", "de": "Limette", "es": "Lima", "fr": "Citron vert", "it": "Lime", "ru": "Лайм", "zh": "青柠", "tr": "Limon"}),
+    LearningCard(primaryText: "Date", translations: {"ar": "تمر", "de": "Dattel", "es": "Dátil", "fr": "Datte", "it": "Dattero", "ru": "Финик", "zh": "椰枣", "tr": "Hurma"}),
+    LearningCard(primaryText: "Cantaloupe", translations: {"ar": "كنتالوب", "de": "Cantaloupe", "es": "Cantalupo", "fr": "Cantaloup", "it": "Cantalupo", "ru": "Канталупа", "zh": "哈密瓜", "tr": "Kantalup"}),
+    LearningCard(primaryText: "Honeydew", translations: {"ar": "شمام أصفر", "de": "Honigmelone", "es": "Melón verde", "fr": "Melon miel", "it": "Melone bianco", "ru": "Дыня медовая", "zh": "蜜瓜", "tr": "Bal kavunu"}),
+    LearningCard(primaryText: "Nectarine", translations: {"ar": "نكتارين", "de": "Nektarine", "es": "Nectarina", "fr": "Nectarine", "it": "Netta", "ru": "Нектарин", "zh": "油桃", "tr": "Nektarin"}),
+  ];
+
+  // ✅ 50+ جملة - عن الفواكه
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 143 (13 جملة) ==========
+    ItemCard(english: "It is better to eat an apple every day.", translations: {"ar": "كويس إنك تكل تفاحة كل يوم", "de": "Es ist besser, jeden Tag einen Apfel zu essen", "es": "Es mejor comer una manzana todos los días", "fr": "Il est préférable de manger une pomme tous les jours", "it": "È meglio mangiare una mela ogni giorno", "ru": "Лучше есть яблоко каждый день", "zh": "每天吃一个苹果更好", "tr": "Her gün bir elma yemek daha iyidir"}),
+    ItemCard(english: "I enjoy eating pineapples.", translations: {"ar": "أنا بحب أكل الأناناس", "de": "Ich genieße es, Ananas zu essen", "es": "Disfruto comiendo piñas", "fr": "J'aime manger des ananas", "it": "Mi piace mangiare l'ananas", "ru": "Мне нравится есть ананасы", "zh": "我喜欢吃菠萝", "tr": "Ananas yemekten hoşlanırım"}),
+    ItemCard(english: "Slowly add the grapes to the bowl.", translations: {"ar": "حط العنب براحة في البولة", "de": "Gib die Trauben langsam in die Schüssel", "es": "Agrega lentamente las uvas al tazón", "fr": "Ajoutez lentement les raisins dans le bol", "it": "Aggiungi lentamente l'uva nella ciotola", "ru": "Медленно добавьте виноград в миску", "zh": "慢慢地把葡萄放进碗里", "tr": "Üzümleri yavaşça kaseye ekleyin"}),
+    ItemCard(english: "Each cake has a cherry on the top.", translations: {"ar": "كل تورته عليها كريزة واحدة من فوق", "de": "Jeder Kuchen hat eine Kirsche oben drauf", "es": "Cada pastel tiene una cereza encima", "fr": "Chaque gâteau a une cerise sur le dessus", "it": "Ogni torta ha una ciliegia sopra", "ru": "На каждом торте сверху вишня", "zh": "每个蛋糕上面都有樱桃", "tr": "Her pastanın üzerinde bir kiraz var"}),
+    ItemCard(english: "Do not throw the banana's skin.", translations: {"ar":">مترميش قشرة الموزة", "de": "Wirf die Bananenschale nicht weg", "es": "No tires la cáscara de plátano", "fr": "Ne jette pas la peau de banane", "it": "Non buttare la buccia della banana", "ru": "Не выбрасывай банановую кожуру", "zh": "不要扔香蕉皮", "tr": "Muz kabuğunu atmayın"}),
+    ItemCard(english: "This watermelon is very big.", translations: {"ar": "البطيخة دي كبيرة جدا", "de": "Diese Wassermelone ist sehr groß", "es": "Esta sandía es muy grande", "fr": "Cette pastèque est très grosse", "it": "Questa anguria è molto grande", "ru": "Этот арбуз очень большой", "zh": "这个西瓜很大", "tr": "Bu karpuz çok büyük"}),
+    ItemCard(english: "If you like salad, try to sprinkle avocado slices with lemon juice.", translations: {"ar": "لو بتحب السلطة جرب تقطع شرايح أفوكادو و عليهم عصرة ليمون", "de": "Wenn du Salat magst, probiere Avocadoscheiben mit Zitronensaft zu beträufeln", "es": "Si te gusta la ensalada, prueba a rociar rodajas de aguacate con jugo de limón", "fr": "Si vous aimez la salade, essayez de saupoudrer des tranches d'avocat avec du jus de citron", "it": "Se ti piace l'insalata, prova a cospargere le fette di avocado con succo di limone", "ru": "Если вам нравится салат, попробуйте сбрызнуть ломтики авокадо лимонным соком", "zh": "如果你喜欢沙拉，试着在牛油果片上撒柠檬汁", "tr": "Salatayı seviyorsanız, avokado dilimlerine limon suyu serpmeyi deneyin"}),
+    ItemCard(english: "You can scrape out the flesh of the melon with a spoon.", translations: {"ar": "ممكن تقطع الشمام بملعقة", "de": "Du kannst das Fruchtfleisch der Melone mit einem Löffel herauskratzen", "es": "Puedes sacar la pulpa del melón con una cuchara", "fr": "Vous pouvez gratter la chair du melon avec une cuillère", "it": "Puoi estrarre la polpa del melone con un cucchiaio", "ru": "Вы можете выскрести мякоть дыни ложкой", "zh": "你可以用勺子挖出瓜肉", "tr": "Kavunun etini bir kaşıkla kazıyabilirsiniz"}),
+    ItemCard(english: "Go and buy a kilogram of orange right now.", translations: {"ar": "روح اشترى كيلو برتقان دلوقتي حالا", "de": "Geh und kaufe jetzt ein Kilo Orangen", "es": "Ve y compra un kilogramo de naranjas ahora mismo", "fr": "Va acheter un kilo d'oranges tout de suite", "it": "Vai a comprare un chilo di arance adesso", "ru": "Иди и купи килограмм апельсинов прямо сейчас", "zh": "现在去买一公斤橙子", "tr": "Git ve hemen bir kilo portakal al"}),
+    ItemCard(english: "My dad has planted a peach tree in the backyard.", translations: {"ar": "بابا زارع شجرة خوخ في الجنينة", "de": "Mein Vater hat einen Pfirsichbaum im Hinterhof gepflanzt", "es": "Mi papá ha plantado un melocotonero en el patio trasero", "fr": "Mon père a planté un pêcher dans l'arrière-cour", "it": "Mio padre ha piantato un pesco nel cortile sul retro", "ru": "Мой папа посадил персиковое дерево на заднем дворе", "zh": "我爸爸在后院种了一棵桃树", "tr": "Babam arka bahçeye bir şeftali ağacı dikti"}),
+    ItemCard(english: "Pears are very useful to your body.", translations: {"ar": "الكمثرى مفيدة جدا لجسمك", "de": "Birnen sind sehr nützlich für deinen Körper", "es": "Las peras son muy útiles para tu cuerpo", "fr": "Les poires sont très utiles pour votre corps", "it": "Le pere sono molto utili per il tuo corpo", "ru": "Груши очень полезны для вашего тела", "zh": "梨对你的身体非常有益", "tr": "Armutlar vücudunuz için çok faydalıdır"}),
+    ItemCard(english: "I have just made a strawberry cake for my children.", translations: {"ar": "أنا لسه عاملة كيكة فراولة لولادي", "de": "Ich habe gerade einen Erdbeerkuchen für meine Kinder gemacht", "es": "Acabo de hacer un pastel de fresa para mis hijos", "fr": "Je viens de faire un gâteau à la fraise pour mes enfants", "it": "Ho appena preparato una torta alla fragola per i miei bambini", "ru": "Я только что приготовил клубничный торт для своих детей", "zh": "我刚为孩子们做了一个草莓蛋糕", "tr": "Çocuklarım için yeni bir çilekli kek yaptım"}),
+    ItemCard(english: "Do you know how to eat plums in a different way?", translations: {"ar": "تعرف إزاي تاكل البرقوق بطريقة مختلفة؟", "de": "Weißt du, wie man Pflaumen auf andere Weise isst?", "es": "¿Sabes cómo comer ciruelas de una manera diferente?", "fr": "Savez-vous comment manger des prunes d'une manière différente?", "it": "Sai come mangiare le prugne in modo diverso?", "ru": "Знаешь, как есть сливы по-другому?", "zh": "你知道怎么用不同的方式吃李子吗？", "tr": "Erikleri farklı bir şekilde nasıl yiyeceğini biliyor musun?"}),
+    
+    // ========== 37 جملة إضافية عن الفواكه ==========
+    ItemCard(english: "An apple a day keeps the doctor away.", translations: {"ar": "تفاحة في اليوم تغنيك عن الطبيب", "de": "Ein Apfel am Tag hält den Arzt fern", "es": "Una manzana al día mantiene al médico alejado", "fr": "Une pomme par jour éloigne le médecin", "it": "Una mela al giorno toglie il medico di torno", "ru": "Одно яблоко в день избавляет от врача", "zh": "一天一苹果，医生远离我", "tr": "Günde bir elma doktoru uzak tutar"}),
+    ItemCard(english: "Oranges are rich in vitamin C.", translations: {"ar": "البرتقال غني بفيتامين سي", "de": "Orangen sind reich an Vitamin C", "es": "Las naranjas son ricas en vitamina C", "fr": "Les oranges sont riches en vitamine C", "it": "Le arance sono ricche di vitamina C", "ru": "Апельсины богаты витамином С", "zh": "橙子富含维生素C", "tr": "Portakal C vitamini açısından zengindir"}),
+    ItemCard(english: "I love eating fresh mangoes in summer.", translations: {"ar": "أنا بحب أكل المانجو الطازة في الصيف", "de": "Ich liebe es, im Sommer frische Mangos zu essen", "es": "Me encanta comer mangos frescos en verano", "fr": "J'adore manger des mangues fraîches en été", "it": "Adoro mangiare mango fresco in estate", "ru": "Люблю есть свежее манго летом", "zh": "我喜欢夏天吃新鲜芒果", "tr": "Yazın taze mango yemeyi severim"}),
+    ItemCard(english: "Bananas are a good source of potassium.", translations: {"ar": "الموز مصدر جيد للبوتاسيوم", "de": "Bananen sind eine gute Kaliumquelle", "es": "Los plátanos son una buena fuente de potasio", "fr": "Les bananes sont une bonne source de potassium", "it": "Le banane sono una buona fonte di potassio", "ru": "Бананы - хороший источник калия", "zh": "香蕉是钾的良好来源", "tr": "Muz iyi bir potasyum kaynağıdır"}),
+    ItemCard(english: "The lemon tastes very sour.", translations: {"ar": "الليمون طعمه حامض جدا", "de": "Die Zitrone schmeckt sehr sauer", "es": "El limón sabe muy ácido", "fr": "Le citron a un goût très acide", "it": "Il limone ha un sapore molto acido", "ru": "Лимон очень кислый на вкус", "zh": "柠檬尝起来很酸", "tr": "Limonun tadı çok ekşidir"}),
+    ItemCard(english: "Pomegranate seeds look like red jewels.", translations: {"ar": "حبوب الرمان شبه الجواهر الحمرا", "de": "Granatapfelkerne sehen aus wie rote Juwelen", "es": "Las semillas de granada parecen joyas rojas", "fr": "Les graines de grenade ressemblent à des bijoux rouges", "it": "I semi di melograno sembrano gioielli rossi", "ru": "Семена граната выглядят как красные драгоценности", "zh": "石榴籽像红色宝石一样", "tr": "Nar taneleri kırmızı mücevherlere benziyor"}),
+    ItemCard(english: "Cherries are small and sweet.", translations: {"ar": "الكرز صغير وحلو", "de": "Kirschen sind klein und süß", "es": "Las cerezas son pequeñas y dulces", "fr": "Les cerises sont petites et sucrées", "it": "Le ciliegie sono piccole e dolci", "ru": "Вишня маленькая и сладкая", "zh": "樱桃又小又甜", "tr": "Kirazlar küçük ve tatlıdır"}),
+    ItemCard(english: "The kiwi has green flesh and tiny black seeds.", translations: {"ar": "الكيوي لبه أخضر و فيه حبوب سودة صغيرة", "de": "Der Kiwi hat grünes Fruchtfleisch und winzige schwarze Kerne", "es": "El kiwi tiene pulpa verde y pequeñas semillas negras", "fr": "Le kiwi a une chair verte et de petites graines noires", "it": "Il kiwi ha polpa verde e piccoli semi neri", "ru": "У киви зеленая мякоть и крошечные черные семена", "zh": "猕猴桃有绿色的果肉和黑色的小种子", "tr": "Kivinin yeşil eti ve küçük siyah çekirdekleri vardır"}),
+    ItemCard(english: "The strawberry is my favorite fruit.", translations: {"ar": "الفراولة هي فاكهتي المفضلة", "de": "Die Erdbeere ist meine Lieblingsfrucht", "es": "La fresa es mi fruta favorita", "fr": "La fraise est mon fruit préféré", "it": "La fragola è il mio frutto preferito", "ru": "Клубника - мой любимый фрукт", "zh": "草莓是我最喜欢的水果", "tr": "Çilek benim en sevdiğim meyvedir"}),
+    ItemCard(english: "Coconut water is very refreshing.", translations: {"ar": "مية جوز الهند منعشة جدا", "de": "Kokoswasser ist sehr erfrischend", "es": "El agua de coco es muy refrescante", "fr": "L'eau de coco est très rafraîchissante", "it": "L'acqua di cocco è molto rinfrescante", "ru": "Кокосовая вода очень освежает", "zh": "椰子水非常清爽", "tr": "Hindistan cevizi suyu çok ferahlatıcıdır"}),
+    ItemCard(english: "Dragon fruit has a sweet and mild taste.", translations: {"ar": "فاكهة التنين طعمها حلو و خفيف", "de": "Die Drachenfrucht hat einen süßen und milden Geschmack", "es": "La fruta del dragón tiene un sabor dulce y suave", "fr": "Le fruit du dragon a un goût sucré et doux", "it": "Il frutto del drago ha un sapore dolce e delicato", "ru": "Дракон фрукт имеет сладкий и мягкий вкус", "zh": "火龙果味道甜美温和", "tr": "Ejder meyvesinin tatlı ve hafif bir tadı vardır"}),
+    ItemCard(english: "Apricots are delicious when they are ripe.", translations: {"ar": "المشمش لذيذ لما يكون ناضج", "de": "Aprikosen sind köstlich, wenn sie reif sind", "es": "Los albaricoques son deliciosos cuando están maduros", "fr": "Les abricots sont délicieux quand ils sont mûrs", "it": "Le albicocche sono deliziose quando sono mature", "ru": "Абрикосы вкусны, когда они спелые", "zh": "杏子成熟时很美味", "tr": "Kayısılar olgunlaştığında lezzetlidir"}),
+    ItemCard(english: "Figs are very sweet and full of fiber.", translations: {"ar": "التين حلو جدا ومليان ألياف", "de": "Feigen sind sehr süß und voller Ballaststoffe", "es": "Los higos son muy dulces y ricos en fibra", "fr": "Les figues sont très sucrées et riches en fibres", "it": "I fichi sono molto dolci e ricchi di fibre", "ru": "Инжир очень сладкий и богат клетчаткой", "zh": "无花果很甜，富含纤维", "tr": "İncirler çok tatlıdır ve lif bakımından zengindir"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الفواكه - Fruits",
+    );
+  }
+}
+
+
+
+////////
+///////
+
+
+
+
+class SeafoodScreen extends StatelessWidget {
+  const SeafoodScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الأسماك والمأكولات البحرية (Seafood)
+  final List<LearningCard> words = const [
+    // ========== أنواع الأسماك من الصورة 163 ==========
+    LearningCard(primaryText: "Tilapia", translations: {"ar": "بلطي", "de": "Tilapia", "es": "Tilapia", "fr": "Tilapia", "it": "Tilapia", "ru": "Тилапия", "zh": "罗非鱼", "tr": "Tilapia"}),
+    LearningCard(primaryText: "Anchovy", translations: {"ar": "أنشوجة", "de": "Sardelle", "es": "Anchoa", "fr": "Anchois", "it": "Acciuga", "ru": "Анчоус", "zh": "凤尾鱼", "tr": "Hamsi"}),
+    LearningCard(primaryText: "Mullet", translations: {"ar": "بوري", "de": "Meeräsche", "es": "Lisa", "fr": "Mulet", "it": "Cefalo", "ru": "Кефаль", "zh": "鲻鱼", "tr": "Kefal"}),
+    LearningCard(primaryText: "Marmora", translations: {"ar": "مرما", "de": "Marmora", "es": "Marmora", "fr": "Marmora", "it": "Marmora", "ru": "Мармора", "zh": "马莫拉鱼", "tr": "Marmora"}),
+    LearningCard(primaryText: "Lizardfish", translations: {"ar": "سمكة المكرونة", "de": "Eidechsenfisch", "es": "Pez lagarto", "fr": "Poisson lézard", "it": "Pesce lucertola", "ru": "Ящероголов", "zh": "蜥蜴鱼", "tr": "Kertenkele balığı"}),
+    LearningCard(primaryText: "Sea Bass", translations: {"ar": "قاروص", "de": "Seebarsch", "es": "Lubina", "fr": "Bar", "it": "Spigola", "ru": "Морской окунь", "zh": "海鲈鱼", "tr": "Levrek"}),
+    LearningCard(primaryText: "Tuna", translations: {"ar": "تونة", "de": "Thunfisch", "es": "Atún", "fr": "Thon", "it": "Tonno", "ru": "Тунец", "zh": "金枪鱼", "tr": "Ton balığı"}),
+    LearningCard(primaryText: "Bream", translations: {"ar": "مرجان", "de": "Brasse", "es": "Brema", "fr": "Brème", "it": "Brama", "ru": "Лещ", "zh": "鲷鱼", "tr": "Çipura"}),
+    LearningCard(primaryText: "Sardine", translations: {"ar": "سردين", "de": "Sardine", "es": "Sardina", "fr": "Sardine", "it": "Sardina", "ru": "Сардина", "zh": "沙丁鱼", "tr": "Sardalya"}),
+    LearningCard(primaryText: "Bonito", translations: {"ar": "بالمبطة", "de": "Bonito", "es": "Bonito", "fr": "Bonite", "it": "Bonito", "ru": "Бонито", "zh": "鲣鱼", "tr": "Palamut"}),
+    LearningCard(primaryText: "Nile Perch", translations: {"ar": "قشر بياض", "de": "Nilbarsch", "es": "Perca del Nilo", "fr": "Perche du Nil", "it": "Pesce persico del Nilo", "ru": "Нильский окунь", "zh": "尼罗河鲈鱼", "tr": "Nil levreği"}),
+    LearningCard(primaryText: "Dusky Spine Foot", translations: {"ar": "سمك البطاطا", "de": "Dunkler Stachelfuß", "es": "Pie espinoso oscuro", "fr": "Pied épineux sombre", "it": "Piede spinoso scuro", "ru": "Темная колючая нога", "zh": "暗色刺足鱼", "tr": "Patates balığı"}),
+    LearningCard(primaryText: "Goatfish", translations: {"ar": "بريون", "de": "Ziegenfisch", "es": "Salmonete", "fr": "Rouget", "it": "Triglia", "ru": "Барабуля", "zh": "羊鱼", "tr": "Tekir"}),
+    LearningCard(primaryText: "Sea Bream", translations: {"ar": "دنيس", "de": "Goldbrasse", "es": "Dorada", "fr": "Dorade", "it": "Orata", "ru": "Морской лещ", "zh": "金头鲷", "tr": "Çipura"}),
+    LearningCard(primaryText: "Salmon", translations: {"ar": "سالمون", "de": "Lachs", "es": "Salmón", "fr": "Saumon", "it": "Salmone", "ru": "Лосось", "zh": "三文鱼", "tr": "Somon"}),
+    
+    // ========== مأكولات وكائنات بحرية من الصورة 163 ==========
+    LearningCard(primaryText: "Octopus", translations: {"ar": "أخطبوط", "de": "Oktopus", "es": "Pulpo", "fr": "Pieuvre", "it": "Polpo", "ru": "Осьминог", "zh": "章鱼", "tr": "Ahtapot"}),
+    LearningCard(primaryText: "Shrimp", translations: {"ar": "جمبري", "de": "Garnele", "es": "Camarón", "fr": "Crevette", "it": "Gambero", "ru": "Креветка", "zh": "虾", "tr": "Karides"}),
+    LearningCard(primaryText: "Squid", translations: {"ar": "حبار", "de": "Tintenfisch", "es": "Calamar", "fr": "Calamar", "it": "Calamaro", "ru": "Кальмар", "zh": "鱿鱼", "tr": "Kalamar"}),
+    LearningCard(primaryText: "Catfish", translations: {"ar": "قرموط", "de": "Wels", "es": "Pez gato", "fr": "Poisson-chat", "it": "Pesce gatto", "ru": "Сом", "zh": "鲶鱼", "tr": "Yayın balığı"}),
+    LearningCard(primaryText: "Clams", translations: {"ar": "جانو فلي", "de": "Muscheln", "es": "Almejas", "fr": "Palourdes", "it": "Vongole", "ru": "Моллюски", "zh": "蛤蜊", "tr": "Midye"}),
+    LearningCard(primaryText: "Sushi", translations: {"ar": "سوشي", "de": "Sushi", "es": "Sushi", "fr": "Sushi", "it": "Sushi", "ru": "Суши", "zh": "寿司", "tr": "Suşi"}),
+    LearningCard(primaryText: "Smoked Salmon", translations: {"ar": "سالمون مدخن", "de": "Räucherlachs", "es": "Salmón ahumado", "fr": "Saumon fumé", "it": "Salmone affumicato", "ru": "Копченый лосось", "zh": "烟熏三文鱼", "tr": "Füme somon"}),
+    LearningCard(primaryText: "Mussels", translations: {"ar": "بلح البحر", "de": "Muscheln", "es": "Mejillones", "fr": "Moules", "it": "Cozze", "ru": "Мидии", "zh": "贻贝", "tr": "Midye"}),
+    LearningCard(primaryText: "Crabs", translations: {"ar": "كابوريا", "de": "Krabben", "es": "Cangrejos", "fr": "Crabes", "it": "Granchi", "ru": "Крабы", "zh": "螃蟹", "tr": "Yengeç"}),
+    LearningCard(primaryText: "Lobster", translations: {"ar": "استاكوزا", "de": "Hummer", "es": "Langosta", "fr": "Homard", "it": "Aragosta", "ru": "Омар", "zh": "龙虾", "tr": "Istakoz"}),
+    
+    // ========== أنواع أسماك إضافية ==========
+    LearningCard(primaryText: "Cod", translations: {"ar": "قد", "de": "Kabeljau", "es": "Bacalao", "fr": "Cabillaud", "it": "Merluzzo", "ru": "Треска", "zh": "鳕鱼", "tr": "Morina"}),
+    LearningCard(primaryText: "Mackerel", translations: {"ar": "ماكريل", "de": "Makrele", "es": "Caballa", "fr": "Maquereau", "it": "Sgombro", "ru": "Скумбрия", "zh": "鲭鱼", "tr": "Uskumru"}),
+    LearningCard(primaryText: "Herring", translations: {"ar": "رنجة", "de": "Hering", "es": "Arenque", "fr": "Hareng", "it": "Aringa", "ru": "Сельдь", "zh": "鲱鱼", "tr": "Ringa balığı"}),
+    LearningCard(primaryText: "Trout", translations: {"ar": "سلمون مرقط", "de": "Forelle", "es": "Trucha", "fr": "Truite", "it": "Trota", "ru": "Форель", "zh": "鳟鱼", "tr": "Alabalık"}),
+    LearningCard(primaryText: "Eel", translations: {"ar": "ثعبان البحر", "de": "Aal", "es": "Anguila", "fr": "Anguille", "it": "Anguilla", "ru": "Угорь", "zh": "鳗鱼", "tr": "Yılan balığı"}),
+    LearningCard(primaryText: "Oyster", translations: {"ar": "محار", "de": "Austern", "es": "Ostra", "fr": "Huître", "it": "Ostrica", "ru": "Устрица", "zh": "牡蛎", "tr": "İstiridye"}),
+    LearningCard(primaryText: "Caviar", translations: {"ar": "كافيار", "de": "Kaviar", "es": "Caviar", "fr": "Caviar", "it": "Caviale", "ru": "Икра", "zh": "鱼子酱", "tr": "Havyar"}),
+  ];
+
+  // ✅ 50+ جملة - عن الأسماك والمأكولات البحرية
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 164 (13 جملة) ==========
+    ItemCard(english: "I don't like tilapia.", translations: {"ar": "أنا مش بحب السمك البلطي", "de": "Ich mag keinen Tilapia", "es": "No me gusta la tilapia", "fr": "Je n'aime pas le tilapia", "it": "Non mi piace la tilapia", "ru": "Мне не нравится тилапия", "zh": "我不喜欢罗非鱼", "tr": "Tilapia sevmiyorum"}),
+    ItemCard(english: "Anchovy smells bad.", translations: {"ar": "الأنشوجة ريحتها وحشة", "de": "Sardellen riechen schlecht", "es": "La anchoa huele mal", "fr": "L'anchois sent mauvais", "it": "L'acciuga puzza", "ru": "Анчоусы плохо пахнут", "zh": "凤尾鱼闻起来很难闻", "tr": "Hamsi kötü kokar"}),
+    ItemCard(english: "My mom cooks mullet.", translations: {"ar": "ماما بتطبع سمك بوري", "de": "Meine Mutter kocht Meeräsche", "es": "Mi mamá cocina lisa", "fr": "Ma mère cuisine du mulet", "it": "Mia madre cucina il cefalo", "ru": "Моя мама готовит кефаль", "zh": "我妈妈做鲻鱼", "tr": "Annem kefal pişirir"}),
+    ItemCard(english: "I like eating sushi with my family.", translations: {"ar": "بحب أكل السوشي مع عيلتي", "de": "Ich esse gerne Sushi mit meiner Familie", "es": "Me gusta comer sushi con mi familia", "fr": "J'aime manger des sushis avec ma famille", "it": "Mi piace mangiare il sushi con la mia famiglia", "ru": "Мне нравится есть суши с семьей", "zh": "我喜欢和家人一起吃寿司", "tr": "Ailemle suşi yemeyi severim"}),
+    ItemCard(english: "Sardine is a very salted type of fish.", translations: {"ar": "السردين نوع مالح جدا من السمك", "de": "Sardine ist eine sehr gesalzene Fischart", "es": "La sardina es un tipo de pescado muy salado", "fr": "La sardine est un type de poisson très salé", "it": "La sardina è un tipo di pesce molto salato", "ru": "Сардина - очень соленая рыба", "zh": "沙丁鱼是一种很咸的鱼", "tr": "Sardalya çok tuzlu bir balık türüdür"}),
+    ItemCard(english: "Put much tuna on my pizza.", translations: {"ar": "حط تونة كثير على البيتزا بتاعتي", "de": "Gib viel Thunfisch auf meine Pizza", "es": "Pon mucho atún en mi pizza", "fr": "Mets beaucoup de thon sur ma pizza", "it": "Metti molto tonno sulla mia pizza", "ru": "Положи много тунца на мою пиццу", "zh": "在我的披萨上放很多金枪鱼", "tr": "Pizzama çok ton balığı koy"}),
+    ItemCard(english: "We eat herring on Sham El-Nessim.", translations: {"ar": "إحنا بناكل رنجة في شم النسيم", "de": "Wir essen Hering an Sham El-Nessim", "es": "Comemos arenque en Sham El-Nessim", "fr": "Nous mangeons du hareng à Sham El-Nessim", "it": "Mangiamo aringhe a Sham El-Nessim", "ru": "Мы едим сельдь в Шам-эль-Нессим", "zh": "我们在闻风节吃鲱鱼", "tr": "Sham El-Nessim'de ringa balığı yeriz"}),
+    ItemCard(english: "I ate a kilo of mussels yesterday.", translations: {"ar": "أنا كلت كيلو بلح البحر إمبارح", "de": "Ich habe gestern ein Kilo Muscheln gegessen", "es": "Comí un kilo de mejillones ayer", "fr": "J'ai mangé un kilo de moules hier", "it": "Ho mangiato un chilo di cozze ieri", "ru": "Я съел килограмм мидий вчера", "zh": "我昨天吃了一公斤贻贝", "tr": "Dün bir kilo midye yedim"}),
+    ItemCard(english: "Sea Bream is my favorite type of fish.", translations: {"ar": "الدنيس هو نوعي المفضل في السمك", "de": "Goldbrasse ist meine Lieblingsfischart", "es": "La dorada es mi tipo de pescado favorito", "fr": "La dorade est mon type de poisson préféré", "it": "L'orata è il mio tipo di pesce preferito", "ru": "Морской лещ - мой любимый вид рыбы", "zh": "金头鲷是我最喜欢的鱼", "tr": "Çipura en sevdiğim balık türüdür"}),
+    ItemCard(english: "Do you like lobster?", translations: {"ar": "بتحب الاستاكوزا؟", "de": "Magst du Hummer?", "es": "¿Te gusta la langosta?", "fr": "Aimez-vous le homard?", "it": "Ti piace l'aragosta?", "ru": "Тебе нравится омар?", "zh": "你喜欢龙虾吗？", "tr": "Istakoz sever misin?"}),
+    ItemCard(english: "Salmon is very expensive.", translations: {"ar": "السالمون غالي جدا", "de": "Lachs ist sehr teuer", "es": "El salmón es muy caro", "fr": "Le saumon est très cher", "it": "Il salmone è molto costoso", "ru": "Лосось очень дорогой", "zh": "三文鱼很贵", "tr": "Somon çok pahalıdır"}),
+    ItemCard(english: "I like eating seafood like shrimps and crabs.", translations: {"ar": "بحب أكل المأكولات البحرية زي الجمبري والكابوريا", "de": "Ich esse gerne Meeresfrüchte wie Garnelen und Krabben", "es": "Me gusta comer mariscos como camarones y cangrejos", "fr": "J'aime manger des fruits de mer comme les crevettes et les crabes", "it": "Mi piace mangiare frutti di mare come gamberi e granchi", "ru": "Мне нравится есть морепродукты, такие как креветки и крабы", "zh": "我喜欢吃海鲜，比如虾和螃蟹", "tr": "Karides ve yengeç gibi deniz ürünleri yemeyi severim"}),
+    ItemCard(english: "You have to wash your hands carefully after eating fish.", translations: {"ar": "لازم تغسل ايديك كويس بعد ما تاكل سمك", "de": "Du musst dir nach dem Fisch essen gründlich die Hände waschen", "es": "Tienes que lavarte las manos cuidadosamente después de comer pescado", "fr": "Vous devez vous laver soigneusement les mains après avoir mangé du poisson", "it": "Devi lavarti accuratamente le mani dopo aver mangiato il pesce", "ru": "Вы должны тщательно мыть руки после еды рыбы", "zh": "吃完鱼后一定要仔细洗手", "tr": "Balık yedikten sonra ellerinizi dikkatlice yıkamalısınız"}),
+    
+    // ========== 37 جملة إضافية عن الأسماك والمأكولات البحرية ==========
+    ItemCard(english: "Salmon is rich in omega-3 fatty acids.", translations: {"ar": "السالمون غني بأحماض أوميغا 3 الدهنية", "de": "Lachs ist reich an Omega-3-Fettsäuren", "es": "El salmón es rico en ácidos grasos omega-3", "fr": "Le saumon est riche en acides gras oméga-3", "it": "Il salmone è ricco di acidi grassi omega-3", "ru": "Лосось богат жирными кислотами омега-3", "zh": "三文鱼富含欧米伽-3脂肪酸", "tr": "Somon, omega-3 yağ asitleri açısından zengindir"}),
+    ItemCard(english: "The octopus has eight tentacles.", translations: {"ar": "الأخطبوط عنده تمانية أذرع", "de": "Der Oktopus hat acht Arme", "es": "El pulpo tiene ocho brazos", "fr": "La pieuvre a huit bras", "it": "Il polpo ha otto braccia", "ru": "У осьминога восемь щупалец", "zh": "章鱼有八条触手", "tr": "Ahtapotun sekiz kolu vardır"}),
+    ItemCard(english: "Shrimp is delicious when grilled.", translations: {"ar": "الجمبري لذيذ لما يتشوى", "de": "Garnelen sind köstlich, wenn sie gegrillt werden", "es": "El camarón es delicioso cuando se asa a la parrilla", "fr": "Les crevettes sont délicieuses lorsqu'elles sont grillées", "it": "I gamberi sono deliziosi quando vengono grigliati", "ru": "Креветки вкусны на гриле", "zh": "虾烤起来很好吃", "tr": "Karides ızgarada lezzetlidir"}),
+    ItemCard(english: "Crab meat is very sweet and tender.", translations: {"ar": "لحم الكابوريا حلو جدا وطري", "de": "Krabbenfleisch ist sehr süß und zart", "es": "La carne de cangrejo es muy dulce y tierna", "fr": "La chair de crabe est très douce et tendre", "it": "La carne di granchio è molto dolce e tenera", "ru": "Мясо краба очень сладкое и нежное", "zh": "蟹肉非常甜嫩", "tr": "Yengeç eti çok tatlı ve yumuşaktır"}),
+    ItemCard(english: "Lobster is considered a luxury food.", translations: {"ar": "الاستاكوزا يعتبر أكل فاخر", "de": "Hummer gilt als Luxusessen", "es": "La langosta se considera un alimento de lujo", "fr": "Le homard est considéré comme un aliment de luxe", "it": "L'aragosta è considerata un cibo di lusso", "ru": "Омар считается деликатесом", "zh": "龙虾被认为是奢侈品", "tr": "Istakoz lüks bir yemek olarak kabul edilir"}),
+    ItemCard(english: "Squid is often fried or grilled.", translations: {"ar": "الحبار بيتقلى أو بيتشوى كتير", "de": "Tintenfisch wird oft gebraten oder gegrillt", "es": "El calamar se fríe o se asa a la parrilla con frecuencia", "fr": "Le calamar est souvent frit ou grillé", "it": "Il calamaro viene spesso fritto o grigliato", "ru": "Кальмара часто жарят или готовят на гриле", "zh": "鱿鱼常被油炸或烧烤", "tr": "Kalamar genellikle kızartılır veya ızgarada pişirilir"}),
+    ItemCard(english: "Sushi is a traditional Japanese dish.", translations: {"ar": "السوشي هو طبق ياباني تقليدي", "de": "Sushi ist ein traditionelles japanisches Gericht", "es": "El sushi es un plato tradicional japonés", "fr": "Le sushi est un plat japonais traditionnel", "it": "Il sushi è un piatto tradizionale giapponese", "ru": "Суши - традиционное японское блюдо", "zh": "寿司是传统的日本料理", "tr": "Suşi geleneksel bir Japon yemeğidir"}),
+    ItemCard(english: "Mussels are often cooked in white wine sauce.", translations: {"ar": "بلح البحر بيتطبخ كتير في صوص النبيذ الأبيض", "de": "Muscheln werden oft in Weißweinsauce gekocht", "es": "Los mejillones a menudo se cocinan en salsa de vino blanco", "fr": "Les moules sont souvent cuites dans une sauce au vin blanc", "it": "Le cozze vengono spesso cotte in salsa di vino bianco", "ru": "Мидии часто готовят в соусе из белого вина", "zh": "贻贝常用白葡萄酒酱烹制", "tr": "Midye genellikle beyaz şarap sosunda pişirilir"}),
+    ItemCard(english: "Tuna is great for making sandwiches.", translations: {"ar": "التونة ممتازة لعمل ساندوتشات", "de": "Thunfisch eignet sich hervorragend für Sandwiches", "es": "El atún es excelente para hacer sándwiches", "fr": "Le thon est idéal pour faire des sandwichs", "it": "Il tonno è ottimo per fare panini", "ru": "Тунец отлично подходит для бутербродов", "zh": "金枪鱼很适合做三明治", "tr": "Ton balığı sandviç yapmak için harikadır"}),
+    ItemCard(english: "Smoked salmon is a popular breakfast item.", translations: {"ar": "السالمون المدخن هو طبق فطار مشهور", "de": "Räucherlachs ist ein beliebtes Frühstücksgericht", "es": "El salmón ahumado es un artículo popular para el desayuno", "fr": "Le saumon fumé est un aliment populaire pour le petit-déjeuner", "it": "Il salmone affumicato è un alimento popolare per la colazione", "ru": "Копченый лосось - популярное блюдо для завтрака", "zh": "烟熏三文鱼是受欢迎的早餐食品", "tr": "Füme somon popüler bir kahvaltı ürünüdür"}),
+    ItemCard(english: "Cod is a white fish with a mild flavor.", translations: {"ar": "سمك القد هو سمك أبيض بطعم خفيف", "de": "Kabeljau ist ein weißer Fisch mit mildem Geschmack", "es": "El bacalao es un pescado blanco con un sabor suave", "fr": "Le cabillaud est un poisson blanc à la saveur douce", "it": "Il merluzzo è un pesce bianco dal sapore delicato", "ru": "Треска - белая рыба с мягким вкусом", "zh": "鳕鱼是一种味道温和的白鱼", "tr": "Morina, hafif tada sahip beyaz bir balıktır"}),
+    ItemCard(english: "Mackerel is rich in healthy oils.", translations: {"ar": "الماكريل غني بالزيوت الصحية", "de": "Makrele ist reich an gesunden Ölen", "es": "La caballa es rica en aceites saludables", "fr": "Le maquereau est riche en huiles saines", "it": "Lo sgombro è ricco di oli salutari", "ru": "Скумбрия богата полезными маслами", "zh": "鲭鱼富含健康油脂", "tr": "Uskumru sağlıklı yağlar açısından zengindir"}),
+    ItemCard(english: "Catfish is popular in Southern cooking.", translations: {"ar": "القرموط مشهور في الطبخ الجنوبي", "de": "Wels ist in der südlichen Küche beliebt", "es": "El pez gato es popular en la cocina sureña", "fr": "Le poisson-chat est populaire dans la cuisine du Sud", "it": "Il pesce gatto è popolare nella cucina del sud", "ru": "Сом популярен в южной кухне", "zh": "鲶鱼在南方烹饪中很受欢迎", "tr": "Yayın balığı güney mutfağında popülerdir"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "المأكولات البحرية - Seafood",
+    );
+  }
+}
+
+
+
+
+
+
+///
+
+
+class FoodAndMealsScreen extends StatelessWidget {
+  const FoodAndMealsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الطعام والوجبات (Food & Meals)
+  final List<LearningCard> words = const [
+    // ========== الوجبات والطعام من الصورة 155 ==========
+    LearningCard(primaryText: "Food", translations: {"ar": "طعام", "de": "Essen", "es": "Comida", "fr": "Nourriture", "it": "Cibo", "ru": "Еда", "zh": "食物", "tr": "Yiyecek"}),
+    LearningCard(primaryText: "Meal", translations: {"ar": "وجبة", "de": "Mahlzeit", "es": "Comida", "fr": "Repas", "it": "Pasto", "ru": "Прием пищи", "zh": "餐", "tr": "Öğün"}),
+    LearningCard(primaryText: "Drink", translations: {"ar": "مشروب", "de": "Getränk", "es": "Bebida", "fr": "Boisson", "it": "Bevanda", "ru": "Напиток", "zh": "饮料", "tr": "İçecek"}),
+    LearningCard(primaryText: "Snack", translations: {"ar": "وجبة خفيفة", "de": "Snack", "es": "Bocadillo", "fr": "En-cas", "it": "Spuntino", "ru": "Закуска", "zh": "点心", "tr": "Atıştırmalık"}),
+    LearningCard(primaryText: "Main Course", translations: {"ar": "الوجبة الأساسية", "de": "Hauptgericht", "es": "Plato principal", "fr": "Plat principal", "it": "Piatto principale", "ru": "Основное блюдо", "zh": "主菜", "tr": "Ana yemek"}),
+    LearningCard(primaryText: "Appetizer", translations: {"ar": "مقبلات", "de": "Vorspeise", "es": "Aperitivo", "fr": "Apéritif", "it": "Antipasto", "ru": "Закуска", "zh": "开胃菜", "tr": "Meze"}),
+    LearningCard(primaryText: "Dessert", translations: {"ar": "تحلية", "de": "Nachspeise", "es": "Postre", "fr": "Dessert", "it": "Dolce", "ru": "Десерт", "zh": "甜点", "tr": "Tatlı"}),
+    LearningCard(primaryText: "Breakfast", translations: {"ar": "الفطور", "de": "Frühstück", "es": "Desayuno", "fr": "Petit-déjeuner", "it": "Colazione", "ru": "Завтрак", "zh": "早餐", "tr": "Kahvaltı"}),
+    LearningCard(primaryText: "Lunch", translations: {"ar": "الغداء", "de": "Mittagessen", "es": "Almuerzo", "fr": "Déjeuner", "it": "Pranzo", "ru": "Обед", "zh": "午餐", "tr": "Öğle yemeği"}),
+    LearningCard(primaryText: "Dinner", translations: {"ar": "العشاء", "de": "Abendessen", "es": "Cena", "fr": "Dîner", "it": "Cena", "ru": "Ужин", "zh": "晚餐", "tr": "Akşam yemeği"}),
+    LearningCard(primaryText: "Supper", translations: {"ar": "العشاء المتأخر", "de": "Abendbrot", "es": "Cena tardía", "fr": "Souper", "it": "Cena tarda", "ru": "Поздний ужин", "zh": "夜宵", "tr": "Geç akşam yemeği"}),
+    LearningCard(primaryText: "Junk Food", translations: {"ar": "أكل غير صحي", "de": "Junkfood", "es": "Comida chatarra", "fr": "Malbouffe", "it": "Cibo spazzatura", "ru": "Вредная еда", "zh": "垃圾食品", "tr": "Abur cubur"}),
+    LearningCard(primaryText: "Fast Food", translations: {"ar": "أكل سريع", "de": "Fast Food", "es": "Comida rápida", "fr": "Fast-food", "it": "Fast food", "ru": "Фастфуд", "zh": "快餐", "tr": "Fast food"}),
+    LearningCard(primaryText: "Vegetarian", translations: {"ar": "نباتي", "de": "Vegetarisch", "es": "Vegetariano", "fr": "Végétarien", "it": "Vegetariano", "ru": "Вегетарианец", "zh": "素食者", "tr": "Vejetaryen"}),
+    LearningCard(primaryText: "Healthy Food", translations: {"ar": "أكل صحي", "de": "Gesundes Essen", "es": "Comida saludable", "fr": "Alimentation saine", "it": "Cibo sano", "ru": "Здоровая пища", "zh": "健康食品", "tr": "Sağlıklı yiyecek"}),
+    
+    // ========== نكهات الطعام من الصورة 155 ==========
+    LearningCard(primaryText: "Sour", translations: {"ar": "حامض", "de": "Sauer", "es": "Ácido", "fr": "Aigre", "it": "Acido", "ru": "Кислый", "zh": "酸的", "tr": "Ekşi"}),
+    LearningCard(primaryText: "Salty", translations: {"ar": "مالح", "de": "Salzig", "es": "Salado", "fr": "Salé", "it": "Salato", "ru": "Соленый", "zh": "咸的", "tr": "Tuzlu"}),
+    LearningCard(primaryText: "Fresh", translations: {"ar": "طازج", "de": "Frisch", "es": "Fresco", "fr": "Frais", "it": "Fresco", "ru": "Свежий", "zh": "新鲜的", "tr": "Taze"}),
+    LearningCard(primaryText: "Bitter", translations: {"ar": "مر", "de": "Bitter", "es": "Amargo", "fr": "Amer", "it": "Amaro", "ru": "Горький", "zh": "苦的", "tr": "Acı"}),
+    LearningCard(primaryText: "Crispy", translations: {"ar": "مقرمش", "de": "Knusprig", "es": "Crujiente", "fr": "Croustillant", "it": "Croccante", "ru": "Хрустящий", "zh": "酥脆的", "tr": "Çıtır"}),
+    LearningCard(primaryText: "Crunchy", translations: {"ar": "مقرمش", "de": "Knackig", "es": "Crujiente", "fr": "Croquant", "it": "Croccante", "ru": "Хрустящий", "zh": "松脆的", "tr": "Gevreği"}),
+    LearningCard(primaryText: "Hot", translations: {"ar": "حار", "de": "Heiß", "es": "Picante", "fr": "Chaud", "it": "Caldo", "ru": "Горячий", "zh": "热的", "tr": "Sıcak"}),
+    LearningCard(primaryText: "Ripe", translations: {"ar": "ناضج", "de": "Reif", "es": "Maduro", "fr": "Mûr", "it": "Maturo", "ru": "Спелый", "zh": "成熟的", "tr": "Olgun"}),
+    LearningCard(primaryText: "Spicy", translations: {"ar": "حار", "de": "Scharf", "es": "Picante", "fr": "Épicé", "it": "Piccante", "ru": "Острый", "zh": "辛辣的", "tr": "Baharatlı"}),
+    LearningCard(primaryText: "Sweet", translations: {"ar": "حلو", "de": "Süß", "es": "Dulce", "fr": "Doux", "it": "Dolce", "ru": "Сладкий", "zh": "甜的", "tr": "Tatlı"}),
+    LearningCard(primaryText: "Delicious", translations: {"ar": "لذيذ", "de": "Köstlich", "es": "Delicioso", "fr": "Délicieux", "it": "Delizioso", "ru": "Вкусный", "zh": "美味的", "tr": "Lezzetli"}),
+    LearningCard(primaryText: "Tasty", translations: {"ar": "لذيذ", "de": "Lecker", "es": "Sabroso", "fr": "Savoureux", "it": "Saporito", "ru": "Вкусный", "zh": "可口的", "tr": "Lezzetli"}),
+    
+    // ========== كلمات إضافية عن الطعام ==========
+    LearningCard(primaryText: "Bread", translations: {"ar": "خبز", "de": "Brot", "es": "Pan", "fr": "Pain", "it": "Pane", "ru": "Хлеб", "zh": "面包", "tr": "Ekmek"}),
+    LearningCard(primaryText: "Rice", translations: {"ar": "أرز", "de": "Reis", "es": "Arroz", "fr": "Riz", "it": "Riso", "ru": "Рис", "zh": "米饭", "tr": "Pirinç"}),
+    LearningCard(primaryText: "Pasta", translations: {"ar": "مكرونة", "de": "Nudeln", "es": "Pasta", "fr": "Pâtes", "it": "Pasta", "ru": "Паста", "zh": "意大利面", "tr": "Makarna"}),
+    LearningCard(primaryText: "Soup", translations: {"ar": "شوربة", "de": "Suppe", "es": "Sopa", "fr": "Soupe", "it": "Zuppa", "ru": "Суп", "zh": "汤", "tr": "Çorba"}),
+    LearningCard(primaryText: "Salad", translations: {"ar": "سلطة", "de": "Salat", "es": "Ensalada", "fr": "Salade", "it": "Insalata", "ru": "Салат", "zh": "沙拉", "tr": "Salata"}),
+    LearningCard(primaryText: "Sandwich", translations: {"ar": "ساندوتش", "de": "Sandwich", "es": "Sándwich", "fr": "Sandwich", "it": "Panino", "ru": "Сэндвич", "zh": "三明治", "tr": "Sandviç"}),
+    LearningCard(primaryText: "Pizza", translations: {"ar": "بيتزا", "de": "Pizza", "es": "Pizza", "fr": "Pizza", "it": "Pizza", "ru": "Пицца", "zh": "披萨", "tr": "Pizza"}),
+    LearningCard(primaryText: "Burger", translations: {"ar": "برجر", "de": "Burger", "es": "Hamburguesa", "fr": "Burger", "it": "Hamburger", "ru": "Бургер", "zh": "汉堡", "tr": "Burger"}),
+    LearningCard(primaryText: "Fries", translations: {"ar": "بطاطس مقلية", "de": "Pommes", "es": "Papas fritas", "fr": "Frites", "it": "Patatine fritte", "ru": "Картофель фри", "zh": "薯条", "tr": "Patates kızartması"}),
+    LearningCard(primaryText: "Cheese", translations: {"ar": "جبنة", "de": "Käse", "es": "Queso", "fr": "Fromage", "it": "Formaggio", "ru": "Сыр", "zh": "奶酪", "tr": "Peynir"}),
+    LearningCard(primaryText: "Eggs", translations: {"ar": "بيض", "de": "Eier", "es": "Huevos", "fr": "Œufs", "it": "Uova", "ru": "Яйца", "zh": "鸡蛋", "tr": "Yumurta"}),
+    LearningCard(primaryText: "Meat", translations: {"ar": "لحم", "de": "Fleisch", "es": "Carne", "fr": "Viande", "it": "Carne", "ru": "Мясо", "zh": "肉", "tr": "Et"}),
+    LearningCard(primaryText: "Chicken", translations: {"ar": "دجاج", "de": "Huhn", "es": "Pollo", "fr": "Poulet", "it": "Pollo", "ru": "Курица", "zh": "鸡肉", "tr": "Tavuk"}),
+    LearningCard(primaryText: "Fish", translations: {"ar": "سمك", "de": "Fisch", "es": "Pescado", "fr": "Poisson", "it": "Pesce", "ru": "Рыба", "zh": "鱼", "tr": "Balık"}),
+    LearningCard(primaryText: "Vegetables", translations: {"ar": "خضروات", "de": "Gemüse", "es": "Verduras", "fr": "Légumes", "it": "Verdure", "ru": "Овощи", "zh": "蔬菜", "tr": "Sebzeler"}),
+    LearningCard(primaryText: "Fruits", translations: {"ar": "فواكه", "de": "Obst", "es": "Frutas", "fr": "Fruits", "it": "Frutta", "ru": "Фрукты", "zh": "水果", "tr": "Meyveler"}),
+  ];
+
+  // ✅ 50+ جملة - عن الطعام والوجبات
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 156 (13 جملة) ==========
+    ItemCard(english: "The chicken is delicious and crispy just the way I like it.", translations: {"ar": "الدجاجة لذيذة ومقرمشة زي ما بحبها بالضبط", "de": "Das Hähnchen ist köstlich und knusprig, genau so wie ich es mag", "es": "El pollo está delicioso y crujiente, tal como me gusta", "fr": "Le poulet est délicieux et croustillant, comme je l'aime", "it": "Il pollo è delizioso e croccante, proprio come piace a me", "ru": "Курица вкусная и хрустящая, как я люблю", "zh": "鸡肉美味酥脆，正是我喜欢的方式", "tr": "Tavuk lezzetli ve çıtır, tam istediğim gibi"}),
+    ItemCard(english: "What kind of sweets do you prefer?", translations: {"ar": "إيه نوع الحلويات اللي بتفضله؟", "de": "Welche Art von Süßigkeiten bevorzugst du?", "es": "¿Qué tipo de dulces prefieres?", "fr": "Quel genre de sucreries préférez-vous?", "it": "Che tipo di dolci preferisci?", "ru": "Какие сладости вы предпочитаете?", "zh": "你喜欢什么样的甜食？", "tr": "Ne tür tatlıları tercih edersin?"}),
+    ItemCard(english: "Don't eat this cheese; because it's sour.", translations: {"ar": "متاكلش الجبنة دي لأنها حامضة", "de": "Iss diesen Käse nicht; er ist sauer", "es": "No comas este queso; está agrio", "fr": "Ne mange pas ce fromage; il est aigre", "it": "Non mangiare questo formaggio; è acido", "ru": "Не ешь этот сыр; он кислый", "zh": "不要吃这个奶酪；它是酸的", "tr": "Bu peyniri yeme; çünkü ekşi"}),
+    ItemCard(english: "This salad is so salty.", translations: {"ar": "السلطة دي مالحة أوي", "de": "Dieser Salat ist so salzig", "es": "Esta ensalada está muy salada", "fr": "Cette salade est trop salée", "it": "Questa insalata è così salata", "ru": "Этот салат такой соленый", "zh": "这沙拉太咸了", "tr": "Bu salata çok tuzlu"}),
+    ItemCard(english: "I always have tea for breakfast.", translations: {"ar": "أنا دايما بشرب شاي في الفطار", "de": "Ich trinke immer Tee zum Frühstück", "es": "Siempre tomo té en el desayuno", "fr": "Je prends toujours du thé au petit-déjeuner", "it": "Prendo sempre tè a colazione", "ru": "Я всегда пью чай на завтрак", "zh": "我早餐总是喝茶", "tr": "Kahvaltıda her zaman çay içerim"}),
+    ItemCard(english: "He was having dinner with her.", translations: {"ar": "هو كان بيتعشى معاها", "de": "Er aß mit ihr zu Abend", "es": "Él estaba cenando con ella", "fr": "Il dînait avec elle", "it": "Stava cenando con lei", "ru": "Он ужинал с ней", "zh": "他正在和她一起吃晚餐", "tr": "Onunla akşam yemeği yiyordu"}),
+    ItemCard(english: "Who is going to cook supper?", translations: {"ar": "مين اللي هيطبخ العشا؟", "de": "Wer wird das Abendessen kochen?", "es": "¿Quién va a cocinar la cena?", "fr": "Qui va cuisiner le dîner?", "it": "Chi cucinerà la cena?", "ru": "Кто будет готовить ужин?", "zh": "谁来做晚饭？", "tr": "Akşam yemeğini kim pişirecek?"}),
+    ItemCard(english: "Mom always gets angry when we buy junk food.", translations: {"ar": "ماما دايما بتتعصب لما نشترى الأكل السريع", "de": "Mama wird immer wütend, wenn wir Junkfood kaufen", "es": "Mamá siempre se enoja cuando compramos comida chatarra", "fr": "Maman se fâche toujours quand nous achetons de la malbouffe", "it": "La mamma si arrabbia sempre quando compriamo cibo spazzatura", "ru": "Мама всегда злится, когда мы покупаем вредную еду", "zh": "当我们买垃圾食品时，妈妈总是生气", "tr": "Abur cubur aldığımızda annem hep sinirlenir"}),
+    ItemCard(english: "My sister is vegetarian; she never eats meat.", translations: {"ar": "أختي نباتية، مش بتاكل لحمة خالص", "de": "Meine Schwester ist Vegetarierin; sie isst nie Fleisch", "es": "Mi hermana es vegetariana; nunca come carne", "fr": "Ma sœur est végétarienne; elle ne mange jamais de viande", "it": "Mia sorella è vegetariana; non mangia mai carne", "ru": "Моя сестра вегетарианка; она никогда не ест мясо", "zh": "我姐姐是素食主义者；她从不吃肉", "tr": "Kız kardeşim vejetaryen; asla et yemez"}),
+    ItemCard(english: "Children love crunchy breakfast cereals.", translations: {"ar": "الأطفال بيحبوا حبوب الفطار المقرمشة", "de": "Kinder lieben knusprige Frühstückscerealien", "es": "A los niños les encantan los cereales crujientes para el desayuno", "fr": "Les enfants adorent les céréales de petit-déjeuner croquantes", "it": "Ai bambini piacciono i cereali per la colazione croccanti", "ru": "Дети любят хрустящие завтраки", "zh": "孩子们喜欢松脆的早餐麦片", "tr": "Çocuklar gevrek kahvaltılık gevrekleri sever"}),
+    ItemCard(english: "What is for lunch, mom?", translations: {"ar": "عاملة إيه على الغدا يا ماما؟", "de": "Was gibt es zum Mittagessen, Mama?", "es": "¿Qué hay para el almuerzo, mamá?", "fr": "Qu'est-ce qu'il y a pour le déjeuner, maman?", "it": "Cosa c'è per pranzo, mamma?", "ru": "Что на обед, мама?", "zh": "妈妈，午餐吃什么？", "tr": "Öğle yemeğinde ne var anne?"}),
+    ItemCard(english: "I am going to order the happy meal from McDonalds.", translations: {"ar": "أنا هطلب الوجبة السعيدة من ماك", "de": "Ich werde das Happy Meal von McDonalds bestellen", "es": "Voy a pedir la comida feliz de McDonalds", "fr": "Je vais commander le happy meal de McDonalds", "it": "Ordinerò il happy meal da McDonalds", "ru": "Я собираюсь заказать счастливый обед в Макдональдсе", "zh": "我要从麦当劳订购开心乐园餐", "tr": "McDonalds'tan mutlu menü sipariş edeceğim"}),
+    ItemCard(english: "Iced coffee is my favorite drink.", translations: {"ar": "القهوة المثلجة هي مشروبي المفضل", "de": "Eiskaffee ist mein Lieblingsgetränk", "es": "El café helado es mi bebida favorita", "fr": "Le café glacé est ma boisson préférée", "it": "Il caffè freddo è la mia bevanda preferita", "ru": "Холодный кофе - мой любимый напиток", "zh": "冰咖啡是我最喜欢的饮料", "tr": "Buzlu kahve en sevdiğim içecektir"}),
+    
+    // ========== 37 جملة إضافية عن الطعام والوجبات ==========
+    ItemCard(english: "Breakfast is the most important meal of the day.", translations: {"ar": "الفطور هو أهم وجبة في اليوم", "de": "Das Frühstück ist die wichtigste Mahlzeit des Tages", "es": "El desayuno es la comida más importante del día", "fr": "Le petit-déjeuner est le repas le plus important de la journée", "it": "La colazione è il pasto più importante della giornata", "ru": "Завтрак - самый важный прием пищи в день", "zh": "早餐是一天中最重要的一餐", "tr": "Kahvaltı günün en önemli öğünüdür"}),
+    ItemCard(english: "This soup is too salty for me.", translations: {"ar": "الشوربة دي مالحة أوي عليا", "de": "Diese Suppe ist zu salzig für mich", "es": "Esta sopa está demasiado salada para mí", "fr": "Cette soupe est trop salée pour moi", "it": "Questa zuppa è troppo salata per me", "ru": "Этот суп слишком соленый для меня", "zh": "这汤对我来说太咸了", "tr": "Bu çorba benim için çok tuzlu"}),
+    ItemCard(english: "I love sweet desserts like cake and ice cream.", translations: {"ar": "أنا بحب الحلويات زي الكيك والآيس كريم", "de": "Ich liebe süße Desserts wie Kuchen und Eiscreme", "es": "Amo los postres dulces como el pastel y el helado", "fr": "J'adore les desserts sucrés comme le gâteau et la glace", "it": "Amo i dolci come la torta e il gelato", "ru": "Я люблю сладкие десерты, такие как торт и мороженое", "zh": "我喜欢甜点，比如蛋糕和冰淇淋", "tr": "Pasta ve dondurma gibi tatlı tatlıları severim"}),
+    ItemCard(english: "Fresh fruits are much healthier than canned ones.", translations: {"ar": "الفواكه الطازجة أصح بكتير من المعلبة", "de": "Frisches Obst ist viel gesünder als Dosenobst", "es": "Las frutas frescas son mucho más saludables que las enlatadas", "fr": "Les fruits frais sont beaucoup plus sains que les fruits en conserve", "it": "La frutta fresca è molto più salutare di quella in scatola", "ru": "Свежие фрукты намного полезнее консервированных", "zh": "新鲜水果比罐装水果健康得多", "tr": "Taze meyveler konserve olanlardan çok daha sağlıklıdır"}),
+    ItemCard(english: "Fast food is convenient but not healthy.", translations: {"ar": "الأكل السريع مريح لكن مش صحي", "de": "Fast Food ist bequem, aber nicht gesund", "es": "La comida rápida es conveniente pero no saludable", "fr": "La restauration rapide est pratique mais pas saine", "it": "Il fast food è comodo ma non salutare", "ru": "Фастфуд удобен, но не полезен", "zh": "快餐方便但不健康", "tr": "Fast food kullanışlıdır ancak sağlıklı değildir"}),
+    ItemCard(english: "This mango is ripe and very sweet.", translations: {"ar": "المانجو دي ناضجة وحلوة أوي", "de": "Diese Mango ist reif und sehr süß", "es": "Este mango está maduro y muy dulce", "fr": "Cette mangue est mûre et très sucrée", "it": "Questo mango è maturo e molto dolce", "ru": "Это манго спелое и очень сладкое", "zh": "这个芒果熟了，很甜", "tr": "Bu mango olgun ve çok tatlı"}),
+    ItemCard(english: "I prefer spicy food with lots of chili.", translations: {"ar": "أنا أفضل الأكل الحار اللي فيه شطة كتير", "de": "Ich bevorzuge scharfes Essen mit viel Chili", "es": "Prefiero la comida picante con mucha guindilla", "fr": "Je préfère la nourriture épicée avec beaucoup de piment", "it": "Preferisco il cibo piccante con molto peperoncino", "ru": "Я предпочитаю острую пищу с большим количеством перца чили", "zh": "我喜欢辣的食物，加很多辣椒", "tr": "Bol biberli baharatlı yemekleri tercih ederim"}),
+    ItemCard(english: "The pizza is hot and fresh from the oven.", translations: {"ar": "البيتزا سخنة وطازجة من الفرن", "de": "Die Pizza ist heiß und frisch aus dem Ofen", "es": "La pizza está caliente y recién salida del horno", "fr": "La pizza est chaude et fraîche du four", "it": "La pizza è calda e fresca dal forno", "ru": "Пицца горячая и свежая из печи", "zh": "披萨又热又新鲜，刚出炉", "tr": "Pizza sıcak ve fırından taze"}),
+    ItemCard(english: "Vegetables are an important part of a healthy diet.", translations: {"ar": "الخضروات جزء مهم من الأكل الصحي", "de": "Gemüse ist ein wichtiger Bestandteil einer gesunden Ernährung", "es": "Las verduras son una parte importante de una dieta saludable", "fr": "Les légumes sont une partie importante d'une alimentation saine", "it": "Le verdure sono una parte importante di una dieta sana", "ru": "Овощи - важная часть здорового питания", "zh": "蔬菜是健康饮食的重要组成部分", "tr": "Sebzeler sağlıklı bir diyetin önemli bir parçasıdır"}),
+    ItemCard(english: "I like my steak medium-rare.", translations: {"ar": "أنا بحب الاستيك نص استواء", "de": "Ich mag mein Steak medium-rare", "es": "Me gusta mi bistec poco hecho", "fr": "J'aime mon steak saignant", "it": "Mi piace la bistecca al sangue", "ru": "Я люблю стейк с кровью", "zh": "我喜欢半熟的牛排", "tr": "Bifteği az pişmiş severim"}),
+    ItemCard(english: "The soup is a bit bitter; did you add too much spice?", translations: {"ar": "الشوربة مرة شوية؛ حطيت بهارات كتير؟", "de": "Die Suppe ist etwas bitter; hast du zu viel Gewürz hinzugefügt?", "es": "La sopa está un poco amarga; ¿agregaste demasiada especia?", "fr": "La soupe est un peu amère; as-tu ajouté trop d'épices?", "it": "La zuppa è un po' amara; hai aggiunto troppe spezie?", "ru": "Суп немного горький; вы добавили слишком много специй?", "zh": "汤有点苦；你加了太多香料吗？", "tr": "Çorba biraz acı; çok fazla baharat mı ekledin?"}),
+    ItemCard(english: "I need to eat a snack before dinner.", translations: {"ar": "أنا محتاج أكل وجبة خفيفة قبل العشاء", "de": "Ich muss vor dem Abendessen einen Snack essen", "es": "Necesito comer un bocadillo antes de la cena", "fr": "J'ai besoin de manger une collation avant le dîner", "it": "Ho bisogno di mangiare uno spuntino prima di cena", "ru": "Мне нужно перекусить перед ужином", "zh": "晚餐前我需要吃点零食", "tr": "Akşam yemeğinden önce atıştırmalık yemeliyim"}),
+    ItemCard(english: "This restaurant serves delicious seafood.", translations: {"ar": "المطعم ده بيقدم مأكولات بحرية لذيذة", "de": "Dieses Restaurant serviert köstliche Meeresfrüchte", "es": "Este restaurante sirve deliciosos mariscos", "fr": "Ce restaurant sert des fruits de mer délicieux", "it": "Questo ristorante serve deliziosi frutti di mare", "ru": "Этот ресторан подает вкусные морепродукты", "zh": "这家餐厅供应美味的海鲜", "tr": "Bu restoran lezzetli deniz ürünleri servis ediyor"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الطعام والوجبات - Food & Meals",
+    );
+  }
+}
+
+
+
+
+
+/////
+
+
+
+class WeatherScreen extends StatelessWidget {
+  const WeatherScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الطقس (Weather)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 37 ==========
+    LearningCard(primaryText: "Weather", translations: {"ar": "الطقس", "de": "Wetter", "es": "Clima", "fr": "Temps", "it": "Tempo", "ru": "Погода", "zh": "天气", "tr": "Hava durumu"}),
+    LearningCard(primaryText: "Weather Forecast", translations: {"ar": "توقعات الطقس", "de": "Wettervorhersage", "es": "Pronóstico del tiempo", "fr": "Prévisions météo", "it": "Previsioni del tempo", "ru": "Прогноз погоды", "zh": "天气预报", "tr": "Hava tahmini"}),
+    LearningCard(primaryText: "Climate", translations: {"ar": "المناخ", "de": "Klima", "es": "Clima", "fr": "Climat", "it": "Clima", "ru": "Климат", "zh": "气候", "tr": "İklim"}),
+    LearningCard(primaryText: "Climate Change", translations: {"ar": "تغير المناخ", "de": "Klimawandel", "es": "Cambio climático", "fr": "Changement climatique", "it": "Cambiamento climatico", "ru": "Изменение климата", "zh": "气候变化", "tr": "İklim değişikliği"}),
+    LearningCard(primaryText: "Rain", translations: {"ar": "المطر", "de": "Regen", "es": "Lluvia", "fr": "Pluie", "it": "Pioggia", "ru": "Дождь", "zh": "雨", "tr": "Yağmur"}),
+    LearningCard(primaryText: "Rainy", translations: {"ar": "ممطر", "de": "Regnerisch", "es": "Lluvioso", "fr": "Pluvieux", "it": "Piovoso", "ru": "Дождливый", "zh": "下雨的", "tr": "Yağmurlu"}),
+    LearningCard(primaryText: "Wind", translations: {"ar": "رياح", "de": "Wind", "es": "Viento", "fr": "Vent", "it": "Vento", "ru": "Ветер", "zh": "风", "tr": "Rüzgar"}),
+    LearningCard(primaryText: "Windy", translations: {"ar": "عاصف", "de": "Windig", "es": "Ventoso", "fr": "Venteux", "it": "Ventoso", "ru": "Ветреный", "zh": "多风的", "tr": "Rüzgarlı"}),
+    LearningCard(primaryText: "Snow", translations: {"ar": "ثلج", "de": "Schnee", "es": "Nieve", "fr": "Neige", "it": "Neve", "ru": "Снег", "zh": "雪", "tr": "Kar"}),
+    LearningCard(primaryText: "Snowy", translations: {"ar": "مثلج", "de": "Verschneit", "es": "Nevado", "fr": "Neigeux", "it": "Nevoso", "ru": "Снежный", "zh": "下雪的", "tr": "Karlı"}),
+    LearningCard(primaryText: "Cloud", translations: {"ar": "سحابة", "de": "Wolke", "es": "Nube", "fr": "Nuage", "it": "Nuvola", "ru": "Облако", "zh": "云", "tr": "Bulut"}),
+    LearningCard(primaryText: "Cloudy", translations: {"ar": "غائم", "de": "Bewölkt", "es": "Nublado", "fr": "Nuageux", "it": "Nuvoloso", "ru": "Облачно", "zh": "多云的", "tr": "Bulutlu"}),
+    LearningCard(primaryText: "Sunny", translations: {"ar": "مشمس", "de": "Sonnig", "es": "Soleado", "fr": "Ensoleillé", "it": "Soleggiato", "ru": "Солнечный", "zh": "晴朗的", "tr": "Güneşli"}),
+    LearningCard(primaryText: "Foggy", translations: {"ar": "ضبابي", "de": "Neblig", "es": "Nebuloso", "fr": "Brumeux", "it": "Nebbioso", "ru": "Туманный", "zh": "有雾的", "tr": "Sisli"}),
+    LearningCard(primaryText: "Hot", translations: {"ar": "حار", "de": "Heiß", "es": "Caliente", "fr": "Chaud", "it": "Caldo", "ru": "Жарко", "zh": "热的", "tr": "Sıcak"}),
+    LearningCard(primaryText: "Cold", translations: {"ar": "بارد", "de": "Kalt", "es": "Frío", "fr": "Froid", "it": "Freddo", "ru": "Холодно", "zh": "冷的", "tr": "Soğuk"}),
+    LearningCard(primaryText: "Dry", translations: {"ar": "جاف", "de": "Trocken", "es": "Seco", "fr": "Sec", "it": "Secco", "ru": "Сухой", "zh": "干燥的", "tr": "Kuru"}),
+    LearningCard(primaryText: "Wet", translations: {"ar": "مبلل", "de": "Nass", "es": "Mojado", "fr": "Mouillé", "it": "Bagnato", "ru": "Влажный", "zh": "潮湿的", "tr": "Islak"}),
+    LearningCard(primaryText: "Frost", translations: {"ar": "صقيع", "de": "Frost", "es": "Escarcha", "fr": "Gel", "it": "Gelo", "ru": "Мороз", "zh": "霜冻", "tr": "Don"}),
+    LearningCard(primaryText: "Ice", translations: {"ar": "جليد", "de": "Eis", "es": "Hielo", "fr": "Glace", "it": "Ghiaccio", "ru": "Лед", "zh": "冰", "tr": "Buz"}),
+    LearningCard(primaryText: "Fine", translations: {"ar": "لطيف", "de": "Schön", "es": "Bueno", "fr": "Beau", "it": "Bello", "ru": "Хороший", "zh": "晴朗的", "tr": "Güzel"}),
+    LearningCard(primaryText: "Warm", translations: {"ar": "دافئ", "de": "Warm", "es": "Templado", "fr": "Chaud", "it": "Caldo", "ru": "Теплый", "zh": "温暖的", "tr": "Ilık"}),
+    LearningCard(primaryText: "Hail", translations: {"ar": "برد", "de": "Hagel", "es": "Granizo", "fr": "Grêle", "it": "Grandine", "ru": "Град", "zh": "冰雹", "tr": "Dolu"}),
+    LearningCard(primaryText: "Clear", translations: {"ar": "صافٍ", "de": "Klar", "es": "Despejado", "fr": "Clair", "it": "Sereno", "ru": "Ясный", "zh": "清澈的", "tr": "Açık"}),
+    LearningCard(primaryText: "Rainbow", translations: {"ar": "قوس قزح", "de": "Regenbogen", "es": "Arcoíris", "fr": "Arc-en-ciel", "it": "Arcobaleno", "ru": "Радуга", "zh": "彩虹", "tr": "Gökkuşağı"}),
+    
+    // ========== كلمات إضافية عن الطقس ==========
+    LearningCard(primaryText: "Storm", translations: {"ar": "عاصفة", "de": "Sturm", "es": "Tormenta", "fr": "Tempête", "it": "Tempesta", "ru": "Шторм", "zh": "暴风雨", "tr": "Fırtına"}),
+    LearningCard(primaryText: "Thunder", translations: {"ar": "رعد", "de": "Donner", "es": "Trueno", "fr": "Tonnerre", "it": "Tuono", "ru": "Гром", "zh": "雷", "tr": "Gök gürültüsü"}),
+    LearningCard(primaryText: "Lightning", translations: {"ar": "برق", "de": "Blitz", "es": "Relámpago", "fr": "Éclair", "it": "Fulmine", "ru": "Молния", "zh": "闪电", "tr": "Şimşek"}),
+    LearningCard(primaryText: "Hurricane", translations: {"ar": "إعصار", "de": "Hurrikan", "es": "Huracán", "fr": "Ouragan", "it": "Uragano", "ru": "Ураган", "zh": "飓风", "tr": "Kasırga"}),
+    LearningCard(primaryText: "Tornado", translations: {"ar": "إعصار", "de": "Tornado", "es": "Tornado", "fr": "Tornade", "it": "Tornado", "ru": "Торнадо", "zh": "龙卷风", "tr": "Hortum"}),
+    LearningCard(primaryText: "Flood", translations: {"ar": "فيضان", "de": "Überschwemmung", "es": "Inundación", "fr": "Inondation", "it": "Alluvione", "ru": "Наводнение", "zh": "洪水", "tr": "Sel"}),
+    LearningCard(primaryText: "Drought", translations: {"ar": "جفاف", "de": "Dürre", "es": "Sequía", "fr": "Sécheresse", "it": "Siccità", "ru": "Засуха", "zh": "干旱", "tr": "Kuraklık"}),
+    LearningCard(primaryText: "Humidity", translations: {"ar": "رطوبة", "de": "Luftfeuchtigkeit", "es": "Humedad", "fr": "Humidité", "it": "Umidità", "ru": "Влажность", "zh": "湿度", "tr": "Nem"}),
+    LearningCard(primaryText: "Temperature", translations: {"ar": "درجة الحرارة", "de": "Temperatur", "es": "Temperatura", "fr": "Température", "it": "Temperatura", "ru": "Температура", "zh": "温度", "tr": "Sıcaklık"}),
+    LearningCard(primaryText: "Degree", translations: {"ar": "درجة", "de": "Grad", "es": "Grado", "fr": "Degré", "it": "Grado", "ru": "Градус", "zh": "度", "tr": "Derece"}),
+  ];
+
+  // ✅ 50+ جملة - عن الطقس
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 38 (13 جملة) ==========
+    ItemCard(english: "What's the weather today?", translations: {"ar": "الجو إيه النهاردة؟", "de": "Wie ist das Wetter heute?", "es": "¿Qué tiempo hace hoy?", "fr": "Quel temps fait-il aujourd'hui?", "it": "Che tempo fa oggi?", "ru": "Какая сегодня погода?", "zh": "今天天气怎么样？", "tr": "Bugün hava nasıl?"}),
+    ItemCard(english: "It may be cloudy in the early morning.", translations: {"ar": "ممكن تكون غيمة الصبح بدري", "de": "Es könnte am frühen Morgen bewölkt sein", "es": "Puede estar nublado en la madrugada", "fr": "Il pourrait être nuageux tôt le matin", "it": "Potrebbe essere nuvoloso al mattino presto", "ru": "Рано утром может быть облачно", "zh": "清晨可能多云", "tr": "Sabah erken saatlerde bulutlu olabilir"}),
+    ItemCard(english: "They say it's going to be foggy tomorrow.", translations: {"ar": "يقولوا الجو هيكون مليان ضباب بكرة", "de": "Sie sagen, dass es morgen neblig wird", "es": "Dicen que va a haber niebla mañana", "fr": "Ils disent qu'il va faire du brouillard demain", "it": "Dicono che domani ci sarà nebbia", "ru": "Говорят, завтра будет туманно", "zh": "他们说明天会有雾", "tr": "Yarın sisli olacağını söylüyorlar"}),
+    ItemCard(english: "According to the week forecast, it's going to rain on Friday.", translations: {"ar": "التوقعات الجوية بتوقع إن الدنيا هتشتي الجمعة الجاية", "de": "Laut der Wochenvorhersage wird es am Freitag regnen", "es": "Según el pronóstico de la semana, va a llover el viernes", "fr": "Selon les prévisions de la semaine, il va pleuvoir vendredi", "it": "Secondo le previsioni della settimana, pioverà venerdì", "ru": "Согласно прогнозу на неделю, в пятницу будет дождь", "zh": "根据本周预报，周五会下雨", "tr": "Haftalık tahmine göre, Cuma günü yağmur yağacak"}),
+    ItemCard(english: "It's supposed to be sunny all week.", translations: {"ar": "المفروض ان الجو يكون مشمس طول الاسبوع", "de": "Es soll die ganze Woche sonnig sein", "es": "Se supone que hará sol toda la semana", "fr": "Il devrait faire soleil toute la semaine", "it": "Dovrebbe essere soleggiato tutta la settimana", "ru": "Предполагается, что всю неделю будет солнечно", "zh": "预计整周都是晴天", "tr": "Tüm hafta güneşli olması gerekiyor"}),
+    ItemCard(english: "It's really cold outside.", translations: {"ar": "الجو سقعة بره", "de": "Es ist wirklich kalt draußen", "es": "Hace mucho frío afuera", "fr": "Il fait très froid dehors", "it": "Fa molto freddo fuori", "ru": "На улице очень холодно", "zh": "外面真的很冷", "tr": "Dışarısı gerçekten soğuk"}),
+    ItemCard(english: "There are a lot of grey clouds in the sky.", translations: {"ar": "السما مليانة سحب رمادي", "de": "Es gibt viele graue Wolken am Himmel", "es": "Hay muchas nubes grises en el cielo", "fr": "Il y a beaucoup de nuages gris dans le ciel", "it": "Ci sono molte nuvole grigie nel cielo", "ru": "На небе много серых облаков", "zh": "天空中有很多灰色的云", "tr": "Gökyüzünde çok fazla gri bulut var"}),
+    ItemCard(english: "It's starting to rain.", translations: {"ar": "الدنيا بتبدأ تمطر", "de": "Es fängt an zu regnen", "es": "Está empezando a llover", "fr": "Il commence à pleuvoir", "it": "Sta iniziando a piovere", "ru": "Начинается дождь", "zh": "开始下雨了", "tr": "Yağmur yağmaya başlıyor"}),
+    ItemCard(english: "It's raining cats and dogs!", translations: {"ar": "الدنيا بتمطر جامد اوي", "de": "Es regnet wie aus Kübeln!", "es": "¡Está lloviendo a cántaros!", "fr": "Il pleut des cordes!", "it": "Piove a catinelle!", "ru": "Льет как из ведра!", "zh": "倾盆大雨！", "tr": "Şiddetli yağmur yağıyor!"}),
+    ItemCard(english: "Climate change may cause storms.", translations: {"ar": "تغير المناخ ممكن يكون السبب في حدوث العواصف", "de": "Der Klimawandel kann Stürme verursachen", "es": "El cambio climático puede causar tormentas", "fr": "Le changement climatique peut provoquer des tempêtes", "it": "Il cambiamento climatico può causare tempeste", "ru": "Изменение климата может вызывать бури", "zh": "气候变化可能导致风暴", "tr": "İklim değişikliği fırtınalara neden olabilir"}),
+    ItemCard(english: "We can't go outside; it's snowing!", translations: {"ar": "مش هنعرف نخرج الدنيا بتشتي تلج!", "de": "Wir können nicht nach draußen gehen; es schneit!", "es": "¡No podemos salir; está nevando!", "fr": "Nous ne pouvons pas sortir; il neige!", "it": "Non possiamo uscire; sta nevicando!", "ru": "Мы не можем выйти на улицу; идет снег!", "zh": "我们不能出去；正在下雪！", "tr": "Dışarı çıkamayız; kar yağıyor!"}),
+    ItemCard(english: "The weather is fine today.", translations: {"ar": "الجو لطيف النهاردة", "de": "Das Wetter ist schön heute", "es": "El tiempo está bien hoy", "fr": "Le temps est beau aujourd'hui", "it": "Il tempo è bello oggi", "ru": "Погода сегодня хорошая", "zh": "今天天气很好", "tr": "Bugün hava güzel"}),
+    ItemCard(english: "You have to wear a jacket; it's frost!", translations: {"ar": "لازم تلبس جاكيت، الجو صقيع", "de": "Du musst eine Jacke tragen; es friert!", "es": "Tienes que usar una chaqueta; ¡hay escarcha!", "fr": "Tu dois porter une veste; il y a du gel!", "it": "Devi indossare una giacca; c'è gelo!", "ru": "Ты должен надеть куртку; мороз!", "zh": "你得穿夹克；有霜冻！", "tr": "Ceket giymelisin; don var!"}),
+    
+    // ========== 37 جملة إضافية عن الطقس ==========
+    ItemCard(english: "The sun is shining brightly today.", translations: {"ar": "الشمس مشرقة اليوم بشكل ساطع", "de": "Die Sonne scheint heute hell", "es": "El sol brilla intensamente hoy", "fr": "Le soleil brille aujourd'hui", "it": "Il sole splende oggi", "ru": "Сегодня ярко светит солнце", "zh": "今天阳光明媚", "tr": "Bugün güneş parlıyor"}),
+    ItemCard(english: "I love the smell of rain on a hot summer day.", translations: {"ar": "أنا بحب رائحة المطر في يوم صيف حار", "de": "Ich liebe den Geruch von Regen an einem heißen Sommertag", "es": "Me encanta el olor de la lluvia en un día caluroso de verano", "fr": "J'adore l'odeur de la pluie un jour d'été chaud", "it": "Amo l'odore della pioggia in una calda giornata estiva", "ru": "Люблю запах дождя в жаркий летний день", "zh": "我喜欢炎热夏日里雨的气息", "tr": "Sıcak bir yaz gününde yağmur kokusunu severim"}),
+    ItemCard(english: "The temperature dropped below zero last night.", translations: {"ar": "درجة الحرارة نزلت تحت الصفر البارحة", "de": "Die Temperatur ist letzte Nacht unter Null gefallen", "es": "La temperatura bajó por debajo de cero anoche", "fr": "La température est descendue en dessous de zéro la nuit dernière", "it": "La temperatura è scesa sotto lo zero la scorsa notte", "ru": "Температура упала ниже нуля прошлой ночью", "zh": "昨晚温度降到了零度以下", "tr": "Dün gece sıcaklık sıfırın altına düştü"}),
+    ItemCard(english: "There was a rainbow after the rain stopped.", translations: {"ar": "ظهر قوس قزح بعد ما المطر وقف", "de": "Es gab einen Regenbogen, nachdem der Regen aufhörte", "es": "Apareció un arcoíris después de que dejó de llover", "fr": "Il y avait un arc-en-ciel après que la pluie se soit arrêtée", "it": "C'era un arcobaleno dopo che la pioggia si è fermata", "ru": "После того, как дождь прекратился, появилась радуга", "zh": "雨停后出现了彩虹", "tr": "Yağmur durduktan sonra bir gökkuşağı vardı"}),
+    ItemCard(english: "The wind is blowing so hard that trees are swaying.", translations: {"ar": "الرياح بتعوي بقوة لدرجة إن الشجر بيتحرك", "de": "Der Wind weht so stark, dass die Bäume schwanken", "es": "El viento sopla tan fuerte que los árboles se balancean", "fr": "Le vent souffle si fort que les arbres se balancent", "it": "Il vento soffia così forte che gli alberi si piegano", "ru": "Ветер дует так сильно, что деревья качаются", "zh": "风吹得厉害，树都在摇摆", "tr": "Rüzgar o kadar sert esiyor ki ağaçlar sallanıyor"}),
+    ItemCard(english: "Pack an umbrella; it might rain later.", translations: {"ar": "حط شمسية في شنطتك؛ ممكن تمطر بعدين", "de": "Pack einen Regenschirm ein; später könnte es regnen", "es": "Empaca un paraguas; puede llover más tarde", "fr": "Prends un parapluie; il pourrait pleuvoir plus tard", "it": "Porta un ombrello; potrebbe piovere più tardi", "ru": "Возьми зонт; позже может пойти дождь", "zh": "带把伞；待会儿可能会下雨", "tr": "Şemsiye al; daha sonra yağmur yağabilir"}),
+    ItemCard(english: "It's freezing cold today! Wear your gloves.", translations: {"ar": "الجو تجمد النهاردة! البس جوانتك", "de": "Es ist heute eiskalt! Zieh deine Handschuhe an", "es": "¡Hace mucho frío hoy! Ponte los guantes", "fr": "Il fait glacial aujourd'hui! Mets tes gants", "it": "Oggi fa freddo gelido! Metti i guanti", "ru": "Сегодня очень холодно! Надень перчатки", "zh": "今天冷极了！戴上手套", "tr": "Bugün hava dondurucu soğuk! Eldivenlerini giy"}),
+    ItemCard(english: "The storm caused damage to several houses.", translations: {"ar": "العاصفة تسببت في أضرار لكذا بيت", "de": "Der Sturm verursachte Schäden an mehreren Häusern", "es": "La tormenta causó daños a varias casas", "fr": "La tempête a causé des dégâts à plusieurs maisons", "it": "La tempesta ha causato danni a diverse case", "ru": "Шторм нанес ущерб нескольким домам", "zh": "暴风雨对几所房屋造成了破坏", "tr": "Fırtına birçok eve hasar verdi"}),
+    ItemCard(english: "I enjoy walking in warm weather.", translations: {"ar": "أنا أستمتع بالمشي في الجو الدافئ", "de": "Ich genieße es, bei warmem Wetter zu laufen", "es": "Disfruto caminar con clima cálido", "fr": "J'aime me promener par temps chaud", "it": "Mi piace camminare con il tempo caldo", "ru": "Мне нравится гулять в теплую погоду", "zh": "我喜欢在温暖的天气里散步", "tr": "Ilık havada yürümekten hoşlanırım"}),
+    ItemCard(english: "The sky is clear and blue today.", translations: {"ar": "السما صافية وزرقا النهاردة", "de": "Der Himmel ist heute klar und blau", "es": "El cielo está despejado y azul hoy", "fr": "Le ciel est clair et bleu aujourd'hui", "it": "Il cielo è limpido e blu oggi", "ru": "Сегодня небо ясное и голубое", "zh": "今天天空清澈湛蓝", "tr": "Bugün gökyüzü açık ve mavi"}),
+    ItemCard(english: "The lightning struck a tree in our garden.", translations: {"ar": "البرق ضرب شجرة في حديقتنا", "de": "Der Blitz schlug in einen Baum in unserem Garten ein", "es": "El rayo cayó en un árbol de nuestro jardín", "fr": "La foudre a frappé un arbre dans notre jardin", "it": "Il fulmine ha colpito un albero nel nostro giardino", "ru": "Молния ударила в дерево в нашем саду", "zh": "闪电击中了我们花园里的一棵树", "tr": "Yıldırım bahçemizdeki bir ağaca düştü"}),
+    ItemCard(english: "The weather forecast said it would be sunny all weekend.", translations: {"ar": "النشرة الجوية قالت إن الجو هيكون مشمس طول الأسبوع", "de": "Die Wettervorhersage sagte, dass es das ganze Wochenende sonnig sein würde", "es": "El pronóstico del tiempo decía que haría sol todo el fin de semana", "fr": "Les prévisions météo annonçaient du soleil tout le week-end", "it": "Le previsioni del tempo dicevano che sarebbe stato soleggiato tutto il fine settimana", "ru": "Прогноз погоды обещал солнечную погоду на все выходные", "zh": "天气预报说整个周末都会是晴天", "tr": "Hava tahmini tüm hafta sonu güneşli olacağını söyledi"}),
+    ItemCard(english: "The hail damaged the crops in the field.", translations: {"ar": "البرد دمر المحاصيل في الحقل", "de": "Der Hagel beschädigte die Ernte auf dem Feld", "es": "El granizo dañó los cultivos en el campo", "fr": "La grêle a endommagé les récoltes dans le champ", "it": "La grandine ha danneggiato i raccolti nel campo", "ru": "Град повредил урожай в поле", "zh": "冰雹损坏了田里的庄稼", "tr": "Dolu tarladaki mahsullere zarar verdi"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الطقس - Weather",
+    );
+  }
+}
+
+
+
+/////////////
+
+
+
+
+class VegetablesScreen extends StatelessWidget {
+  const VegetablesScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الخضروات (Vegetables)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 150 ==========
+    LearningCard(primaryText: "Carrots", translations: {"ar": "جزر", "de": "Karotten", "es": "Zanahorias", "fr": "Carottes", "it": "Carote", "ru": "Морковь", "zh": "胡萝卜", "tr": "Havuç"}),
+    LearningCard(primaryText: "Potatoes", translations: {"ar": "بطاطس", "de": "Kartoffeln", "es": "Papas", "fr": "Pommes de terre", "it": "Patate", "ru": "Картофель", "zh": "土豆", "tr": "Patates"}),
+    LearningCard(primaryText: "Tomatoes", translations: {"ar": "طماطم", "de": "Tomaten", "es": "Tomates", "fr": "Tomates", "it": "Pomodori", "ru": "Помидоры", "zh": "西红柿", "tr": "Domates"}),
+    LearningCard(primaryText: "Peas", translations: {"ar": "بازلاء", "de": "Erbsen", "es": "Guisantes", "fr": "Petits pois", "it": "Piselli", "ru": "Горох", "zh": "豌豆", "tr": "Bezelye"}),
+    LearningCard(primaryText: "Onions", translations: {"ar": "بصل", "de": "Zwiebeln", "es": "Cebollas", "fr": "Oignons", "it": "Cipolle", "ru": "Лук", "zh": "洋葱", "tr": "Soğan"}),
+    LearningCard(primaryText: "Garlic", translations: {"ar": "ثوم", "de": "Knoblauch", "es": "Ajo", "fr": "Ail", "it": "Aglio", "ru": "Чеснок", "zh": "大蒜", "tr": "Sarımsak"}),
+    LearningCard(primaryText: "Pepper", translations: {"ar": "فلفل", "de": "Paprika", "es": "Pimiento", "fr": "Poivron", "it": "Peperone", "ru": "Перец", "zh": "甜椒", "tr": "Biber"}),
+    LearningCard(primaryText: "Cucumber", translations: {"ar": "خيار", "de": "Gurke", "es": "Pepino", "fr": "Concombre", "it": "Cetriolo", "ru": "Огурец", "zh": "黄瓜", "tr": "Salatalık"}),
+    LearningCard(primaryText: "Cabbage", translations: {"ar": "كرنب", "de": "Kohl", "es": "Repollo", "fr": "Chou", "it": "Cavolo", "ru": "Капуста", "zh": "卷心菜", "tr": "Lahana"}),
+    LearningCard(primaryText: "Lettuce", translations: {"ar": "خس", "de": "Salat", "es": "Lechuga", "fr": "Laitue", "it": "Lattuga", "ru": "Салат", "zh": "生菜", "tr": "Marul"}),
+    LearningCard(primaryText: "Zucchini", translations: {"ar": "كوسة", "de": "Zucchini", "es": "Calabacín", "fr": "Courgette", "it": "Zucchina", "ru": "Цукини", "zh": "西葫芦", "tr": "Kabak"}),
+    LearningCard(primaryText: "Lemon", translations: {"ar": "ليمون", "de": "Zitrone", "es": "Limón", "fr": "Citron", "it": "Limone", "ru": "Лимон", "zh": "柠檬", "tr": "Limon"}),
+    LearningCard(primaryText: "Green Onion", translations: {"ar": "بصل أخضر", "de": "Frühlingszwiebel", "es": "Cebolla verde", "fr": "Oignon vert", "it": "Cipolla verde", "ru": "Зеленый лук", "zh": "大葱", "tr": "Yeşil soğan"}),
+    LearningCard(primaryText: "Lentils", translations: {"ar": "عدس", "de": "Linsen", "es": "Lentejas", "fr": "Lentilles", "it": "Lenticchie", "ru": "Чечевица", "zh": "扁豆", "tr": "Mercimek"}),
+    LearningCard(primaryText: "Okra", translations: {"ar": "بامية", "de": "Okra", "es": "Okra", "fr": "Gombo", "it": "Okra", "ru": "Окра", "zh": "秋葵", "tr": "Bamya"}),
+    LearningCard(primaryText: "Eggplant", translations: {"ar": "باذنجان", "de": "Aubergine", "es": "Berenjena", "fr": "Aubergine", "it": "Melanzana", "ru": "Баклажан", "zh": "茄子", "tr": "Patlıcan"}),
+    LearningCard(primaryText: "Beans", translations: {"ar": "فاصوليا", "de": "Bohnen", "es": "Frijoles", "fr": "Haricots", "it": "Fagioli", "ru": "Фасоль", "zh": "豆角", "tr": "Fasulye"}),
+    LearningCard(primaryText: "Artichoke", translations: {"ar": "خرشوف", "de": "Artischocke", "es": "Alcachofa", "fr": "Artichaut", "it": "Carciofo", "ru": "Артишок", "zh": "洋蓟", "tr": "Enginar"}),
+    LearningCard(primaryText: "Radish", translations: {"ar": "فجل", "de": "Rettich", "es": "Rábano", "fr": "Radis", "it": "Ravanello", "ru": "Редис", "zh": "萝卜", "tr": "Turp"}),
+    LearningCard(primaryText: "Mushroom", translations: {"ar": "مشروم", "de": "Pilz", "es": "Champiñón", "fr": "Champignon", "it": "Fungo", "ru": "Гриб", "zh": "蘑菇", "tr": "Mantar"}),
+    LearningCard(primaryText: "Broccoli", translations: {"ar": "بروكلي", "de": "Brokkoli", "es": "Brócoli", "fr": "Brocoli", "it": "Broccolo", "ru": "Брокколи", "zh": "西兰花", "tr": "Brokoli"}),
+    LearningCard(primaryText: "Chili Pepper", translations: {"ar": "فلفل حار", "de": "Chili", "es": "Chile", "fr": "Piment", "it": "Peperoncino", "ru": "Острый перец", "zh": "辣椒", "tr": "Acı biber"}),
+    LearningCard(primaryText: "Cauliflower", translations: {"ar": "قرنبيط", "de": "Blumenkohl", "es": "Coliflor", "fr": "Chou-fleur", "it": "Cavolfiore", "ru": "Цветная капуста", "zh": "菜花", "tr": "Karnabahar"}),
+    LearningCard(primaryText: "Leek", translations: {"ar": "كرات", "de": "Lauch", "es": "Puerro", "fr": "Poireau", "it": "Porro", "ru": "Лук-порей", "zh": "韭葱", "tr": "Pırasa"}),
+    LearningCard(primaryText: "Ginger", translations: {"ar": "زنجبيل", "de": "Ingwer", "es": "Jengibre", "fr": "Gingembre", "it": "Zenzero", "ru": "Имбирь", "zh": "姜", "tr": "Zencefil"}),
+    
+    // ========== من الصورة 151 ==========
+    LearningCard(primaryText: "Dill", translations: {"ar": "شبت", "de": "Dill", "es": "Eneldo", "fr": "Aneth", "it": "Aneto", "ru": "Укроп", "zh": "莳萝", "tr": "Dereotu"}),
+    LearningCard(primaryText: "Parsley", translations: {"ar": "بقدونس", "de": "Petersilie", "es": "Perejil", "fr": "Persil", "it": "Prezzemolo", "ru": "Петрушка", "zh": "欧芹", "tr": "Maydanoz"}),
+    LearningCard(primaryText: "Coriander", translations: {"ar": "كزبرة", "de": "Koriander", "es": "Cilantro", "fr": "Coriandre", "it": "Coriandolo", "ru": "Кинза", "zh": "香菜", "tr": "Kişniş"}),
+    LearningCard(primaryText: "Olives", translations: {"ar": "زيتون", "de": "Oliven", "es": "Aceitunas", "fr": "Olives", "it": "Olive", "ru": "Оливки", "zh": "橄榄", "tr": "Zeytin"}),
+    LearningCard(primaryText: "Pumpkin", translations: {"ar": "يقطين", "de": "Kürbis", "es": "Calabaza", "fr": "Citrouille", "it": "Zucca", "ru": "Тыква", "zh": "南瓜", "tr": "Kabak"}),
+    LearningCard(primaryText: "Squash", translations: {"ar": "قرع", "de": "Kürbis", "es": "Calabaza", "fr": "Courge", "it": "Zucca", "ru": "Тыква", "zh": "南瓜", "tr": "Kabak"}),
+    LearningCard(primaryText: "Sweet Potato", translations: {"ar": "بطاطا", "de": "Süßkartoffel", "es": "Batata", "fr": "Patate douce", "it": "Patata dolce", "ru": "Батат", "zh": "红薯", "tr": "Tatlı patates"}),
+    LearningCard(primaryText: "Spinach", translations: {"ar": "سبانخ", "de": "Spinat", "es": "Espinaca", "fr": "Épinards", "it": "Spinaci", "ru": "Шпинат", "zh": "菠菜", "tr": "Ispanak"}),
+    LearningCard(primaryText: "Asparagus", translations: {"ar": "هليون", "de": "Spargel", "es": "Espárrago", "fr": "Asperge", "it": "Asparago", "ru": "Спаржа", "zh": "芦笋", "tr": "Kuşkonmaz"}),
+    LearningCard(primaryText: "Mint", translations: {"ar": "نعناع", "de": "Minze", "es": "Menta", "fr": "Menthe", "it": "Menta", "ru": "Мята", "zh": "薄荷", "tr": "Nane"}),
+    
+    // ========== خضروات إضافية ==========
+    LearningCard(primaryText: "Celery", translations: {"ar": "كرفس", "de": "Sellerie", "es": "Apio", "fr": "Céleri", "it": "Sedano", "ru": "Сельдерей", "zh": "芹菜", "tr": "Kereviz"}),
+    LearningCard(primaryText: "Beetroot", translations: {"ar": "بنجر", "de": "Rote Bete", "es": "Remolacha", "fr": "Betterave", "it": "Barbabietola", "ru": "Свекла", "zh": "甜菜", "tr": "Pancar"}),
+    LearningCard(primaryText: "Turnip", translations: {"ar": "لفت", "de": "Rübe", "es": "Nabo", "fr": "Navet", "it": "Rapa", "ru": "Репа", "zh": "芜菁", "tr": "Şalgam"}),
+    LearningCard(primaryText: "Watercress", translations: {"ar": "جرجير", "de": "Brunnenkresse", "es": "Berro", "fr": "Cresson", "it": "Crescione", "ru": "Кресс-салат", "zh": "豆瓣菜", "tr": "Su teresi"}),
+    LearningCard(primaryText: "Arugula", translations: {"ar": "روكا", "de": "Rucola", "es": "Rúcula", "fr": "Roquette", "it": "Rucola", "ru": "Руккола", "zh": "芝麻菜", "tr": "Roka"}),
+  ];
+
+  // ✅ 50+ جملة - عن الخضروات
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 152 (13 جملة) ==========
+    ItemCard(english: "Tell her that I am peeling the potatoes.", translations: {"ar": "قولي لها إني بقشر البطاطس", "de": "Sag ihr, dass ich die Kartoffeln schäle", "es": "Dile que estoy pelando las papas", "fr": "Dis-lui que je suis en train d'éplucher les pommes de terre", "it": "Dille che sto sbucciando le patate", "ru": "Скажи ей, что я чищу картошку", "zh": "告诉她我在削土豆皮", "tr": "Ona patatesleri soyduğumu söyle"}),
+    ItemCard(english: "In ten minutes, the beans will be done.", translations: {"ar": "عشر دقائق والفاصوليا تكون جاهزة", "de": "In zehn Minuten sind die Bohnen fertig", "es": "En diez minutos, los frijoles estarán listos", "fr": "Dans dix minutes, les haricots seront prêts", "it": "Tra dieci minuti, i fagioli saranno pronti", "ru": "Через десять минут фасоль будет готова", "zh": "十分钟后，豆角就好了", "tr": "On dakika içinde fasulyeler hazır olacak"}),
+    ItemCard(english: "Ali doesn't like green beans at all.", translations: {"ar": "علي مبيحبش الفاصوليا الخضرا خالص", "de": "Ali mag grüne Bohnen überhaupt nicht", "es": "A Ali no le gustan nada los frijoles verdes", "fr": "Ali n'aime pas du tout les haricots verts", "it": "Ad Ali non piacciono affatto i fagiolini", "ru": "Али совсем не любит зеленую фасоль", "zh": "阿里一点也不喜欢青豆", "tr": "Ali yeşil fasulyeyi hiç sevmez"}),
+    ItemCard(english: "I ate some spinach.", translations: {"ar": "أكلت شوية سبانخ", "de": "Ich habe etwas Spinat gegessen", "es": "Comí un poco de espinaca", "fr": "J'ai mangé des épinards", "it": "Ho mangiato un po' di spinaci", "ru": "Я съел немного шпината", "zh": "我吃了一些菠菜", "tr": "Biraz ıspanak yedim"}),
+    ItemCard(english: "Do you like mushroom soup?", translations: {"ar": "بتحب شوربة المشروم؟", "de": "Magst du Pilzsuppe?", "es": "¿Te gusta la sopa de champiñones?", "fr": "Aimez-vous la soupe aux champignons?", "it": "Ti piace la zuppa di funghi?", "ru": "Тебе нравится грибной суп?", "zh": "你喜欢蘑菇汤吗？", "tr": "Mantar çorbasını sever misin?"}),
+    ItemCard(english: "I have never drunk tea with lemon.", translations: {"ar": "أنا عمري ما شربت شاي بليمون", "de": "Ich habe noch nie Tee mit Zitrone getrunken", "es": "Nunca he tomado té con limón", "fr": "Je n'ai jamais bu de thé au citron", "it": "Non ho mai bevuto tè al limone", "ru": "Я никогда не пил чай с лимоном", "zh": "我从未喝过加柠檬的茶", "tr": "Hiç limonlu çay içmedim"}),
+    ItemCard(english: "You should add garlic and ginger.", translations: {"ar": "المفروض تضيف توم وزنجبيل", "de": "Du solltest Knoblauch und Ingwer hinzufügen", "es": "Deberías agregar ajo y jengibre", "fr": "Tu devrais ajouter de l'ail et du gingembre", "it": "Dovresti aggiungere aglio e zenzero", "ru": "Тебе нужно добавить чеснок и имбирь", "zh": "你应该加大蒜和姜", "tr": "Sarımsak ve zencefil eklemelisin"}),
+    ItemCard(english: "Black olives are less bitter than green olives.", translations: {"ar": "الزيتون الأسود أقل مرارة من الزيتون الأخضر", "de": "Schwarze Oliven sind weniger bitter als grüne Oliven", "es": "Las aceitunas negras son menos amargas que las aceitunas verdes", "fr": "Les olives noires sont moins amères que les olives vertes", "it": "Le olive nere sono meno amare delle olive verdi", "ru": "Черные оливки менее горькие, чем зеленые", "zh": "黑橄榄比青橄榄苦味少", "tr": "Siyah zeytinler yeşil zeytinlerden daha az acıdır"}),
+    ItemCard(english: "Tom likes all vegetables except cabbage.", translations: {"ar": "توم بيحب كل الخضار ماعدا الكرنب", "de": "Tom mag alle Gemüse außer Kohl", "es": "A Tom le gustan todas las verduras excepto el repollo", "fr": "Tom aime tous les légumes sauf le chou", "it": "A Tom piacciono tutte le verdure tranne il cavolo", "ru": "Том любит все овощи, кроме капусты", "zh": "汤姆喜欢除了卷心菜以外的所有蔬菜", "tr": "Tom lahana dışındaki tüm sebzeleri sever"}),
+    ItemCard(english: "I love broccoli, but I don't love cauliflower.", translations: {"ar": "أنا بحب البروكلي، بس مبحبش القرنيط", "de": "Ich liebe Brokkoli, aber ich liebe keinen Blumenkohl", "es": "Amo el brócoli, pero no amo la coliflor", "fr": "J'adore le brocoli, mais je n'aime pas le chou-fleur", "it": "Adoro i broccoli, ma non amo il cavolfiore", "ru": "Я люблю брокколи, но не люблю цветную капусту", "zh": "我喜欢西兰花，但不喜欢菜花", "tr": "Brokoliyi severim ama karnabaharı sevmem"}),
+    ItemCard(english: "The doctor advised me to eat lettuce, leek, and artichoke.", translations: {"ar": "الدكتور نصحني أكل خس و كرات وخرشوف", "de": "Der Arzt riet mir, Salat, Lauch und Artischocke zu essen", "es": "El médico me aconsejó comer lechuga, puerro y alcachofa", "fr": "Le médecin m'a conseillé de manger de la laitue, du poireau et de l'artichaut", "it": "Il dottore mi ha consigliato di mangiare lattuga, porro e carciofo", "ru": "Врач посоветовал мне есть салат, лук-порей и артишок", "zh": "医生建议我吃生菜、韭葱和洋蓟", "tr": "Doktor bana marul, pırasa ve enginar yememi tavsiye etti"}),
+    ItemCard(english: "I ate the pumpkin pie.", translations: {"ar": "أنا أكلت قطيرة اليقطين", "de": "Ich habe die Kürbistorte gegessen", "es": "Comí el pastel de calabaza", "fr": "J'ai mangé la tarte à la citrouille", "it": "Ho mangiato la torta di zucca", "ru": "Я съел тыквенный пирог", "zh": "我吃了南瓜派", "tr": "Balkabağı turtasını yedim"}),
+    ItemCard(english: "I can eat sweet potato every day; I love it so much.", translations: {"ar": "أنا ممكن أكل بطاطا كل يوم؛ بحبها اوي", "de": "Ich kann jeden Tag Süßkartoffeln essen; ich liebe sie so sehr", "es": "Puedo comer batata todos los días; me encanta mucho", "fr": "Je peux manger de la patate douce tous les jours; je l'aime tellement", "it": "Posso mangiare patate dolci ogni giorno; le amo così tanto", "ru": "Я могу есть батат каждый день; я его так люблю", "zh": "我可以每天吃红薯；我太爱它了", "tr": "Her gün tatlı patates yiyebilirim; çok seviyorum"}),
+    
+    // ========== 37 جملة إضافية عن الخضروات ==========
+    ItemCard(english: "Carrots are good for your eyesight.", translations: {"ar": "الجزر مفيد لنظر عيونك", "de": "Karotten sind gut für deine Sehkraft", "es": "Las zanahorias son buenas para la vista", "fr": "Les carottes sont bonnes pour la vue", "it": "Le carote fanno bene alla vista", "ru": "Морковь полезна для зрения", "zh": "胡萝卜对视力有好处", "tr": "Havuç göz sağlığı için iyidir"}),
+    ItemCard(english: "I need to buy some garlic for the sauce.", translations: {"ar": "أنا محتاج أشتري توم للصوص", "de": "Ich muss etwas Knoblauch für die Soße kaufen", "es": "Necesito comprar un poco de ajo para la salsa", "fr": "J'ai besoin d'acheter de l'ail pour la sauce", "it": "Devo comprare dell'aglio per la salsa", "ru": "Мне нужно купить чеснок для соуса", "zh": "我需要买些大蒜做酱汁", "tr": "Sos için biraz sarımsak almam gerek"}),
+    ItemCard(english: "Tomatoes are a key ingredient in many dishes.", translations: {"ar": "الطماطم مكون أساسي في أكلات كتير", "de": "Tomaten sind eine Schlüsselzutat in vielen Gerichten", "es": "Los tomates son un ingrediente clave en muchos platos", "fr": "Les tomates sont un ingrédient clé dans de nombreux plats", "it": "I pomodori sono un ingrediente chiave in molti piatti", "ru": "Помидоры - ключевой ингредиент во многих блюдах", "zh": "西红柿是许多菜肴的关键配料", "tr": "Domates birçok yemekte önemli bir malzemedir"}),
+    ItemCard(english: "This soup needs more salt and pepper.", translations: {"ar": "الشوربة دي محتاجة ملح وفلفل أكتر", "de": "Diese Suppe braucht mehr Salz und Pfeffer", "es": "Esta sopa necesita más sal y pimienta", "fr": "Cette soupe a besoin de plus de sel et de poivre", "it": "Questa zuppa ha bisogno di più sale e pepe", "ru": "Этот суп нуждается в большем количестве соли и перца", "zh": "这汤需要更多的盐和胡椒", "tr": "Bu çorbanın daha fazla tuz ve bibere ihtiyacı var"}),
+    ItemCard(english: "Cucumbers are refreshing in summer salads.", translations: {"ar": "الخيار منعش في السلطات الصيفية", "de": "Gurken sind erfrischend in Sommersalaten", "es": "Los pepinos son refrescantes en ensaladas de verano", "fr": "Les concombres sont rafraîchissants dans les salades d'été", "it": "I cetrioli sono rinfrescanti nelle insalate estive", "ru": "Огурцы освежают в летних салатах", "zh": "黄瓜在夏季沙拉中很清爽", "tr": "Salatalık yaz salatalarında ferahlatıcıdır"}),
+    ItemCard(english: "Lentil soup is very healthy and filling.", translations: {"ar": "شوربة العدس صحية جدا وبتشبع", "de": "Linsensuppe ist sehr gesund und sättigend", "es": "La sopa de lentejas es muy saludable y sacia", "fr": "La soupe aux lentilles est très saine et rassasiante", "it": "La zuppa di lenticchie è molto salutare e saziante", "ru": "Чечевичный суп очень полезен и сытный", "zh": "扁豆汤非常健康且饱腹", "tr": "Mercimek çorbası çok sağlıklı ve doyurucudur"}),
+    ItemCard(english: "Eggplant parmesan is a classic Italian dish.", translations: {"ar": "باذنجان بارميزان هو طبق إيطالي كلاسيكي", "de": "Auberginen-Parmesan ist ein klassisches italienisches Gericht", "es": "La berenjena a la parmesana es un plato italiano clásico", "fr": "L'aubergine parmesane est un plat italien classique", "it": "La parmigiana di melanzane è un piatto italiano classico", "ru": "Баклажаны по-пармезански - классическое итальянское блюдо", "zh": "茄子帕尔马干酪是一道经典的意大利菜", "tr": "Patlıcan parmesan klasik bir İtalyan yemeğidir"}),
+    ItemCard(english: "Stir-fried broccoli with garlic is delicious.", translations: {"ar": "البروكلي المقلي مع الثوم لذيذ", "de": "Brokkoli mit Knoblauch gebraten ist köstlich", "es": "El brócoli salteado con ajo es delicioso", "fr": "Le brocoli sauté à l'ail est délicieux", "it": "I broccoli saltati con aglio sono deliziosi", "ru": "Жареный брокколи с чесноком вкусен", "zh": "蒜蓉西兰花很好吃", "tr": "Sarımsaklı brokoli nefistir"}),
+    ItemCard(english: "I like to add mint to my tea.", translations: {"ar": "أنا بحب أضيف نعناع للشاي بتاعي", "de": "Ich mag es, Minze in meinen Tee zu geben", "es": "Me gusta agregar menta a mi té", "fr": "J'aime ajouter de la menthe à mon thé", "it": "Mi piace aggiungere la menta al mio tè", "ru": "Мне нравится добавлять мяту в чай", "zh": "我喜欢在茶里加薄荷", "tr": "Çayıma nane eklemeyi severim"}),
+    ItemCard(english: "Parsley is often used as a garnish.", translations: {"ar": "البقدونس غالباً بيتستخدم كزينة", "de": "Petersilie wird oft als Garnitur verwendet", "es": "El perejil se usa a menudo como guarnición", "fr": "Le persil est souvent utilisé comme garniture", "it": "Il prezzemolo è spesso usato come guarnizione", "ru": "Петрушку часто используют как гарнир", "zh": "欧芹常被用作装饰", "tr": "Maydanoz genellikle süs olarak kullanılır"}),
+    ItemCard(english: "Spinach is rich in iron.", translations: {"ar": "السبانخ غنية بالحديد", "de": "Spinat ist reich an Eisen", "es": "La espinaca es rica en hierro", "fr": "Les épinards sont riches en fer", "it": "Gli spinaci sono ricchi di ferro", "ru": "Шпинат богат железом", "zh": "菠菜富含铁", "tr": "Ispanak demir açısından zengindir"}),
+    ItemCard(english: "Fresh corn is sweet and crunchy.", translations: {"ar": "الذرة الطازجة حلوة ومقرمشة", "de": "Frischer Mais ist süß und knusprig", "es": "El maíz fresco es dulce y crujiente", "fr": "Le maïs frais est sucré et croquant", "it": "Il mais fresco è dolce e croccante", "ru": "Свежая кукуруза сладкая и хрустящая", "zh": "新鲜玉米又甜又脆", "tr": "Taze mısır tatlı ve gevrektir"}),
+    ItemCard(english: "Artichokes take time to prepare but are worth it.", translations: {"ar": "الخرشوف بياخد وقت في التجهيز بس يستاهل", "de": "Artischocken brauchen Zeit zur Zubereitung, aber es lohnt sich", "es": "Las alcachofas tardan en prepararse pero valen la pena", "fr": "Les artichauts prennent du temps à préparer mais ça vaut le coup", "it": "I carciofi richiedono tempo per essere preparati ma ne vale la pena", "ru": "Артишоки требуют времени для приготовления, но оно того стоит", "zh": "洋蓟需要时间来准备，但值得", "tr": "Enginar hazırlaması zaman alır ama buna değer"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الخضروات - Vegetables",
+    );
+  }
+}
+
+
+
+
+
+/////////
+////////
+
+
+
+
+
+
+class DrinksScreen extends StatelessWidget {
+  const DrinksScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - المشروبات (Drinks & Beverages)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 167 ==========
+    LearningCard(primaryText: "Water", translations: {"ar": "ماء", "de": "Wasser", "es": "Agua", "fr": "Eau", "it": "Acqua", "ru": "Вода", "zh": "水", "tr": "Su"}),
+    LearningCard(primaryText: "Tap Water", translations: {"ar": "ماء من الحنفية", "de": "Leitungswasser", "es": "Agua del grifo", "fr": "Eau du robinet", "it": "Acqua del rubinetto", "ru": "Вода из-под крана", "zh": "自来水", "tr": "Musluk suyu"}),
+    LearningCard(primaryText: "Cola / Coke", translations: {"ar": "كولا", "de": "Cola", "es": "Cola", "fr": "Cola", "it": "Cola", "ru": "Кола", "zh": "可乐", "tr": "Kola"}),
+    LearningCard(primaryText: "Soft Drink", translations: {"ar": "مشروب غازي", "de": "Erfrischungsgetränk", "es": "Bebida gaseosa", "fr": "Boisson gazeuse", "it": "Bevanda gassata", "ru": "Газированный напиток", "zh": "软饮料", "tr": "Gazlı içecek"}),
+    LearningCard(primaryText: "Lemonade", translations: {"ar": "عصير ليمون", "de": "Limonade", "es": "Limonada", "fr": "Limonade", "it": "Limonata", "ru": "Лимонад", "zh": "柠檬水", "tr": "Limonata"}),
+    LearningCard(primaryText: "Juice", translations: {"ar": "عصير", "de": "Saft", "es": "Jugo", "fr": "Jus", "it": "Succo", "ru": "Сок", "zh": "果汁", "tr": "Meyve suyu"}),
+    LearningCard(primaryText: "Watermelon Juice", translations: {"ar": "عصير بطيخ", "de": "Wassermelonensaft", "es": "Jugo de sandía", "fr": "Jus de pastèque", "it": "Succo di anguria", "ru": "Арбузный сок", "zh": "西瓜汁", "tr": "Karpuz suyu"}),
+    LearningCard(primaryText: "Kiwi Juice", translations: {"ar": "عصير كيوي", "de": "Kiwisaft", "es": "Jugo de kiwi", "fr": "Jus de kiwi", "it": "Succo di kiwi", "ru": "Сок киви", "zh": "猕猴桃汁", "tr": "Kivi suyu"}),
+    LearningCard(primaryText: "Orange Juice", translations: {"ar": "عصير برتقال", "de": "Orangensaft", "es": "Jugo de naranja", "fr": "Jus d'orange", "it": "Succo d'arancia", "ru": "Апельсиновый сок", "zh": "橙汁", "tr": "Portakal suyu"}),
+    LearningCard(primaryText: "Grapefruit Juice", translations: {"ar": "عصير جريب فروت", "de": "Grapefruitsaft", "es": "Jugo de toronja", "fr": "Jus de pamplemousse", "it": "Succo di pompelmo", "ru": "Грейпфрутовый сок", "zh": "西柚汁", "tr": "Greyfurt suyu"}),
+    LearningCard(primaryText: "Tea", translations: {"ar": "شاي", "de": "Tee", "es": "Té", "fr": "Thé", "it": "Tè", "ru": "Чай", "zh": "茶", "tr": "Çay"}),
+    LearningCard(primaryText: "Green Tea", translations: {"ar": "شاي أخضر", "de": "Grüner Tee", "es": "Té verde", "fr": "Thé vert", "it": "Tè verde", "ru": "Зеленый чай", "zh": "绿茶", "tr": "Yeşil çay"}),
+    LearningCard(primaryText: "Fruit Tea", translations: {"ar": "شاي فواكه", "de": "Früchtetee", "es": "Té de frutas", "fr": "Thé aux fruits", "it": "Tè alla frutta", "ru": "Фруктовый чай", "zh": "水果茶", "tr": "Meyve çayı"}),
+    LearningCard(primaryText: "Iced Tea", translations: {"ar": "شاي مثلج", "de": "Eistee", "es": "Té helado", "fr": "Thé glacé", "it": "Tè freddo", "ru": "Холодный чай", "zh": "冰茶", "tr": "Buzlu çay"}),
+    LearningCard(primaryText: "Coffee", translations: {"ar": "قهوة", "de": "Kaffee", "es": "Café", "fr": "Café", "it": "Caffè", "ru": "Кофе", "zh": "咖啡", "tr": "Kahve"}),
+    LearningCard(primaryText: "Black Coffee", translations: {"ar": "قهوة سادة", "de": "Schwarzer Kaffee", "es": "Café negro", "fr": "Café noir", "it": "Caffè nero", "ru": "Черный кофе", "zh": "黑咖啡", "tr": "Sade kahve"}),
+    LearningCard(primaryText: "Iced Coffee", translations: {"ar": "قهوة مثلجة", "de": "Eiskaffee", "es": "Café helado", "fr": "Café glacé", "it": "Caffè freddo", "ru": "Холодный кофе", "zh": "冰咖啡", "tr": "Buzlu kahve"}),
+    LearningCard(primaryText: "Cocoa", translations: {"ar": "كاكاو", "de": "Kakao", "es": "Cacao", "fr": "Cacao", "it": "Cacao", "ru": "Какао", "zh": "可可", "tr": "Kakao"}),
+    LearningCard(primaryText: "Hot Chocolate", translations: {"ar": "هوت شوكليت", "de": "Heiße Schokolade", "es": "Chocolate caliente", "fr": "Chocolat chaud", "it": "Cioccolata calda", "ru": "Горячий шоколад", "zh": "热巧克力", "tr": "Sıcak çikolata"}),
+    LearningCard(primaryText: "Latte", translations: {"ar": "لاتيه", "de": "Latte Macchiato", "es": "Latte", "fr": "Latte", "it": "Latte macchiato", "ru": "Латте", "zh": "拿铁", "tr": "Latte"}),
+    LearningCard(primaryText: "Milkshake", translations: {"ar": "ميلك شيك", "de": "Milchshake", "es": "Batido", "fr": "Milkshake", "it": "Frullato", "ru": "Молочный коктейль", "zh": "奶昔", "tr": "Milkshake"}),
+    LearningCard(primaryText: "Smoothie", translations: {"ar": "سموزي", "de": "Smoothie", "es": "Batido de frutas", "fr": "Smoothie", "it": "Frullato di frutta", "ru": "Смузи", "zh": "思慕雪", "tr": "Smoothie"}),
+    LearningCard(primaryText: "Milk", translations: {"ar": "لبن", "de": "Milch", "es": "Leche", "fr": "Lait", "it": "Latte", "ru": "Молоко", "zh": "牛奶", "tr": "Süt"}),
+    LearningCard(primaryText: "Energy Drink", translations: {"ar": "مشروب طاقة", "de": "Energy Drink", "es": "Bebida energética", "fr": "Boisson énergisante", "it": "Bevanda energetica", "ru": "Энергетический напиток", "zh": "能量饮料", "tr": "Enerji içeceği"}),
+    LearningCard(primaryText: "Ice Cream", translations: {"ar": "آيس كريم", "de": "Eiscreme", "es": "Helado", "fr": "Glace", "it": "Gelato", "ru": "Мороженое", "zh": "冰淇淋", "tr": "Dondurma"}),
+    
+    // ========== مشروبات إضافية ==========
+    LearningCard(primaryText: "Sparkling Water", translations: {"ar": "ماء فوار", "de": "Sprudelwasser", "es": "Agua con gas", "fr": "Eau pétillante", "it": "Acqua frizzante", "ru": "Газированная вода", "zh": "气泡水", "tr": "Maden suyu"}),
+    LearningCard(primaryText: "Mineral Water", translations: {"ar": "ماء معدني", "de": "Mineralwasser", "es": "Agua mineral", "fr": "Eau minérale", "it": "Acqua minerale", "ru": "Минеральная вода", "zh": "矿泉水", "tr": "Maden suyu"}),
+    LearningCard(primaryText: "Cappuccino", translations: {"ar": "كابتشينو", "de": "Cappuccino", "es": "Capuchino", "fr": "Cappuccino", "it": "Cappuccino", "ru": "Капучино", "zh": "卡布奇诺", "tr": "Kapuçino"}),
+    LearningCard(primaryText: "Espresso", translations: {"ar": "إسبرسو", "de": "Espresso", "es": "Espresso", "fr": "Expresso", "it": "Espresso", "ru": "Эспрессо", "zh": "浓缩咖啡", "tr": "Espresso"}),
+    LearningCard(primaryText: "Mocha", translations: {"ar": "موكا", "de": "Mokka", "es": "Moca", "fr": "Moka", "it": "Moka", "ru": "Мокко", "zh": "摩卡", "tr": "Mocha"}),
+    LearningCard(primaryText: "Apple Juice", translations: {"ar": "عصير تفاح", "de": "Apfelsaft", "es": "Jugo de manzana", "fr": "Jus de pomme", "it": "Succo di mela", "ru": "Яблочный сок", "zh": "苹果汁", "tr": "Elma suyu"}),
+    LearningCard(primaryText: "Mango Juice", translations: {"ar": "عصير مانجو", "de": "Mangosaft", "es": "Jugo de mango", "fr": "Jus de mangue", "it": "Succo di mango", "ru": "Манговый сок", "zh": "芒果汁", "tr": "Mango suyu"}),
+    LearningCard(primaryText: "Strawberry Juice", translations: {"ar": "عصير فراولة", "de": "Erdbeersaft", "es": "Jugo de fresa", "fr": "Jus de fraise", "it": "Succo di fragola", "ru": "Клубничный сок", "zh": "草莓汁", "tr": "Çilek suyu"}),
+    LearningCard(primaryText: "Carrot Juice", translations: {"ar": "عصير جزر", "de": "Karottensaft", "es": "Jugo de zanahoria", "fr": "Jus de carotte", "it": "Succo di carota", "ru": "Морковный сок", "zh": "胡萝卜汁", "tr": "Havuç suyu"}),
+  ];
+
+  // ✅ 50+ جملة - عن المشروبات
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 168 (13 جملة) ==========
+    ItemCard(english: "Would you like to drink tea?", translations: {"ar": "تحب تشرب شاي؟", "de": "Möchtest du Tee trinken?", "es": "¿Te gustaría tomar té?", "fr": "Voudrais-tu boire du thé?", "it": "Ti piacerebbe bere del tè?", "ru": "Ты хочешь выпить чай?", "zh": "你想喝茶吗？", "tr": "Çay içmek ister misin?"}),
+    ItemCard(english: "Salma doesn't prefer soft drinks.", translations: {"ar": "سلمى مش بتحب المشروبات الغازية", "de": "Salma bevorzugt keine Erfrischungsgetränke", "es": "A Salma no le gustan las bebidas gaseosas", "fr": "Salma ne préfère pas les boissons gazeuses", "it": "A Salma non piacciono le bevande gassate", "ru": "Сальма не любит газированные напитки", "zh": "萨尔玛不喜欢软饮料", "tr": "Salma gazlı içecekleri tercih etmez"}),
+    ItemCard(english: "In my opinion, hot chocolate is the best on cold nights.", translations: {"ar": "في رأيي الهوت شوكليت هو الأفضل في الليالي الباردة", "de": "Meiner Meinung nach ist heiße Schokolade an kalten Nächten am besten", "es": "En mi opinión, el chocolate caliente es el mejor en las noches frías", "fr": "À mon avis, le chocolat chaud est le meilleur les nuits froides", "it": "Secondo me, la cioccolata calda è la migliore nelle notti fredde", "ru": "По моему мнению, горячий шоколад лучше всего в холодные ночи", "zh": "在我看来，热巧克力在寒冷的夜晚是最好的", "tr": "Bence sıcak çikolata soğuk gecelerde en iyisidir"}),
+    ItemCard(english: "Could you give me a can of cola, please?", translations: {"ar": "ممكن تديني كنزاية كولا من فضلك؟", "de": "Könntest du mir bitte eine Dose Cola geben?", "es": "¿Podrías darme una lata de cola, por favor?", "fr": "Pourrais-tu me donner une canette de cola, s'il te plaît?", "it": "Potresti darmi una lattina di cola, per favore?", "ru": "Не могли бы вы дать мне банку колы, пожалуйста?", "zh": "请给我一罐可乐好吗？", "tr": "Bana bir kutu kola verir misin lütfen?"}),
+    ItemCard(english: "She goes on a healthy diet, and drinks green tea every day.", translations: {"ar": "هي ماشية على نظام غذائي صحي وبتشرب شاي أخضر كل يوم", "de": "Sie macht eine gesunde Diät und trinkt jeden Tag grünen Tee", "es": "Ella sigue una dieta saludable y bebe té verde todos los días", "fr": "Elle suit un régime sain et boit du thé vert tous les jours", "it": "Segue una dieta sana e beve tè verde ogni giorno", "ru": "Она соблюдает здоровую диету и пьет зеленый чай каждый день", "zh": "她在健康饮食，每天都喝绿茶", "tr": "Sağlıklı bir diyet yapıyor ve her gün yeşil çay içiyor"}),
+    ItemCard(english: "I will take a milkshake, what about you?", translations: {"ar": "أنا هاخد ميلك شيك، وانت؟", "de": "Ich nehme einen Milchshake, und du?", "es": "Tomaré un batido, ¿y tú?", "fr": "Je prendrai un milkshake, et toi?", "it": "Prenderò un frappè, tu?", "ru": "Я возьму молочный коктейль, а ты?", "zh": "我要一杯奶昔，你呢？", "tr": "Milkshake alacağım, ya sen?"}),
+    ItemCard(english: "Ali's favorite drink is latte.", translations: {"ar": "مشروب علي المفضل هو اللاتيه", "de": "Ali's Lieblingsgetränk ist Latte", "es": "La bebida favorita de Ali es el latte", "fr": "La boisson préférée d'Ali est le latte", "it": "La bevanda preferita di Ali è il latte macchiato", "ru": "Любимый напиток Али - латте", "zh": "阿里最喜欢的饮料是拿铁", "tr": "Ali'nin en sevdiği içecek lat tedir"}),
+    ItemCard(english: "She is too young; we can't give her iced coffee.", translations: {"ar": "دي صغيرة اوي، منقدرش نشربها قهوة متلجة", "de": "Sie ist zu jung; wir können ihr keinen Eiskaffee geben", "es": "Es demasiado joven; no podemos darle café helado", "fr": "Elle est trop jeune; nous ne pouvons pas lui donner du café glacé", "it": "È troppo giovane; non possiamo darle il caffè freddo", "ru": "Она слишком молода; мы не можем дать ей холодный кофе", "zh": "她太年轻了；我们不能给她冰咖啡", "tr": "Çok genç; ona buzlu kahve veremeyiz"}),
+    ItemCard(english: "I don't like fruit tea. I just like the regular one.", translations: {"ar": "أنا مش بحب شاي الفواكه أنا بحب بس الشاي العادي", "de": "Ich mag keinen Früchtetee. Ich mag nur den normalen", "es": "No me gusta el té de frutas. Solo me gusta el té normal", "fr": "Je n'aime pas le thé aux fruits. J'aime juste le thé ordinaire", "it": "Non mi piace il tè alla frutta. Mi piace solo quello normale", "ru": "Я не люблю фруктовый чай. Я люблю только обычный", "zh": "我不喜欢水果茶。我只喜欢普通的茶", "tr": "Meyve çayını sevmiyorum. Sadece normal çayı severim"}),
+    ItemCard(english: "This hotel offers good beverages.", translations: {"ar": "الفندق ده يقدم مشروبات حلوة", "de": "Dieses Hotel bietet gute Getränke an", "es": "Este hotel ofrece buenas bebidas", "fr": "Cet hôtel propose de bonnes boissons", "it": "Questo hotel offre buone bevande", "ru": "Этот отель предлагает хорошие напитки", "zh": "这家酒店提供好喝的饮料", "tr": "Bu otel güzel içecekler sunuyor"}),
+    ItemCard(english: "I need to take my coffee in the morning.", translations: {"ar": "أنا محتاج آخد قهوتي في الصباح", "de": "Ich muss meinen Kaffee am Morgen nehmen", "es": "Necesito tomar mi café por la mañana", "fr": "J'ai besoin de prendre mon café le matin", "it": "Devo prendere il mio caffè al mattino", "ru": "Мне нужно выпить кофе утром", "zh": "我需要在早上喝咖啡", "tr": "Sabahları kahvemi almam gerekiyor"}),
+    ItemCard(english: "Chocolate ice cream is the best.", translations: {"ar": "آيس كريم الشوكولاتة أحلى حاجة", "de": "Schokoladeneis ist das Beste", "es": "El helado de chocolate es el mejor", "fr": "La glace au chocolat est la meilleure", "it": "Il gelato al cioccolato è il migliore", "ru": "Шоколадное мороженое - лучшее", "zh": "巧克力冰淇淋是最好的", "tr": "Çikolatalı dondurma en iyisidir"}),
+    ItemCard(english: "Mom shouts at me every morning to drink milk, but I don't like it.", translations: {"ar": "ماما بتزعقلي كل يوم الصبح عشان أشرب اللبن بس أنا مش بحبه", "de": "Mama schreit mich jeden Morgen an, weil ich Milch trinken soll, aber ich mag sie nicht", "es": "Mi mamá me grita todas las mañanas para que tome leche, pero no me gusta", "fr": "Ma mère me crie dessus tous les matins pour que je boive du lait, mais je n'aime pas ça", "it": "Mia madre mi grida ogni mattina per farmi bere il latte, ma non mi piace", "ru": "Мама кричит на меня каждое утро, чтобы я пил молоко, но я его не люблю", "zh": "妈妈每天早上都喊我喝牛奶，但我不喜欢", "tr": "Annem her sabah süt içmem için bağırır, ama ben sevmem"}),
+    
+    // ========== 37 جملة إضافية عن المشروبات ==========
+    ItemCard(english: "A glass of water is always refreshing.", translations: {"ar": "كوباية مية دايمًا منعشة", "de": "Ein Glas Wasser ist immer erfrischend", "es": "Un vaso de agua es siempre refrescante", "fr": "Un verre d'eau est toujours rafraîchissant", "it": "Un bicchiere d'acqua è sempre rinfrescante", "ru": "Стакан воды всегда освежает", "zh": "一杯水总是令人神清气爽", "tr": "Bir bardak su her zaman ferahlatıcıdır"}),
+    ItemCard(english: "I prefer fresh juice over soda.", translations: {"ar": "أنا أفضل العصير الطازج عن الصودا", "de": "Ich bevorzuge frischen Saft gegenüber Limonade", "es": "Prefiero el jugo fresco sobre la soda", "fr": "Je préfère le jus frais au soda", "it": "Preferisco il succo fresco alla soda", "ru": "Я предпочитаю свежий сок газировке", "zh": "比起苏打水，我更喜欢鲜榨果汁", "tr": "Sodaya taze meyve suyunu tercih ederim"}),
+    ItemCard(english: "Can I have a cup of black coffee, please?", translations: {"ar": "ممكن كوباية قهوة سادة من فضلك؟", "de": "Kann ich bitte eine Tasse schwarzen Kaffee haben?", "es": "¿Puedo tomar una taza de café negro, por favor?", "fr": "Puis-je avoir une tasse de café noir, s'il vous plaît?", "it": "Posso avere una tazza di caffè nero, per favore?", "ru": "Можно мне чашку черного кофе, пожалуйста?", "zh": "请给我一杯黑咖啡好吗？", "tr": "Bir fincan sade kahve alabilir miyim lütfen?"}),
+    ItemCard(english: "Green tea is full of antioxidants.", translations: {"ar": "الشاي الأخضر مليان مضادات أكسدة", "de": "Grüner Tee ist voller Antioxidantien", "es": "El té verde está lleno de antioxidantes", "fr": "Le thé vert est plein d'antioxydants", "it": "Il tè verde è pieno di antiossidanti", "ru": "Зеленый чай полон антиоксидантов", "zh": "绿茶富含抗氧化剂", "tr": "Yeşil çay antioksidanlarla doludur"}),
+    ItemCard(english: "I always order a cappuccino at this cafe.", translations: {"ar": "أنا دايما بطلب كابتشينو في الكافيه ده", "de": "Ich bestelle in diesem Café immer einen Cappuccino", "es": "Siempre pido un capuchino en este café", "fr": "Je commande toujours un cappuccino dans ce café", "it": "Ordino sempre un cappuccino in questo bar", "ru": "Я всегда заказываю капучино в этом кафе", "zh": "我总是在这家咖啡馆点卡布奇诺", "tr": "Bu kafede her zaman kapuçino sipariş ederim"}),
+    ItemCard(english: "Lemonade is perfect for hot summer days.", translations: {"ar": "عصير الليمون مثالي لأيام الصيف الحارة", "de": "Limonade ist perfekt für heiße Sommertage", "es": "La limonada es perfecta para los días calurosos de verano", "fr": "La limonade est parfaite pour les chaudes journées d'été", "it": "La limonata è perfetta per le calde giornate estive", "ru": "Лимонад идеально подходит для жарких летних дней", "zh": "柠檬水非常适合炎热的夏日", "tr": "Limonata sıcak yaz günleri için mükemmeldir"}),
+    ItemCard(english: "Milk is rich in calcium for strong bones.", translations: {"ar": "اللبن غني بالكالسيوم لعظام قوية", "de": "Milch ist reich an Kalzium für starke Knochen", "es": "La leche es rica en calcio para huesos fuertes", "fr": "Le lait est riche en calcium pour des os solides", "it": "Il latte è ricco di calcio per ossa forti", "ru": "Молоко богато кальцием для крепких костей", "zh": "牛奶富含钙质，强健骨骼", "tr": "Süt güçlü kemikler için kalsiyum açısından zengindir"}),
+    ItemCard(english: "Energy drinks give me a quick boost.", translations: {"ar": "مشروبات الطاقة بتديني دفعة سريعة", "de": "Energy-Drinks geben mir einen schnellen Schub", "es": "Las bebidas energéticas me dan un impulso rápido", "fr": "Les boissons énergisantes me donnent un coup de fouet rapide", "it": "Le bevande energetiche mi danno una carica rapida", "ru": "Энергетические напитки дают мне быстрый заряд", "zh": "能量饮料让我快速提神", "tr": "Enerji içecekleri bana hızlı bir enerji verir"}),
+    ItemCard(english: "I love a smoothie for breakfast.", translations: {"ar": "أنا بحب السموزي على الفطار", "de": "Ich liebe einen Smoothie zum Frühstück", "es": "Me encanta un batido para el desayuno", "fr": "J'adore un smoothie pour le petit-déjeuner", "it": "Adoro un frullato per colazione", "ru": "Я люблю смузи на завтрак", "zh": "我喜欢早餐喝思慕雪", "tr": "Kahvaltıda smoothie'yi severim"}),
+    ItemCard(english: "This orange juice tastes freshly squeezed.", translations: {"ar": "عصير البرتقال ده طعمه عصرة جديدة", "de": "Dieser Orangensaft schmeckt frisch gepresst", "es": "Este jugo de naranja sabe recién exprimido", "fr": "Ce jus d'orange a un goût fraîchement pressé", "it": "Questo succo d'arancia sa di appena spremuto", "ru": "Этот апельсиновый сок на вкус свежевыжатый", "zh": "这橙汁尝起来像是鲜榨的", "tr": "Bu portakal suyunun tadı taze sıkılmış gibi"}),
+    ItemCard(english: "I like my coffee with a little sugar.", translations: {"ar": "أنا بحب قهوتي بشوية سكر", "de": "Ich mag meinen Kaffee mit etwas Zucker", "es": "Me gusta mi café con un poco de azúcar", "fr": "J'aime mon café avec un peu de sucre", "it": "Mi piace il mio caffè con un po' di zucchero", "ru": "Я люблю кофе с небольшим количеством сахара", "zh": "我喜欢我的咖啡加一点糖", "tr": "Kahvemi biraz şekerli severim"}),
+    ItemCard(english: "Hot chocolate is like a warm hug in a cup.", translations: {"ar": "الهوت شوكليت زي حضن دافي في كوباية", "de": "Heiße Schokolade ist wie eine warme Umarmung in einer Tasse", "es": "El chocolate caliente es como un abrazo cálido en una taza", "fr": "Le chocolat chaud est comme un câlin chaud dans une tasse", "it": "La cioccolata calda è come un abbraccio caldo in una tazza", "ru": "Горячий шоколад как теплое объятие в чашке", "zh": "热巧克力就像杯子里的温暖拥抱", "tr": "Sıcak çikolata bir fincanda sıcak bir kucaklama gibidir"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "المشروبات - Drinks",
+    );
+  }
+}
+
+
+
+///////
+///////
+
+
+
+
+class SweetsScreen extends StatelessWidget {
+  const SweetsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الحلويات (Sweets & Candy)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 171 ==========
+    LearningCard(primaryText: "Candy", translations: {"ar": "حلوى", "de": "Bonbon", "es": "Caramelo", "fr": "Bonbon", "it": "Caramella", "ru": "Конфета", "zh": "糖果", "tr": "Şeker"}),
+    LearningCard(primaryText: "Sweets", translations: {"ar": "حلويات", "de": "Süßigkeiten", "es": "Dulces", "fr": "Sucreries", "it": "Dolci", "ru": "Сладости", "zh": "甜食", "tr": "Tatlılar"}),
+    LearningCard(primaryText: "Chocolate", translations: {"ar": "شوكولاتة", "de": "Schokolade", "es": "Chocolate", "fr": "Chocolat", "it": "Cioccolato", "ru": "Шоколад", "zh": "巧克力", "tr": "Çikolata"}),
+    LearningCard(primaryText: "Muffin", translations: {"ar": "مافن", "de": "Muffin", "es": "Muffin", "fr": "Muffin", "it": "Muffin", "ru": "Маффин", "zh": "玛芬蛋糕", "tr": "Muffin"}),
+    LearningCard(primaryText: "Cotton Candy", translations: {"ar": "غزل البنات", "de": "Zuckerwatte", "es": "Algodón de azúcar", "fr": "Barbe à papa", "it": "Zucchero filato", "ru": "Сахарная вата", "zh": "棉花糖", "tr": "Pamuk şeker"}),
+    LearningCard(primaryText: "Jelly", translations: {"ar": "جيلي", "de": "Götterspeise", "es": "Gelatina", "fr": "Gelée", "it": "Gelatina", "ru": "Желе", "zh": "果冻", "tr": "Jöle"}),
+    LearningCard(primaryText: "Cake", translations: {"ar": "كيكة", "de": "Kuchen", "es": "Pastel", "fr": "Gâteau", "it": "Torta", "ru": "Торт", "zh": "蛋糕", "tr": "Pasta"}),
+    LearningCard(primaryText: "Pancakes", translations: {"ar": "بان كيك", "de": "Pfannkuchen", "es": "Panqueques", "fr": "Crêpes", "it": "Pancake", "ru": "Блины", "zh": "煎饼", "tr": "Pankek"}),
+    LearningCard(primaryText: "Donuts", translations: {"ar": "دونات", "de": "Donuts", "es": "Donas", "fr": "Beignets", "it": "Ciambelle", "ru": "Пончики", "zh": "甜甜圈", "tr": "Donut"}),
+    LearningCard(primaryText: "Lollipop", translations: {"ar": "مصاصة", "de": "Lutscher", "es": "Chupeta", "fr": "Sucette", "it": "Lecca lecca", "ru": "Леденец на палочке", "zh": "棒棒糖", "tr": "Lolipop"}),
+    LearningCard(primaryText: "Cookies", translations: {"ar": "كوكيز", "de": "Kekse", "es": "Galletas", "fr": "Biscuits", "it": "Biscotti", "ru": "Печенье", "zh": "饼干", "tr": "Kurabiye"}),
+    LearningCard(primaryText: "Pudding", translations: {"ar": "بودينج", "de": "Pudding", "es": "Pudin", "fr": "Pudding", "it": "Budino", "ru": "Пудинг", "zh": "布丁", "tr": "Puding"}),
+    LearningCard(primaryText: "Cupcake", translations: {"ar": "كب كيك", "de": "Cupcake", "es": "Pastelito", "fr": "Cupcake", "it": "Cupcake", "ru": "Капкейк", "zh": "纸杯蛋糕", "tr": "Kek"}),
+    LearningCard(primaryText: "Apple Pie", translations: {"ar": "فطيرة تفاح", "de": "Apfelkuchen", "es": "Pastel de manzana", "fr": "Tarte aux pommes", "it": "Torta di mele", "ru": "Яблочный пирог", "zh": "苹果派", "tr": "Elmalı turta"}),
+    LearningCard(primaryText: "Mousse", translations: {"ar": "موس", "de": "Mousse", "es": "Mousse", "fr": "Mousse", "it": "Mousse", "ru": "Мусс", "zh": "慕斯", "tr": "Mus"}),
+    LearningCard(primaryText: "Waffle", translations: {"ar": "وافل", "de": "Waffel", "es": "Waffle", "fr": "Gaufre", "it": "Cialda", "ru": "Вафля", "zh": "华夫饼", "tr": "Waffle"}),
+    LearningCard(primaryText: "Croissant", translations: {"ar": "كرواسون", "de": "Croissant", "es": "Croissant", "fr": "Croissant", "it": "Croissant", "ru": "Круассан", "zh": "牛角包", "tr": "Kruvasan"}),
+    LearningCard(primaryText: "Ice Cream", translations: {"ar": "آيس كريم", "de": "Eiscreme", "es": "Helado", "fr": "Glace", "it": "Gelato", "ru": "Мороженое", "zh": "冰淇淋", "tr": "Dondurma"}),
+    LearningCard(primaryText: "Pie", translations: {"ar": "فطيرة", "de": "Pastete", "es": "Pastel", "fr": "Tarte", "it": "Torta salata", "ru": "Пирог", "zh": "派", "tr": "Turta"}),
+    LearningCard(primaryText: "Biscuits", translations: {"ar": "بسكويت", "de": "Kekse", "es": "Galletas", "fr": "Biscuits", "it": "Biscotti", "ru": "Печенье", "zh": "饼干", "tr": "Bisküvi"}),
+    
+    // ========== حلويات إضافية ==========
+    LearningCard(primaryText: "Brownie", translations: {"ar": "براوني", "de": "Brownie", "es": "Brownie", "fr": "Brownie", "it": "Brownie", "ru": "Брауни", "zh": "布朗尼", "tr": "Browni"}),
+    LearningCard(primaryText: "Cheesecake", translations: {"ar": "تشيز كيك", "de": "Käsekuchen", "es": "Pastel de queso", "fr": "Cheesecake", "it": "Cheesecake", "ru": "Чизкейк", "zh": "芝士蛋糕", "tr": "Cheesecake"}),
+    LearningCard(primaryText: "Macaron", translations: {"ar": "ماكارون", "de": "Macaron", "es": "Macarrón", "fr": "Macaron", "it": "Macaron", "ru": "Макарон", "zh": "马卡龙", "tr": "Makaron"}),
+    LearningCard(primaryText: "Tiramisu", translations: {"ar": "تيراميسو", "de": "Tiramisu", "es": "Tiramisú", "fr": "Tiramisu", "it": "Tiramisù", "ru": "Тирамису", "zh": "提拉米苏", "tr": "Tiramisu"}),
+    LearningCard(primaryText: "Custard", translations: {"ar": "كاسترد", "de": "Krem", "es": "Crema pastelera", "fr": "Crème anglaise", "it": "Crema pasticcera", "ru": "Заварной крем", "zh": "蛋奶糊", "tr": "Muhallebi"}),
+    LearningCard(primaryText: "Fudge", translations: {"ar": "فدج", "de": "Fudge", "es": "Dulce de leche", "fr": "Fudge", "it": "Fudge", "ru": "Помадка", "zh": "软糖", "tr": "Fudge"}),
+    LearningCard(primaryText: "Gum", translations: {"ar": "علكة", "de": "Kaubonbon", "es": "Chicle", "fr": "Chewing-gum", "it": "Gomma da masticare", "ru": "Жвачка", "zh": "口香糖", "tr": "Sakız"}),
+    LearningCard(primaryText: "Marshmallow", translations: {"ar": "مارشميلو", "de": "Marshmallow", "es": "Malvavisco", "fr": "Guimauve", "it": "Marshmallow", "ru": "Маршмеллоу", "zh": "棉花糖", "tr": "Marshmallow"}),
+    LearningCard(primaryText: "Creme Brulee", translations: {"ar": "كريم بروليه", "de": "Crème Brûlée", "es": "Crema catalana", "fr": "Crème brûlée", "it": "Crema catalana", "ru": "Крем-брюле", "zh": "焦糖布丁", "tr": "Crème brûlée"}),
+    LearningCard(primaryText: "Fruit Salad", translations: {"ar": "سلطة فواكه", "de": "Obstsalat", "es": "Ensalada de frutas", "fr": "Salade de fruits", "it": "Macedonia di frutta", "ru": "Фруктовый салат", "zh": "水果沙拉", "tr": "Meyve salatası"}),
+  ];
+
+  // ✅ 50+ جملة - عن الحلويات
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 172 (13 جملة) ==========
+    ItemCard(english: "You shouldn't eat too much sweets; it's bad for your teeth.", translations: {"ar": "مش المفروض تآكل حلويات كثير ده غلط على أسنانك", "de": "Du solltest nicht zu viele Süßigkeiten essen; es ist schlecht für deine Zähne", "es": "No deberías comer demasiados dulces; es malo para tus dientes", "fr": "Tu ne devrais pas manger trop de sucreries; c'est mauvais pour tes dents", "it": "Non dovresti mangiare troppi dolci; fa male ai denti", "ru": "Тебе не следует есть много сладостей; это вредно для зубов", "zh": "你不应该吃太多甜食；对牙齿不好", "tr": "Çok fazla şeker yememelisin; dişlerine zararlı"}),
+    ItemCard(english: "I like cotton candy because it looks like clouds.", translations: {"ar": "أنا بحب غزل البنات عشان شبه السحاب", "de": "Ich mag Zuckerwatte, weil sie wie Wolken aussieht", "es": "Me gusta el algodón de azúcar porque parece nubes", "fr": "J'aime la barbe à papa parce qu'elle ressemble à des nuages", "it": "Mi piace lo zucchero filato perché sembra nuvole", "ru": "Мне нравится сахарная вата, потому что она похожа на облака", "zh": "我喜欢棉花糖，因为它看起来像云", "tr": "Pamuk şekeri severim çünkü bulutlara benziyor"}),
+    ItemCard(english: "Pancakes are my favorite because they are so easy to prepare.", translations: {"ar": "البان كيك هي المفضلة بالنسبة لي عشان سهلة التعمل", "de": "Pfannkuchen sind meine Lieblingsspeise, weil sie so einfach zuzubereiten sind", "es": "Los panqueques son mis favoritos porque son muy fáciles de preparar", "fr": "Les crêpes sont mes préférées car elles sont si faciles à préparer", "it": "I pancake sono i miei preferiti perché sono così facili da preparare", "ru": "Блины - мои любимые, потому что их так легко готовить", "zh": "煎饼是我的最爱，因为它们很容易做", "tr": "Pankekler benim favorim çünkü hazırlaması çok kolay"}),
+    ItemCard(english: "Mai doesn't like pudding at all. She prefers mousse.", translations: {"ar": "مي مش بتحب البودينج خالص، هي بتفضل الموس", "de": "Mai mag Pudding überhaupt nicht. Sie bevorzugt Mousse", "es": "A Mai no le gusta el pudín en absoluto. Ella prefiere el mousse", "fr": "Mai n'aime pas du tout le pudding. Elle préfère la mousse", "it": "A Mai non piace per niente il budino. Preferisce la mousse", "ru": "Май совсем не любит пудинг. Она предпочитает мусс", "zh": "麦一点都不喜欢布丁。她更喜欢慕斯", "tr": "Mai pudingi hiç sevmez. Mus'u tercih ediyor"}),
+    ItemCard(english: "What will you take, apple pie or cupcake?", translations: {"ar": "هتاخد إيه؟ فطيرة تفاح ولا كب كيك؟", "de": "Was nimmst du, Apfelkuchen oder Cupcake?", "es": "¿Qué tomarás, pastel de manzana o pastelito?", "fr": "Que prendrez-vous, tarte aux pommes ou cupcake?", "it": "Cosa prenderai, torta di mele o cupcake?", "ru": "Что ты возьмешь, яблочный пирог или капкейк?", "zh": "你要吃什么，苹果派还是纸杯蛋糕？", "tr": "Ne alacaksın, elmalı turta mı kek mi?"}),
+    ItemCard(english: "She always eats croissant because she wants to travel to France.", translations: {"ar": "هي دايماً بتاكل كرواسون عشان عايزة تسافر فرنسا", "de": "Sie isst immer Croissant, weil sie nach Frankreich reisen möchte", "es": "Ella siempre come croissant porque quiere viajar a Francia", "fr": "Elle mange toujours des croissants parce qu'elle veut voyager en France", "it": "Mangia sempre croissant perché vuole viaggiare in Francia", "ru": "Она всегда ест круассаны, потому что хочет поехать во Францию", "zh": "她总是吃牛角包，因为她想去法国旅行", "tr": "Fransa'ya seyahat etmek istediği için her zaman kruvasan yer"}),
+    ItemCard(english: "Fruit salad is very healthy and delicious.", translations: {"ar": "سلطة الفواكه صحية جداً و لذيذة", "de": "Obstsalat ist sehr gesund und lecker", "es": "La ensalada de frutas es muy saludable y deliciosa", "fr": "La salade de fruits est très saine et délicieuse", "it": "La macedonia di frutta è molto salutare e deliziosa", "ru": "Фруктовый салат очень полезен и вкусен", "zh": "水果沙拉非常健康美味", "tr": "Meyve salatası çok sağlıklı ve lezzetlidir"}),
+    ItemCard(english: "When I feel sad, I always bake a pie.", translations: {"ar": "لما بحس إني حزين دايماً بعمل فطيرة", "de": "Wenn ich traurig bin, backe ich immer einen Kuchen", "es": "Cuando me siento triste, siempre horneo un pastel", "fr": "Quand je me sens triste, je fais toujours une tarte", "it": "Quando mi sento triste, preparo sempre una torta", "ru": "Когда мне грустно, я всегда пеку пирог", "zh": "当我感到悲伤时，我总是烤一个派", "tr": "Üzgün hissettiğimde her zaman turta yaparım"}),
+    ItemCard(english: "Malak is the best one to make cookies.", translations: {"ar": "ملك أحسن واحدة بتعمل كوكيز", "de": "Malak ist die beste, wenn es ums Keksebacken geht", "es": "Malak es la mejor para hacer galletas", "fr": "Malak est la meilleure pour faire des biscuits", "it": "Malak è la migliore a fare i biscotti", "ru": "Малак лучше всех делает печенье", "zh": "马拉克是最会做饼干的人", "tr": "Malak kurabiye yapmada en iyisidir"}),
+    ItemCard(english: "They have muffins for breakfast.", translations: {"ar": "هما بياكلو مافن على الفطار", "de": "Sie haben Muffins zum Frühstück", "es": "Ellos tienen muffins para el desayuno", "fr": "Ils ont des muffins pour le petit-déjeuner", "it": "Hanno muffin per colazione", "ru": "У них на завтрак маффины", "zh": "他们早餐吃玛芬蛋糕", "tr": "Kahvaltıda muffin yerler"}),
+    ItemCard(english: "Could I have a biscuit, please?", translations: {"ar": "ممكن آخد قطعة بسكويت من فضلك؟", "de": "Könnte ich bitte einen Keks haben?", "es": "¿Podría tomar una galleta, por favor?", "fr": "Puis-je avoir un biscuit, s'il vous plaît?", "it": "Potrei avere un biscotto, per favore?", "ru": "Можно мне печенье, пожалуйста?", "zh": "请给我一块饼干好吗？", "tr": "Bir bisküvi alabilir miyim lütfen?"}),
+    ItemCard(english: "I know the lollipop is delicious, but it's harmful for your teeth.", translations: {"ar": "أنا عارف إن المصاصة لذيذة لكنها ضارة لأسنانك", "de": "Ich weiß, dass der Lutscher lecker ist, aber er ist schädlich für deine Zähne", "es": "Sé que la chupeta es deliciosa, pero es dañina para tus dientes", "fr": "Je sais que la sucette est délicieuse, mais elle est nocive pour tes dents", "it": "So che il lecca lecca è delizioso, ma è dannoso per i denti", "ru": "Я знаю, что леденец вкусный, но он вреден для зубов", "zh": "我知道棒棒糖很好吃，但对牙齿有害", "tr": "Lolipopun lezzetli olduğunu biliyorum ama dişlerine zararlı"}),
+    ItemCard(english: "Try this waffle, and you will like it.", translations: {"ar": "جرب الوافل ده هتحبه", "de": "Probiere diese Waffel, und du wirst sie mögen", "es": "Prueba este waffle, y te gustará", "fr": "Essaie cette gaufre, et tu l'aimeras", "it": "Prova questa cialda, e ti piacerà", "ru": "Попробуй эту вафлю, и она тебе понравится", "zh": "试试这个华夫饼，你会喜欢的", "tr": "Bu waffle'ı dene, seveceksin"}),
+    
+    // ========== 37 جملة إضافية عن الحلويات ==========
+    ItemCard(english: "Chocolate is my favorite sweet treat.", translations: {"ar": "الشوكولاتة هي حلويتي المفضلة", "de": "Schokolade ist meine liebste Süßigkeit", "es": "El chocolate es mi golosina favorita", "fr": "Le chocolat est ma friandise préférée", "it": "Il cioccolato è il mio dolce preferito", "ru": "Шоколад - мое любимое лакомство", "zh": "巧克力是我最喜欢的甜食", "tr": "Çikolata en sevdiğim tatlıdır"}),
+    ItemCard(english: "These cookies are homemade and delicious.", translations: {"ar": "الكوكيز دي معمولة في البيت ولذيذة", "de": "Diese Kekse sind hausgemacht und köstlich", "es": "Estas galletas son caseras y deliciosas", "fr": "Ces biscuits sont faits maison et délicieux", "it": "Questi biscotti sono fatti in casa e deliziosi", "ru": "Это печенье домашнее и вкусное", "zh": "这些饼干是自制的，很美味", "tr": "Bu kurabiyeler ev yapımı ve lezzetli"}),
+    ItemCard(english: "I love eating ice cream on a hot day.", translations: {"ar": "أنا بحب أكل الآيس كريم في اليوم الحار", "de": "Ich liebe es, an einem heißen Tag Eis zu essen", "es": "Me encanta comer helado en un día caluroso", "fr": "J'adore manger de la glace par une journée chaude", "it": "Adoro mangiare il gelato in una giornata calda", "ru": "Я люблю есть мороженое в жаркий день", "zh": "我喜欢在炎热的日子里吃冰淇淋", "tr": "Sıcak bir günde dondurma yemeyi severim"}),
+    ItemCard(english: "The cupcake has pink frosting on top.", translations: {"ar": "الكب كيك عليه مثلجات وردية من فوق", "de": "Der Cupcake hat rosa Glasur oben drauf", "es": "El pastelito tiene glaseado rosa en la parte superior", "fr": "Le cupcake a un glaçage rose sur le dessus", "it": "Il cupcake ha una glassa rosa sopra", "ru": "На капкейке сверху розовая глазурь", "zh": "纸杯蛋糕上面有粉色的糖霜", "tr": "Kekin üzerinde pembe krema var"}),
+    ItemCard(english: "Donuts with sprinkles are so colorful and fun.", translations: {"ar": "الدونات المحبب ملون وممتع", "de": "Donuts mit Streuseln sind so bunt und lustig", "es": "Las donas con chispas son muy coloridas y divertidas", "fr": "Les beignets avec des vermicelles sont si colorés et amusants", "it": "Le ciambelle con zuccherini sono così colorate e divertenti", "ru": "Пончики с посыпкой такие красочные и веселые", "zh": "带糖粒的甜甜圈色彩缤纷有趣", "tr": "Süslemeli donutlar çok renkli ve eğlencelidir"}),
+    ItemCard(english: "The chocolate cake was moist and rich.", translations: {"ar": "الكيكة بالشوكولاتة كانت طرية وغنية", "de": "Der Schokoladenkuchen war saftig und reichhaltig", "es": "El pastel de chocolate estaba húmedo y rico", "fr": "Le gâteau au chocolat était moelleux et riche", "it": "La torta al cioccolato era umida e ricca", "ru": "Шоколадный торт был сочным и насыщенным", "zh": "巧克力蛋糕湿润而浓郁", "tr": "Çikolatalı pasta nemli ve zengindi"}),
+    ItemCard(english: "Jelly is wobbly and sweet.", translations: {"ar": "الجيلي مهزوز وحلو", "de": "Götterspeise ist wackelig und süß", "es": "La gelatina es temblorosa y dulce", "fr": "La gelée est tremblante et sucrée", "it": "La gelatina è traballante e dolce", "ru": "Желе дрожит и сладкое", "zh": "果冻又软又甜", "tr": "Jöle titrek ve tatlıdır"}),
+    ItemCard(english: "I like to dip my cookies in milk.", translations: {"ar": "أنا بحب أغمس الكوكيز بتاعي في اللبن", "de": "Ich mag es, meine Kekse in Milch zu tunken", "es": "Me gusta mojar mis galletas en leche", "fr": "J'aime tremper mes biscuits dans du lait", "it": "Mi piace intingere i miei biscotti nel latte", "ru": "Мне нравится макать печенье в молоко", "zh": "我喜欢把饼干蘸牛奶", "tr": "Kurabiyelerimi süte batırmayı severim"}),
+    ItemCard(english: "Cheesecake is rich and creamy.", translations: {"ar": "التشيز كيك غني وكريمي", "de": "Käsekuchen ist reichhaltig und cremig", "es": "El pastel de queso es rico y cremoso", "fr": "Le cheesecake est riche et crémeux", "it": "La cheesecake è ricca e cremosa", "ru": "Чизкейк насыщенный и кремовый", "zh": "芝士蛋糕浓郁而奶油", "tr": "Cheesecake zengin ve kremalıdır"}),
+    ItemCard(english: "Brownies are fudgy and chocolatey.", translations: {"ar": "البراوني طري وشوكولاتي", "de": "Brownies sind weich und schokoladig", "es": "Los brownies son suaves y chocolatosos", "fr": "Les brownies sont fondants et chocolatés", "it": "I brownie sono morbidi e cioccolatosi", "ru": "Брауни мягкие и шоколадные", "zh": "布朗尼软糯巧克力味浓郁", "tr": "Browniler yumuşak ve çikolatalıdır"}),
+    ItemCard(english: "Macarons are delicate and colorful French cookies.", translations: {"ar": "المكارون بسكويت فرنسي رقيق وملون", "de": "Macarons sind zarte und bunte französische Kekse", "es": "Los macarons son galletas francesas delicadas y coloridas", "fr": "Les macarons sont des biscuits français délicats et colorés", "it": "I macaron sono biscotti francesi delicati e colorati", "ru": "Макарон - это нежное и красочное французское печенье", "zh": "马卡龙是精致多彩的法式饼干", "tr": "Makaronlar narin ve renkli Fransız kurabiyeleridir"}),
+    ItemCard(english: "Tiramisu is an Italian dessert with coffee flavor.", translations: {"ar": "التيراميسو هو حلوى إيطالية بطعم القهوة", "de": "Tiramisu ist ein italienisches Dessert mit Kaffeegeschmack", "es": "El tiramisú es un postre italiano con sabor a café", "fr": "Le tiramisu est un dessert italien à la saveur de café", "it": "Il tiramisù è un dolce italiano al gusto di caffè", "ru": "Тирамису - итальянский десерт со вкусом кофе", "zh": "提拉米苏是一种带有咖啡味的意大利甜点", "tr": "Tiramisu kahve aromalı bir İtalyan tatlısıdır"}),
+    ItemCard(english: "I love the crunchy texture of waffles.", translations: {"ar": "أنا بحب القرمشة بتاعة الوافل", "de": "Ich liebe die knusprige Textur von Waffeln", "es": "Me encanta la textura crujiente de los waffles", "fr": "J'adore la texture croustillante des gaufres", "it": "Adoro la consistenza croccante delle cialde", "ru": "Мне нравится хрустящая текстура вафель", "zh": "我喜欢华夫饼的酥脆口感", "tr": "Waffle'ların gevrek dokusunu severim"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الحلويات - Sweets & Candy",
+    );
+  }
+}
+
+
+
+
+/////////
+/////////
+
+
+
+
+class ColorsScreen extends StatelessWidget {
+  const ColorsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الألوان (Colors)
+  final List<LearningCard> words = const [
+    // ========== ألوان أساسية من الصورة 182 ==========
+    LearningCard(primaryText: "Red", translations: {"ar": "أحمر", "de": "Rot", "es": "Rojo", "fr": "Rouge", "it": "Rosso", "ru": "Красный", "zh": "红色", "tr": "Kırmızı"}),
+    LearningCard(primaryText: "Yellow", translations: {"ar": "أصفر", "de": "Gelb", "es": "Amarillo", "fr": "Jaune", "it": "Giallo", "ru": "Желтый", "zh": "黄色", "tr": "Sarı"}),
+    LearningCard(primaryText: "Green", translations: {"ar": "أخضر", "de": "Grün", "es": "Verde", "fr": "Vert", "it": "Verde", "ru": "Зеленый", "zh": "绿色", "tr": "Yeşil"}),
+    LearningCard(primaryText: "Black", translations: {"ar": "أسود", "de": "Schwarz", "es": "Negro", "fr": "Noir", "it": "Nero", "ru": "Черный", "zh": "黑色", "tr": "Siyah"}),
+    LearningCard(primaryText: "Brown", translations: {"ar": "بني", "de": "Braun", "es": "Marrón", "fr": "Marron", "it": "Marrone", "ru": "Коричневый", "zh": "棕色", "tr": "Kahverengi"}),
+    LearningCard(primaryText: "Gray", translations: {"ar": "رمادي", "de": "Grau", "es": "Gris", "fr": "Gris", "it": "Grigio", "ru": "Серый", "zh": "灰色", "tr": "Gri"}),
+    LearningCard(primaryText: "Orange", translations: {"ar": "برتقالي", "de": "Orange", "es": "Naranja", "fr": "Orange", "it": "Arancione", "ru": "Оранжевый", "zh": "橙色", "tr": "Turuncu"}),
+    LearningCard(primaryText: "White", translations: {"ar": "أبيض", "de": "Weiß", "es": "Blanco", "fr": "Blanc", "it": "Bianco", "ru": "Белый", "zh": "白色", "tr": "Beyaz"}),
+    LearningCard(primaryText: "Blue", translations: {"ar": "أزرق", "de": "Blau", "es": "Azul", "fr": "Bleu", "it": "Blu", "ru": "Синий", "zh": "蓝色", "tr": "Mavi"}),
+    LearningCard(primaryText: "Pink", translations: {"ar": "وردي", "de": "Rosa", "es": "Rosa", "fr": "Rose", "it": "Rosa", "ru": "Розовый", "zh": "粉色", "tr": "Pembe"}),
+    LearningCard(primaryText: "Purple", translations: {"ar": "بنفسجي", "de": "Lila", "es": "Morado", "fr": "Violet", "it": "Viola", "ru": "Фиолетовый", "zh": "紫色", "tr": "Mor"}),
+    LearningCard(primaryText: "Beige", translations: {"ar": "بيج", "de": "Beige", "es": "Beige", "fr": "Beige", "it": "Beige", "ru": "Бежевый", "zh": "米色", "tr": "Bej"}),
+    LearningCard(primaryText: "Gold", translations: {"ar": "ذهبي", "de": "Gold", "es": "Dorado", "fr": "Doré", "it": "Oro", "ru": "Золотой", "zh": "金色", "tr": "Altın"}),
+    LearningCard(primaryText: "Silver", translations: {"ar": "فضي", "de": "Silber", "es": "Plateado", "fr": "Argenté", "it": "Argento", "ru": "Серебряный", "zh": "银色", "tr": "Gümüş"}),
+    LearningCard(primaryText: "Bronze", translations: {"ar": "برونزي", "de": "Bronze", "es": "Bronce", "fr": "Bronze", "it": "Bronzo", "ru": "Бронзовый", "zh": "青铜色", "tr": "Bronz"}),
+    
+    // ========== ألوان فرعية من الصورة 182 ==========
+    LearningCard(primaryText: "Khaki", translations: {"ar": "كاكي", "de": "Khaki", "es": "Caqui", "fr": "Kaki", "it": "Cachi", "ru": "Хаки", "zh": "卡其色", "tr": "Haki"}),
+    LearningCard(primaryText: "Azure", translations: {"ar": "أزرق سماوي", "de": "Azurblau", "es": "Azul celeste", "fr": "Azur", "it": "Azzurro", "ru": "Лазурный", "zh": "天蓝色", "tr": "Gök mavisi"}),
+    LearningCard(primaryText: "Navy Blue", translations: {"ar": "أزرق بحري", "de": "Marineblau", "es": "Azul marino", "fr": "Bleu marine", "it": "Blu scuro", "ru": "Темно-синий", "zh": "海军蓝", "tr": "Lacivert"}),
+    LearningCard(primaryText: "Maroon", translations: {"ar": "كستنائي", "de": "Kastanienbraun", "es": "Granate", "fr": "Bordeaux", "it": "Marrone scuro", "ru": "Каштановый", "zh": "栗色", "tr": "Kestane rengi"}),
+    LearningCard(primaryText: "Crimson", translations: {"ar": "قرمزي", "de": "Karminrot", "es": "Carmesí", "fr": "Cramoisi", "it": "Cremisi", "ru": "Малиновый", "zh": "深红色", "tr": "Kıpkırmızı"}),
+    LearningCard(primaryText: "Baby Pink", translations: {"ar": "وردي فاتح", "de": "Babyrosa", "es": "Rosa bebé", "fr": "Rose clair", "it": "Rosa chiaro", "ru": "Светло-розовый", "zh": "淡粉色", "tr": "Bebek pembesi"}),
+    LearningCard(primaryText: "Aquamarine", translations: {"ar": "أزرق مخضر", "de": "Aquamarin", "es": "Aguamarina", "fr": "Aigue-marine", "it": "Acquamarina", "ru": "Аквамарин", "zh": "海蓝色", "tr": "Akuamarin"}),
+    LearningCard(primaryText: "Magenta", translations: {"ar": "أرجواني", "de": "Magenta", "es": "Magenta", "fr": "Magenta", "it": "Magenta", "ru": "Пурпурный", "zh": "洋红色", "tr": "Macenta"}),
+    LearningCard(primaryText: "Olive", translations: {"ar": "زيتوني", "de": "Olivgrün", "es": "Verde oliva", "fr": "Olive", "it": "Oliva", "ru": "Оливковый", "zh": "橄榄绿", "tr": "Zeytin yeşili"}),
+    LearningCard(primaryText: "Mustard", translations: {"ar": "مستردة", "de": "Senfgelb", "es": "Mostaza", "fr": "Moutarde", "it": "Giallo senape", "ru": "Горчичный", "zh": "芥末黄", "tr": "Hardal rengi"}),
+    LearningCard(primaryText: "Caramel", translations: {"ar": "بني فاتح", "de": "Karamell", "es": "Caramelo", "fr": "Caramel", "it": "Caramello", "ru": "Карамельный", "zh": "焦糖色", "tr": "Karamel"}),
+    LearningCard(primaryText: "Cyan", translations: {"ar": "سماوي", "de": "Cyan", "es": "Cian", "fr": "Cyan", "it": "Ciano", "ru": "Голубой", "zh": "青色", "tr": "Cam göbeği"}),
+    LearningCard(primaryText: "Ivory", translations: {"ar": "عاجي", "de": "Elfenbein", "es": "Marfil", "fr": "Ivoire", "it": "Avorio", "ru": "Слоновая кость", "zh": "象牙色", "tr": "Fildişi"}),
+    
+    // ========== صفات الألوان من الصورة 183 ==========
+    LearningCard(primaryText: "Dark", translations: {"ar": "غامق", "de": "Dunkel", "es": "Oscuro", "fr": "Foncé", "it": "Scuro", "ru": "Темный", "zh": "深色的", "tr": "Koyu"}),
+    LearningCard(primaryText: "Light", translations: {"ar": "فاتح", "de": "Hell", "es": "Claro", "fr": "Clair", "it": "Chiaro", "ru": "Светлый", "zh": "浅色的", "tr": "Açık"}),
+    LearningCard(primaryText: "Colorless", translations: {"ar": "شاحب", "de": "Farblos", "es": "Incoloro", "fr": "Incolore", "it": "Incolore", "ru": "Бесцветный", "zh": "无色的", "tr": "Renksiz"}),
+    LearningCard(primaryText: "Faded", translations: {"ar": "باهت", "de": "Verblasst", "es": "Descolorido", "fr": "Décoloré", "it": "Sbiadito", "ru": "Выцветший", "zh": "褪色的", "tr": "Soluk"}),
+    LearningCard(primaryText: "Translucent", translations: {"ar": "شفاف", "de": "Durchscheinend", "es": "Translúcido", "fr": "Translucide", "it": "Traslucido", "ru": "Полупрозрачный", "zh": "半透明的", "tr": "Yarı saydam"}),
+    LearningCard(primaryText: "Watery", translations: {"ar": "مشبع بالماء", "de": "Wässrig", "es": "Acuoso", "fr": "Aqueux", "it": "Acquoso", "ru": "Водянистый", "zh": "水汪汪的", "tr": "Sulu"}),
+    LearningCard(primaryText: "Sooty", translations: {"ar": "قاتم", "de": "Rußig", "es": "Hollín", "fr": "Suie", "it": "Fuligginoso", "ru": "Сажевый", "zh": "煤烟色的", "tr": "İsli"}),
+    LearningCard(primaryText: "Dim", translations: {"ar": "خافت", "de": "Dunkel", "es": "Débil", "fr": "Terne", "it": "Debole", "ru": "Тусклый", "zh": "暗淡的", "tr": "Loş"}),
+    LearningCard(primaryText: "Opaque", translations: {"ar": "معتم", "de": "Undurchsichtig", "es": "Opaco", "fr": "Opaque", "it": "Opaco", "ru": "Непрозрачный", "zh": "不透明的", "tr": "Opak"}),
+    LearningCard(primaryText: "Drab", translations: {"ar": "باهت", "de": "Eintönig", "es": "Soso", "fr": "Terne", "it": "Sbiadito", "ru": "Тусклый", "zh": "单调的", "tr": "Sıkıcı"}),
+    LearningCard(primaryText: "Pale", translations: {"ar": "شاحب", "de": "Blass", "es": "Pálido", "fr": "Pâle", "it": "Pallido", "ru": "Бледный", "zh": "苍白的", "tr": "Solgun"}),
+    LearningCard(primaryText: "Neutral", translations: {"ar": "لون محايد", "de": "Neutral", "es": "Neutro", "fr": "Neutre", "it": "Neutro", "ru": "Нейтральный", "zh": "中性的", "tr": "Nötr"}),
+    LearningCard(primaryText: "Fresh", translations: {"ar": "منعش", "de": "Frisch", "es": "Fresco", "fr": "Frais", "it": "Fresco", "ru": "Свежий", "zh": "清新的", "tr": "Taze"}),
+    LearningCard(primaryText: "Cold", translations: {"ar": "بارد", "de": "Kalt", "es": "Frío", "fr": "Froid", "it": "Freddo", "ru": "Холодный", "zh": "冷色调的", "tr": "Soğuk"}),
+    
+    // ========== صفات إضافية من الصورة 183 ==========
+    LearningCard(primaryText: "Showy", translations: {"ar": "مبهرج", "de": "Auffällig", "es": "Llamativo", "fr": "Éclatant", "it": "Vistoso", "ru": "Кричащий", "zh": "艳丽的", "tr": "Gösterişli"}),
+    LearningCard(primaryText: "Brilliantly", translations: {"ar": "لامع", "de": "Glänzend", "es": "Brillante", "fr": "Brillant", "it": "Brillante", "ru": "Блестящий", "zh": "明亮的", "tr": "Parlak"}),
+    LearningCard(primaryText: "Splashy", translations: {"ar": "مبقع", "de": "Bunt", "es": "Llamativo", "fr": "Éclatant", "it": "Vistoso", "ru": "Пестрый", "zh": "鲜艳的", "tr": "Gösterişli"}),
+    LearningCard(primaryText: "Tinted", translations: {"ar": "ملون", "de": "Getönt", "es": "Teñido", "fr": "Teinté", "it": "Tinto", "ru": "Подкрашенный", "zh": "着色的", "tr": "Renkli"}),
+  ];
+
+  // ✅ 50+ جملة - عن الألوان
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 184 (13 جملة) ==========
+    ItemCard(english: "Mariam prefers silver accessories to gold ones.", translations: {"ar": "مريم بتفضل الإكسسوارات الفضي على الذهبي", "de": "Mariam bevorzugt silberne Accessoires gegenüber goldenen", "es": "Mariam prefiere accesorios plateados a los dorados", "fr": "Mariam préfère les accessoires argentés aux dorés", "it": "Mariam preferisce accessori argentati a quelli dorati", "ru": "Мариам предпочитает серебряные аксессуары золотым", "zh": "玛丽亚姆更喜欢银饰而不是金饰", "tr": "Mariam altın aksesuarlardan gümüş aksesuarları tercih ediyor"}),
+    ItemCard(english: "She looks gorgeous in beige.", translations: {"ar": "شكلها رائع في اللون البيج", "de": "Sie sieht in Beige umwerfend aus", "es": "Se ve hermosa en beige", "fr": "Elle est magnifique en beige", "it": "Sta benissimo in beige", "ru": "Она великолепно выглядит в бежевом", "zh": "她穿米色很好看", "tr": "Bej rengi giysiyle harika görünüyor"}),
+    ItemCard(english: "He has more than a t-shirt in blue. I think it's his favorite color.", translations: {"ar": "هو عنده أكثر من تيشيرت أزرق، يبتهيالي ده لونه المفضل", "de": "Er hat mehr als ein blaues T-Shirt. Ich denke, das ist seine Lieblingsfarbe", "es": "Tiene más de una camiseta azul. Creo que es su color favorito", "fr": "Il a plus d'un t-shirt bleu. Je pense que c'est sa couleur préférée", "it": "Ha più di una maglietta blu. Penso che sia il suo colore preferito", "ru": "У него больше одной синей футболки. Думаю, это его любимый цвет", "zh": "他不止一件蓝色T恤。我想这是他的最爱颜色", "tr": "Mavi tişörtü birden fazla. Sanırım bu onun en sevdiği renk"}),
+    ItemCard(english: "If your skin is reddish, you must see a doctor.", translations: {"ar": "لو لون بشرتك محمر لازم تروح لدكتور", "de": "Wenn Ihre Haut rötlich ist, müssen Sie einen Arzt aufsuchen", "es": "Si tu piel es rojiza, debes ver a un médico", "fr": "Si votre peau est rougeâtre, vous devez consulter un médecin", "it": "Se la tua pelle è rossastra, devi vedere un medico", "ru": "Если ваша кожа красноватая, вам нужно обратиться к врачу", "zh": "如果你的皮肤发红，你必须去看医生", "tr": "Cildiniz kırmızımsıysa, bir doktora görünmelisiniz"}),
+    ItemCard(english: "Ahmed didn't buy the white car. He preferred the black one.", translations: {"ar": "أحمد مشتراش العربية البيضة هو عجبه السودة", "de": "Ahmed hat das weiße Auto nicht gekauft. Er bevorzugte das schwarze", "es": "Ahmed no compró el coche blanco. Prefirió el negro", "fr": "Ahmed n'a pas acheté la voiture blanche. Il a préféré la noire", "it": "Ahmed non ha comprato l'auto bianca. Ha preferito quella nera", "ru": "Ахмед не купил белую машину. Он предпочел черную", "zh": "艾哈迈德没有买白色的车。他更喜欢黑色的", "tr": "Ahmed beyaz arabayı almadı. Siyah olanı tercih etti"}),
+    ItemCard(english: "I like brown because it is the color of chocolate.", translations: {"ar": "أنا بحب اللون البني لأنه لون الشيكولاته", "de": "Ich mag Braun, weil es die Farbe von Schokolade ist", "es": "Me gusta el marrón porque es el color del chocolate", "fr": "J'aime le marron parce que c'est la couleur du chocolat", "it": "Mi piace il marrone perché è il colore del cioccolato", "ru": "Мне нравится коричневый, потому что это цвет шоколада", "zh": "我喜欢棕色，因为它是巧克力的颜色", "tr": "Kahverengiyi severim çünkü çikolatanın rengidir"}),
+    ItemCard(english: "He had a bluish bruise.", translations: {"ar": "هو عنده كدمة مزرقة", "de": "Er hatte einen bläulichen Bluterguss", "es": "Tenía un moretón azulado", "fr": "Il avait une ecchymose bleuâtre", "it": "Aveva un livido bluastro", "ru": "У него был синеватый синяк", "zh": "他有一块发蓝的瘀伤", "tr": "Mavimsi bir morluğu vardı"}),
+    ItemCard(english: "No, that's not white. It's ivory.", translations: {"ar": "لا ده مش لون أبيض ده لون عاجي", "de": "Nein, das ist nicht weiß. Es ist elfenbein", "es": "No, eso no es blanco. Es marfil", "fr": "Non, ce n'est pas blanc. C'est ivoire", "it": "No, non è bianco. È avorio", "ru": "Нет, это не белый. Это слоновая кость", "zh": "不，那不是白色。是象牙色", "tr": "Hayır, bu beyaz değil. Fildişi rengi"}),
+    ItemCard(english: "She has long maroon hair.", translations: {"ar": "هي عندها شعر طويل كستنائي", "de": "Sie hat lange kastanienbraune Haare", "es": "Ella tiene el pelo largo castaño oscuro", "fr": "Elle a de longs cheveux bordeaux", "it": "Ha i capelli lunghi castani scuri", "ru": "У нее длинные каштановые волосы", "zh": "她有一头长长的栗色头发", "tr": "Uzun kestane rengi saçları var"}),
+    ItemCard(english: "I like purple and all its shades.", translations: {"ar": "أنا بحب البنفسجي وكل درجاته", "de": "Ich mag Lila und alle seine Schattierungen", "es": "Me gusta el morado y todos sus tonos", "fr": "J'aime le violet et toutes ses nuances", "it": "Mi piace il viola e tutte le sue sfumature", "ru": "Мне нравится фиолетовый и все его оттенки", "zh": "我喜欢紫色和它的所有色调", "tr": "Mor rengi ve tüm tonlarını severim"}),
+    ItemCard(english: "I don't think that pink is suitable.", translations: {"ar": "أنا معتقدش إن اللون الوردي مناسب", "de": "Ich glaube nicht, dass Rosa geeignet ist", "es": "No creo que el rosa sea adecuado", "fr": "Je ne pense pas que le rose convienne", "it": "Non credo che il rosa sia adatto", "ru": "Я не думаю, что розовый подходит", "zh": "我不认为粉色适合", "tr": "Pembenin uygun olduğunu düşünmüyorum"}),
+    ItemCard(english: "Although her favorite color is black, she bought the red dress.", translations: {"ar": "على الرغم أن الأسود لونها المفضل، هي اشترت الفستان الأحمر", "de": "Obwohl ihre Lieblingsfarbe Schwarz ist, kaufte sie das rote Kleid", "es": "Aunque su color favorito es el negro, compró el vestido rojo", "fr": "Bien que sa couleur préférée soit le noir, elle a acheté la robe rouge", "it": "Sebbene il suo colore preferito sia il nero, ha comprato l'abito rosso", "ru": "Хотя ее любимый цвет - черный, она купила красное платье", "zh": "虽然她最喜欢的颜色是黑色，但她买了红裙子", "tr": "En sevdiği renk siyah olmasına rağmen kırmızı elbiseyi aldı"}),
+    ItemCard(english: "I don't like it; it's very drab.", translations: {"ar": "مش عاجبني؛ شكله باهت اوي", "de": "Ich mag es nicht; es ist sehr eintönig", "es": "No me gusta; es muy soso", "fr": "Je n'aime pas ça; c'est très terne", "it": "Non mi piace; è molto sbiadito", "ru": "Мне это не нравится; это очень тускло", "zh": "我不喜欢它；太单调了", "tr": "Beğenmedim; çok sıkıcı görünüyor"}),
+    
+    // ========== 37 جملة إضافية عن الألوان ==========
+    ItemCard(english: "The sky is blue on a clear day.", translations: {"ar": "السماء زرقاء في اليوم الصافي", "de": "Der Himmel ist an einem klaren Tag blau", "es": "El cielo es azul en un día despejado", "fr": "Le ciel est bleu par temps clair", "it": "Il cielo è blu in una giornata limpida", "ru": "Небо голубое в ясный день", "zh": "晴朗的日子里天空是蓝色的", "tr": "Açık bir günde gökyüzü mavidir"}),
+    ItemCard(english: "Roses are red and violets are blue.", translations: {"ar": "الورد أحمر والبنفسج أزرق", "de": "Rosen sind rot und Veilchen sind blau", "es": "Las rosas son rojas y las violetas son azules", "fr": "Les roses sont rouges et les violettes sont bleues", "it": "Le rose sono rosse e le viole sono blu", "ru": "Розы красные, а фиалки синие", "zh": "玫瑰是红色的，紫罗兰是蓝色的", "tr": "Güller kırmızı, menekşeler mavidir"}),
+    ItemCard(english: "The grass is green in spring.", translations: {"ar": "العشب أخضر في الربيع", "de": "Das Gras ist im Frühling grün", "es": "El pasto es verde en primavera", "fr": "L'herbe est verte au printemps", "it": "L'erba è verde in primavera", "ru": "Трава зеленая весной", "zh": "春天的草是绿色的", "tr": "Çimler ilkbaharda yeşildir"}),
+    ItemCard(english: "She wore a beautiful pink dress to the party.", translations: {"ar": "هي لبست فستان وردي جميل للحفلة", "de": "Sie trug ein schönes rosa Kleid zur Party", "es": "Ella usó un hermoso vestido rosa a la fiesta", "fr": "Elle portait une belle robe rose à la fête", "it": "Indossava un bellissimo vestito rosa alla festa", "ru": "Она надела красивое розовое платье на вечеринку", "zh": "她穿了一件漂亮的粉色裙子去参加派对", "tr": "Partiye güzel bir pembe elbise giydi"}),
+    ItemCard(english: "The sun is yellow and bright.", translations: {"ar": "الشمس صفراء ومشرقة", "de": "Die Sonne ist gelb und hell", "es": "El sol es amarillo y brillante", "fr": "Le soleil est jaune et brillant", "it": "Il sole è giallo e luminoso", "ru": "Солнце желтое и яркое", "zh": "太阳是黄色的，很明亮", "tr": "Güneş sarı ve parlaktır"}),
+    ItemCard(english: "Dark colors make a room feel smaller.", translations: {"ar": "الألوان الغامقة بتخلي الغرفة تحس أصغر", "de": "Dunkle Farben lassen einen Raum kleiner wirken", "es": "Los colores oscuros hacen que una habitación se sienta más pequeña", "fr": "Les couleurs foncées rendent une pièce plus petite", "it": "I colori scuri fanno sembrare una stanza più piccola", "ru": "Темные цвета делают комнату меньше", "zh": "深色让房间感觉更小", "tr": "Koyu renkler bir odayı daha küçük gösterir"}),
+    ItemCard(english: "Light colors reflect more sunlight.", translations: {"ar": "الألوان الفاتحة تعكس ضوء الشمس أكتر", "de": "Helle Farben reflektieren mehr Sonnenlicht", "es": "Los colores claros reflejan más luz solar", "fr": "Les couleurs claires reflètent plus de lumière solaire", "it": "I colori chiari riflettono più luce solare", "ru": "Светлые цвета отражают больше солнечного света", "zh": "浅色反射更多的阳光", "tr": "Açık renkler daha fazla güneş ışığı yansıtır"}),
+    ItemCard(english: "His face turned pale when he heard the news.", translations: {"ar": "وشه اتشحب لما سمع الخبر", "de": "Sein Gesicht wurde blass, als er die Nachricht hörte", "es": "Su rostro se puso pálido cuando escuchó la noticia", "fr": "Son visage est devenu pâle quand il a entendu la nouvelle", "it": "Il suo viso divenne pallido quando sentì la notizia", "ru": "Его лицо побледнело, когда он услышал новость", "zh": "听到这个消息时他的脸色变得苍白", "tr": "Haberi duyunca yüzü solgunlaştı"}),
+    ItemCard(english: "Gold jewelry is more expensive than silver.", translations: {"ar": "المجوهرات الذهبية أغلى من الفضية", "de": "Goldschmuck ist teurer als Silber", "es": "Las joyas de oro son más caras que las de plata", "fr": "Les bijoux en or sont plus chers que l'argent", "it": "I gioielli d'oro sono più costosi dell'argento", "ru": "Золотые украшения дороже серебряных", "zh": "金首饰比银首饰贵", "tr": "Altın takılar gümüşten daha pahalıdır"}),
+    ItemCard(english: "The painting uses various shades of blue.", translations: {"ar": "الرسمة بتستخدم درجات مختلفة من الأزرق", "de": "Das Gemälde verwendet verschiedene Blautöne", "es": "La pintura usa varios tonos de azul", "fr": "Le tableau utilise différentes nuances de bleu", "it": "Il dipinto usa varie sfumature di blu", "ru": "На картине используются различные оттенки синего", "zh": "这幅画使用了各种蓝色调", "tr": "Tablo, mavinin çeşitli tonlarını kullanıyor"}),
+    ItemCard(english: "The walls are painted in a neutral beige color.", translations: {"ar": "الحيطان مدهونة بلون بيج محايد", "de": "Die Wände sind in einem neutralen Beige gestrichen", "es": "Las paredes están pintadas en un color beige neutro", "fr": "Les murs sont peints dans une couleur beige neutre", "it": "Le pareti sono dipinte in un colore beige neutro", "ru": "Стены окрашены в нейтральный бежевый цвет", "zh": "墙壁涂成了中性米色", "tr": "Duvarlar nötr bir bej renge boyanmış"}),
+    ItemCard(english: "She prefers dark chocolate over milk chocolate.", translations: {"ar": "هي بتفضل الشوكولاتة الداكنة عن شوكولاتة اللبن", "de": "Sie bevorzugt dunkle Schokolade gegenüber Milchschokolade", "es": "Ella prefiere el chocolate negro sobre el chocolate con leche", "fr": "Elle préfère le chocolat noir au chocolat au lait", "it": "Preferisce il cioccolato fondente al cioccolato al latte", "ru": "Она предпочитает темный шоколад молочному", "zh": "她更喜欢黑巧克力而不是牛奶巧克力", "tr": "Sütlü çikolataya koyu çikolatayı tercih ediyor"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الألوان - Colors",
+    );
+  }
+}
+
+
+
+/////
+/////
+//////
+
+
+
+
+
+
+class SchoolScreen extends StatelessWidget {
+  const SchoolScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - المدرسة والدراسة (School)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 187 ==========
+    LearningCard(primaryText: "School", translations: {"ar": "مدرسة", "de": "Schule", "es": "Escuela", "fr": "École", "it": "Scuola", "ru": "Школа", "zh": "学校", "tr": "Okul"}),
+    LearningCard(primaryText: "Kindergarten", translations: {"ar": "حضانة", "de": "Kindergarten", "es": "Jardín de infancia", "fr": "Jardin d'enfants", "it": "Asilo", "ru": "Детский сад", "zh": "幼儿园", "tr": "Anaokulu"}),
+    LearningCard(primaryText: "Pre School", translations: {"ar": "ما قبل المدرسة", "de": "Vorschule", "es": "Preescolar", "fr": "Préscolaire", "it": "Prescuola", "ru": "Дошкольное учреждение", "zh": "学前班", "tr": "Okul öncesi"}),
+    LearningCard(primaryText: "Faculty", translations: {"ar": "كلية", "de": "Fakultät", "es": "Facultad", "fr": "Faculté", "it": "Facoltà", "ru": "Факультет", "zh": "学院", "tr": "Fakülte"}),
+    LearningCard(primaryText: "Classroom", translations: {"ar": "فصل", "de": "Klassenzimmer", "es": "Aula", "fr": "Salle de classe", "it": "Aula", "ru": "Классная комната", "zh": "教室", "tr": "Sınıf"}),
+    LearningCard(primaryText: "Primary School", translations: {"ar": "إبتدائي", "de": "Grundschule", "es": "Escuela primaria", "fr": "École primaire", "it": "Scuola primaria", "ru": "Начальная школа", "zh": "小学", "tr": "İlkokul"}),
+    LearningCard(primaryText: "Middle School", translations: {"ar": "إعدادي", "de": "Mittelschule", "es": "Escuela secundaria", "fr": "Collège", "it": "Scuola media", "ru": "Средняя школа", "zh": "中学", "tr": "Ortaokul"}),
+    LearningCard(primaryText: "High School", translations: {"ar": "ثانوي", "de": "High School", "es": "Instituto", "fr": "Lycée", "it": "Scuola superiore", "ru": "Старшая школа", "zh": "高中", "tr": "Lise"}),
+    LearningCard(primaryText: "University", translations: {"ar": "جامعة", "de": "Universität", "es": "Universidad", "fr": "Université", "it": "Università", "ru": "Университет", "zh": "大学", "tr": "Üniversite"}),
+    LearningCard(primaryText: "Curriculum", translations: {"ar": "منهج", "de": "Lehrplan", "es": "Plan de estudios", "fr": "Programme", "it": "Curriculum", "ru": "Учебный план", "zh": "课程", "tr": "Müfredat"}),
+    LearningCard(primaryText: "Teacher", translations: {"ar": "مدرس", "de": "Lehrer", "es": "Profesor", "fr": "Enseignant", "it": "Insegnante", "ru": "Учитель", "zh": "老师", "tr": "Öğretmen"}),
+    LearningCard(primaryText: "Student", translations: {"ar": "طالب", "de": "Schüler", "es": "Estudiante", "fr": "Étudiant", "it": "Studente", "ru": "Студент", "zh": "学生", "tr": "Öğrenci"}),
+    LearningCard(primaryText: "Headmaster", translations: {"ar": "مدير", "de": "Schulleiter", "es": "Director", "fr": "Directeur", "it": "Preside", "ru": "Директор", "zh": "校长", "tr": "Müdür"}),
+    LearningCard(primaryText: "Headmistress", translations: {"ar": "مديرة", "de": "Schulleiterin", "es": "Directora", "fr": "Directrice", "it": "Preside", "ru": "Директриса", "zh": "女校长", "tr": "Müdire"}),
+    LearningCard(primaryText: "Subject", translations: {"ar": "مادة دراسية", "de": "Fach", "es": "Asignatura", "fr": "Matière", "it": "Materia", "ru": "Предмет", "zh": "科目", "tr": "Ders"}),
+    
+    // ========== من الصورة 187 - أدوات مدرسية ==========
+    LearningCard(primaryText: "Marker", translations: {"ar": "ماركر", "de": "Marker", "es": "Marcador", "fr": "Marqueur", "it": "Pennarello", "ru": "Маркер", "zh": "记号笔", "tr": "Marker"}),
+    LearningCard(primaryText: "Book", translations: {"ar": "كتاب", "de": "Buch", "es": "Libro", "fr": "Livre", "it": "Libro", "ru": "Книга", "zh": "书", "tr": "Kitap"}),
+    LearningCard(primaryText: "Notebook", translations: {"ar": "كراسة", "de": "Notizbuch", "es": "Cuaderno", "fr": "Cahier", "it": "Quaderno", "ru": "Тетрадь", "zh": "笔记本", "tr": "Defter"}),
+    LearningCard(primaryText: "Ruler", translations: {"ar": "مسطرة", "de": "Lineal", "es": "Regla", "fr": "Règle", "it": "Righello", "ru": "Линейка", "zh": "尺子", "tr": "Cetvel"}),
+    LearningCard(primaryText: "Pen", translations: {"ar": "قلم جاف", "de": "Kugelschreiber", "es": "Bolígrafo", "fr": "Stylo", "it": "Penna", "ru": "Ручка", "zh": "钢笔", "tr": "Tükenmez kalem"}),
+    LearningCard(primaryText: "Pencil", translations: {"ar": "قلم رصاص", "de": "Bleistift", "es": "Lápiz", "fr": "Crayon", "it": "Matita", "ru": "Карандаш", "zh": "铅笔", "tr": "Kurşun kalem"}),
+    LearningCard(primaryText: "Corrector", translations: {"ar": "مصحح", "de": "Korrekturstift", "es": "Corrector", "fr": "Correcteur", "it": "Correttore", "ru": "Корректирующая жидкость", "zh": "修正液", "tr": "Düzeltici"}),
+    LearningCard(primaryText: "Pencil Case", translations: {"ar": "قلمدان", "de": "Federmappe", "es": "Estuche", "fr": "Trousse", "it": "Astuccio", "ru": "Пенал", "zh": "铅笔盒", "tr": "Kalemlik"}),
+    LearningCard(primaryText: "Sharpener", translations: {"ar": "براية", "de": "Spitzer", "es": "Sacapuntas", "fr": "Taille-crayon", "it": "Temperamatite", "ru": "Точилка", "zh": "卷笔刀", "tr": "Kalemtraş"}),
+    LearningCard(primaryText: "Eraser", translations: {"ar": "مساحة", "de": "Radiergummi", "es": "Borrador", "fr": "Gomme", "it": "Gomma", "ru": "Ластик", "zh": "橡皮擦", "tr": "Silgi"}),
+    
+    // ========== من الصورة 188 ==========
+    LearningCard(primaryText: "Glue", translations: {"ar": "صمغ", "de": "Kleber", "es": "Pegamento", "fr": "Colle", "it": "Colla", "ru": "Клей", "zh": "胶水", "tr": "Tutkal"}),
+    LearningCard(primaryText: "Scissors", translations: {"ar": "مقص", "de": "Schere", "es": "Tijeras", "fr": "Ciseaux", "it": "Forbici", "ru": "Ножницы", "zh": "剪刀", "tr": "Makas"}),
+    LearningCard(primaryText: "Lesson", translations: {"ar": "درس", "de": "Unterrichtsstunde", "es": "Lección", "fr": "Leçon", "it": "Lezione", "ru": "Урок", "zh": "课", "tr": "Ders"}),
+    LearningCard(primaryText: "Bag", translations: {"ar": "شنطة", "de": "Tasche", "es": "Mochila", "fr": "Sac", "it": "Zaino", "ru": "Сумка", "zh": "书包", "tr": "Çanta"}),
+    LearningCard(primaryText: "Paper Clip", translations: {"ar": "مشبك ورق", "de": "Büroklammer", "es": "Clip", "fr": "Trombone", "it": "Graffetta", "ru": "Скрепка", "zh": "回形针", "tr": "Ataş"}),
+    LearningCard(primaryText: "Stapler", translations: {"ar": "دباسة", "de": "Heftgerät", "es": "Grapadora", "fr": "Agrafeuse", "it": "Cucitrice", "ru": "Степлер", "zh": "订书机", "tr": "Zımba"}),
+    LearningCard(primaryText: "Tape", translations: {"ar": "شريط لاصق", "de": "Klebeband", "es": "Cinta adhesiva", "fr": "Ruban adhésif", "it": "Nastro adesivo", "ru": "Скотч", "zh": "胶带", "tr": "Bant"}),
+    LearningCard(primaryText: "Colored Chalk", translations: {"ar": "طباشير ملون", "de": "Farbkreide", "es": "Tiza de colores", "fr": "Craie colorée", "it": "Gesso colorato", "ru": "Цветной мел", "zh": "彩色粉笔", "tr": "Renkli tebeşir"}),
+    LearningCard(primaryText: "Desk", translations: {"ar": "مكتب", "de": "Schreibtisch", "es": "Escritorio", "fr": "Bureau", "it": "Scrivania", "ru": "Парта", "zh": "书桌", "tr": "Sıra"}),
+    LearningCard(primaryText: "Table", translations: {"ar": "طاولة", "de": "Tisch", "es": "Mesa", "fr": "Table", "it": "Tavolo", "ru": "Стол", "zh": "桌子", "tr": "Masa"}),
+    LearningCard(primaryText: "Sheet", translations: {"ar": "ورقة", "de": "Blatt", "es": "Hoja", "fr": "Feuille", "it": "Foglio", "ru": "Лист", "zh": "纸张", "tr": "Kağıt"}),
+    LearningCard(primaryText: "Assignment", translations: {"ar": "واجب", "de": "Aufgabe", "es": "Tarea", "fr": "Devoir", "it": "Compito", "ru": "Задание", "zh": "作业", "tr": "Ödev"}),
+    LearningCard(primaryText: "Homework", translations: {"ar": "الواجب", "de": "Hausaufgaben", "es": "Tarea", "fr": "Devoirs", "it": "Compiti", "ru": "Домашнее задание", "zh": "家庭作业", "tr": "Ev ödevi"}),
+    LearningCard(primaryText: "Chalk", translations: {"ar": "طباشير", "de": "Kreide", "es": "Tiza", "fr": "Craie", "it": "Gesso", "ru": "Мел", "zh": "粉笔", "tr": "Tebeşir"}),
+    LearningCard(primaryText: "Crayons", translations: {"ar": "أقلام تلوين", "de": "Wachsmalstifte", "es": "Crayones", "fr": "Crayons de couleur", "it": "Pastelli", "ru": "Цветные карандаши", "zh": "蜡笔", "tr": "Boyama kalemi"}),
+    LearningCard(primaryText: "Exams", translations: {"ar": "امتحانات", "de": "Prüfungen", "es": "Exámenes", "fr": "Examens", "it": "Esami", "ru": "Экзамены", "zh": "考试", "tr": "Sınavlar"}),
+    LearningCard(primaryText: "Break", translations: {"ar": "فسحة", "de": "Pause", "es": "Descanso", "fr": "Récréation", "it": "Ricreazione", "ru": "Перемена", "zh": "课间休息", "tr": "Teneffüs"}),
+    LearningCard(primaryText: "Vacation", translations: {"ar": "إجازة", "de": "Ferien", "es": "Vacaciones", "fr": "Vacances", "it": "Vacanza", "ru": "Каникулы", "zh": "假期", "tr": "Tatil"}),
+    LearningCard(primaryText: "Weekend", translations: {"ar": "عطلة نهاية الأسبوع", "de": "Wochenende", "es": "Fin de semana", "fr": "Week-end", "it": "Fine settimana", "ru": "Выходные", "zh": "周末", "tr": "Hafta sonu"}),
+    LearningCard(primaryText: "Calculator", translations: {"ar": "آلة حاسبة", "de": "Taschenrechner", "es": "Calculadora", "fr": "Calculatrice", "it": "Calcolatrice", "ru": "Калькулятор", "zh": "计算器", "tr": "Hesap makinesi"}),
+    
+    // ========== كلمات إضافية عن المدرسة ==========
+    LearningCard(primaryText: "Library", translations: {"ar": "مكتبة", "de": "Bibliothek", "es": "Biblioteca", "fr": "Bibliothèque", "it": "Biblioteca", "ru": "Библиотека", "zh": "图书馆", "tr": "Kütüphane"}),
+    LearningCard(primaryText: "Laboratory", translations: {"ar": "معمل", "de": "Labor", "es": "Laboratorio", "fr": "Laboratoire", "it": "Laboratorio", "ru": "Лаборатория", "zh": "实验室", "tr": "Laboratuvar"}),
+    LearningCard(primaryText: "Playground", translations: {"ar": "ملعب", "de": "Spielplatz", "es": "Patio de recreo", "fr": "Cour de récréation", "it": "Cortile", "ru": "Игровая площадка", "zh": "操场", "tr": "Oyun alanı"}),
+    LearningCard(primaryText: "Diploma", translations: {"ar": "دبلوم", "de": "Diplom", "es": "Diploma", "fr": "Diplôme", "it": "Diploma", "ru": "Диплом", "zh": "文凭", "tr": "Diploma"}),
+    LearningCard(primaryText: "Graduation", translations: {"ar": "تخرج", "de": "Abschluss", "es": "Graduación", "fr": "Diplôme", "it": "Laurea", "ru": "Выпуск", "zh": "毕业", "tr": "Mezuniyet"}),
+  ];
+
+  // ✅ 50+ جملة - عن المدرسة والدراسة
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 189 (13 جملة) ==========
+    ItemCard(english: "Your child needs to join a kindergarten.", translations: {"ar": "ابنك محتاج يخش حضانة", "de": "Ihr Kind muss in den Kindergarten gehen", "es": "Tu hijo necesita ir al jardín de infancia", "fr": "Votre enfant doit aller à la maternelle", "it": "Tuo figlio deve andare all'asilo", "ru": "Ваш ребенок должен пойти в детский сад", "zh": "你的孩子需要上幼儿园", "tr": "Çocuğunuzun anaokuluna gitmesi gerekiyor"}),
+    ItemCard(english: "Faculty of medicine is my dream.", translations: {"ar": "كلية الطب هي حلمي", "de": "Die medizinische Fakultät ist mein Traum", "es": "La facultad de medicina es mi sueño", "fr": "La faculté de médecine est mon rêve", "it": "La facoltà di medicina è il mio sogno", "ru": "Медицинский факультет - моя мечта", "zh": "医学院是我的梦想", "tr": "Tıp fakültesi benim hayalim"}),
+    ItemCard(english: "This curriculum needs a superhero to study.", translations: {"ar": "المنهج ده محتاج بطل خارق عشان يدرسه", "de": "Dieser Lehrplan braucht einen Superhelden zum Lernen", "es": "Este plan de estudios necesita un superhéroe para estudiarlo", "fr": "Ce programme a besoin d'un super-héros pour l'étudier", "it": "Questo curriculum ha bisogno di un supereroe per studiarlo", "ru": "Эта учебная программа требует супергероя для изучения", "zh": "这门课程需要一个超级英雄来学习", "tr": "Bu müfredatı çalışmak için bir süper kahraman gerekiyor"}),
+    ItemCard(english: "I hang out with my friends every weekend.", translations: {"ar": "بخرج مع صحابي كل عطلة نهاية الأسبوع", "de": "Ich verbringe jedes Wochenende mit meinen Freunden", "es": "Salgo con mis amigos todos los fines de semana", "fr": "Je sors avec mes amis chaque week-end", "it": "Esco con i miei amici ogni fine settimana", "ru": "Я тусуюсь с друзьями каждые выходные", "zh": "我每个周末都和朋友出去玩", "tr": "Her hafta sonu arkadaşlarımla takılırım"}),
+    ItemCard(english: "Who has a pencil sharpener?", translations: {"ar": "مين معاه براية؟", "de": "Wer hat einen Bleistiftspitzer?", "es": "¿Quién tiene un sacapuntas?", "fr": "Qui a un taille-crayon?", "it": "Chi ha un temperamatite?", "ru": "У кого есть точилка?", "zh": "谁有卷笔刀？", "tr": "Kimde kalemtraş var?"}),
+    ItemCard(english: "Our teacher has been promoted to a headmaster.", translations: {"ar": "مدرسنا ارتقى وبقى مدير", "de": "Unser Lehrer wurde zum Schulleiter befördert", "es": "Nuestro maestro ha sido ascendido a director", "fr": "Notre professeur a été promu directeur", "it": "Il nostro insegnante è stato promosso a preside", "ru": "Наш учитель был повышен до директора", "zh": "我们的老师被提升为校长", "tr": "Öğretmenimiz müdürlüğe terfi etti"}),
+    ItemCard(english: "What is today's assignment in history?", translations: {"ar": "إيه تكليف التاريخ بتاع انهاردة؟", "de": "Was ist die heutige Aufgabe in Geschichte?", "es": "¿Cuál es la tarea de hoy en historia?", "fr": "Quel est le devoir d'histoire d'aujourd'hui?", "it": "Qual è il compito di storia di oggi?", "ru": "Какое сегодня задание по истории?", "zh": "今天的历史作业是什么？", "tr": "Bugünün tarih ödevi nedir?"}),
+    ItemCard(english: "Deal with English as a language not a subject.", translations: {"ar": "اتعامل مع الإنجليزية كلغة مش كمادة", "de": "Behandle Englisch als Sprache, nicht als Fach", "es": "Trata el inglés como un idioma, no como una materia", "fr": "Traite l'anglais comme une langue, pas comme une matière", "it": "Tratta l'inglese come una lingua, non come una materia", "ru": "Относись к английскому как к языку, а не как к предмету", "zh": "把英语当作一门语言而不是一门学科", "tr": "İngilizceye bir ders olarak değil, bir dil olarak yaklaş"}),
+    ItemCard(english: "Bring a notebook and a pencil with you.", translations: {"ar": "هات كراسة وقلم رصاص معاك", "de": "Bring ein Notizbuch und einen Bleistift mit", "es": "Trae un cuaderno y un lápiz contigo", "fr": "Apporte un cahier et un crayon avec toi", "it": "Porta un quaderno e una matita con te", "ru": "Возьми с собой тетрадь и карандаш", "zh": "带上笔记本和铅笔", "tr": "Yanına bir defter ve kurşun kalem al"}),
+    ItemCard(english: "I've promised myself some fun when the exams are over.", translations: {"ar": "وعدت نفسي بشوية ترفيه بعد ما الامتحانات تخلص", "de": "Ich habe mir versprochen, etwas Spaß zu haben, wenn die Prüfungen vorbei sind", "es": "Me prometí divertirme cuando terminen los exámenes", "fr": "Je me suis promis de m'amuser quand les examens seront finis", "it": "Mi sono promesso un po' di divertimento quando gli esami saranno finiti", "ru": "Я пообещал себе немного развлечься, когда экзамены закончатся", "zh": "我答应自己在考试结束后好好玩一下", "tr": "Sınavlar bitince biraz eğlenmeye söz verdim"}),
+    ItemCard(english: "She fastened the papers together with a paper clip.", translations: {"ar": "هي ثبتت الورق مع بعضه بمشبك ورق", "de": "Sie heftete die Papiere mit einer Büroklammer zusammen", "es": "Ella sujetó los papeles con un clip", "fr": "Elle a attaché les papiers avec un trombone", "it": "Ha fissato i fogli insieme con una graffetta", "ru": "Она скрепила бумаги скрепкой", "zh": "她用回形针把文件夹在一起", "tr": "Kağıtları bir ataşla birbirine tutturdum"}),
+    ItemCard(english: "The revision sheets are easy.", translations: {"ar": "ورق المراجعة سهل", "de": "Die Überarbeitungsblätter sind einfach", "es": "Las hojas de revisión son fáciles", "fr": "Les feuilles de révision sont faciles", "it": "I fogli di ripasso sono facili", "ru": "Листы для повторения легкие", "zh": "复习资料很容易", "tr": "Revizyon kağıtları kolay"}),
+    ItemCard(english: "My stapler is not working.", translations: {"ar": "دباستي مش شغالة", "de": "Mein Heftgerät funktioniert nicht", "es": "Mi grapadora no funciona", "fr": "Mon agrafeuse ne fonctionne pas", "it": "La mia cucitrice non funziona", "ru": "Мой степлер не работает", "zh": "我的订书机坏了", "tr": "Zımbam çalışmıyor"}),
+    
+    // ========== 37 جملة إضافية عن المدرسة ==========
+    ItemCard(english: "I have to finish my homework before tomorrow.", translations: {"ar": "لازم أخلص واجبي قبل بكرة", "de": "Ich muss meine Hausaufgaben bis morgen erledigen", "es": "Tengo que terminar mi tarea antes de mañana", "fr": "Je dois finir mes devoirs avant demain", "it": "Devo finire i compiti prima di domani", "ru": "Я должен закончить домашнее задание до завтра", "zh": "我必须在明天之前完成作业", "tr": "Ödevimi yarından önce bitirmeliyim"}),
+    ItemCard(english: "The teacher wrote on the board with chalk.", translations: {"ar": "المدرس كتب على السبورة بالطباشير", "de": "Der Lehrer schrieb mit Kreide an die Tafel", "es": "El maestro escribió en la pizarra con tiza", "fr": "Le professeur a écrit au tableau avec de la craie", "it": "L'insegnante ha scritto alla lavagna con il gesso", "ru": "Учитель писал на доске мелом", "zh": "老师用粉笔在黑板上写字", "tr": "Öğretmen tebeşirle tahtaya yazdı"}),
+    ItemCard(english: "I need a new pencil case for school.", translations: {"ar": "أنا محتاج قلمدان جديد للمدرسة", "de": "Ich brauche eine neue Federmappe für die Schule", "es": "Necesito un estuche nuevo para la escuela", "fr": "J'ai besoin d'une nouvelle trousse pour l'école", "it": "Ho bisogno di un nuovo astuccio per la scuola", "ru": "Мне нужен новый пенал для школы", "zh": "我需要一个新的铅笔盒上学用", "tr": "Okul için yeni bir kalemliğe ihtiyacım var"}),
+    ItemCard(english: "The students are taking a break in the playground.", translations: {"ar": "الطلاب بياخدوا فسحة في الملعب", "de": "Die Schüler machen eine Pause auf dem Spielplatz", "es": "Los estudiantes están tomando un descanso en el patio", "fr": "Les étudiants prennent une pause dans la cour de récréation", "it": "Gli studenti stanno facendo una pausa nel cortile", "ru": "Студенты отдыхают на игровой площадке", "zh": "学生们在操场上休息", "tr": "Öğrenciler oyun alanında teneffüs yapıyor"}),
+    ItemCard(english: "I always carry a calculator for math class.", translations: {"ar": "أنا دايما باخد آلة حاسبة لحصة الرياضيات", "de": "Ich trage immer einen Taschenrechner für den Matheunterricht", "es": "Siempre llevo una calculadora para la clase de matemáticas", "fr": "J'ai toujours une calculatrice pour les cours de maths", "it": "Porto sempre una calcolatrice per la lezione di matematica", "ru": "Я всегда ношу калькулятор на урок математики", "zh": "我总是带着计算器上数学课", "tr": "Matematik dersi için her zaman hesap makinesi taşırım"}),
+    ItemCard(english: "She graduated from university last year.", translations: {"ar": "هي تخرجت من الجامعة السنة اللي فاتت", "de": "Sie hat letztes Jahr ihren Universitätsabschluss gemacht", "es": "Ella se graduó de la universidad el año pasado", "fr": "Elle a obtenu son diplôme de l'université l'année dernière", "it": "Si è laureata all'università l'anno scorso", "ru": "Она окончила университет в прошлом году", "zh": "她去年大学毕业了", "tr": "Geçen yıl üniversiteden mezun oldu"}),
+    ItemCard(english: "The library is quiet and perfect for studying.", translations: {"ar": "المكتبة هادية ومثالية للمذاكرة", "de": "Die Bibliothek ist ruhig und perfekt zum Lernen", "es": "La biblioteca es tranquila y perfecta para estudiar", "fr": "La bibliothèque est calme et parfaite pour étudier", "it": "La biblioteca è tranquilla e perfetta per studiare", "ru": "Библиотека тихая и идеально подходит для учебы", "zh": "图书馆很安静，非常适合学习", "tr": "Kütüphane sessiz ve ders çalışmak için mükemmel"}),
+    ItemCard(english: "I need to borrow a pen; mine ran out of ink.", translations: {"ar": "أنا محتاج استلف قلم؛ قلمي خلص حبره", "de": "Ich muss mir einen Kugelschreiber ausleihen; meiner hat keine Tinte mehr", "es": "Necesito pedir prestado un bolígrafo; el mío se quedó sin tinta", "fr": "J'ai besoin d'emprunter un stylo; le mien n'a plus d'encre", "it": "Ho bisogno di prendere in prestito una penna; la mia ha finito l'inchiostro", "ru": "Мне нужно одолжить ручку; в моей закончились чернила", "zh": "我需要借一支笔；我的笔没墨了", "tr": "Bir kalem ödünç almam gerekiyor; benimkinin mürekkebi bitti"}),
+    ItemCard(english: "The final exams are next week.", translations: {"ar": "الامتحانات النهائية الأسبوع الجاي", "de": "Die Abschlussprüfungen sind nächste Woche", "es": "Los exámenes finales son la próxima semana", "fr": "Les examens finaux sont la semaine prochaine", "it": "Gli esami finali sono la prossima settimana", "ru": "Выпускные экзамены на следующей неделе", "zh": "期末考试在下周", "tr": "Final sınavları gelecek hafta"}),
+    ItemCard(english: "I use a ruler to draw straight lines.", translations: {"ar": "أنا استخدم المسطرة عشان أرسم خطوط مستقيمة", "de": "Ich benutze ein Lineal, um gerade Linien zu ziehen", "es": "Uso una regla para dibujar líneas rectas", "fr": "J'utilise une règle pour tracer des lignes droites", "it": "Uso un righello per disegnare linee rette", "ru": "Я использую линейку, чтобы рисовать прямые линии", "zh": "我用尺子画直线", "tr": "Düz çizgiler çizmek için cetvel kullanırım"}),
+    ItemCard(english: "The teacher gave us a lot of homework today.", translations: {"ar": "المدرس أدانا واجب كتير النهاردة", "de": "Der Lehrer hat uns heute viele Hausaufgaben aufgegeben", "es": "El maestro nos dio mucha tarea hoy", "fr": "Le professeur nous a donné beaucoup de devoirs aujourd'hui", "it": "L'insegnante ci ha dato molti compiti oggi", "ru": "Учитель задал нам много домашнего задания сегодня", "zh": "老师今天给我们布置了很多作业", "tr": "Öğretmen bize bugün çok ödev verdi"}),
+    ItemCard(english: "My favorite subject is science.", translations: {"ar": "مادتي المفضلة هي العلوم", "de": "Mein Lieblingsfach ist Naturwissenschaft", "es": "Mi materia favorita es ciencias", "fr": "Ma matière préférée est la science", "it": "La mia materia preferita è scienze", "ru": "Мой любимый предмет - наука", "zh": "我最喜欢的科目是科学", "tr": "En sevdiğim ders fen bilgisi"}),
+    ItemCard(english: "The school principal announced a holiday tomorrow.", translations: {"ar": "مدير المدرسة أعلن إن بكرة أجازة", "de": "Der Schulleiter hat einen Feiertag für morgen angekündigt", "es": "El director de la escuela anunció un día festivo mañana", "fr": "Le directeur de l'école a annoncé un jour férié demain", "it": "Il preside ha annunciato una festa domani", "ru": "Директор школы объявил завтра выходной", "zh": "校长宣布明天放假", "tr": "Okul müdürü yarın tatil olduğunu duyurdu"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "المدرسة والدراسة - School",
+    );
+  }
+}
+
+
+
+
+
+
+/////////////
+////////////
+
+
+
+
+
+class SchoolSubjectsScreen extends StatelessWidget {
+  const SchoolSubjectsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - المواد الدراسية (School Subjects)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 192 ==========
+    LearningCard(primaryText: "English", translations: {"ar": "الإنجليزية", "de": "Englisch", "es": "Inglés", "fr": "Anglais", "it": "Inglese", "ru": "Английский", "zh": "英语", "tr": "İngilizce"}),
+    LearningCard(primaryText: "Arabic", translations: {"ar": "العربية", "de": "Arabisch", "es": "Árabe", "fr": "Arabe", "it": "Arabo", "ru": "Арабский", "zh": "阿拉伯语", "tr": "Arapça"}),
+    LearningCard(primaryText: "French", translations: {"ar": "الفرنسية", "de": "Französisch", "es": "Francés", "fr": "Français", "it": "Francese", "ru": "Французский", "zh": "法语", "tr": "Fransızca"}),
+    LearningCard(primaryText: "Science", translations: {"ar": "العلوم", "de": "Naturwissenschaft", "es": "Ciencias", "fr": "Sciences", "it": "Scienze", "ru": "Наука", "zh": "科学", "tr": "Fen Bilimleri"}),
+    LearningCard(primaryText: "Social Studies", translations: {"ar": "الدراسات الاجتماعية", "de": "Sozialkunde", "es": "Estudios sociales", "fr": "Sciences sociales", "it": "Studi sociali", "ru": "Обществознание", "zh": "社会研究", "tr": "Sosyal Bilgiler"}),
+    LearningCard(primaryText: "Maths", translations: {"ar": "الرياضيات", "de": "Mathematik", "es": "Matemáticas", "fr": "Mathématiques", "it": "Matematica", "ru": "Математика", "zh": "数学", "tr": "Matematik"}),
+    LearningCard(primaryText: "Religion", translations: {"ar": "الدين", "de": "Religion", "es": "Religión", "fr": "Religion", "it": "Religione", "ru": "Религия", "zh": "宗教", "tr": "Din"}),
+    LearningCard(primaryText: "Art", translations: {"ar": "الرسم", "de": "Kunst", "es": "Arte", "fr": "Art", "it": "Arte", "ru": "Искусство", "zh": "艺术", "tr": "Sanat"}),
+    LearningCard(primaryText: "Music", translations: {"ar": "الموسيقى", "de": "Musik", "es": "Música", "fr": "Musique", "it": "Musica", "ru": "Музыка", "zh": "音乐", "tr": "Müzik"}),
+    LearningCard(primaryText: "Computer Science", translations: {"ar": "علوم الكمبيوتر", "de": "Informatik", "es": "Informática", "fr": "Informatique", "it": "Informatica", "ru": "Информатика", "zh": "计算机科学", "tr": "Bilgisayar Bilimi"}),
+    LearningCard(primaryText: "Chemistry", translations: {"ar": "الكيمياء", "de": "Chemie", "es": "Química", "fr": "Chimie", "it": "Chimica", "ru": "Химия", "zh": "化学", "tr": "Kimya"}),
+    LearningCard(primaryText: "Biology", translations: {"ar": "الأحياء", "de": "Biologie", "es": "Biología", "fr": "Biologie", "it": "Biologia", "ru": "Биология", "zh": "生物学", "tr": "Biyoloji"}),
+    LearningCard(primaryText: "Geology", translations: {"ar": "الجيولوجيا", "de": "Geologie", "es": "Geología", "fr": "Géologie", "it": "Geologia", "ru": "Геология", "zh": "地质学", "tr": "Jeoloji"}),
+    LearningCard(primaryText: "Physics", translations: {"ar": "الفيزياء", "de": "Physik", "es": "Física", "fr": "Physique", "it": "Fisica", "ru": "Физика", "zh": "物理学", "tr": "Fizik"}),
+    LearningCard(primaryText: "Geography", translations: {"ar": "الجغرافيا", "de": "Geographie", "es": "Geografía", "fr": "Géographie", "it": "Geografia", "ru": "География", "zh": "地理", "tr": "Coğrafya"}),
+    LearningCard(primaryText: "History", translations: {"ar": "التاريخ", "de": "Geschichte", "es": "Historia", "fr": "Histoire", "it": "Storia", "ru": "История", "zh": "历史", "tr": "Tarih"}),
+    LearningCard(primaryText: "Philosophy", translations: {"ar": "الفلسفة", "de": "Philosophie", "es": "Filosofía", "fr": "Philosophie", "it": "Filosofia", "ru": "Философия", "zh": "哲学", "tr": "Felsefe"}),
+    LearningCard(primaryText: "Psychology", translations: {"ar": "علم النفس", "de": "Psychologie", "es": "Psicología", "fr": "Psychologie", "it": "Psicologia", "ru": "Психология", "zh": "心理学", "tr": "Psikoloji"}),
+    LearningCard(primaryText: "Trigonometry", translations: {"ar": "حساب المثلثات", "de": "Trigonometrie", "es": "Trigonometría", "fr": "Trigonométrie", "it": "Trigonometria", "ru": "Тригонометрия", "zh": "三角学", "tr": "Trigonometri"}),
+    LearningCard(primaryText: "Geometry", translations: {"ar": "الهندسة", "de": "Geometrie", "es": "Geometría", "fr": "Géométrie", "it": "Geometria", "ru": "Геометрия", "zh": "几何学", "tr": "Geometri"}),
+    LearningCard(primaryText: "Calculus", translations: {"ar": "التفاضل والتكامل", "de": "Analysis", "es": "Cálculo", "fr": "Calcul", "it": "Calcolo", "ru": "Математический анализ", "zh": "微积分", "tr": "Kalkülüs"}),
+    LearningCard(primaryText: "Algebra", translations: {"ar": "الجبر", "de": "Algebra", "es": "Álgebra", "fr": "Algèbre", "it": "Algebra", "ru": "Алгебра", "zh": "代数", "tr": "Cebir"}),
+    
+    // ========== مواد دراسية إضافية ==========
+    LearningCard(primaryText: "Economics", translations: {"ar": "الاقتصاد", "de": "Wirtschaft", "es": "Economía", "fr": "Économie", "it": "Economia", "ru": "Экономика", "zh": "经济学", "tr": "Ekonomi"}),
+    LearningCard(primaryText: "Sociology", translations: {"ar": "علم الاجتماع", "de": "Soziologie", "es": "Sociología", "fr": "Sociologie", "it": "Sociologia", "ru": "Социология", "zh": "社会学", "tr": "Sosyoloji"}),
+    LearningCard(primaryText: "Political Science", translations: {"ar": "العلوم السياسية", "de": "Politikwissenschaft", "es": "Ciencia política", "fr": "Sciences politiques", "it": "Scienze politiche", "ru": "Политология", "zh": "政治学", "tr": "Politik Bilim"}),
+    LearningCard(primaryText: "Literature", translations: {"ar": "الأدب", "de": "Literatur", "es": "Literatura", "fr": "Littérature", "it": "Letteratura", "ru": "Литература", "zh": "文学", "tr": "Edebiyat"}),
+    LearningCard(primaryText: "Drama", translations: {"ar": "المسرح", "de": "Theater", "es": "Teatro", "fr": "Théâtre", "it": "Teatro", "ru": "Театр", "zh": "戏剧", "tr": "Tiyatro"}),
+    LearningCard(primaryText: "Physical Education", translations: {"ar": "التربية البدنية", "de": "Sport", "es": "Educación física", "fr": "Éducation physique", "it": "Educazione fisica", "ru": "Физкультура", "zh": "体育", "tr": "Beden Eğitimi"}),
+    LearningCard(primaryText: "Statistics", translations: {"ar": "الإحصاء", "de": "Statistik", "es": "Estadística", "fr": "Statistiques", "it": "Statistica", "ru": "Статистика", "zh": "统计学", "tr": "İstatistik"}),
+    LearningCard(primaryText: "Anatomy", translations: {"ar": "علم التشريح", "de": "Anatomie", "es": "Anatomía", "fr": "Anatomie", "it": "Anatomia", "ru": "Анатомия", "zh": "解剖学", "tr": "Anatomi"}),
+  ];
+
+  // ✅ 50+ جملة - عن المواد الدراسية
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 193 (13 جملة) ==========
+    ItemCard(english: "Mona is good at French, but she is weak at history.", translations: {"ar": "منى شاطرة في الفرنساوي، بس ضعيفة في التاريخ", "de": "Mona ist gut in Französisch, aber schwach in Geschichte", "es": "Mona es buena en francés, pero es débil en historia", "fr": "Mona est bonne en français, mais faible en histoire", "it": "Mona è brava in francese, ma è debole in storia", "ru": "Мона хороша во французском, но слаба в истории", "zh": "莫娜法语很好，但历史很弱", "tr": "Mona Fransızcada iyidir, ancak tarihte zayıftır"}),
+    ItemCard(english: "How can we make science lessons more interesting?", translations: {"ar": "إزاي نخلي حصص العلوم ممتعة أكثر؟", "de": "Wie können wir den Naturwissenschaftsunterricht interessanter gestalten?", "es": "¿Cómo podemos hacer las lecciones de ciencias más interesantes?", "fr": "Comment rendre les cours de sciences plus intéressants?", "it": "Come possiamo rendere le lezioni di scienze più interessanti?", "ru": "Как сделать уроки науки более интересными?", "zh": "我们怎样才能让科学课更有趣？", "tr": "Fen derslerini nasıl daha ilginç hale getirebiliriz?"}),
+    ItemCard(english: "My favorite subject is chemistry.", translations: {"ar": "مادتي المفضلة هي الكيمياء", "de": "Mein Lieblingsfach ist Chemie", "es": "Mi materia favorita es química", "fr": "Ma matière préférée est la chimie", "it": "La mia materia preferita è la chimica", "ru": "Мой любимый предмет - химия", "zh": "我最喜欢的科目是化学", "tr": "En sevdiğim ders kimyadır"}),
+    ItemCard(english: "Our English teacher praised us yesterday.", translations: {"ar": "مدرس الإنجليزي بتاعنا مدحنا امبارح", "de": "Unser Englischlehrer hat uns gestern gelobt", "es": "Nuestro profesor de inglés nos elogió ayer", "fr": "Notre professeur d'anglais nous a félicités hier", "it": "Il nostro insegnante di inglese ci ha elogiati ieri", "ru": "Наш учитель английского похвалил нас вчера", "zh": "我们的英语老师昨天表扬了我们", "tr": "İngilizce öğretmenimiz dün bizi övdü"}),
+    ItemCard(english: "When is your psychology lesson?", translations: {"ar": "حصة علم النفس بتاعتك امتى؟", "de": "Wann ist deine Psychologiestunde?", "es": "¿Cuándo es tu lección de psicología?", "fr": "Quand est ta leçon de psychologie?", "it": "Quando è la tua lezione di psicologia?", "ru": "Когда у тебя урок психологии?", "zh": "你的心理学课是什么时候？", "tr": "Psikoloji dersin ne zaman?"}),
+    ItemCard(english: "Do you like your philosophy lessons?", translations: {"ar": "بتحب حصص الفلسفة بتاعتك؟", "de": "Magst du deinen Philosophieunterricht?", "es": "¿Te gustan tus lecciones de filosofía?", "fr": "Aimes-tu tes cours de philosophie?", "it": "Ti piacciono le tue lezioni di filosofia?", "ru": "Тебе нравятся уроки философии?", "zh": "你喜欢你的哲学课吗？", "tr": "Felsefe derslerini seviyor musun?"}),
+    ItemCard(english: "Social studies lesson starts at 9.", translations: {"ar": "حصة الدراسات الاجتماعية بتبدأ الساعة 9", "de": "Der Sozialkundeunterricht beginnt um 9 Uhr", "es": "La lección de estudios sociales comienza a las 9", "fr": "Le cours de sciences sociales commence à 9 heures", "it": "La lezione di studi sociali inizia alle 9", "ru": "Урок обществознания начинается в 9", "zh": "社会研究课9点开始", "tr": "Sosyal bilgiler dersi saat 9'da başlıyor"}),
+    ItemCard(english: "Emma likes music lessons.", translations: {"ar": "إيما بتحب حصص الموسيقى", "de": "Emma mag Musikunterricht", "es": "A Emma le gustan las lecciones de música", "fr": "Emma aime les cours de musique", "it": "Ad Emma piacciono le lezioni di musica", "ru": "Эмме нравятся уроки музыки", "zh": "艾玛喜欢音乐课", "tr": "Emma müzik derslerini sever"}),
+    ItemCard(english: "How do you study your math lessons?", translations: {"ar": "إنت بتذاكر دروس الرياضيات بتاعتك إزاي؟", "de": "Wie lernst du für deinen Matheunterricht?", "es": "¿Cómo estudias tus lecciones de matemáticas?", "fr": "Comment étudies-tu tes cours de maths?", "it": "Come studi le tue lezioni di matematica?", "ru": "Как ты учишь уроки математики?", "zh": "你怎么学习数学课？", "tr": "Matematik derslerini nasıl çalışıyorsun?"}),
+    ItemCard(english: "Do you like geometry?", translations: {"ar": "هل بتحب مادة الهندسة؟", "de": "Magst du Geometrie?", "es": "¿Te gusta la geometría?", "fr": "Aimes-tu la géométrie?", "it": "Ti piace la geometria?", "ru": "Тебе нравится геометрия?", "zh": "你喜欢几何吗？", "tr": "Geometriyi sever misin?"}),
+    ItemCard(english: "Mona is worried she won't pass calculus.", translations: {"ar": "منى خايفة متنجحش في التفاضل", "de": "Mona hat Angst, dass sie die Analysis nicht besteht", "es": "Mona está preocupada de no aprobar cálculo", "fr": "Mona a peur de ne pas réussir le calcul", "it": "Mona è preoccupata di non passare il calcolo", "ru": "Мона волнуется, что не сдаст матанализ", "zh": "莫娜担心自己通不过微积分", "tr": "Mona kalkülüs dersini geçemeyeceğinden endişeleniyor"}),
+    ItemCard(english: "Our new geology teacher is very nice.", translations: {"ar": "مدرسة الجيولوجيا الجديدة بتاعتنا لطيفة أوي", "de": "Unsere neue Geologielehrerin ist sehr nett", "es": "Nuestra nueva profesora de geología es muy agradable", "fr": "Notre nouveau professeur de géologie est très gentil", "it": "La nostra nuova insegnante di geologia è molto simpatica", "ru": "Наша новая учительница геологии очень милая", "zh": "我们的新地质老师非常好", "tr": "Yeni jeoloji öğretmenimiz çok hoş"}),
+    ItemCard(english: "Classical music is the best.", translations: {"ar": "الموسيقى الكلاسيكية هي الأفضل", "de": "Klassische Musik ist die beste", "es": "La música clásica es la mejor", "fr": "La musique classique est la meilleure", "it": "La musica classica è la migliore", "ru": "Классическая музыка - лучшая", "zh": "古典音乐是最好的", "tr": "Klasik müzik en iyisidir"}),
+    
+    // ========== 37 جملة إضافية عن المواد الدراسية ==========
+    ItemCard(english: "Physics explains how the universe works.", translations: {"ar": "الفيزياء بتشرح الكون بيشتغل إزاي", "de": "Die Physik erklärt, wie das Universum funktioniert", "es": "La física explica cómo funciona el universo", "fr": "La physique explique comment fonctionne l'univers", "it": "La fisica spiega come funziona l'universo", "ru": "Физика объясняет, как работает вселенная", "zh": "物理学解释了宇宙是如何运作的", "tr": "Fizik evrenin nasıl çalıştığını açıklar"}),
+    ItemCard(english: "Biology is the study of living organisms.", translations: {"ar": "علم الأحياء هو دراسة الكائنات الحية", "de": "Biologie ist die Lehre von den Lebewesen", "es": "La biología es el estudio de los organismos vivos", "fr": "La biologie est l'étude des organismes vivants", "it": "La biologia è lo studio degli organismi viventi", "ru": "Биология - это изучение живых организмов", "zh": "生物学是研究生物体的学科", "tr": "Biyoloji, canlı organizmaların incelenmesidir"}),
+    ItemCard(english: "Geography helps us understand the world's landscapes.", translations: {"ar": "الجغرافيا بتساعدنا نفهم تضاريس العالم", "de": "Die Geographie hilft uns, die Landschaften der Welt zu verstehen", "es": "La geografía nos ayuda a entender los paisajes del mundo", "fr": "La géographie nous aide à comprendre les paysages du monde", "it": "La geografia ci aiuta a capire i paesaggi del mondo", "ru": "География помогает нам понять ландшафты мира", "zh": "地理帮助我们了解世界的景观", "tr": "Coğrafya, dünyanın manzaralarını anlamamıza yardımcı olur"}),
+    ItemCard(english: "History teaches us about past civilizations.", translations: {"ar": "التاريخ بيعلمنا عن الحضارات الماضية", "de": "Die Geschichte lehrt uns über vergangene Zivilisationen", "es": "La historia nos enseña sobre civilizaciones pasadas", "fr": "L'histoire nous enseigne les civilisations passées", "it": "La storia ci insegna le civiltà passate", "ru": "История учит нас прошлым цивилизациям", "zh": "历史教会我们过去的文明", "tr": "Tarih bize geçmiş uygarlıkları öğretir"}),
+    ItemCard(english: "Arabic is my native language.", translations: {"ar": "العربية هي لغتي الأم", "de": "Arabisch ist meine Muttersprache", "es": "El árabe es mi lengua materna", "fr": "L'arabe est ma langue maternelle", "it": "L'arabo è la mia lingua madre", "ru": "Арабский - мой родной язык", "zh": "阿拉伯语是我的母语", "tr": "Arapça benim ana dilimdir"}),
+    ItemCard(english: "Art class allows me to express my creativity.", translations: {"ar": "حصة الرسم بتخليني أعبر عن إبداعي", "de": "Der Kunstunterricht ermöglicht es mir, meine Kreativität auszudrücken", "es": "La clase de arte me permite expresar mi creatividad", "fr": "Le cours d'art me permet d'exprimer ma créativité", "it": "La lezione d'arte mi permette di esprimere la mia creatività", "ru": "Урок искусства позволяет мне выразить свою креативность", "zh": "美术课让我表达我的创造力", "tr": "Sanat dersi yaratıcılığımı ifade etmemi sağlıyor"}),
+    ItemCard(english: "Computer science is a very useful skill nowadays.", translations: {"ar": "علوم الكمبيوتر مهارة مفيدة جدا في وقتنا الحالي", "de": "Informatik ist heutzutage eine sehr nützliche Fähigkeit", "es": "La informática es una habilidad muy útil hoy en día", "fr": "L'informatique est une compétence très utile de nos jours", "it": "L'informatica è un'abilità molto utile al giorno d'oggi", "ru": "Информатика - очень полезный навык в наше время", "zh": "计算机科学在当今是非常有用的技能", "tr": "Bilgisayar bilimi günümüzde çok kullanışlı bir beceridir"}),
+    ItemCard(english: "I struggle with algebra, but I'm good at geometry.", translations: {"ar": "أنا بتعب في الجبر، بس شاطر في الهندسة", "de": "Ich kämpfe mit Algebra, aber ich bin gut in Geometrie", "es": "Lucho con álgebra, pero soy bueno en geometría", "fr": "J'ai du mal avec l'algèbre, mais je suis bon en géométrie", "it": "Ho difficoltà con l'algebra, ma sono bravo in geometria", "ru": "Мне трудно дается алгебра, но я хорош в геометрии", "zh": "我在代数方面有困难，但几何很好", "tr": "Cebirde zorlanıyorum ama geometride iyiyim"}),
+    ItemCard(english: "Music lessons help me relax after a long day.", translations: {"ar": "حصص الموسيقى بتساعدني استرخي بعد يوم طويل", "de": "Musikunterricht hilft mir, nach einem langen Tag zu entspannen", "es": "Las lecciones de música me ayudan a relajarme después de un largo día", "fr": "Les cours de musique m'aident à me détendre après une longue journée", "it": "Le lezioni di musica mi aiutano a rilassarmi dopo una lunga giornata", "ru": "Уроки музыки помогают мне расслабиться после долгого дня", "zh": "音乐课帮助我在漫长的一天后放松", "tr": "Müzik dersleri uzun bir günün ardından rahatlamama yardımcı oluyor"}),
+    ItemCard(english: "Philosophy makes me think deeply about life.", translations: {"ar": "الفلسفة بتخليني أفكر بعمق في الحياة", "de": "Philosophie bringt mich dazu, tief über das Leben nachzudenken", "es": "La filosofía me hace pensar profundamente sobre la vida", "fr": "La philosophie me fait réfléchir profondément à la vie", "it": "La filosofia mi fa pensare profondamente alla vita", "ru": "Философия заставляет меня глубоко задуматься о жизни", "zh": "哲学让我深入思考生活", "tr": "Felsefe hayat hakkında derin düşünmemi sağlıyor"}),
+    ItemCard(english: "Chemistry experiments are exciting and dangerous.", translations: {"ar": "تجارب الكيمياء مثيرة وخطيرة", "de": "Chemieexperimente sind aufregend und gefährlich", "es": "Los experimentos de química son emocionantes y peligrosos", "fr": "Les expériences de chimie sont passionnantes et dangereuses", "it": "Gli esperimenti di chimica sono eccitanti e pericolosi", "ru": "Химические опыты увлекательны и опасны", "zh": "化学实验既刺激又危险", "tr": "Kimya deneyleri heyecan verici ve tehlikelidir"}),
+    ItemCard(english: "Physical education keeps me fit and healthy.", translations: {"ar": "التربية البدنية بتخليني لائق بدني وصحي", "de": "Der Sportunterricht hält mich fit und gesund", "es": "La educación física me mantiene en forma y saludable", "fr": "L'éducation physique me maintient en forme et en bonne santé", "it": "L'educazione fisica mi mantiene in forma e in salute", "ru": "Физкультура поддерживает меня в форме и здоровье", "zh": "体育让我保持健康", "tr": "Beden eğitimi beni formda ve sağlıklı tutuyor"}),
+    ItemCard(english: "Economics explains how money and markets work.", translations: {"ar": "الاقتصاد بيشرح الفلوس والأسواق بتشتغل إزاي", "de": "Die Wirtschaft erklärt, wie Geld und Märkte funktionieren", "es": "La economía explica cómo funcionan el dinero y los mercados", "fr": "L'économie explique comment fonctionnent l'argent et les marchés", "it": "L'economia spiega come funzionano il denaro e i mercati", "ru": "Экономика объясняет, как работают деньги и рынки", "zh": "经济学解释了货币和市场如何运作", "tr": "Ekonomi, para ve piyasaların nasıl çalıştığını açıklar")},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "المواد الدراسية - School Subjects",
+    );
+  }
+}
+
+
+
+
+
+
+/////////
+             //////////////
+////////////
+
+
+
+         class NumbersScreen extends StatelessWidget {
+  const NumbersScreen({Key? key}) : super(key: key);
+
+  // ✅ جميع الأرقام والمفاهيم الرياضية
+  final List<LearningCard> words = const [
+    // ========== الأعداد من 0 إلى 20 ==========
+    LearningCard(primaryText: "Zero", translations: {"ar": "صفر", "de": "Null", "es": "Cero", "fr": "Zéro", "it": "Zero", "ru": "Ноль", "zh": "零", "tr": "Sıfır"}),
+    LearningCard(primaryText: "One", translations: {"ar": "واحد", "de": "Eins", "es": "Uno", "fr": "Un", "it": "Uno", "ru": "Один", "zh": "一", "tr": "Bir"}),
+    LearningCard(primaryText: "Two", translations: {"ar": "اثنان", "de": "Zwei", "es": "Dos", "fr": "Deux", "it": "Due", "ru": "Два", "zh": "二", "tr": "İki"}),
+    LearningCard(primaryText: "Three", translations: {"ar": "ثلاثة", "de": "Drei", "es": "Tres", "fr": "Trois", "it": "Tre", "ru": "Три", "zh": "三", "tr": "Üç"}),
+    LearningCard(primaryText: "Four", translations: {"ar": "أربعة", "de": "Vier", "es": "Cuatro", "fr": "Quatre", "it": "Quattro", "ru": "Четыре", "zh": "四", "tr": "Dört"}),
+    LearningCard(primaryText: "Five", translations: {"ar": "خمسة", "de": "Fünf", "es": "Cinco", "fr": "Cinq", "it": "Cinque", "ru": "Пять", "zh": "五", "tr": "Beş"}),
+    LearningCard(primaryText: "Six", translations: {"ar": "ستة", "de": "Sechs", "es": "Seis", "fr": "Six", "it": "Sei", "ru": "Шесть", "zh": "六", "tr": "Altı"}),
+    LearningCard(primaryText: "Seven", translations: {"ar": "سبعة", "de": "Sieben", "es": "Siete", "fr": "Sept", "it": "Sette", "ru": "Семь", "zh": "七", "tr": "Yedi"}),
+    LearningCard(primaryText: "Eight", translations: {"ar": "ثمانية", "de": "Acht", "es": "Ocho", "fr": "Huit", "it": "Otto", "ru": "Восемь", "zh": "八", "tr": "Sekiz"}),
+    LearningCard(primaryText: "Nine", translations: {"ar": "تسعة", "de": "Neun", "es": "Nueve", "fr": "Neuf", "it": "Nove", "ru": "Девять", "zh": "九", "tr": "Dokuz"}),
+    LearningCard(primaryText: "Ten", translations: {"ar": "عشرة", "de": "Zehn", "es": "Diez", "fr": "Dix", "it": "Dieci", "ru": "Десять", "zh": "十", "tr": "On"}),
+    LearningCard(primaryText: "Eleven", translations: {"ar": "أحد عشر", "de": "Elf", "es": "Once", "fr": "Onze", "it": "Undici", "ru": "Одиннадцать", "zh": "十一", "tr": "On bir"}),
+    LearningCard(primaryText: "Twelve", translations: {"ar": "اثنا عشر", "de": "Zwölf", "es": "Doce", "fr": "Douze", "it": "Dodici", "ru": "Двенадцать", "zh": "十二", "tr": "On iki"}),
+    LearningCard(primaryText: "Thirteen", translations: {"ar": "ثلاثة عشر", "de": "Dreizehn", "es": "Trece", "fr": "Treize", "it": "Tredici", "ru": "Тринадцать", "zh": "十三", "tr": "On üç"}),
+    LearningCard(primaryText: "Fourteen", translations: {"ar": "أربعة عشر", "de": "Vierzehn", "es": "Catorce", "fr": "Quatorze", "it": "Quattordici", "ru": "Четырнадцать", "zh": "十四", "tr": "On dört"}),
+    LearningCard(primaryText: "Fifteen", translations: {"ar": "خمسة عشر", "de": "Fünfzehn", "es": "Quince", "fr": "Quinze", "it": "Quindici", "ru": "Пятнадцать", "zh": "十五", "tr": "On beş"}),
+    LearningCard(primaryText: "Sixteen", translations: {"ar": "ستة عشر", "de": "Sechzehn", "es": "Dieciséis", "fr": "Seize", "it": "Sedici", "ru": "Шестнадцать", "zh": "十六", "tr": "On altı"}),
+    LearningCard(primaryText: "Seventeen", translations: {"ar": "سبعة عشر", "de": "Siebzehn", "es": "Diecisiete", "fr": "Dix-sept", "it": "Diciassette", "ru": "Семнадцать", "zh": "十七", "tr": "On yedi"}),
+    LearningCard(primaryText: "Eighteen", translations: {"ar": "ثمانية عشر", "de": "Achtzehn", "es": "Dieciocho", "fr": "Dix-huit", "it": "Diciotto", "ru": "Восемнадцать", "zh": "十八", "tr": "On sekiz"}),
+    LearningCard(primaryText: "Nineteen", translations: {"ar": "تسعة عشر", "de": "Neunzehn", "es": "Diecinueve", "fr": "Dix-neuf", "it": "Diciannove", "ru": "Девятнадцать", "zh": "十九", "tr": "On dokuz"}),
+    LearningCard(primaryText: "Twenty", translations: {"ar": "عشرون", "de": "Zwanzig", "es": "Veinte", "fr": "Vingt", "it": "Venti", "ru": "Двадцать", "zh": "二十", "tr": "Yirmi"}),
+    
+    // ========== الأعداد من 21 إلى 30 ==========
+    LearningCard(primaryText: "Twenty-One", translations: {"ar": "واحد وعشرون", "de": "Einundzwanzig", "es": "Veintiuno", "fr": "Vingt et un", "it": "Ventuno", "ru": "Двадцать один", "zh": "二十一", "tr": "Yirmi bir"}),
+    LearningCard(primaryText: "Twenty-Two", translations: {"ar": "اثنان وعشرون", "de": "Zweiundzwanzig", "es": "Veintidós", "fr": "Vingt-deux", "it": "Ventidue", "ru": "Двадцать два", "zh": "二十二", "tr": "Yirmi iki"}),
+    LearningCard(primaryText: "Twenty-Three", translations: {"ar": "ثلاثة وعشرون", "de": "Dreiundzwanzig", "es": "Veintitrés", "fr": "Vingt-trois", "it": "Ventitré", "ru": "Двадцать три", "zh": "二十三", "tr": "Yirmi üç"}),
+    LearningCard(primaryText: "Twenty-Four", translations: {"ar": "أربعة وعشرون", "de": "Vierundzwanzig", "es": "Veinticuatro", "fr": "Vingt-quatre", "it": "Ventiquattro", "ru": "Двадцать четыре", "zh": "二十四", "tr": "Yirmi dört"}),
+    LearningCard(primaryText: "Twenty-Five", translations: {"ar": "خمسة وعشرون", "de": "Fünfundzwanzig", "es": "Veinticinco", "fr": "Vingt-cinq", "it": "Venticinque", "ru": "Двадцать пять", "zh": "二十五", "tr": "Yirmi beş"}),
+    LearningCard(primaryText: "Twenty-Six", translations: {"ar": "ستة وعشرون", "de": "Sechsundzwanzig", "es": "Veintiséis", "fr": "Vingt-six", "it": "Ventisei", "ru": "Двадцать шесть", "zh": "二十六", "tr": "Yirmi altı"}),
+    LearningCard(primaryText: "Twenty-Seven", translations: {"ar": "سبعة وعشرون", "de": "Siebenundzwanzig", "es": "Veintisiete", "fr": "Vingt-sept", "it": "Ventisette", "ru": "Двадцать семь", "zh": "二十七", "tr": "Yirmi yedi"}),
+    LearningCard(primaryText: "Twenty-Eight", translations: {"ar": "ثمانية وعشرون", "de": "Achtundzwanzig", "es": "Veintiocho", "fr": "Vingt-huit", "it": "Ventotto", "ru": "Двадцать восемь", "zh": "二十八", "tr": "Yirmi sekiz"}),
+    LearningCard(primaryText: "Twenty-Nine", translations: {"ar": "تسعة وعشرون", "de": "Neunundzwanzig", "es": "Veintinueve", "fr": "Vingt-neuf", "it": "Ventinove", "ru": "Двадцать девять", "zh": "二十九", "tr": "Yirmi dokuz"}),
+    LearningCard(primaryText: "Thirty", translations: {"ar": "ثلاثون", "de": "Dreißig", "es": "Treinta", "fr": "Trente", "it": "Trenta", "ru": "Тридцать", "zh": "三十", "tr": "Otuz"}),
+    
+    // ========== العشرات ==========
+    LearningCard(primaryText: "Forty", translations: {"ar": "أربعون", "de": "Vierzig", "es": "Cuarenta", "fr": "Quarante", "it": "Quaranta", "ru": "Сорок", "zh": "四十", "tr": "Kırk"}),
+    LearningCard(primaryText: "Fifty", translations: {"ar": "خمسون", "de": "Fünfzig", "es": "Cincuenta", "fr": "Cinquante", "it": "Cinquanta", "ru": "Пятьдесят", "zh": "五十", "tr": "Elli"}),
+    LearningCard(primaryText: "Sixty", translations: {"ar": "ستون", "de": "Sechzig", "es": "Sesenta", "fr": "Soixante", "it": "Sessanta", "ru": "Шестьдесят", "zh": "六十", "tr": "Altmış"}),
+    LearningCard(primaryText: "Seventy", translations: {"ar": "سبعون", "de": "Siebzig", "es": "Setenta", "fr": "Soixante-dix", "it": "Settanta", "ru": "Семьдесят", "zh": "七十", "tr": "Yetmiş"}),
+    LearningCard(primaryText: "Eighty", translations: {"ar": "ثمانون", "de": "Achtzig", "es": "Ochenta", "fr": "Quatre-vingts", "it": "Ottanta", "ru": "Восемьдесят", "zh": "八十", "tr": "Seksen"}),
+    LearningCard(primaryText: "Ninety", translations: {"ar": "تسعون", "de": "Neunzig", "es": "Noventa", "fr": "Quatre-vingt-dix", "it": "Novanta", "ru": "Девяносто", "zh": "九十", "tr": "Doksan"}),
+    
+    // ========== الأعداد الكبيرة ==========
+    LearningCard(primaryText: "One Hundred", translations: {"ar": "مائة", "de": "Einhundert", "es": "Cien", "fr": "Cent", "it": "Cento", "ru": "Сто", "zh": "一百", "tr": "Yüz"}),
+    LearningCard(primaryText: "Two Hundred", translations: {"ar": "مائتان", "de": "Zweihundert", "es": "Doscientos", "fr": "Deux cents", "it": "Duecento", "ru": "Двести", "zh": "二百", "tr": "İki yüz"}),
+    LearningCard(primaryText: "Three Hundred", translations: {"ar": "ثلاثمائة", "de": "Dreihundert", "es": "Trescientos", "fr": "Trois cents", "it": "Trecento", "ru": "Триста", "zh": "三百", "tr": "Üç yüz"}),
+    LearningCard(primaryText: "Four Hundred", translations: {"ar": "أربعمائة", "de": "Vierhundert", "es": "Cuatrocientos", "fr": "Quatre cents", "it": "Quattrocento", "ru": "Четыреста", "zh": "四百", "tr": "Dört yüz"}),
+    LearningCard(primaryText: "Five Hundred", translations: {"ar": "خمسمائة", "de": "Fünfhundert", "es": "Quinientos", "fr": "Cinq cents", "it": "Cinquecento", "ru": "Пятьсот", "zh": "五百", "tr": "Beş yüz"}),
+    LearningCard(primaryText: "Six Hundred", translations: {"ar": "ستمائة", "de": "Sechshundert", "es": "Seiscientos", "fr": "Six cents", "it": "Seicento", "ru": "Шестьсот", "zh": "六百", "tr": "Altı yüz"}),
+    LearningCard(primaryText: "Seven Hundred", translations: {"ar": "سبعمائة", "de": "Siebenhundert", "es": "Setecientos", "fr": "Sept cents", "it": "Settecento", "ru": "Семьсот", "zh": "七百", "tr": "Yedi yüz"}),
+    LearningCard(primaryText: "Eight Hundred", translations: {"ar": "ثمانمائة", "de": "Achthundert", "es": "Ochocientos", "fr": "Huit cents", "it": "Ottocento", "ru": "Восемьсот", "zh": "八百", "tr": "Sekiz yüz"}),
+    LearningCard(primaryText: "Nine Hundred", translations: {"ar": "تسعمائة", "de": "Neunhundert", "es": "Novecientos", "fr": "Neuf cents", "it": "Novecento", "ru": "Девятьсот", "zh": "九百", "tr": "Dokuz yüz"}),
+    LearningCard(primaryText: "One Thousand", translations: {"ar": "ألف", "de": "Eintausend", "es": "Mil", "fr": "Mille", "it": "Mille", "ru": "Тысяча", "zh": "一千", "tr": "Bin"}),
+    LearningCard(primaryText: "Ten Thousand", translations: {"ar": "عشرة آلاف", "de": "Zehntausend", "es": "Diez mil", "fr": "Dix mille", "it": "Diecimila", "ru": "Десять тысяч", "zh": "一万", "tr": "On bin"}),
+    LearningCard(primaryText: "One Hundred Thousand", translations: {"ar": "مائة ألف", "de": "Einhunderttausend", "es": "Cien mil", "fr": "Cent mille", "it": "Centomila", "ru": "Сто тысяч", "zh": "十万", "tr": "Yüz bin"}),
+    LearningCard(primaryText: "One Million", translations: {"ar": "مليون", "de": "Eine Million", "es": "Un millón", "fr": "Un million", "it": "Un milione", "ru": "Один миллион", "zh": "一百万", "tr": "Bir milyon"}),
+    LearningCard(primaryText: "One Billion", translations: {"ar": "مليار", "de": "Eine Milliarde", "es": "Mil millones", "fr": "Un milliard", "it": "Un miliardo", "ru": "Один миллиард", "zh": "十亿", "tr": "Bir milyar"}),
+    
+    // ========== الأعداد الترتيبية ==========
+    LearningCard(primaryText: "First", translations: {"ar": "الأول", "de": "Erste", "es": "Primero", "fr": "Premier", "it": "Primo", "ru": "Первый", "zh": "第一", "tr": "Birinci"}),
+    LearningCard(primaryText: "Second", translations: {"ar": "الثاني", "de": "Zweite", "es": "Segundo", "fr": "Deuxième", "it": "Secondo", "ru": "Второй", "zh": "第二", "tr": "İkinci"}),
+    LearningCard(primaryText: "Third", translations: {"ar": "الثالث", "de": "Dritte", "es": "Tercero", "fr": "Troisième", "it": "Terzo", "ru": "Третий", "zh": "第三", "tr": "Üçüncü"}),
+    LearningCard(primaryText: "Fourth", translations: {"ar": "الرابع", "de": "Vierte", "es": "Cuarto", "fr": "Quatrième", "it": "Quarto", "ru": "Четвертый", "zh": "第四", "tr": "Dördüncü"}),
+    LearningCard(primaryText: "Fifth", translations: {"ar": "الخامس", "de": "Fünfte", "es": "Quinto", "fr": "Cinquième", "it": "Quinto", "ru": "Пятый", "zh": "第五", "tr": "Beşinci"}),
+    LearningCard(primaryText: "Sixth", translations: {"ar": "السادس", "de": "Sechste", "es": "Sexto", "fr": "Sixième", "it": "Sesto", "ru": "Шестой", "zh": "第六", "tr": "Altıncı"}),
+    LearningCard(primaryText: "Seventh", translations: {"ar": "السابع", "de": "Siebte", "es": "Séptimo", "fr": "Septième", "it": "Settimo", "ru": "Седьмой", "zh": "第七", "tr": "Yedinci"}),
+    LearningCard(primaryText: "Eighth", translations: {"ar": "الثامن", "de": "Achte", "es": "Octavo", "fr": "Huitième", "it": "Ottavo", "ru": "Восьмой", "zh": "第八", "tr": "Sekizinci"}),
+    LearningCard(primaryText: "Ninth", translations: {"ar": "التاسع", "de": "Neunte", "es": "Noveno", "fr": "Neuvième", "it": "Nono", "ru": "Девятый", "zh": "第九", "tr": "Dokuzuncu"}),
+    LearningCard(primaryText: "Tenth", translations: {"ar": "العاشر", "de": "Zehnte", "es": "Décimo", "fr": "Dixième", "it": "Decimo", "ru": "Десятый", "zh": "第十", "tr": "Onuncu"}),
+    LearningCard(primaryText: "Eleventh", translations: {"ar": "الحادي عشر", "de": "Elfte", "es": "Undécimo", "fr": "Onzième", "it": "Undicesimo", "ru": "Одиннадцатый", "zh": "第十一", "tr": "On birinci"}),
+    LearningCard(primaryText: "Twelfth", translations: {"ar": "الثاني عشر", "de": "Zwölfte", "es": "Duodécimo", "fr": "Douzième", "it": "Dodicesimo", "ru": "Двенадцатый", "zh": "第十二", "tr": "On ikinci"}),
+    LearningCard(primaryText: "Twentieth", translations: {"ar": "العشرون", "de": "Zwanzigste", "es": "Vigésimo", "fr": "Vingtième", "it": "Ventesimo", "ru": "Двадцатый", "zh": "第二十", "tr": "Yirminci"}),
+    
+    // ========== الكسور ==========
+    LearningCard(primaryText: "One Half (1/2)", translations: {"ar": "نصف", "de": "Eine Hälfte", "es": "Un medio", "fr": "Un demi", "it": "Un mezzo", "ru": "Одна вторая", "zh": "一半", "tr": "Yarım"}),
+    LearningCard(primaryText: "One Third (1/3)", translations: {"ar": "ثلث", "de": "Ein Drittel", "es": "Un tercio", "fr": "Un tiers", "it": "Un terzo", "ru": "Одна треть", "zh": "三分之一", "tr": "Üçte bir"}),
+    LearningCard(primaryText: "Two Thirds (2/3)", translations: {"ar": "ثلثان", "de": "Zwei Drittel", "es": "Dos tercios", "fr": "Deux tiers", "it": "Due terzi", "ru": "Две трети", "zh": "三分之二", "tr": "Üçte iki"}),
+    LearningCard(primaryText: "One Fourth (1/4)", translations: {"ar": "ربع", "de": "Ein Viertel", "es": "Un cuarto", "fr": "Un quart", "it": "Un quarto", "ru": "Одна четвертая", "zh": "四分之一", "tr": "Çeyrek"}),
+    LearningCard(primaryText: "Three Fourths (3/4)", translations: {"ar": "ثلاثة أرباع", "de": "Drei Viertel", "es": "Tres cuartos", "fr": "Trois quarts", "it": "Tre quarti", "ru": "Три четверти", "zh": "四分之三", "tr": "Dörtte üç"}),
+    LearningCard(primaryText: "One Fifth (1/5)", translations: {"ar": "خمس", "de": "Ein Fünftel", "es": "Un quinto", "fr": "Un cinquième", "it": "Un quinto", "ru": "Одна пятая", "zh": "五分之一", "tr": "Beşte bir"}),
+    LearningCard(primaryText: "One Sixth (1/6)", translations: {"ar": "سدس", "de": "Ein Sechstel", "es": "Un sexto", "fr": "Un sixième", "it": "Un sesto", "ru": "Одна шестая", "zh": "六分之一", "tr": "Altta bir"}),
+    LearningCard(primaryText: "One Eighth (1/8)", translations: {"ar": "ثمن", "de": "Ein Achtel", "es": "Un octavo", "fr": "Un huitième", "it": "Un ottavo", "ru": "Одна восьмая", "zh": "八分之一", "tr": "Sekizde bir"}),
+    LearningCard(primaryText: "One Tenth (1/10)", translations: {"ar": "عشر", "de": "Ein Zehntel", "es": "Un décimo", "fr": "Un dixième", "it": "Un decimo", "ru": "Одна десятая", "zh": "十分之一", "tr": "Onda bir"}),
+    
+    // ========== الكسور العشرية ==========
+    LearningCard(primaryText: "Point Five (0.5)", translations: {"ar": "نقطة خمسة", "de": "Komma fünf", "es": "Punto cinco", "fr": "Virgule cinq", "it": "Virgola cinque", "ru": "Точка пять", "zh": "点五", "tr": "Nokta beş"}),
+    LearningCard(primaryText: "Point Two Five (0.25)", translations: {"ar": "نقطة خمسة وعشرون", "de": "Komma fünfundzwanzig", "es": "Punto veinticinco", "fr": "Virgule vingt-cinq", "it": "Virgola venticinque", "ru": "Точка двадцать пять", "zh": "点二五", "tr": "Nokta yirmi beş"}),
+    LearningCard(primaryText: "Point Seven Three (0.73)", translations: {"ar": "نقطة ثلاثة وسبعون", "de": "Komma dreiundsiebzig", "es": "Punto setenta y tres", "fr": "Virgule soixante-treize", "it": "Virgola settantatré", "ru": "Точка семьдесят три", "zh": "点七三", "tr": "Nokta yetmiş üç"}),
+    LearningCard(primaryText: "Point Zero Five (0.05)", translations: {"ar": "نقطة صفر خمسة", "de": "Komma null fünf", "es": "Punto cero cinco", "fr": "Virgule zéro cinq", "it": "Virgola zero cinque", "ru": "Точка ноль пять", "zh": "点零五", "tr": "Nokta sıfır beş"}),
+    
+    // ========== النسب المئوية ==========
+    LearningCard(primaryText: "Five Percent (5%)", translations: {"ar": "خمسة بالمائة", "de": "Fünf Prozent", "es": "Cinco por ciento", "fr": "Cinq pour cent", "it": "Cinque per cento", "ru": "Пять процентов", "zh": "百分之五", "tr": "Yüzde beş"}),
+    LearningCard(primaryText: "Ten Percent (10%)", translations: {"ar": "عشرة بالمائة", "de": "Zehn Prozent", "es": "Diez por ciento", "fr": "Dix pour cent", "it": "Dieci per cento", "ru": "Десять процентов", "zh": "百分之十", "tr": "Yüzde on"}),
+    LearningCard(primaryText: "Twenty Percent (20%)", translations: {"ar": "عشرون بالمائة", "de": "Zwanzig Prozent", "es": "Veinte por ciento", "fr": "Vingt pour cent", "it": "Venti per cento", "ru": "Двадцать процентов", "zh": "百分之二十", "tr": "Yüzde yirmi"}),
+    LearningCard(primaryText: "Twenty-Five Percent (25%)", translations: {"ar": "خمسة وعشرون بالمائة", "de": "Fünfundzwanzig Prozent", "es": "Veinticinco por ciento", "fr": "Vingt-cinq pour cent", "it": "Venticinque per cento", "ru": "Двадцать пять процентов", "zh": "百分之二十五", "tr": "Yüzde yirmi beş"}),
+    LearningCard(primaryText: "Fifty Percent (50%)", translations: {"ar": "خمسون بالمائة", "de": "Fünfzig Prozent", "es": "Cincuenta por ciento", "fr": "Cinquante pour cent", "it": "Cinquanta per cento", "ru": "Пятьдесят процентов", "zh": "百分之五十", "tr": "Yüzde elli"}),
+    LearningCard(primaryText: "Seventy Percent (70%)", translations: {"ar": "سبعون بالمائة", "de": "Siebzig Prozent", "es": "Setenta por ciento", "fr": "Soixante-dix pour cent", "it": "Settanta per cento", "ru": "Семьдесят процентов", "zh": "百分之七十", "tr": "Yüzde yetmiş"}),
+    LearningCard(primaryText: "Eighty-Two Percent (82%)", translations: {"ar": "اثنان وثمانون بالمائة", "de": "Zweiundachtzig Prozent", "es": "Ochenta y dos por ciento", "fr": "Quatre-vingt-deux pour cent", "it": "Ottantadue per cento", "ru": "Восемьдесят два процента", "zh": "百分之八十二", "tr": "Yüzde seksen iki"}),
+    LearningCard(primaryText: "One Hundred Percent (100%)", translations: {"ar": "مائة بالمائة", "de": "Einhundert Prozent", "es": "Cien por ciento", "fr": "Cent pour cent", "it": "Cento per cento", "ru": "Сто процентов", "zh": "百分之百", "tr": "Yüzde yüz"}),
+  ];
+
+  // ✅ 50+ جملة - عن الأرقام والأعداد
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 10 (13 جملة) ==========
+    ItemCard(english: "We should eat three meals a day.", translations: {"ar": "المفروض ناكل 3 وجبات في اليوم", "de": "Wir sollten drei Mahlzeiten am Tag essen", "es": "Deberíamos comer tres comidas al día", "fr": "Nous devrions manger trois repas par jour", "it": "Dovremmo mangiare tre pasti al giorno", "ru": "Мы должны есть три раза в день", "zh": "我们应该一天吃三餐", "tr": "Günde üç öğün yemeliyiz"}),
+    ItemCard(english: "A dollar equals one hundred cents.", translations: {"ar": "الدولار يساوي مائة سنت", "de": "Ein Dollar entspricht einhundert Cent", "es": "Un dólar equivale a cien centavos", "fr": "Un dollar équivaut à cent cents", "it": "Un dollaro equivale a cento centesimi", "ru": "Доллар равен ста центам", "zh": "一美元等于一百美分", "tr": "Bir dolar yüz sente eşittir"}),
+    ItemCard(english: "There are forty people in the classroom.", translations: {"ar": "في أربعين واحد في الفصل", "de": "Es gibt vierzig Leute im Klassenzimmer", "es": "Hay cuarenta personas en el aula", "fr": "Il y a quarante personnes dans la classe", "it": "Ci sono quaranta persone in classe", "ru": "В классе сорок человек", "zh": "教室里有四十个人", "tr": "Sınıfta kırk kişi var"}),
+    ItemCard(english: "Self-confidence is the first secret of success.", translations: {"ar": "الثقة بالنفس هي أول أسرار النجاح", "de": "Selbstvertrauen ist das erste Geheimnis des Erfolgs", "es": "La autoconfianza es el primer secreto del éxito", "fr": "La confiance en soi est le premier secret du succès", "it": "La fiducia in se stessi è il primo segreto del successo", "ru": "Уверенность в себе - первый секрет успеха", "zh": "自信是成功的第一个秘诀", "tr": "Kendine güven, başarının ilk sırrıdır"}),
+    ItemCard(english: "Three fourths of the class was absent yesterday.", translations: {"ar": "ثلاثة أرباع الفصل كانوا غايبين امبارح", "de": "Drei Viertel der Klasse waren gestern abwesend", "es": "Tres cuartos de la clase estuvieron ausentes ayer", "fr": "Les trois quarts de la classe étaient absents hier", "it": "I tre quarti della classe erano assenti ieri", "ru": "Три четверти класса отсутствовали вчера", "zh": "昨天班上四分之三的人缺席", "tr": "Sınıfın dörtte üçü dün yoktu"}),
+    ItemCard(english: "This t-shirt is made from one hundred percent cotton.", translations: {"ar": "القميص ده مصنوع من القطن بنسبة مائة في المائة", "de": "Dieses T-Shirt besteht zu einhundert Prozent aus Baumwolle", "es": "Esta camiseta está hecha de cien por ciento algodón", "fr": "Ce t-shirt est fait de cent pour cent coton", "it": "Questa maglietta è fatta di cento per cento cotone", "ru": "Эта футболка сделана из ста процентов хлопка", "zh": "这件T恤是百分之百纯棉的", "tr": "Bu tişört yüzde yüz pamuktan yapılmıştır"}),
+    ItemCard(english: "I was born in 1997 (nineteen ninety seven).", translations: {"ar": "أنا إتولدت سنة 1997", "de": "Ich wurde 1997 geboren", "es": "Nací en 1997", "fr": "Je suis né en 1997", "it": "Sono nato nel 1997", "ru": "Я родился в 1997 году", "zh": "我出生于1997年", "tr": "1997'de doğdum"}),
+    ItemCard(english: "I bought a book with 50% (fifty percent) discount.", translations: {"ar": "اشتريت كتاب بنص التمن (بخصم 50%)", "de": "Ich kaufte ein Buch mit 50% Rabatt", "es": "Compré un libro con un 50% de descuento", "fr": "J'ai acheté un livre avec 50% de réduction", "it": "Ho comprato un libro con il 50% di sconto", "ru": "Я купил книгу со скидкой 50%", "zh": "我以五折买了一本书", "tr": "Yüzde 50 indirimle bir kitap aldım"}),
+    ItemCard(english: "I am 14 (fourteen) years old, and my sister is 20 (twenty).", translations: {"ar": "أنا عندي 14 سنة، وأختي عندها 20 سنة", "de": "Ich bin 14 Jahre alt und meine Schwester ist 20", "es": "Tengo 14 años y mi hermana tiene 20", "fr": "J'ai 14 ans et ma sœur a 20 ans", "it": "Ho 14 anni e mia sorella ha 20 anni", "ru": "Мне 14 лет, а моей сестре 20", "zh": "我14岁，我妹妹20岁", "tr": "Ben 14 yaşındayım ve kız kardeşim 20 yaşında"}),
+    ItemCard(english: "The second lesson is very easy.", translations: {"ar": "الدرس الثاني سهل جداً", "de": "Die zweite Lektion ist sehr einfach", "es": "La segunda lección es muy fácil", "fr": "La deuxième leçon est très facile", "it": "La seconda lezione è molto facile", "ru": "Второй урок очень легкий", "zh": "第二课非常简单", "tr": "İkinci ders çok kolay"}),
+    ItemCard(english: "The third car is being stolen.", translations: {"ar": "العربية التالتة بتتسرق دلوقتي", "de": "Das dritte Auto wird gestohlen", "es": "El tercer coche está siendo robado", "fr": "La troisième voiture est en train d'être volée", "it": "La terza macchina viene rubata", "ru": "Третью машину угоняют", "zh": "第三辆车正在被偷", "tr": "Üçüncü araba çalınıyor"}),
+    ItemCard(english: "My dad will be 54 (fifty four) next month.", translations: {"ar": "بابا هيكون عنده 54 سنة الشهر الجاي", "de": "Mein Vater wird nächsten Monat 54", "es": "Mi papá cumplirá 54 el próximo mes", "fr": "Mon père aura 54 ans le mois prochain", "it": "Mio padre compirà 54 anni il mese prossimo", "ru": "Моему папе исполнится 54 в следующем месяце", "zh": "我爸爸下个月就54岁了", "tr": "Babam gelecek ay 54 yaşında olacak"}),
+    ItemCard(english: "Seventy percent of the team was absent last time.", translations: {"ar": "سبعين في المية من الفريق مكانوش موجودين المرة اللي فاتت", "de": "Siebzig Prozent des Teams waren letztes Mal abwesend", "es": "Setenta por ciento del equipo estuvo ausente la última vez", "fr": "Soixante-dix pour cent de l'équipe étaient absents la dernière fois", "it": "Il settanta per cento della squadra era assente l'ultima volta", "ru": "Семьдесят процентов команды отсутствовали в прошлый раз", "zh": "上次球队有百分之七十的人缺席", "tr": "Takımın yüzde yetmişi geçen sefer yoktu"}),
+    
+    // ========== 37 جملة إضافية ==========
+    ItemCard(english: "There are seven days in a week.", translations: {"ar": "في سبعة أيام في الأسبوع", "de": "Es gibt sieben Tage in einer Woche", "es": "Hay siete días en una semana", "fr": "Il y a sept jours dans une semaine", "it": "Ci sono sette giorni in una settimana", "ru": "В неделе семь дней", "zh": "一周有七天", "tr": "Bir haftada yedi gün vardır"}),
+    ItemCard(english: "A century has one hundred years.", translations: {"ar": "القرن فيه مائة سنة", "de": "Ein Jahrhundert hat einhundert Jahre", "es": "Un siglo tiene cien años", "fr": "Un siècle a cent ans", "it": "Un secolo ha cento anni", "ru": "Век имеет сто лет", "zh": "一个世纪有一百年", "tr": "Bir yüzyılda yüz yıl vardır"}),
+    ItemCard(english: "I need half a kilo of sugar.", translations: {"ar": "أنا محتاج نص كيلو سكر", "de": "Ich brauche ein halbes Kilo Zucker", "es": "Necesito medio kilo de azúcar", "fr": "J'ai besoin d'un demi-kilo de sucre", "it": "Ho bisogno di mezzo chilo di zucchero", "ru": "Мне нужно полкило сахара", "zh": "我需要半公斤糖", "tr": "Yarım kilo şekere ihtiyacım var"}),
+    ItemCard(english: "The temperature dropped to zero degrees.", translations: {"ar": "درجة الحرارة نزلت لصفر", "de": "Die Temperatur fiel auf null Grad", "es": "La temperatura bajó a cero grados", "fr": "La température est descendue à zéro degré", "it": "La temperatura è scesa a zero gradi", "ru": "Температура упала до нуля", "zh": "温度降至零度", "tr": "Sıcaklık sıfır dereceye düştü"}),
+    ItemCard(english: "She finished in second place in the race.", translations: {"ar": "هي جت في المركز الثاني في السباق", "de": "Sie wurde Zweite im Rennen", "es": "Terminó en segundo lugar en la carrera", "fr": "Elle a terminé deuxième à la course", "it": "È arrivata seconda nella gara", "ru": "Она финишировала второй в гонке", "zh": "她在比赛中获得第二名", "tr": "Yarışta ikinci oldu"}),
+    ItemCard(english: "I need to add one-third of a cup of milk.", translations: {"ar": "أنا محتاج أضيف ثلث كوب لبن", "de": "Ich muss ein Drittel einer Tasse Milch hinzufügen", "es": "Necesito agregar un tercio de taza de leche", "fr": "Je dois ajouter un tiers de tasse de lait", "it": "Devo aggiungere un terzo di tazza di latte", "ru": "Мне нужно добавить треть чашки молока", "zh": "我需要加三分之一杯牛奶", "tr": "Üçte bir fincan süt eklemeliyim"}),
+    ItemCard(english: "He scored ninety percent on his exam.", translations: {"ar": "هو جاب تسعين في المية في امتحانه", "de": "Er hat neunzig Prozent in seiner Prüfung erreicht", "es": "Obtuvo noventa por ciento en su examen", "fr": "Il a obtenu quatre-vingt-dix pour cent à son examen", "it": "Ha ottenuto il novanta per cento nel suo esame", "ru": "Он набрал девяносто процентов на экзамене", "zh": "他的考试得了九十分", "tr": "Sınavında yüzde doksan aldı"}),
+    ItemCard(english: "My house number is twenty-five.", translations: {"ar": "رقم بيتي هو خمسة وعشرون", "de": "Meine Hausnummer ist fünfundzwanzig", "es": "El número de mi casa es veinticinco", "fr": "Le numéro de ma maison est vingt-cinq", "it": "Il numero della mia casa è venticinque", "ru": "Номер моего дома - двадцать пять", "zh": "我的门牌号是二十五", "tr": "Ev numaram yirmi beş"}),
+    ItemCard(english: "A quarter of an hour is fifteen minutes.", translations: {"ar": "ربع ساعة يساوي خمسة عشر دقيقة", "de": "Eine Viertelstunde sind fünfzehn Minuten", "es": "Un cuarto de hora son quince minutos", "fr": "Un quart d'heure correspond à quinze minutes", "it": "Un quarto d'ora sono quindici minuti", "ru": "Четверть часа - это пятнадцать минут", "zh": "一刻钟是十五分钟", "tr": "Çeyrek saat on beş dakikadır"}),
+    ItemCard(english: "There are sixty minutes in an hour.", translations: {"ar": "في ستين دقيقة في الساعة", "de": "Es gibt sechzig Minuten in einer Stunde", "es": "Hay sesenta minutos en una hora", "fr": "Il y a soixante minutes dans une heure", "it": "Ci sono sessanta minuti in un'ora", "ru": "В часе шестьдесят минут", "zh": "一小时有六十分钟", "tr": "Bir saatte altmış dakika vardır"}),
+    ItemCard(english: "He was born on the tenth of May.", translations: {"ar": "هو اتولد في العاشر من مايو", "de": "Er wurde am zehnten Mai geboren", "es": "Nació el diez de mayo", "fr": "Il est né le dix mai", "it": "È nato il dieci maggio", "ru": "Он родился десятого мая", "zh": "他出生于五月十日", "tr": "On Mayıs'ta doğdu"}),
+    ItemCard(english: "Twenty percent of the students passed with honors.", translations: {"ar": "عشرين في المية من الطلاب نجحوا بامتياز", "de": "Zwanzig Prozent der Schüler haben mit Auszeichnung bestanden", "es": "Veinte por ciento de los estudiantes aprobaron con honores", "fr": "Vingt pour cent des étudiants ont réussi avec mention", "it": "Il venti per cento degli studenti ha superato con lode", "ru": "Двадцать процентов студентов сдали с отличием", "zh": "百分之二十的学生以优异成绩通过", "tr": "Öğrencilerin yüzde yirmisi onur derecesiyle geçti"}),
+    ItemCard(english: "The recipe calls for three-quarters of a cup of flour.", translations: {"ar": "الوصفة محتاجة ثلاثة أرباع كوب دقيق", "de": "Das Rezept verlangt nach drei Vierteln einer Tasse Mehl", "es": "La receta requiere tres cuartos de taza de harina", "fr": "La recette demande trois quarts de tasse de farine", "it": "La ricetta richiede tre quarti di tazza di farina", "ru": "Рецепт требует три четверти чашки муки", "zh": "食谱需要四分之三杯面粉", "tr": "Tarif, dörtte üç fincan un gerektiriyor"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الأعداد - Numbers",
+    );
+  }
+}
+
+
+
+
+             class ShoppingScreen extends StatelessWidget {
+  const ShoppingScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - التسوق (Shopping)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 33 ==========
+    LearningCard(primaryText: "Shopping", translations: {"ar": "التسوق", "de": "Einkaufen", "es": "Compras", "fr": "Shopping", "it": "Shopping", "ru": "Шоппинг", "zh": "购物", "tr": "Alışveriş"}),
+    LearningCard(primaryText: "Mall", translations: {"ar": "مول", "de": "Einkaufszentrum", "es": "Centro comercial", "fr": "Centre commercial", "it": "Centro commerciale", "ru": "Торговый центр", "zh": "购物中心", "tr": "Alışveriş merkezi"}),
+    LearningCard(primaryText: "Receipt", translations: {"ar": "إيصال", "de": "Quittung", "es": "Recibo", "fr": "Reçu", "it": "Ricevuta", "ru": "Чек", "zh": "收据", "tr": "Fiş"}),
+    LearningCard(primaryText: "Aisle", translations: {"ar": "ممر", "de": "Gang", "es": "Pasillo", "fr": "Allée", "it": "Corridoio", "ru": "Проход", "zh": "过道", "tr": "Koridor"}),
+    LearningCard(primaryText: "Shelf", translations: {"ar": "رف", "de": "Regal", "es": "Estante", "fr": "Étagère", "it": "Scaffale", "ru": "Полка", "zh": "架子", "tr": "Raf"}),
+    LearningCard(primaryText: "Fitting Room", translations: {"ar": "غرفة القياس", "de": "Umkleidekabine", "es": "Probador", "fr": "Cabine d'essayage", "it": "Cabina di prova", "ru": "Примерочная", "zh": "试衣间", "tr": "Deneme kabini"}),
+    LearningCard(primaryText: "Customer", translations: {"ar": "زبون", "de": "Kunde", "es": "Cliente", "fr": "Client", "it": "Cliente", "ru": "Клиент", "zh": "顾客", "tr": "Müşteri"}),
+    LearningCard(primaryText: "Store", translations: {"ar": "متجر", "de": "Geschäft", "es": "Tienda", "fr": "Magasin", "it": "Negozio", "ru": "Магазин", "zh": "商店", "tr": "Mağaza"}),
+    LearningCard(primaryText: "Sale", translations: {"ar": "تخفيض", "de": "Verkauf", "es": "Venta", "fr": "Vente", "it": "Vendita", "ru": "Распродажа", "zh": "促销", "tr": "İndirim"}),
+    LearningCard(primaryText: "Discount", translations: {"ar": "خصم", "de": "Rabatt", "es": "Descuento", "fr": "Réduction", "it": "Sconto", "ru": "Скидка", "zh": "折扣", "tr": "İndirim"}),
+    LearningCard(primaryText: "Expensive", translations: {"ar": "غالي", "de": "Teuer", "es": "Caro", "fr": "Cher", "it": "Costoso", "ru": "Дорогой", "zh": "昂贵的", "tr": "Pahalı"}),
+    LearningCard(primaryText: "Cheap", translations: {"ar": "رخيص", "de": "Billig", "es": "Barato", "fr": "Bon marché", "it": "Economico", "ru": "Дешевый", "zh": "便宜的", "tr": "Ucuz"}),
+    LearningCard(primaryText: "Shopping List", translations: {"ar": "قائمة التسوق", "de": "Einkaufsliste", "es": "Lista de compras", "fr": "Liste de courses", "it": "Lista della spesa", "ru": "Список покупок", "zh": "购物清单", "tr": "Alışveriş listesi"}),
+    LearningCard(primaryText: "Cashier", translations: {"ar": "كاشير", "de": "Kassierer", "es": "Cajero", "fr": "Caissier", "it": "Cassa", "ru": "Кассир", "zh": "收银员", "tr": "Kasiyer"}),
+    LearningCard(primaryText: "Queue", translations: {"ar": "طابور", "de": "Schlange", "es": "Fila", "fr": "Queue", "it": "Coda", "ru": "Очередь", "zh": "队伍", "tr": "Kuyruk"}),
+    LearningCard(primaryText: "Refund", translations: {"ar": "استرداد", "de": "Rückerstattung", "es": "Reembolso", "fr": "Remboursement", "it": "Rimborso", "ru": "Возврат", "zh": "退款", "tr": "Para iadesi"}),
+    LearningCard(primaryText: "Cash", translations: {"ar": "كاش", "de": "Bargeld", "es": "Efectivo", "fr": "Argent liquide", "it": "Contanti", "ru": "Наличные", "zh": "现金", "tr": "Nakit"}),
+    LearningCard(primaryText: "Price", translations: {"ar": "سعر", "de": "Preis", "es": "Precio", "fr": "Prix", "it": "Prezzo", "ru": "Цена", "zh": "价格", "tr": "Fiyat"}),
+    LearningCard(primaryText: "Trolley", translations: {"ar": "عربة تسوق", "de": "Einkaufswagen", "es": "Carrito", "fr": "Caddie", "it": "Carrello", "ru": "Тележка", "zh": "购物车", "tr": "Alışveriş arabası"}),
+    LearningCard(primaryText: "In Stock", translations: {"ar": "في المخزن", "de": "Auf Lager", "es": "En stock", "fr": "En stock", "it": "Disponibile", "ru": "В наличии", "zh": "有货", "tr": "Stokta var"}),
+    LearningCard(primaryText: "Available", translations: {"ar": "متاح", "de": "Verfügbar", "es": "Disponible", "fr": "Disponible", "it": "Disponibile", "ru": "Доступно", "zh": "有货", "tr": "Mevcut"}),
+    LearningCard(primaryText: "Unavailable", translations: {"ar": "غير متوفر", "de": "Nicht verfügbar", "es": "No disponible", "fr": "Indisponible", "it": "Non disponibile", "ru": "Недоступно", "zh": "缺货", "tr": "Mevcut değil"}),
+    LearningCard(primaryText: "Small Size", translations: {"ar": "مقاس صغير", "de": "Kleine Größe", "es": "Talla pequeña", "fr": "Petite taille", "it": "Taglia piccola", "ru": "Маленький размер", "zh": "小号", "tr": "Küçük beden"}),
+    LearningCard(primaryText: "Medium Size", translations: {"ar": "مقاس متوسط", "de": "Mittlere Größe", "es": "Talla mediana", "fr": "Taille moyenne", "it": "Taglia media", "ru": "Средний размер", "zh": "中号", "tr": "Orta beden"}),
+    LearningCard(primaryText: "Large Size", translations: {"ar": "مقاس كبير", "de": "Große Größe", "es": "Talla grande", "fr": "Grande taille", "it": "Taglia grande", "ru": "Большой размер", "zh": "大号", "tr": "Büyük beden"}),
+    
+    // ========== كلمات إضافية عن التسوق ==========
+    LearningCard(primaryText: "Online Shopping", translations: {"ar": "التسوق عبر الإنترنت", "de": "Online-Einkauf", "es": "Compras en línea", "fr": "Shopping en ligne", "it": "Shopping online", "ru": "Онлайн-шоппинг", "zh": "网上购物", "tr": "Online alışveriş"}),
+    LearningCard(primaryText: "Barcode", translations: {"ar": "باركود", "de": "Strichcode", "es": "Código de barras", "fr": "Code-barres", "it": "Codice a barre", "ru": "Штрих-код", "zh": "条形码", "tr": "Barkod"}),
+    LearningCard(primaryText: "Basket", translations: {"ar": "سلة", "de": "Korb", "es": "Cesta", "fr": "Panier", "it": "Cestino", "ru": "Корзина", "zh": "篮子", "tr": "Sepet"}),
+    LearningCard(primaryText: "Credit Card", translations: {"ar": "بطاقة ائتمان", "de": "Kreditkarte", "es": "Tarjeta de crédito", "fr": "Carte de crédit", "it": "Carta di credito", "ru": "Кредитная карта", "zh": "信用卡", "tr": "Kredi kartı"}),
+    LearningCard(primaryText: "Debit Card", translations: {"ar": "بطاقة خصم", "de": "Debitkarte", "es": "Tarjeta de débito", "fr": "Carte de débit", "it": "Carta di debito", "ru": "Дебетовая карта", "zh": "借记卡", "tr": "Banka kartı"}),
+    LearningCard(primaryText: "Gift Card", translations: {"ar": "بطاقة هدايا", "de": "Geschenkkarte", "es": "Tarjeta de regalo", "fr": "Carte cadeau", "it": "Carta regalo", "ru": "Подарочная карта", "zh": "礼品卡", "tr": "Hediye kartı"}),
+    LearningCard(primaryText: "Loyalty Card", translations: {"ar": "بطاقة ولاء", "de": "Kundenkarte", "es": "Tarjeta de fidelidad", "fr": "Carte de fidélité", "it": "Carta fedeltà", "ru": "Карта лояльности", "zh": "会员卡", "tr": "Sadakat kartı"}),
+    LearningCard(primaryText: "Return", translations: {"ar": "إرجاع", "de": "Rückgabe", "es": "Devolución", "fr": "Retour", "it": "Reso", "ru": "Возврат", "zh": "退货", "tr": "İade"}),
+    LearningCard(primaryText: "Exchange", translations: {"ar": "استبدال", "de": "Umtausch", "es": "Cambio", "fr": "Échange", "it": "Cambio", "ru": "Обмен", "zh": "换货", "tr": "Değişim"}),
+    LearningCard(primaryText: "Bargain", translations: {"ar": "صفقة", "de": "Schnäppchen", "es": "Ganga", "fr": "Bonne affaire", "it": "Affare", "ru": "Выгодная покупка", "zh": "便宜货", "tr": "Kez"},),
+    LearningCard(primaryText: "Brand", translations: {"ar": "ماركة", "de": "Marke", "es": "Marca", "fr": "Marque", "it": "Marca", "ru": "Бренд", "zh": "品牌", "tr": "Marka"}),
+    LearningCard(primaryText: "Size", translations: {"ar": "مقاس", "de": "Größe", "es": "Talla", "fr": "Taille", "it": "Taglia", "ru": "Размер", "zh": "尺码", "tr": "Beden"}),
+    LearningCard(primaryText: "Color", translations: {"ar": "لون", "de": "Farbe", "es": "Color", "fr": "Couleur", "it": "Colore", "ru": "Цвет", "zh": "颜色", "tr": "Renk"}),
+    LearningCard(primaryText: "Try On", translations: {"ar": "يجرب", "de": "Anprobieren", "es": "Probarse", "fr": "Essayer", "it": "Provarsi", "ru": "Примерять", "zh": "试穿", "tr": "Denemek"}),
+  ];
+
+  // ✅ 50+ جملة - عن التسوق
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 34 (13 جملة) ==========
+    ItemCard(english: "Let's go shopping.", translations: {"ar": "يلا نروح نتسوق", "de": "Lass uns einkaufen gehen", "es": "Vamos de compras", "fr": "Allons faire du shopping", "it": "Andiamo a fare shopping", "ru": "Давай пойдем по магазинам", "zh": "我们去购物吧", "tr": "Haydi alışverişe gidelim"}),
+    ItemCard(english: "I love shopping at this mall.", translations: {"ar": "أنا بحب التسوق في المول دا", "de": "Ich liebe es, in diesem Einkaufszentrum einzukaufen", "es": "Me encanta comprar en este centro comercial", "fr": "J'adore faire du shopping dans ce centre commercial", "it": "Adoro fare shopping in questo centro commerciale", "ru": "Я люблю покупать в этом торговом центре", "zh": "我喜欢在这个购物中心购物", "tr": "Bu alışveriş merkezinde alışveriş yapmayı seviyorum"}),
+    ItemCard(english: "Online shopping allows people to buy products at any time.", translations: {"ar": "التسوق أونلاين يسمح للناس انهم يشتروا المنتجات في أي وقت", "de": "Online-Shopping ermöglicht es Menschen, Produkte jederzeit zu kaufen", "es": "Las compras en línea permiten a las personas comprar productos en cualquier momento", "fr": "Le shopping en ligne permet aux gens d'acheter des produits à tout moment", "it": "Lo shopping online consente alle persone di acquistare prodotti in qualsiasi momento", "ru": "Онлайн-шоппинг позволяет людям покупать товары в любое время", "zh": "网上购物允许人们随时购买产品", "tr": "Online alışveriş, insanların ürünleri istedikleri zaman satın almalarına olanak tanır"}),
+    ItemCard(english: "You can find the new collection at this aisle.", translations: {"ar": "تقدر تلاقي المجموعة الجديدة في الممر دا", "de": "Sie finden die neue Kollektion in diesem Gang", "es": "Puedes encontrar la nueva colección en este pasillo", "fr": "Vous pouvez trouver la nouvelle collection dans cette allée", "it": "Puoi trovare la nuova collezione in questo corridoio", "ru": "Вы можете найти новую коллекцию в этом проходе", "zh": "你可以在这个过道找到新系列", "tr": "Yeni koleksiyonu bu koridorda bulabilirsiniz"}),
+    ItemCard(english: "Try this in the fitting room.", translations: {"ar": "جرب دا في غرفة القياس", "de": "Probieren Sie das in der Umkleidekabine", "es": "Prueba esto en el probador", "fr": "Essayez ceci dans la cabine d'essayage", "it": "Prova questo nella cabina di prova", "ru": "Примерьте это в примерочной", "zh": "在试衣间试试这个", "tr": "Bunu deneme kabininde dene"}),
+    ItemCard(english: "This store offers a big sale!", translations: {"ar": "المحل دا عنده تخفيض كبير", "de": "Dieser Laden bietet einen großen Verkauf an!", "es": "¡Esta tienda ofrece una gran rebaja!", "fr": "Ce magasin offre une grande vente!", "it": "Questo negozio offre un grande sconto!", "ru": "В этом магазине большая распродажа!", "zh": "这家店大减价！", "tr": "Bu mağaza büyük bir indirim sunuyor!"}),
+    ItemCard(english: "It suits me, but it's very expensive.", translations: {"ar": "عاجبني بس غالي أوي", "de": "Es passt mir, aber es ist sehr teuer", "es": "Me queda bien, pero es muy caro", "fr": "Ça me va, mais c'est très cher", "it": "Mi sta bene, ma è molto costoso", "ru": "Мне идет, но это очень дорого", "zh": "它适合我，但是太贵了", "tr": "Bana uyuyor ama çok pahalı"}),
+    ItemCard(english: "What are the available colors?", translations: {"ar": "إيه الألوان المتاحة؟", "de": "Welche Farben sind verfügbar?", "es": "¿Cuáles son los colores disponibles?", "fr": "Quelles sont les couleurs disponibles?", "it": "Quali sono i colori disponibili?", "ru": "Какие цвета доступны?", "zh": "有哪些颜色？", "tr": "Mevcut renkler hangileri?"}),
+    ItemCard(english: "Sorry, this size is unavailable.", translations: {"ar": "آسف، المقاس دا مش متوفر", "de": "Entschuldigung, diese Größe ist nicht verfügbar", "es": "Lo siento, esta talla no está disponible", "fr": "Désolé, cette taille n'est pas disponible", "it": "Spiacente, questa taglia non è disponibile", "ru": "Извините, этот размер недоступен", "zh": "对不起，这个尺码没货了", "tr": "Üzgünüm, bu beden mevcut değil"}),
+    ItemCard(english: "I forgot my shopping list.", translations: {"ar": "نسيت قائمة التسوق بتاعتي", "de": "Ich habe meine Einkaufsliste vergessen", "es": "Olvidé mi lista de compras", "fr": "J'ai oublié ma liste de courses", "it": "Ho dimenticato la mia lista della spesa", "ru": "Я забыл свой список покупок", "zh": "我忘了我的购物清单", "tr": "Alışveriş listemi unuttum"}),
+    ItemCard(english: "I would prefer the medium size.", translations: {"ar": "أفضل المقاس المتوسط", "de": "Ich würde die mittlere Größe bevorzugen", "es": "Preferiría la talla mediana", "fr": "Je préférerais la taille moyenne", "it": "Preferirei la taglia media", "ru": "Я предпочел бы средний размер", "zh": "我更喜欢中号", "tr": "Orta bedeni tercih ederim"}),
+    ItemCard(english: "It's too large, is the small size available?", translations: {"ar": "دا كبير أوي، هل المقاس الصغير متوفر؟", "de": "Es ist zu groß, ist die kleine Größe verfügbar?", "es": "Es demasiado grande, ¿está disponible la talla pequeña?", "fr": "C'est trop grand, la petite taille est-elle disponible?", "it": "È troppo grande, la taglia piccola è disponibile?", "ru": "Слишком большой, есть маленький размер?", "zh": "太大了，小号有货吗？", "tr": "Çok büyük, küçük beden mevcut mu?"}),
+    ItemCard(english: "Many people these days prefer online shopping.", translations: {"ar": "ناس كثير الأيام دي بتفضل التسوق أونلاين", "de": "Viele Leute bevorzugen heutzutage das Online-Shopping", "es": "Muchas personas hoy en día prefieren las compras en línea", "fr": "De nombreuses personnes préfèrent aujourd'hui le shopping en ligne", "it": "Molte persone al giorno d'oggi preferiscono lo shopping online", "ru": "Многие люди в наши дни предпочитают онлайн-шоппинг", "zh": "现在很多人更喜欢网上购物", "tr": "Bugünlerde birçok kişi online alışverişi tercih ediyor"}),
+    
+    // ========== 37 جملة إضافية عن التسوق ==========
+    ItemCard(english: "I need to buy some groceries at the supermarket.", translations: {"ar": "أنا محتاج أشتري بعض البقالة من السوبر ماركت", "de": "Ich muss im Supermarkt Lebensmittel kaufen", "es": "Necesito comprar algunos comestibles en el supermercado", "fr": "Je dois acheter des produits d'épicerie au supermarché", "it": "Devo comprare generi alimentari al supermercato", "ru": "Мне нужно купить продукты в супермаркете", "zh": "我需要去超市买些食品杂货", "tr": "Süpermarkette biraz bakkal alışverişi yapmalıyım"}),
+    ItemCard(english: "The cashier scanned all my items.", translations: {"ar": "الكاشير مسح كل الأغراض بتاعتي", "de": "Der Kassierer scannte alle meine Artikel", "es": "El cajero escaneó todos mis artículos", "fr": "Le caissier a scanné tous mes articles", "it": "Il cassiere ha scannerizzato tutti i miei articoli", "ru": "Кассир отсканировал все мои товары", "zh": "收银员扫描了我所有的物品", "tr": "Kasiyer tüm ürünlerimi okuttu"}),
+    ItemCard(english: "There was a long queue at the checkout.", translations: {"ar": "كان في طابور طويل عند الكاشير", "de": "Es gab eine lange Schlange an der Kasse", "es": "Había una larga fila en la caja", "fr": "Il y avait une longue file d'attente à la caisse", "it": "C'era una lunga coda alla cassa", "ru": "У кассы была длинная очередь", "zh": "收银台排着长队", "tr": "Kasiyerde uzun bir kuyruk vardı"}),
+    ItemCard(english: "I got a 20% discount on this jacket.", translations: {"ar": "أنا أخدت خصم 20% على الجاكيت ده", "de": "Ich habe 20% Rabatt auf diese Jacke bekommen", "es": "Conseguí un 20% de descuento en esta chaqueta", "fr": "J'ai obtenu une réduction de 20% sur cette veste", "it": "Ho ottenuto uno sconto del 20% su questa giacca", "ru": "Я получил 20% скидку на эту куртку", "zh": "这件夹克我打了八折", "tr": "Bu cekette %20 indirim aldım"}),
+    ItemCard(english: "Can I pay with a credit card?", translations: {"ar": "ممكن أدفع ببطاقة ائتمان؟", "de": "Kann ich mit Kreditkarte bezahlen?", "es": "¿Puedo pagar con tarjeta de crédito?", "fr": "Puis-je payer par carte de crédit?", "it": "Posso pagare con la carta di credito?", "ru": "Можно заплатить кредитной картой?", "zh": "我可以用信用卡支付吗？", "tr": "Kredi kartı ile ödeyebilir miyim?"}),
+    ItemCard(english: "I need to return this shirt because it's damaged.", translations: {"ar": "أنا محتاج أرجع القميص دا لأنه متضرر", "de": "Ich muss dieses Hemd zurückgeben, weil es beschädigt ist", "es": "Necesito devolver esta camisa porque está dañada", "fr": "Je dois retourner cette chemise car elle est endommagée", "it": "Devo restituire questa camicia perché è danneggiata", "ru": "Мне нужно вернуть эту рубашку, потому что она повреждена", "zh": "我需要退这件衬衫因为它有损坏", "tr": "Bu gömleği iade etmeliyim çünkü hasarlı"}),
+    ItemCard(english: "The items on this shelf are on sale.", translations: {"ar": "الأغراض اللي على الرف دا عليها تخفيض", "de": "Die Artikel auf diesem Regal sind im Angebot", "es": "Los artículos en este estante están en oferta", "fr": "Les articles sur cette étagère sont en solde", "it": "Gli articoli su questo scaffale sono in offerta", "ru": "Товары на этой полке продаются со скидкой", "zh": "这个架子上的商品正在打折", "tr": "Bu raftaki ürünler indirimli"}),
+    ItemCard(english: "I found a great bargain at this store.", translations: {"ar": "أنا لقيت صفقة رائعة في المحل دا", "de": "Ich habe ein tolles Schnäppchen in diesem Laden gefunden", "es": "Encontré una gran ganga en esta tienda", "fr": "J'ai trouvé une bonne affaire dans ce magasin", "it": "Ho trovato un ottimo affare in questo negozio", "ru": "Я нашел выгодную покупку в этом магазине", "zh": "我在这家店找到了一个便宜货", "tr": "Bu mağazada harika bir kez buldum"}),
+    ItemCard(english: "Do you have this dress in a larger size?", translations: {"ar": "عندك الفستان دا بمقاس أكبر؟", "de": "Haben Sie dieses Kleid in einer größeren Größe?", "es": "¿Tienes este vestido en una talla más grande?", "fr": "Avez-vous cette robe dans une taille plus grande?", "it": "Avete questo vestito in una taglia più grande?", "ru": "У вас есть это платье большего размера?", "zh": "这条裙子有大一号的吗？", "tr": "Bu elbise daha büyük bedende var mı?"}),
+    ItemCard(english: "I prefer to pay in cash.", translations: {"ar": "أنا أفضل أدفع كاش", "de": "Ich bevorzuge es, in bar zu bezahlen", "es": "Prefiero pagar en efectivo", "fr": "Je préfère payer en espèces", "it": "Preferisco pagare in contanti", "ru": "Я предпочитаю платить наличными", "zh": "我更喜欢用现金支付", "tr": "Nakit ödemeyi tercih ederim"}),
+    ItemCard(english: "This brand is known for its quality.", translations: {"ar": "الماركة دي معروفة بجودتها", "de": "Diese Marke ist für ihre Qualität bekannt", "es": "Esta marca es conocida por su calidad", "fr": "Cette marque est connue pour sa qualité", "it": "Questo marchio è noto per la sua qualità", "ru": "Этот бренд известен своим качеством", "zh": "这个品牌以其质量闻名", "tr": "Bu marka kalitesiyle tanınır"}),
+    ItemCard(english: "I need a refund for this defective product.", translations: {"ar": "أنا محتاج استرداد فلوسي للمنتج المعيب دا", "de": "Ich brauche eine Rückerstattung für dieses defekte Produkt", "es": "Necesito un reembolso por este producto defectuoso", "fr": "J'ai besoin d'un remboursement pour ce produit défectueux", "it": "Ho bisogno di un rimborso per questo prodotto difettoso", "ru": "Мне нужен возврат денег за этот бракованный товар", "zh": "我需要为这个有缺陷的产品退款", "tr": "Bu hatalı ürün için para iadesine ihtiyacım var"}),
+    ItemCard(english: "The sales assistant was very helpful.", translations: {"ar": "مساعد المبيعات كان مفيد جداً", "de": "Der Verkäufer war sehr hilfreich", "es": "El asistente de ventas fue muy útil", "fr": "Le vendeur a été très utile", "it": "L'assistente alle vendite è stato molto utile", "ru": "Продавец был очень полезен", "zh": "销售助理非常乐于助人", "tr": "Satış asistanı çok yardımcı oldu"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "التسوق - Shopping",
+    );
+  }
+}
+
+
+
+             
+
+
+class PlacesScreen extends StatelessWidget {
+  const PlacesScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الأماكن (Places)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 19 ==========
+    LearningCard(primaryText: "Hospital", translations: {"ar": "مستشفى", "de": "Krankenhaus", "es": "Hospital", "fr": "Hôpital", "it": "Ospedale", "ru": "Больница", "zh": "医院", "tr": "Hastane"}),
+    LearningCard(primaryText: "School", translations: {"ar": "مدرسة", "de": "Schule", "es": "Escuela", "fr": "École", "it": "Scuola", "ru": "Школа", "zh": "学校", "tr": "Okul"}),
+    LearningCard(primaryText: "Bank", translations: {"ar": "بنك", "de": "Bank", "es": "Banco", "fr": "Banque", "it": "Banca", "ru": "Банк", "zh": "银行", "tr": "Banka"}),
+    LearningCard(primaryText: "Library", translations: {"ar": "مكتبة", "de": "Bibliothek", "es": "Biblioteca", "fr": "Bibliothèque", "it": "Biblioteca", "ru": "Библиотека", "zh": "图书馆", "tr": "Kütüphane"}),
+    LearningCard(primaryText: "Museum", translations: {"ar": "متحف", "de": "Museum", "es": "Museo", "fr": "Musée", "it": "Museo", "ru": "Музей", "zh": "博物馆", "tr": "Müze"}),
+    LearningCard(primaryText: "University", translations: {"ar": "جامعة", "de": "Universität", "es": "Universidad", "fr": "Université", "it": "Università", "ru": "Университет", "zh": "大学", "tr": "Üniversite"}),
+    LearningCard(primaryText: "Court", translations: {"ar": "محكمة", "de": "Gericht", "es": "Tribunal", "fr": "Tribunal", "it": "Tribunale", "ru": "Суд", "zh": "法院", "tr": "Mahkeme"}),
+    LearningCard(primaryText: "Police Station", translations: {"ar": "قسم شرطة", "de": "Polizeiwache", "es": "Comisaría", "fr": "Commissariat", "it": "Commissariato", "ru": "Полицейский участок", "zh": "警察局", "tr": "Polis karakolu"}),
+    LearningCard(primaryText: "Airport", translations: {"ar": "مطار", "de": "Flughafen", "es": "Aeropuerto", "fr": "Aéroport", "it": "Aeroporto", "ru": "Аэропорт", "zh": "机场", "tr": "Havalimanı"}),
+    LearningCard(primaryText: "Bookstore", translations: {"ar": "مكتبة", "de": "Buchhandlung", "es": "Librería", "fr": "Librairie", "it": "Libreria", "ru": "Книжный магазин", "zh": "书店", "tr": "Kitabevi"}),
+    LearningCard(primaryText: "Clinic", translations: {"ar": "عيادة", "de": "Klinik", "es": "Clínica", "fr": "Clinique", "it": "Clinica", "ru": "Клиника", "zh": "诊所", "tr": "Klinik"}),
+    LearningCard(primaryText: "Coffee Shop", translations: {"ar": "مقهى", "de": "Café", "es": "Cafetería", "fr": "Café", "it": "Bar", "ru": "Кафе", "zh": "咖啡馆", "tr": "Kahve dükkanı"}),
+    LearningCard(primaryText: "Factory", translations: {"ar": "مصنع", "de": "Fabrik", "es": "Fábrica", "fr": "Usine", "it": "Fabbrica", "ru": "Завод", "zh": "工厂", "tr": "Fabrika"}),
+    LearningCard(primaryText: "Hotel", translations: {"ar": "فندق", "de": "Hotel", "es": "Hotel", "fr": "Hôtel", "it": "Hotel", "ru": "Отель", "zh": "酒店", "tr": "Otel"}),
+    LearningCard(primaryText: "Home", translations: {"ar": "منزل", "de": "Zuhause", "es": "Hogar", "fr": "Maison", "it": "Casa", "ru": "Дом", "zh": "家", "tr": "Ev"}),
+    LearningCard(primaryText: "Mall", translations: {"ar": "مول", "de": "Einkaufszentrum", "es": "Centro comercial", "fr": "Centre commercial", "it": "Centro commerciale", "ru": "Торговый центр", "zh": "购物中心", "tr": "Alışveriş merkezi"}),
+    LearningCard(primaryText: "Grocery Store", translations: {"ar": "محل بقالة", "de": "Lebensmittelgeschäft", "es": "Tienda de comestibles", "fr": "Épicerie", "it": "Alimentari", "ru": "Продуктовый магазин", "zh": "杂货店", "tr": "Bakkal"}),
+    LearningCard(primaryText: "Cinema", translations: {"ar": "سينما", "de": "Kino", "es": "Cine", "fr": "Cinéma", "it": "Cinema", "ru": "Кинотеатр", "zh": "电影院", "tr": "Sinema"}),
+    LearningCard(primaryText: "Prison", translations: {"ar": "سجن", "de": "Gefängnis", "es": "Prisión", "fr": "Prison", "it": "Prigione", "ru": "Тюрьма", "zh": "监狱", "tr": "Hapis"}),
+    LearningCard(primaryText: "Restaurant", translations: {"ar": "مطعم", "de": "Restaurant", "es": "Restaurante", "fr": "Restaurant", "it": "Ristorante", "ru": "Ресторан", "zh": "餐厅", "tr": "Restoran"}),
+    LearningCard(primaryText: "Park", translations: {"ar": "منتزه", "de": "Park", "es": "Parque", "fr": "Parc", "it": "Parco", "ru": "Парк", "zh": "公园", "tr": "Park"}),
+    LearningCard(primaryText: "Port", translations: {"ar": "ميناء", "de": "Hafen", "es": "Puerto", "fr": "Port", "it": "Porto", "ru": "Порт", "zh": "港口", "tr": "Liman"}),
+    LearningCard(primaryText: "Shop", translations: {"ar": "متجر", "de": "Geschäft", "es": "Tienda", "fr": "Magasin", "it": "Negozio", "ru": "Магазин", "zh": "商店", "tr": "Dükkan"}),
+    LearningCard(primaryText: "Theater", translations: {"ar": "مسرح", "de": "Theater", "es": "Teatro", "fr": "Théâtre", "it": "Teatro", "ru": "Театр", "zh": "剧院", "tr": "Tiyatro"}),
+    
+    // ========== من الصورة 20 ==========
+    LearningCard(primaryText: "Pharmacy", translations: {"ar": "صيدلية", "de": "Apotheke", "es": "Farmacia", "fr": "Pharmacie", "it": "Farmacia", "ru": "Аптека", "zh": "药店", "tr": "Eczane"}),
+    LearningCard(primaryText: "Stadium", translations: {"ar": "ستاد", "de": "Stadion", "es": "Estadio", "fr": "Stade", "it": "Stadio", "ru": "Стадион", "zh": "体育场", "tr": "Stadyum"}),
+    LearningCard(primaryText: "Institute", translations: {"ar": "معهد", "de": "Institut", "es": "Instituto", "fr": "Institut", "it": "Istituto", "ru": "Институт", "zh": "学院", "tr": "Enstitü"}),
+    LearningCard(primaryText: "Agency", translations: {"ar": "وكالة", "de": "Agentur", "es": "Agencia", "fr": "Agence", "it": "Agenzia", "ru": "Агентство", "zh": "机构", "tr": "Ajans"}),
+    LearningCard(primaryText: "Bakery", translations: {"ar": "مخبز", "de": "Bäckerei", "es": "Panadería", "fr": "Boulangerie", "it": "Panetteria", "ru": "Пекарня", "zh": "面包店", "tr": "Fırın"}),
+    LearningCard(primaryText: "Barber Shop", translations: {"ar": "محل حلاقة", "de": "Friseursalon", "es": "Barbería", "fr": "Salon de coiffure", "it": "Barbiere", "ru": "Парикмахерская", "zh": "理发店", "tr": "Berber dükkanı"}),
+    LearningCard(primaryText: "Beach", translations: {"ar": "شاطئ", "de": "Strand", "es": "Playa", "fr": "Plage", "it": "Spiaggia", "ru": "Пляж", "zh": "海滩", "tr": "Plaj"}),
+    LearningCard(primaryText: "Church", translations: {"ar": "كنيسة", "de": "Kirche", "es": "Iglesia", "fr": "Église", "it": "Chiesa", "ru": "Церковь", "zh": "教堂", "tr": "Kilise"}),
+    LearningCard(primaryText: "Mosque", translations: {"ar": "مسجد", "de": "Moschee", "es": "Mezquita", "fr": "Mosquée", "it": "Moschea", "ru": "Мечеть", "zh": "清真寺", "tr": "Cami"}),
+    LearningCard(primaryText: "Clothes Store", translations: {"ar": "محل ملابس", "de": "Bekleidungsgeschäft", "es": "Tienda de ropa", "fr": "Magasin de vêtements", "it": "Negozio di abbigliamento", "ru": "Магазин одежды", "zh": "服装店", "tr": "Giyim mağazası"}),
+    LearningCard(primaryText: "Desert", translations: {"ar": "صحراء", "de": "Wüste", "es": "Desierto", "fr": "Désert", "it": "Deserto", "ru": "Пустыня", "zh": "沙漠", "tr": "Çöl"}),
+    LearningCard(primaryText: "Embassy", translations: {"ar": "سفارة", "de": "Botschaft", "es": "Embajada", "fr": "Ambassade", "it": "Ambasciata", "ru": "Посольство", "zh": "大使馆", "tr": "Büyükelçilik"}),
+    LearningCard(primaryText: "Farm", translations: {"ar": "مزرعة", "de": "Bauernhof", "es": "Granja", "fr": "Ferme", "it": "Fattoria", "ru": "Ферма", "zh": "农场", "tr": "Çiftlik"}),
+    LearningCard(primaryText: "Garden", translations: {"ar": "حديقة", "de": "Garten", "es": "Jardín", "fr": "Jardin", "it": "Giardino", "ru": "Сад", "zh": "花园", "tr": "Bahçe"}),
+    LearningCard(primaryText: "Market", translations: {"ar": "سوق", "de": "Markt", "es": "Mercado", "fr": "Marché", "it": "Mercato", "ru": "Рынок", "zh": "市场", "tr": "Pazar"}),
+    LearningCard(primaryText: "Supermarket", translations: {"ar": "سوبر ماركت", "de": "Supermarkt", "es": "Supermercado", "fr": "Supermarché", "it": "Supermercato", "ru": "Супермаркет", "zh": "超市", "tr": "Süpermarket"}),
+    LearningCard(primaryText: "Company", translations: {"ar": "شركة", "de": "Unternehmen", "es": "Empresa", "fr": "Entreprise", "it": "Azienda", "ru": "Компания", "zh": "公司", "tr": "Şirket"}),
+    LearningCard(primaryText: "Laundry", translations: {"ar": "مغسلة", "de": "Waschsalon", "es": "Lavandería", "fr": "Laverie", "it": "Lavanderia", "ru": "Прачечная", "zh": "洗衣店", "tr": "Çamaşırhane"}),
+    LearningCard(primaryText: "Post Office", translations: {"ar": "مكتب بريد", "de": "Postamt", "es": "Oficina de correos", "fr": "Bureau de poste", "it": "Ufficio postale", "ru": "Почтовое отделение", "zh": "邮局", "tr": "Postane"}),
+    LearningCard(primaryText: "Shoe Shop", translations: {"ar": "محل أحذية", "de": "Schuhgeschäft", "es": "Zapatería", "fr": "Magasin de chaussures", "it": "Negozio di scarpe", "ru": "Обувной магазин", "zh": "鞋店", "tr": "Ayakkabı mağazası"}),
+    LearningCard(primaryText: "Stationery Store", translations: {"ar": "مكتبة", "de": "Schreibwarenladen", "es": "Papelería", "fr": "Papeterie", "it": "Cartoleria", "ru": "Канцелярский магазин", "zh": "文具店", "tr": "Kırtasiye"}),
+    LearningCard(primaryText: "Train Station", translations: {"ar": "محطة قطار", "de": "Bahnhof", "es": "Estación de tren", "fr": "Gare", "it": "Stazione ferroviaria", "ru": "Железнодорожный вокзал", "zh": "火车站", "tr": "Tren istasyonu"}),
+    LearningCard(primaryText: "Fire Station", translations: {"ar": "محطة إطفاء", "de": "Feuerwache", "es": "Estación de bomberos", "fr": "Caserne de pompiers", "it": "Caserma dei pompieri", "ru": "Пожарная часть", "zh": "消防站", "tr": "İtfaiye istasyonu"}),
+    LearningCard(primaryText: "Zoo", translations: {"ar": "حديقة حيوان", "de": "Zoo", "es": "Zoológico", "fr": "Zoo", "it": "Zoo", "ru": "Зоопарк", "zh": "动物园", "tr": "Hayvanat bahçesi"}),
+  ];
+
+  // ✅ 50+ جملة - عن الأماكن
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 21 (13 جملة) ==========
+    ItemCard(english: "They are building a new hospital.", translations: {"ar": "دول بينوا مستشفى جديدة", "de": "Sie bauen ein neues Krankenhaus", "es": "Están construyendo un nuevo hospital", "fr": "Ils construisent un nouvel hôpital", "it": "Stanno costruendo un nuovo ospedale", "ru": "Они строят новую больницу", "zh": "他们在建新医院", "tr": "Yeni bir hastane inşa ediyorlar"}),
+    ItemCard(english: "I saw the lion when I went to the zoo.", translations: {"ar": "أنا شوفت الأسد لما روحت حديقة الحيوان", "de": "Ich sah den Löwen, als ich in den Zoo ging", "es": "Vi al león cuando fui al zoológico", "fr": "J'ai vu le lion quand je suis allé au zoo", "it": "Ho visto il leone quando sono andato allo zoo", "ru": "Я видел льва, когда пошел в зоопарк", "zh": "我去动物园时看到了狮子", "tr": "Hayvanat bahçesine gittiğimde aslanı gördüm"}),
+    ItemCard(english: "I live on the opposite side of my school.", translations: {"ar": "أنا بعيش في الجزء المقابل للمدرسة بتاعتي", "de": "Ich wohne auf der gegenüberliegenden Seite meiner Schule", "es": "Vivo en el lado opuesto de mi escuela", "fr": "J'habite du côté opposé de mon école", "it": "Vivo sul lato opposto della mia scuola", "ru": "Я живу на противоположной стороне от моей школы", "zh": "我住在我学校的对面", "tr": "Okulumun karşı tarafında yaşıyorum"}),
+    ItemCard(english: "I go to the park with my friends every Friday.", translations: {"ar": "أنا بروح المنتزه مع صحابي كل جمعة", "de": "Ich gehe jeden Freitag mit meinen Freunden in den Park", "es": "Voy al parque con mis amigos todos los viernes", "fr": "Je vais au parc avec mes amis tous les vendredis", "it": "Vado al parco con i miei amici ogni venerdì", "ru": "Я хожу в парк с друзьями каждую пятницу", "zh": "我每周五和朋友去公园", "tr": "Her cuma arkadaşlarımla parka giderim"}),
+    ItemCard(english: "I am in the faculty of medicine.", translations: {"ar": "أنا في كلية الطب", "de": "Ich bin in der medizinischen Fakultät", "es": "Estoy en la facultad de medicina", "fr": "Je suis à la faculté de médecine", "it": "Sono alla facoltà di medicina", "ru": "Я на медицинском факультете", "zh": "我在医学院", "tr": "Tıp fakültesindeyim"}),
+    ItemCard(english: "I bought some medicine from the pharmacy because I was sick.", translations: {"ar": "أنا اشتريت علاج من الصيدلية لأنني كنت تعبان", "de": "Ich kaufte Medikamente in der Apotheke, weil ich krank war", "es": "Compré medicina en la farmacia porque estaba enfermo", "fr": "J'ai acheté des médicaments à la pharmacie parce que j'étais malade", "it": "Ho comprato delle medicine in farmacia perché ero malato", "ru": "Я купил лекарство в аптеке, потому что болел", "zh": "我生病了，从药店买了药", "tr": "Hasta olduğum için eczaneden ilaç aldım"}),
+    ItemCard(english: "The factory workers are threatening to go on strike.", translations: {"ar": "عمال المصنع يهددوا انهم هيسيبوا الشغل", "de": "Die Fabrikarbeiter drohen, in den Streik zu treten", "es": "Los trabajadores de la fábrica amenazan con ir a la huelga", "fr": "Les ouvriers de l'usine menacent de faire la grève", "it": "Gli operai della fabbrica minacciano di scioperare", "ru": "Рабочие завода угрожают забастовкой", "zh": "工厂工人威胁要罢工", "tr": "Fabrika işçileri greve gitmekle tehdit ediyor"}),
+    ItemCard(english: "Can we go to the cinema because I want to watch the new movie?", translations: {"ar": "ممكن نروح السينما عشان أنا عايز أتفرج على الفيلم الجديد؟", "de": "Können wir ins Kino gehen, weil ich den neuen Film sehen möchte?", "es": "¿Podemos ir al cine porque quiero ver la nueva película?", "fr": "Peut-on aller au cinéma parce que je veux voir le nouveau film?", "it": "Possiamo andare al cinema perché voglio vedere il nuovo film?", "ru": "Можем ли мы пойти в кино, потому что я хочу посмотреть новый фильм?", "zh": "我们可以去电影院吗？因为我想看新电影", "tr": "Yeni filmi izlemek istediğim için sinemaya gidebilir miyiz?"}),
+    ItemCard(english: "I just want to stay at home.", translations: {"ar": "أنا عاوز أفضل في البيت بس", "de": "Ich möchte nur zu Hause bleiben", "es": "Solo quiero quedarme en casa", "fr": "Je veux juste rester à la maison", "it": "Voglio solo stare a casa", "ru": "Я просто хочу остаться дома", "zh": "我只想呆在家里", "tr": "Sadece evde kalmak istiyorum"}),
+    ItemCard(english: "I bought a new shirt from this store.", translations: {"ar": "أنا اشتريت قميص جديد من المحل ده", "de": "Ich habe ein neues Hemd in diesem Geschäft gekauft", "es": "Compré una camisa nueva en esta tienda", "fr": "J'ai acheté une nouvelle chemise dans ce magasin", "it": "Ho comprato una nuova camicia in questo negozio", "ru": "Я купил новую рубашку в этом магазине", "zh": "我从这家店买了一件新衬衫", "tr": "Bu mağazadan yeni bir gömlek aldım"}),
+    ItemCard(english: "It is not only a restaurant, it is also a coffee shop.", translations: {"ar": "ده مش بس مطعم ده كمان كافيه", "de": "Es ist nicht nur ein Restaurant, sondern auch ein Café", "es": "No es solo un restaurante, también es una cafetería", "fr": "Ce n'est pas seulement un restaurant, c'est aussi un café", "it": "Non è solo un ristorante, è anche un bar", "ru": "Это не только ресторан, это также кафе", "zh": "这不只是一家餐厅，也是一家咖啡馆", "tr": "Bu sadece bir restoran değil, aynı zamanda bir kafe"}),
+    ItemCard(english: "Can you buy me a new sharpener from the stationery store?", translations: {"ar": "ممكن تجيبلي براية جديدة من المكتبة؟", "de": "Kannst du mir einen neuen Anspitzer aus dem Schreibwarenladen kaufen?", "es": "¿Puedes comprarme un nuevo sacapuntas en la papelería?", "fr": "Peux-tu m'acheter un nouveau taille-crayon dans la papeterie?", "it": "Puoi comprarmi un nuovo temperamatite in cartoleria?", "ru": "Можешь купить мне новую точилку в канцелярском магазине?", "zh": "你能从文具店给我买个新的卷笔刀吗？", "tr": "Bana kırtasiyeden yeni bir kalemtraş alır mısın?"}),
+    ItemCard(english: "Go straight, and turn right.", translations: {"ar": "امشي عدل وحود يمين", "de": "Gehen Sie geradeaus und biegen Sie rechts ab", "es": "Sigue recto y gira a la derecha", "fr": "Allez tout droit et tournez à droite", "it": "Vai dritto e gira a destra", "ru": "Идите прямо и поверните направо", "zh": "直走然后右转", "tr": "Düz git ve sağa dön"}),
+    
+    // ========== 37 جملة إضافية عن الأماكن ==========
+    ItemCard(english: "The library is a quiet place for studying.", translations: {"ar": "المكتبة مكان هادي للمذاكرة", "de": "Die Bibliothek ist ein ruhiger Ort zum Lernen", "es": "La biblioteca es un lugar tranquilo para estudiar", "fr": "La bibliothèque est un endroit calme pour étudier", "it": "La biblioteca è un posto tranquillo per studiare", "ru": "Библиотека - тихое место для учебы", "zh": "图书馆是学习的好地方", "tr": "Kütüphane ders çalışmak için sessiz bir yerdir"}),
+    ItemCard(english: "The museum exhibits ancient artifacts.", translations: {"ar": "المتحف يعرض قطع أثرية قديمة", "de": "Das Museum zeigt antike Artefakte", "es": "El museo exhibe artefactos antiguos", "fr": "Le musée expose des artefacts anciens", "it": "Il museo espone manufatti antichi", "ru": "Музей выставляет древние артефакты", "zh": "博物馆展出古代文物", "tr": "Müze eski eserleri sergiliyor"}),
+    ItemCard(english: "The police station is located near the bank.", translations: {"ar": "قسم الشرطة موجود جنب البنك", "de": "Die Polizeiwache befindet sich in der Nähe der Bank", "es": "La comisaría está ubicada cerca del banco", "fr": "Le commissariat est situé près de la banque", "it": "Il commissariato si trova vicino alla banca", "ru": "Полицейский участок находится рядом с банком", "zh": "警察局在银行附近", "tr": "Polis karakolu bankanın yakınında bulunuyor"}),
+    ItemCard(english: "The airport was very crowded.", translations: {"ar": "المطار كان زحمة أوي", "de": "Der Flughafen war sehr überfüllt", "es": "El aeropuerto estaba muy lleno", "fr": "L'aéroport était très bondé", "it": "L'aeroporto era molto affollato", "ru": "Аэропорт был очень переполнен", "zh": "机场非常拥挤", "tr": "Havalimanı çok kalabalıktı"}),
+    ItemCard(english: "We had dinner at a fancy restaurant.", translations: {"ar": "احنا تعشينا في مطعم فاخر", "de": "Wir haben in einem schicken Restaurant zu Abend gegessen", "es": "Cenamos en un restaurante elegante", "fr": "Nous avons dîné dans un restaurant chic", "it": "Abbiamo cenato in un ristorante elegante", "ru": "Мы поужинали в шикарном ресторане", "zh": "我们在一家高档餐厅吃了晚餐", "tr": "Süslü bir restoranda akşam yemeği yedik"}),
+    ItemCard(english: "The beach is beautiful in summer.", translations: {"ar": "الشاطئ جميل في الصيف", "de": "Der Strand ist im Sommer wunderschön", "es": "La playa es hermosa en verano", "fr": "La plage est belle en été", "it": "La spiaggia è bellissima in estate", "ru": "Пляж прекрасен летом", "zh": "夏天的海滩很美", "tr": "Plaj yazın güzeldir"}),
+    ItemCard(english: "The mosque is a place of worship for Muslims.", translations: {"ar": "المسجد هو مكان عبادة للمسلمين", "de": "Die Moschee ist ein Ort der Anbetung für Muslime", "es": "La mezquita es un lugar de culto para los musulmanes", "fr": "La mosquée est un lieu de culte pour les musulmans", "it": "La moschea è un luogo di culto per i musulmani", "ru": "Мечеть - место поклонения для мусульман", "zh": "清真寺是穆斯林的礼拜场所", "tr": "Cami Müslümanlar için bir ibadet yeridir"}),
+    ItemCard(english: "The church bell rings every hour.", translations: {"ar": "جرس الكنيسة بدق كل ساعة", "de": "Die Kirchenglocke läutet jede Stunde", "es": "La campana de la iglesia suena cada hora", "fr": "La cloche de l'église sonne toutes les heures", "it": "La campana della chiesa suona ogni ora", "ru": "Церковный колокол звонит каждый час", "zh": "教堂钟声每小时敲响", "tr": "Kilise çanı her saat başı çalar"}),
+    ItemCard(english: "The stadium can hold fifty thousand spectators.", translations: {"ar": "الستاد يتسع لخمسين ألف متفرج", "de": "Das Stadion kann fünfzigtausend Zuschauer fassen", "es": "El estadio puede albergar cincuenta mil espectadores", "fr": "Le stade peut accueillir cinquante mille spectateurs", "it": "Lo stadio può ospitare cinquantamila spettatori", "ru": "Стадион может вместить пятьдесят тысяч зрителей", "zh": "体育场可容纳五万名观众", "tr": "Stadyum elli bin seyirci kapasitelidir"}),
+    ItemCard(english: "The bakery sells fresh bread every morning.", translations: {"ar": "المخبز يبيع خبز طازج كل صباح", "de": "Die Bäckerei verkauft jeden Morgen frisches Brot", "es": "La panadería vende pan fresco cada mañana", "fr": "La boulangerie vend du pain frais chaque matin", "it": "La panetteria vende pane fresco ogni mattina", "ru": "Пекарня продает свежий хлеб каждое утро", "zh": "面包店每天早上卖新鲜面包", "tr": "Fırın her sabah taze ekmek satar"}),
+    ItemCard(english: "The barber shop is closed on Sundays.", translations: {"ar": "محل الحلاقة مقفل يوم الأحد", "de": "Der Friseursalon ist sonntags geschlossen", "es": "La barbería está cerrada los domingos", "fr": "Le salon de coiffure est fermé le dimanche", "it": "Il barbiere è chiuso la domenica", "ru": "Парикмахерская закрыта по воскресеньям", "zh": "理发店星期天关门", "tr": "Berber dükkanı pazar günleri kapalıdır"}),
+    ItemCard(english: "The post office opens at 9 AM.", translations: {"ar": "مكتب البريد بيفتح الساعة 9 الصبح", "de": "Die Post öffnet um 9 Uhr morgens", "es": "La oficina de correos abre a las 9 AM", "fr": "La poste ouvre à 9 heures", "it": "L'ufficio postale apre alle 9", "ru": "Почтовое отделение открывается в 9 утра", "zh": "邮局早上9点开门", "tr": "Postane sabah 9'da açılır"}),
+    ItemCard(english: "The fire station received an emergency call.", translations: {"ar": "محطة الإطفاء استلمت مكالمة طوارئ", "de": "Die Feuerwache erhielt einen Notruf", "es": "La estación de bomberos recibió una llamada de emergencia", "fr": "La caserne de pompiers a reçu un appel d'urgence", "it": "La caserma dei pompieri ha ricevuto una chiamata di emergenza", "ru": "Пожарная часть получила экстренный вызов", "zh": "消防站接到了紧急电话", "tr": "İtfaiye istasyonu acil bir çağrı aldı"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الأماكن - Places",
+    );
+  }
+}
+
+
+
+
+             //////////////////
+  ///////////////
+
+
+
+             class DirectionsScreen extends StatelessWidget {
+  const DirectionsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - الاتجاهات (Directions)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 24 ==========
+    LearningCard(primaryText: "Direction", translations: {"ar": "اتجاه", "de": "Richtung", "es": "Dirección", "fr": "Direction", "it": "Direzione", "ru": "Направление", "zh": "方向", "tr": "Yön"}),
+    LearningCard(primaryText: "North", translations: {"ar": "شمال", "de": "Norden", "es": "Norte", "fr": "Nord", "it": "Nord", "ru": "Север", "zh": "北", "tr": "Kuzey"}),
+    LearningCard(primaryText: "South", translations: {"ar": "جنوب", "de": "Süden", "es": "Sur", "fr": "Sud", "it": "Sud", "ru": "Юг", "zh": "南", "tr": "Güney"}),
+    LearningCard(primaryText: "East", translations: {"ar": "شرق", "de": "Osten", "es": "Este", "fr": "Est", "it": "Est", "ru": "Восток", "zh": "东", "tr": "Doğu"}),
+    LearningCard(primaryText: "West", translations: {"ar": "غرب", "de": "Westen", "es": "Oeste", "fr": "Ouest", "it": "Ovest", "ru": "Запад", "zh": "西", "tr": "Batı"}),
+    LearningCard(primaryText: "Go", translations: {"ar": "اذهب", "de": "Gehen", "es": "Ir", "fr": "Aller", "it": "Andare", "ru": "Идти", "zh": "去", "tr": "Git"}),
+    LearningCard(primaryText: "Along", translations: {"ar": "بمحاذاة", "de": "Entlang", "es": "A lo largo de", "fr": "Le long de", "it": "Lungo", "ru": "Вдоль", "zh": "沿着", "tr": "Boyunca"}),
+    LearningCard(primaryText: "Straight", translations: {"ar": "مستقيم", "de": "Geradeaus", "es": "Recto", "fr": "Tout droit", "it": "Dritto", "ru": "Прямо", "zh": "直", "tr": "Düz"}),
+    LearningCard(primaryText: "Turn Right", translations: {"ar": "انعطف يميناً", "de": "Nach rechts abbiegen", "es": "Girar a la derecha", "fr": "Tourner à droite", "it": "Girare a destra", "ru": "Повернуть направо", "zh": "右转", "tr": "Sağa dön"}),
+    LearningCard(primaryText: "Turn Left", translations: {"ar": "انعطف يساراً", "de": "Nach links abbiegen", "es": "Girar a la izquierda", "fr": "Tourner à gauche", "it": "Girare a sinistra", "ru": "Повернуть налево", "zh": "左转", "tr": "Sola dön"}),
+    LearningCard(primaryText: "In front of", translations: {"ar": "أمام", "de": "Vor", "es": "Delante de", "fr": "Devant", "it": "Davanti a", "ru": "Перед", "zh": "在...前面", "tr": "Önünde"}),
+    LearningCard(primaryText: "Behind", translations: {"ar": "خلف", "de": "Hinter", "es": "Detrás de", "fr": "Derrière", "it": "Dietro", "ru": "Позади", "zh": "在...后面", "tr": "Arkasında"}),
+    LearningCard(primaryText: "Next to", translations: {"ar": "بجانب", "de": "Neben", "es": "Al lado de", "fr": "À côté de", "it": "Accanto a", "ru": "Рядом с", "zh": "在...旁边", "tr": "Yanında"}),
+    LearningCard(primaryText: "Between", translations: {"ar": "بين", "de": "Zwischen", "es": "Entre", "fr": "Entre", "it": "Tra", "ru": "Между", "zh": "在...之间", "tr": "Arasında"}),
+    LearningCard(primaryText: "Opposite", translations: {"ar": "مقابل", "de": "Gegenüber", "es": "Enfrente de", "fr": "En face de", "it": "Di fronte a", "ru": "Напротив", "zh": "在...对面", "tr": "Karşısında"}),
+    LearningCard(primaryText: "Cross The Road", translations: {"ar": "اعبر الطريق", "de": "Die Straße überqueren", "es": "Cruzar la calle", "fr": "Traverser la rue", "it": "Attraversare la strada", "ru": "Перейти дорогу", "zh": "过马路", "tr": "Yolu geç"}),
+    LearningCard(primaryText: "At The Corner", translations: {"ar": "في الزاوية", "de": "An der Ecke", "es": "En la esquina", "fr": "Au coin", "it": "All'angolo", "ru": "На углу", "zh": "在拐角处", "tr": "Köşede"}),
+    LearningCard(primaryText: "Go Along", translations: {"ar": "اذهب مباشرة", "de": "Entlang gehen", "es": "Ir a lo largo", "fr": "Aller le long", "it": "Andare lungo", "ru": "Идти вдоль", "zh": "沿着走", "tr": "Boyunca git"}),
+    LearningCard(primaryText: "Go Down", translations: {"ar": "انزل", "de": "Hinuntergehen", "es": "Bajar", "fr": "Descendre", "it": "Scendere", "ru": "Спуститься", "zh": "下去", "tr": "Aşağı inmek"}),
+    LearningCard(primaryText: "Go Up", translations: {"ar": "اصعد", "de": "Hinaufgehen", "es": "Subir", "fr": "Monter", "it": "Salire", "ru": "Подняться", "zh": "上去", "tr": "Yukarı çıkmak"}),
+    LearningCard(primaryText: "Go Past", translations: {"ar": "تجاوز", "de": "Vorbeigehen", "es": "Pasar", "fr": "Passer devant", "it": "Passare oltre", "ru": "Пройди мимо", "zh": "经过", "tr": "Geçip gitmek"}),
+    LearningCard(primaryText: "Take This Road", translations: {"ar": "خذ هذا الطريق", "de": "Nehmen Sie diese Straße", "es": "Toma este camino", "fr": "Prenez cette route", "it": "Prendi questa strada", "ru": "Иди по этой дороге", "zh": "走这条路", "tr": "Bu yolu takip et"}),
+    LearningCard(primaryText: "On Your Right", translations: {"ar": "على يمينك", "de": "Auf deiner Rechten", "es": "A tu derecha", "fr": "À ta droite", "it": "Alla tua destra", "ru": "Справа от тебя", "zh": "在你的右边", "tr": "Sağında"}),
+    LearningCard(primaryText: "On Your Left", translations: {"ar": "على يسارك", "de": "Auf deiner Linken", "es": "A tu izquierda", "fr": "À ta gauche", "it": "Alla tua sinistra", "ru": "Слева от тебя", "zh": "在你的左边", "tr": "Solunda"}),
+    LearningCard(primaryText: "Destination", translations: {"ar": "وجهة", "de": "Ziel", "es": "Destino", "fr": "Destination", "it": "Destinazione", "ru": "Место назначения", "zh": "目的地", "tr": "Hedef"}),
+    
+    // ========== من الصورة 25 ==========
+    LearningCard(primaryText: "Far", translations: {"ar": "بعيد", "de": "Weit", "es": "Lejos", "fr": "Loin", "it": "Lontano", "ru": "Далеко", "zh": "远的", "tr": "Uzak"}),
+    LearningCard(primaryText: "Near", translations: {"ar": "قريب", "de": "Nah", "es": "Cerca", "fr": "Près", "it": "Vicino", "ru": "Близко", "zh": "近的", "tr": "Yakın"}),
+    LearningCard(primaryText: "Here", translations: {"ar": "هنا", "de": "Hier", "es": "Aquí", "fr": "Ici", "it": "Qui", "ru": "Здесь", "zh": "这里", "tr": "Burada"}),
+    LearningCard(primaryText: "There", translations: {"ar": "هناك", "de": "Dort", "es": "Allí", "fr": "Là-bas", "it": "Lì", "ru": "Там", "zh": "那里", "tr": "Orada"}),
+    LearningCard(primaryText: "Get out of here", translations: {"ar": "اخرج من هنا", "de": "Geh weg von hier", "es": "Sal de aquí", "fr": "Sors d'ici", "it": "Esci di qui", "ru": "Убирайся отсюда", "zh": "离开这里", "tr": "Buradan defol"}),
+    LearningCard(primaryText: "Inside", translations: {"ar": "داخل", "de": "Innen", "es": "Dentro", "fr": "À l'intérieur", "it": "Dentro", "ru": "Внутри", "zh": "在里面", "tr": "İçinde"}),
+    LearningCard(primaryText: "Outside", translations: {"ar": "خارج", "de": "Außen", "es": "Fuera", "fr": "À l'extérieur", "it": "Fuori", "ru": "Снаружи", "zh": "在外面", "tr": "Dışında"}),
+    LearningCard(primaryText: "Right", translations: {"ar": "يمين", "de": "Rechts", "es": "Derecha", "fr": "Droite", "it": "Destra", "ru": "Право", "zh": "右", "tr": "Sağ"}),
+    LearningCard(primaryText: "Left", translations: {"ar": "يسار", "de": "Links", "es": "Izquierda", "fr": "Gauche", "it": "Sinistra", "ru": "Лево", "zh": "左", "tr": "Sol"}),
+    LearningCard(primaryText: "Compass", translations: {"ar": "بوصلة", "de": "Kompass", "es": "Brújula", "fr": "Boussole", "it": "Bussola", "ru": "Компас", "zh": "指南针", "tr": "Pusula"}),
+    LearningCard(primaryText: "Map", translations: {"ar": "خريطة", "de": "Karte", "es": "Mapa", "fr": "Carte", "it": "Mappa", "ru": "Карта", "zh": "地图", "tr": "Harita"}),
+    LearningCard(primaryText: "GPS", translations: {"ar": "GPS", "de": "GPS", "es": "GPS", "fr": "GPS", "it": "GPS", "ru": "GPS", "zh": "全球定位系统", "tr": "GPS"}),
+    LearningCard(primaryText: "Square", translations: {"ar": "ميدان", "de": "Platz", "es": "Plaza", "fr": "Place", "it": "Piazza", "ru": "Площадь", "zh": "广场", "tr": "Meydan"}),
+    LearningCard(primaryText: "Tunnel", translations: {"ar": "نفق", "de": "Tunnel", "es": "Túnel", "fr": "Tunnel", "it": "Tunnel", "ru": "Тоннель", "zh": "隧道", "tr": "Tünel"}),
+    LearningCard(primaryText: "Road", translations: {"ar": "طريق", "de": "Straße", "es": "Carretera", "fr": "Route", "it": "Strada", "ru": "Дорога", "zh": "道路", "tr": "Yol"}),
+  ];
+
+  // ✅ 50+ جملة - عن الاتجاهات
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 26 (13 جملة) ==========
+    ItemCard(english: "Police cars were coming from all directions.", translations: {"ar": "عربيات الشرطة كانت جاية من كل الاتجاهات", "de": "Polizeiautos kamen aus allen Richtungen", "es": "Los coches de policía venían de todas direcciones", "fr": "Les voitures de police venaient de toutes les directions", "it": "Le auto della polizia arrivavano da tutte le direzioni", "ru": "Полицейские машины ехали со всех направлений", "zh": "警车从四面八方开来", "tr": "Polis arabaları her yönden geliyordu"}),
+    ItemCard(english: "We met in front of the main station.", translations: {"ar": "اتقابلنا قدام المحطة الرئيسية", "de": "Wir trafen uns vor dem Hauptbahnhof", "es": "Nos encontramos frente a la estación principal", "fr": "Nous nous sommes rencontrés devant la gare principale", "it": "Ci siamo incontrati davanti alla stazione principale", "ru": "Мы встретились перед главным вокзалом", "zh": "我们在主站前见面", "tr": "Ana istasyonun önünde buluştuk"}),
+    ItemCard(english: "The sun disappeared behind heavy clouds.", translations: {"ar": "الشمس اختفت خلف السحب الكثيفة", "de": "Die Sonne verschwand hinter schweren Wolken", "es": "El sol desapareció detrás de las nubes pesadas", "fr": "Le soleil a disparu derrière les nuages épais", "it": "Il sole è scomparso dietro le nuvole pesanti", "ru": "Солнце исчезло за тяжелыми облаками", "zh": "太阳消失在厚厚的云层后面", "tr": "Güneş ağır bulutların arkasında kayboldu"}),
+    ItemCard(english: "I go to school on foot because it's near home.", translations: {"ar": "أنا بروح المدرسة مشي لأنها قريبة من البيت", "de": "Ich gehe zu Fuß zur Schule, weil sie in der Nähe ist", "es": "Voy a la escuela a pie porque está cerca de casa", "fr": "Je vais à l'école à pied parce que c'est près de la maison", "it": "Vado a scuola a piedi perché è vicino a casa", "ru": "Я хожу в школу пешком, потому что это рядом с домом", "zh": "我步行上学因为离家近", "tr": "Eve yakın olduğu için okula yürüyerek giderim"}),
+    ItemCard(english: "I don't want to see you; get out of here.", translations: {"ar": "أنا مش عايزة اشوفك، اخرج من هنا", "de": "Ich will dich nicht sehen; geh weg von hier", "es": "No quiero verte; sal de aquí", "fr": "Je ne veux pas te voir; sors d'ici", "it": "Non voglio vederti; esci di qui", "ru": "Я не хочу тебя видеть; убирайся отсюда", "zh": "我不想见你；离开这里", "tr": "Seni görmek istemiyorum; buradan defol"}),
+    ItemCard(english: "Turn left just after the school.", translations: {"ar": "انعطف شمال بعد المدرسة عدل", "de": "Biegen Sie gleich nach der Schule links ab", "es": "Gira a la izquierda justo después de la escuela", "fr": "Tournez à gauche juste après l'école", "it": "Gira a sinistra subito dopo la scuola", "ru": "Поверните налево сразу после школы", "zh": "过了学校就左转", "tr": "Okuldan hemen sonra sola dön"}),
+    ItemCard(english: "It took us all day to reach our destination.", translations: {"ar": "أخذنا اليوم كله عشان نوصل وجهتنا", "de": "Wir brauchten den ganzen Tag, um unser Ziel zu erreichen", "es": "Nos tomó todo el día llegar a nuestro destino", "fr": "Il nous a fallu toute la journée pour atteindre notre destination", "it": "Ci abbiamo messo tutto il giorno per raggiungere la nostra destinazione", "ru": "Нам потребовался весь день, чтобы добраться до места назначения", "zh": "我们花了一整天到达目的地", "tr": "Hedefimize varmak bütün günümüzü aldı"}),
+    ItemCard(english: "You are going in the wrong way; you should turn right.", translations: {"ar": "أنت ماشي في الطريق الغلط، المفروض تحود يمين", "de": "Du gehst in die falsche Richtung; du solltest rechts abbiegen", "es": "Vas en la dirección equivocada; deberías girar a la derecha", "fr": "Tu vas dans la mauvaise direction; tu devrais tourner à droite", "it": "Stai andando nella direzione sbagliata; dovresti girare a destra", "ru": "Ты идешь в неправильном направлении; тебе следует повернуть направо", "zh": "你走错方向了；你应该右转", "tr": "Yanlış yöne gidiyorsun; sağa dönmelisin"}),
+    ItemCard(english: "How far is it to the post office from here?", translations: {"ar": "مكتب البريد يبعد عن هنا قد إيه؟", "de": "Wie weit ist es von hier bis zur Post?", "es": "¿Qué tan lejos está la oficina de correos desde aquí?", "fr": "À quelle distance se trouve la poste d'ici?", "it": "Quanto dista l'ufficio postale da qui?", "ru": "Как далеко отсюда почтовое отделение?", "zh": "从这里到邮局有多远？", "tr": "Postane buradan ne kadar uzak?"}),
+    ItemCard(english: "Can you show me on the map?", translations: {"ar": "ممكن توريني على الخريطة؟", "de": "Kannst du es mir auf der Karte zeigen?", "es": "¿Puedes mostrarme en el mapa?", "fr": "Peux-tu me montrer sur la carte?", "it": "Puoi mostrarmi sulla mappa?", "ru": "Можешь показать мне на карте?", "zh": "你能在地图上指给我看吗？", "tr": "Haritada bana gösterebilir misin?"}),
+    ItemCard(english: "You have to take transportation.", translations: {"ar": "إنت لازم تأخذ مواصلة", "de": "Du musst die öffentlichen Verkehrsmittel nehmen", "es": "Tienes que tomar transporte", "fr": "Tu dois prendre les transports", "it": "Devi prendere il trasporto", "ru": "Тебе нужно воспользоваться транспортом", "zh": "你必须乘坐交通工具", "tr": "Ulaşım araçlarını kullanmalısın"}),
+    ItemCard(english: "Go down the tunnel, and it will be on your left.", translations: {"ar": "انزل النفق و بعدين هتلقيه على شمالك", "de": "Gehen Sie durch den Tunnel, dann wird es auf Ihrer linken Seite sein", "es": "Baja por el túnel, y estará a tu izquierda", "fr": "Descendez le tunnel, et ce sera sur votre gauche", "it": "Scendi nel tunnel e sarà alla tua sinistra", "ru": "Спуститесь в туннель, и он будет слева от вас", "zh": "走下隧道，它就在你的左边", "tr": "Tünelden aşağı in, solunda olacak"}),
+    ItemCard(english: "A compass shows you which direction is north.", translations: {"ar": "البوصلة هتوريك الشمال إيه اتجاه", "de": "Ein Kompass zeigt dir, welche Richtung Norden ist", "es": "Una brújula te muestra qué dirección es el norte", "fr": "Une boussole vous montre quelle direction est le nord", "it": "Una bussola ti mostra quale direzione è il nord", "ru": "Компас показывает вам, какое направление является северным", "zh": "指南针告诉你哪个方向是北", "tr": "Pusula sana hangi yönün kuzey olduğunu gösterir")},
+    
+    // ========== 37 جملة إضافية ==========
+    ItemCard(english: "The bank is next to the supermarket.", translations: {"ar": "البنك بجانب السوبر ماركت", "de": "Die Bank ist neben dem Supermarkt", "es": "El banco está al lado del supermercado", "fr": "La banque est à côté du supermarché", "it": "La banca è accanto al supermercato", "ru": "Банк находится рядом с супермаркетом", "zh": "银行在超市旁边", "tr": "Banka süpermarketin yanında"}),
+    ItemCard(english: "The hospital is opposite the school.", translations: {"ar": "المستشفى مقابل المدرسة", "de": "Das Krankenhaus ist gegenüber der Schule", "es": "El hospital está enfrente de la escuela", "fr": "L'hôpital est en face de l'école", "it": "L'ospedale è di fronte alla scuola", "ru": "Больница находится напротив школы", "zh": "医院在学校对面", "tr": "Hastane okulun karşısında"}),
+    ItemCard(english: "Go straight for two blocks.", translations: {"ar": "امشي عدل لمدة كتلتين", "de": "Gehen Sie zwei Blocks geradeaus", "es": "Sigue recto dos cuadras", "fr": "Allez tout droit pendant deux pâtés de maisons", "it": "Vai dritto per due isolati", "ru": "Идите прямо два квартала", "zh": "直走两个街区", "tr": "İki blok düz git"}),
+    ItemCard(english: "The library is behind the post office.", translations: {"ar": "المكتبة ورا مكتب البريد", "de": "Die Bibliothek ist hinter der Post", "es": "La biblioteca está detrás de la oficina de correos", "fr": "La bibliothèque est derrière la poste", "it": "La biblioteca è dietro l'ufficio postale", "ru": "Библиотека находится за почтовым отделением", "zh": "图书馆在邮局后面", "tr": "Kütüphane postanenin arkasında"}),
+    ItemCard(english: "Cross the road at the traffic lights.", translations: {"ar": "اعبر الطريق عند الإشارة", "de": "Überqueren Sie die Straße an der Ampel", "es": "Cruza la calle en el semáforo", "fr": "Traversez la rue au feu", "it": "Attraversa la strada al semaforo", "ru": "Перейдите дорогу на светофоре", "zh": "在红绿灯处过马路", "tr": "Trafik ışıklarında yolu geç"}),
+    ItemCard(english: "The restaurant is at the corner of Main Street.", translations: {"ar": "المطعم في زاوية شارع الرئيسي", "de": "Das Restaurant ist an der Ecke der Hauptstraße", "es": "El restaurante está en la esquina de la calle principal", "fr": "Le restaurant est au coin de la rue principale", "it": "Il ristorante è all'angolo di Main Street", "ru": "Ресторан находится на углу Главной улицы", "zh": "餐厅在主街的拐角处", "tr": "Restoran Ana Cadde'nin köşesinde"}),
+    ItemCard(english: "Turn right at the next intersection.", translations: {"ar": "انعطف يمين عند التقاطع الجاي", "de": "Biegen Sie an der nächsten Kreuzung rechts ab", "es": "Gira a la derecha en el próximo cruce", "fr": "Tournez à droite au prochain carrefour", "it": "Gira a destra al prossimo incrocio", "ru": "Поверните направо на следующем перекрестке", "zh": "在下一个十字路口右转", "tr": "Bir sonraki kavşakta sağa dön"}),
+    ItemCard(english: "The park is near the river.", translations: {"ar": "المنتزه قريب من النهر", "de": "Der Park ist in der Nähe des Flusses", "es": "El parque está cerca del río", "fr": "Le parc est près de la rivière", "it": "Il parco è vicino al fiume", "ru": "Парк находится недалеко от реки", "zh": "公园在河边", "tr": "Park nehrin yakınında"}),
+    ItemCard(english: "My house is far from the city center.", translations: {"ar": "بيتي بعيد عن وسط البلد", "de": "Mein Haus ist weit vom Stadtzentrum entfernt", "es": "Mi casa está lejos del centro de la ciudad", "fr": "Ma maison est loin du centre-ville", "it": "La mia casa è lontana dal centro città", "ru": "Мой дом далеко от центра города", "zh": "我家离市中心很远", "tr": "Evim şehir merkezinden uzak"}),
+    ItemCard(english: "Go past the cinema, and you'll see the bank.", translations: {"ar": "تجاوز السينما، وهتشوف البنك", "de": "Gehen Sie am Kino vorbei, und Sie werden die Bank sehen", "es": "Pasa el cine y verás el banco", "fr": "Passez devant le cinéma, et vous verrez la banque", "it": "Passa oltre il cinema e vedrai la banca", "ru": "Пройдите мимо кинотеатра, и вы увидите банк", "zh": "经过电影院，你就会看到银行", "tr": "Sinemanın yanından geç, bankayı göreceksin"}),
+    ItemCard(english: "The hotel is on your right side.", translations: {"ar": "الفندق على يمينك", "de": "Das Hotel ist auf Ihrer rechten Seite", "es": "El hotel está a tu derecha", "fr": "L'hôtel est sur votre droite", "it": "L'hotel è alla tua destra", "ru": "Отель находится справа от вас", "zh": "酒店在你的右边", "tr": "Otel sağ tarafınızda"}),
+    ItemCard(english: "Take this road until you reach the square.", translations: {"ar": "خد الطريق ده لحد ما توصل الميدان", "de": "Nehmen Sie diese Straße, bis Sie den Platz erreichen", "es": "Toma este camino hasta llegar a la plaza", "fr": "Prenez cette route jusqu'à ce que vous arriviez à la place", "it": "Prendi questa strada fino a raggiungere la piazza", "ru": "Идите по этой дороге, пока не дойдете до площади", "zh": "沿着这条路一直走到广场", "tr": "Meydana ulaşana kadar bu yolu takip et"}),
+    ItemCard(english: "Use the GPS to find the address.", translations: {"ar": "استخدم GPS عشان تلاقي العنوان", "de": "Benutze das GPS, um die Adresse zu finden", "es": "Usa el GPS para encontrar la dirección", "fr": "Utilisez le GPS pour trouver l'adresse", "it": "Usa il GPS per trovare l'indirizzo", "ru": "Используйте GPS, чтобы найти адрес", "zh": "使用GPS查找地址", "tr": "Adresi bulmak için GPS kullan"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "الاتجاهات - Directions",
+    );
+  }
+}
+
+
+
+
+
+             class DairyProductsScreen extends StatelessWidget {
+  const DairyProductsScreen({Key? key}) : super(key: key);
+
+  // ✅ 50+ كلمة - منتجات الألبان (Dairy Products)
+  final List<LearningCard> words = const [
+    // ========== من الصورة 159 ==========
+    LearningCard(primaryText: "Milk", translations: {"ar": "لبن", "de": "Milch", "es": "Leche", "fr": "Lait", "it": "Latte", "ru": "Молоко", "zh": "牛奶", "tr": "Süt"}),
+    LearningCard(primaryText: "Cream", translations: {"ar": "قشطة", "de": "Sahne", "es": "Crema", "fr": "Crème", "it": "Panna", "ru": "Сливки", "zh": "奶油", "tr": "Krema"}),
+    LearningCard(primaryText: "Whipping Cream", translations: {"ar": "كريمة خفق", "de": "Schlagsahne", "es": "Crema para batir", "fr": "Crème fouettée", "it": "Panna da montare", "ru": "Сливки для взбивания", "zh": "打发奶油", "tr": "Krema"}),
+    LearningCard(primaryText: "Yogurt", translations: {"ar": "زبادي", "de": "Joghurt", "es": "Yogur", "fr": "Yaourt", "it": "Yogurt", "ru": "Йогурт", "zh": "酸奶", "tr": "Yoğurt"}),
+    LearningCard(primaryText: "Skimmed Milk", translations: {"ar": "لبن خالي الدسم", "de": "Magermilch", "es": "Leche desnatada", "fr": "Lait écrémé", "it": "Latte scremato", "ru": "Обезжиренное молоко", "zh": "脱脂牛奶", "tr": "Yağsız süt"}),
+    LearningCard(primaryText: "Sour Milk", translations: {"ar": "لبن رايب", "de": "Saure Milch", "es": "Leche agria", "fr": "Lait caillé", "it": "Latte acido", "ru": "Кислое молоко", "zh": "酸牛奶", "tr": "Ekşi süt"}),
+    LearningCard(primaryText: "Cheddar", translations: {"ar": "جبنة شيدر", "de": "Cheddar-Käse", "es": "Queso cheddar", "fr": "Cheddar", "it": "Cheddar", "ru": "Чеддер", "zh": "切达奶酪", "tr": "Çedar peyniri"}),
+    LearningCard(primaryText: "Cottage Cheese", translations: {"ar": "جبنة قريش", "de": "Hüttenkäse", "es": "Queso cottage", "fr": "Fromage blanc", "it": "Ricotta", "ru": "Творог", "zh": "白软干酪", "tr": "Süzme peynir"}),
+    LearningCard(primaryText: "Semi-skimmed Milk", translations: {"ar": "لبن نصف دسم", "de": "Teilmagermilch", "es": "Leche semidesnatada", "fr": "Lait demi-écrémé", "it": "Latte parzialmente scremato", "ru": "Молоко средней жирности", "zh": "半脱脂牛奶", "tr": "Yarımlı süt"}),
+    LearningCard(primaryText: "Condensed Milk", translations: {"ar": "لبن مكثف", "de": "Kondensmilch", "es": "Leche condensada", "fr": "Lait concentré", "it": "Latte condensato", "ru": "Сгущенное молоко", "zh": "炼乳", "tr": "Koyulaştırılmış süt"}),
+    LearningCard(primaryText: "Cheese", translations: {"ar": "جبنة", "de": "Käse", "es": "Queso", "fr": "Fromage", "it": "Formaggio", "ru": "Сыр", "zh": "奶酪", "tr": "Peynir"}),
+    LearningCard(primaryText: "Mozzarella", translations: {"ar": "جبنة موتزاريلا", "de": "Mozzarella", "es": "Mozzarella", "fr": "Mozzarella", "it": "Mozzarella", "ru": "Моцарелла", "zh": "马苏里拉奶酪", "tr": "Mozzarella"}),
+    LearningCard(primaryText: "Full-fat Milk", translations: {"ar": "لبن كامل الدسم", "de": "Vollmilch", "es": "Leche entera", "fr": "Lait entier", "it": "Latte intero", "ru": "Цельное молоко", "zh": "全脂牛奶", "tr": "Tam yağlı süt"}),
+    LearningCard(primaryText: "Butter", translations: {"ar": "زبدة", "de": "Butter", "es": "Mantequilla", "fr": "Beurre", "it": "Burro", "ru": "Масло", "zh": "黄油", "tr": "Tereyağı"}),
+    LearningCard(primaryText: "Creamy Cheese", translations: {"ar": "جبنة كريمي", "de": "Frischkäse", "es": "Queso crema", "fr": "Fromage à la crème", "it": "Formaggio cremoso", "ru": "Сливочный сыр", "zh": "奶油奶酪", "tr": "Krem peynir"}),
+    LearningCard(primaryText: "Ghee", translations: {"ar": "سمن", "de": "Ghee", "es": "Ghee", "fr": "Ghee", "it": "Ghee", "ru": "Топленое масло", "zh": "酥油", "tr": "Sade yağı"}),
+    
+    // ========== منتجات ألبان إضافية ==========
+    LearningCard(primaryText: "Ice Cream", translations: {"ar": "آيس كريم", "de": "Eiscreme", "es": "Helado", "fr": "Glace", "it": "Gelato", "ru": "Мороженое", "zh": "冰淇淋", "tr": "Dondurma"}),
+    LearningCard(primaryText: "Kefir", translations: {"ar": "كفير", "de": "Kefir", "es": "Kéfir", "fr": "Kéfir", "it": "Kefir", "ru": "Кефир", "zh": "开菲尔", "tr": "Kefir"}),
+    LearningCard(primaryText: "Buttermilk", translations: {"ar": "لبن خاثر", "de": "Buttermilch", "es": "Suero de leche", "fr": "Babeurre", "it": "Latticello", "ru": "Пахта", "zh": "酪乳", "tr": "Ayran"}),
+    LearningCard(primaryText: "Parmesan", translations: {"ar": "جبنة بارميزان", "de": "Parmesan", "es": "Parmesano", "fr": "Parmesan", "it": "Parmigiano", "ru": "Пармезан", "zh": "帕尔马干酪", "tr": "Parmesan"}),
+    LearningCard(primaryText: "Feta", translations: {"ar": "جبنة فيتا", "de": "Feta", "es": "Queso feta", "fr": "Feta", "it": "Feta", "ru": "Фета", "zh": "菲达奶酪", "tr": "Beyaz peynir"}),
+    LearningCard(primaryText: "Ricotta", translations: {"ar": "جبنة ريكوتا", "de": "Ricotta", "es": "Ricotta", "fr": "Ricotta", "it": "Ricotta", "ru": "Рикотта", "zh": "瑞可塔奶酪", "tr": "Ricotta"}),
+    LearningCard(primaryText: "Cream Cheese", translations: {"ar": "جبنة كريمية", "de": "Frischkäse", "es": "Queso crema", "fr": "Fromage à la crème", "it": "Formaggio spalmabile", "ru": "Сливочный сыр", "zh": "奶油干酪", "tr": "Krem peynir"}),
+    LearningCard(primaryText: "Powdered Milk", translations: {"ar": "لبن بودرة", "de": "Milchpulver", "es": "Leche en polvo", "fr": "Lait en poudre", "it": "Latte in polvere", "ru": "Сухое молоко", "zh": "奶粉", "tr": "Süt tozu"}),
+  ];
+
+  // ✅ 50+ جملة - عن منتجات الألبان
+  final List<ItemCard> sentences = const [
+    // ========== الجمل الأصلية من الصورة 160 (13 جملة) ==========
+    ItemCard(english: "It was a surprise to my little brother that we take cream from milk.", translations: {"ar": "كانت مفاجأة لخويا الصغير إننا بنطلع القشطة من اللبن", "de": "Es war eine Überraschung für meinen kleinen Bruder, dass wir Sahne aus Milch gewinnen", "es": "Fue una sorpresa para mi hermano pequeño que saquemos crema de la leche", "fr": "C'était une surprise pour mon petit frère qu'on obtienne la crème du lait", "it": "È stata una sorpresa per mio fratellino che prendiamo la panna dal latte", "ru": "Для моего младшего брата было сюрпризом, что мы берем сливки из молока", "zh": "对我弟弟来说，我们从牛奶中提取奶油是一个惊喜", "tr": "Sütten krema aldığımız küçük kardeşim için bir sürpriz oldu"}),
+    ItemCard(english: "Maha doesn't like whipping cream on her pancakes.", translations: {"ar": "مها مش بتحب كريمة الخفق على البانكيك بتاعتها", "de": "Maha mag keine Schlagsahne auf ihren Pfannkuchen", "es": "A Maha no le gusta la crema batida en sus panqueques", "fr": "Maha n'aime pas la crème fouettée sur ses crêpes", "it": "A Maha non piace la panna montata sui suoi pancake", "ru": "Маха не любит взбитые сливки на своих блинах", "zh": "玛哈不喜欢在煎饼上放打发奶油", "tr": "Maha pankeklerinde krema sevmez"}),
+    ItemCard(english: "They don't like any type of cheese.", translations: {"ar": "هما مش بيحبوا أي نوع جبنة", "de": "Sie mögen keine Art von Käse", "es": "No les gusta ningún tipo de queso", "fr": "Ils n'aiment aucun type de fromage", "it": "Non amano nessun tipo di formaggio", "ru": "Они не любят никакой сыр", "zh": "他们不喜欢任何类型的奶酪", "tr": "Hiçbir peynir türünü sevmezler"}),
+    ItemCard(english: "I love extra mozzarella on my pizza.", translations: {"ar": "أنا بحب موتزاريلا زيادة على البيتزا بتاعتي", "de": "Ich liebe extra Mozzarella auf meiner Pizza", "es": "Me encanta el queso mozzarella extra en mi pizza", "fr": "J'adore la mozzarella supplémentaire sur ma pizza", "it": "Adoro la mozzarella extra sulla mia pizza", "ru": "Я люблю дополнительную моцареллу на пицце", "zh": "我喜欢在披萨上加额外的马苏里拉奶酪", "tr": "Pizzamda fazla mozzarella severim"}),
+    ItemCard(english: "Doctors say that cottage cheese is very healthy.", translations: {"ar": "الدكاترة بيقولوا إن الجبنة القريش صحية جدًا", "de": "Ärzte sagen, dass Hüttenkäse sehr gesund ist", "es": "Los médicos dicen que el requesón es muy saludable", "fr": "Les médecins disent que le fromage blanc est très sain", "it": "I medici dicono che la ricotta è molto salutare", "ru": "Врачи говорят, что творог очень полезен", "zh": "医生说白软干酪非常健康", "tr": "Doktorlar süzme peynirin çok sağlıklı olduğunu söylüyor"}),
+    ItemCard(english: "Would you like cheddar sauce with your burger?", translations: {"ar": "تحب صوص شيدر مع البرجر بتاعتك؟", "de": "Möchten Sie Cheddar-Sauce zu Ihrem Burger?", "es": "¿Te gustaría salsa cheddar con tu hamburguesa?", "fr": "Voulez-vous de la sauce cheddar avec votre burger?", "it": "Vorresti salsa cheddar con il tuo hamburger?", "ru": "Хотите соус чеддер к бургеру?", "zh": "你的汉堡想要切达奶酪酱吗？", "tr": "Burgerinle çedar sos ister misin?"}),
+    ItemCard(english: "Condensed milk is used in many desserts.", translations: {"ar": "اللبن المكثف بيستخدم في حلويات كتير", "de": "Kondensmilch wird in vielen Desserts verwendet", "es": "La leche condensada se usa en muchos postres", "fr": "Le lait concentré est utilisé dans de nombreux desserts", "it": "Il latte condensato viene utilizzato in molti dessert", "ru": "Сгущенное молоко используется во многих десертах", "zh": "炼乳用于许多甜点", "tr": "Koyulaştırılmış süt birçok tatlıda kullanılır"}),
+    ItemCard(english: "Hana takes her coffee with semi-skimmed milk.", translations: {"ar": "هنا بتاخد القهوة بتاعتها بلبن نص دسم", "de": "Hana trinkt ihren Kaffee mit Teilmagermilch", "es": "Hana toma su café con leche semidesnatada", "fr": "Hana prend son café avec du lait demi-écrémé", "it": "Hana prende il suo caffè con latte parzialmente scremato", "ru": "Хана пьет кофе с молоком средней жирности", "zh": "哈娜喝咖啡加半脱脂牛奶", "tr": "Hana kahvesini yarımlı sütle içiyor"}),
+    ItemCard(english: "Dairy products are very useful to your health.", translations: {"ar": "منتجات الألبان مفيدة جدًا لصحتك", "de": "Milchprodukte sind sehr nützlich für Ihre Gesundheit", "es": "Los productos lácteos son muy útiles para tu salud", "fr": "Les produits laitiers sont très utiles pour votre santé", "it": "I prodotti lattiero-caseari sono molto utili per la tua salute", "ru": "Молочные продукты очень полезны для вашего здоровья", "zh": "乳制品对你的健康非常有益", "tr": "Süt ürünleri sağlığınız için çok faydalıdır"}),
+    ItemCard(english: "My mom always uses butter when she bakes something.", translations: {"ar": "ماما دايما بتستخدم زبدة لما بتخبز حاجة", "de": "Meine Mutter benutzt immer Butter, wenn sie etwas backt", "es": "Mi mamá siempre usa mantequilla cuando hornea algo", "fr": "Ma mère utilise toujours du beurre quand elle fait la cuisine", "it": "Mia madre usa sempre il burro quando prepara qualcosa al forno", "ru": "Моя мама всегда использует масло, когда что-то печет", "zh": "我妈妈烤东西时总是用黄油", "tr": "Annem bir şey pişirirken her zaman tereyağı kullanır"}),
+    ItemCard(english: "My grandpa always has yogurt and sour milk to help with digestion.", translations: {"ar": "جدي دايما بيأكل زبادي ولبن رايب عشان يساعدوا في الهضم", "de": "Mein Opa isst immer Joghurt und saure Milch, um die Verdauung zu unterstützen", "es": "Mi abuelo siempre come yogur y leche agria para ayudar con la digestión", "fr": "Mon grand-père mange toujours du yaourt et du lait caillé pour faciliter la digestion", "it": "Mio nonno mangia sempre yogurt e latte acido per aiutare la digestione", "ru": "Мой дедушка всегда ест йогурт и кислое молоко, чтобы помочь пищеварению", "zh": "我爷爷总是吃酸奶和酸牛奶帮助消化", "tr": "Dedem sindirime yardımcı olması için her zaman yoğurt ve ekşi süt yer"}),
+    ItemCard(english: "We need butter, cinnamon, and flour.", translations: {"ar": "إحنا محتاجين زبدة وقرفة ودقيق", "de": "Wir brauchen Butter, Zimt und Mehl", "es": "Necesitamos mantequilla, canela y harina", "fr": "Nous avons besoin de beurre, de cannelle et de farine", "it": "Abbiamo bisogno di burro, cannella e farina", "ru": "Нам нужно масло, корица и мука", "zh": "我们需要黄油、肉桂和面粉", "tr": "Tereyağı, tarçın ve una ihtiyacımız var"}),
+    ItemCard(english: "The doctor advised her to drink a glass of milk every day.", translations: {"ar": "الدكتور نصحها تشرب كوباية لبن كل يوم", "de": "Der Arzt riet ihr, jeden Tag ein Glas Milch zu trinken", "es": "El médico le aconsejó beber un vaso de leche todos los días", "fr": "Le médecin lui a conseillé de boire un verre de lait tous les jours", "it": "Il medico le ha consigliato di bere un bicchiere di latte ogni giorno", "ru": "Врач посоветовал ей выпивать стакан молока каждый день", "zh": "医生建议她每天喝一杯牛奶", "tr": "Doktor ona her gün bir bardak süt içmesini tavsiye etti")},
+    
+    // ========== 37 جملة إضافية ==========
+    ItemCard(english: "Milk is rich in calcium for strong bones.", translations: {"ar": "اللبن غني بالكالسيوم لعظام قوية", "de": "Milch ist reich an Kalzium für starke Knochen", "es": "La leche es rica en calcio para huesos fuertes", "fr": "Le lait est riche en calcium pour des os solides", "it": "Il latte è ricco di calcio per ossa forti", "ru": "Молоко богато кальцием для крепких костей", "zh": "牛奶富含钙质，强健骨骼", "tr": "Süt güçlü kemikler için kalsiyum açısından zengindir"}),
+    ItemCard(english: "I prefer full-fat milk for my coffee.", translations: {"ar": "أنا أفضل اللبن كامل الدسم للقهوة بتاعتي", "de": "Ich bevorzuge Vollmilch für meinen Kaffee", "es": "Prefiero leche entera para mi café", "fr": "Je préfère le lait entier pour mon café", "it": "Preferisco il latte intero per il mio caffè", "ru": "Я предпочитаю цельное молоко для кофе", "zh": "我更喜欢全脂牛奶配咖啡", "tr": "Kahvem için tam yağlı sütü tercih ederim"}),
+    ItemCard(english: "Greek yogurt is high in protein.", translations: {"ar": "الزبادي اليوناني عالي في البروتين", "de": "Griechischer Joghurt ist reich an Eiweiß", "es": "El yogur griego es alto en proteínas", "fr": "Le yaourt grec est riche en protéines", "it": "Lo yogurt greco è ricco di proteine", "ru": "Греческий йогурт богат белком", "zh": "希腊酸奶蛋白质含量高", "tr": "Yunan yoğurdu protein açısından zengindir"}),
+    ItemCard(english: "Butter makes everything taste better.", translations: {"ar": "الزبدة بتخلي كل حاجة طعمها أحسن", "de": "Butter macht alles besser schmecken", "es": "La mantequilla hace que todo sepa mejor", "fr": "Le beurre rend tout meilleur", "it": "Il burro rende tutto più buono", "ru": "Масло делает все вкуснее", "zh": "黄油让一切味道更好", "tr": "Tereyağı her şeyin tadını daha iyi yapar"}),
+    ItemCard(english: "Cheese contains a lot of protein and fat.", translations: {"ar": "الجبنة فيها بروتين ودهون كتير", "de": "Käse enthält viel Eiweiß und Fett", "es": "El queso contiene mucha proteína y grasa", "fr": "Le fromage contient beaucoup de protéines et de matières grasses", "it": "Il formaggio contiene molte proteine e grassi", "ru": "Сыр содержит много белка и жира", "zh": "奶酪含有大量蛋白质和脂肪", "tr": "Peynir çok fazla protein ve yağ içerir"}),
+    ItemCard(english: "Yogurt with honey is a healthy snack.", translations: {"ar": "الزبادي بالعسل هو وجبة خفيفة صحية", "de": "Joghurt mit Honig ist ein gesunder Snack", "es": "El yogur con miel es un bocadillo saludable", "fr": "Le yaourt au miel est une collation saine", "it": "Lo yogurt con miele è uno spuntino sano", "ru": "Йогурт с медом - полезный перекус", "zh": "酸奶加蜂蜜是一种健康的零食", "tr": "Ballı yoğurt sağlıklı bir atıştırmalıktır"}),
+    ItemCard(english: "Ice cream is a dairy dessert loved by many.", translations: {"ar": "الآيس كريم هو حلوى ألبان بيحبها ناس كتير", "de": "Eiscreme ist ein Milchdessert, das von vielen geliebt wird", "es": "El helado es un postre lácteo amado por muchos", "fr": "La glace est un dessert laitier aimé par beaucoup", "it": "Il gelato è un dessert caseario amato da molti", "ru": "Мороженое - молочный десерт, любимый многими", "zh": "冰淇淋是许多人喜爱的乳制品甜点", "tr": "Dondurma birçok kişi tarafından sevilen bir sütlü tatlıdır"}),
+    ItemCard(english: "Feta cheese is salty and crumbly.", translations: {"ar": "جبنة الفيتا مالحة ومتفتتة", "de": "Feta-Käse ist salzig und bröckelig", "es": "El queso feta es salado y se desmorona", "fr": "Le fromage feta est salé et friable", "it": "Il formaggio feta è salato e friabile", "ru": "Сыр фета соленый и рассыпчатый", "zh": "菲达奶酪咸而易碎", "tr": "Beyaz peynir tuzlu ve ufalanandır"}),
+    ItemCard(english: "Ghee is often used in Indian cooking.", translations: {"ar": "السمن غالبًا بيستخدم في الطبخ الهندي", "de": "Ghee wird oft in der indischen Küche verwendet", "es": "El ghee se usa a menudo en la cocina india", "fr": "Le ghee est souvent utilisé dans la cuisine indienne", "it": "Il ghee è spesso usato nella cucina indiana", "ru": "Топленое масло часто используется в индийской кухне", "zh": "酥油常用于印度烹饪", "tr": "Sade yağı genellikle Hint yemeklerinde kullanılır"}),
+    ItemCard(english: "Skimmed milk has less fat than whole milk.", translations: {"ar": "اللبن الخالي الدسم فيه دهون أقل من اللبن كامل الدسم", "de": "Magermilch hat weniger Fett als Vollmilch", "es": "La leche desnatada tiene menos grasa que la leche entera", "fr": "Le lait écrémé contient moins de matières grasses que le lait entier", "it": "Il latte scremato ha meno grassi del latte intero", "ru": "Обезжиренное молоко содержит меньше жира, чем цельное молоко", "zh": "脱脂牛奶比全脂牛奶脂肪含量低", "tr": "Yağsız süt, tam yağlı sütten daha az yağ içerir"}),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ProfessionsTabScreen(
+      ttsLanguage: "en-US",
+      words: words,
+      sentences: sentences,
+      title: "منتجات الألبان - Dairy Products",
+    );
+  }
+}
+
+
+
+
+             
+
              
 
              
