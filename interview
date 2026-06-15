@@ -1,0 +1,1594 @@
+class InterviewScreen extends StatelessWidget {
+  // ✅ جميع أسئلة وأجوبة المقابلة - كل جملة في LearningCard منفصل مع 8 لغات
+  final List<LearningCard> interviewCards = const [
+    // ========== السؤال 1: تقديم النفس - الاسم والعمر ==========
+    LearningCard(
+      primaryText: "My name is Ali.",
+      translations: {
+        "ar": "اسمي علي.",
+        "de": "Mein Name ist Ali.",
+        "es": "Mi nombre es Ali.",
+        "fr": "Je m'appelle Ali.",
+        "it": "Mi chiamo Ali.",
+        "ru": "Меня зовут Али.",
+        "zh": "我的名字是阿里。",
+        "tr": "Benim adım Ali."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am 26 years old.",
+      translations: {
+        "ar": "عمري 26 سنة.",
+        "de": "Ich bin 26 Jahre alt.",
+        "es": "Tengo 26 años.",
+        "fr": "J'ai 26 ans.",
+        "it": "Ho 26 anni.",
+        "ru": "Мне 26 лет.",
+        "zh": "我26岁了。",
+        "tr": "26 yaşındayım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I was born and raised in Egypt.",
+      translations: {
+        "ar": "لقد ولدت ونشأت في مصر.",
+        "de": "Ich bin in Ägypten geboren und aufgewachsen.",
+        "es": "Nací y crecí en Egipto.",
+        "fr": "Je suis né et j'ai grandi en Égypte.",
+        "it": "Sono nato e cresciuto in Egitto.",
+        "ru": "Я родился и вырос в Египте.",
+        "zh": "我在埃及出生长大。",
+        "tr": "Mısır'da doğdum ve büyüdüm."
+      }
+    ),
+    LearningCard(
+      primaryText: "I currently live in Gaza.",
+      translations: {
+        "ar": "أعيش حاليا في غزة.",
+        "de": "Momentan wohne ich in Gaza.",
+        "es": "Actualmente vivo en Gaza.",
+        "fr": "Je vis actuellement à Gaza.",
+        "it": "Attualmente vivo a Gaza.",
+        "ru": "В настоящее время я живу в Газе.",
+        "zh": "我目前住在加沙。",
+        "tr": "Şu anda Gazze'de yaşıyorum."
+      }
+    ),
+
+    // ========== الدراسة ==========
+    LearningCard(
+      primaryText: "I studied Information Technology at Theba Institute.",
+      translations: {
+        "ar": "درست تكنولوجيا المعلومات في معهد طيبة.",
+        "de": "Ich habe am Theba-Institut Informationstechnologie studiert.",
+        "es": "Estudié Tecnología de la Información en el Instituto Theba.",
+        "fr": "J'ai étudié les technologies de l'information à l'Institut Theba.",
+        "it": "Ho studiato Tecnologia dell'Informazione all'Istituto Theba.",
+        "ru": "Я изучал информационные технологии в институте Теба.",
+        "zh": "我在特巴学院学习信息技术。",
+        "tr": "Theba Enstitüsü'nde Bilgi Teknolojileri okudum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I graduated in 2022.",
+      translations: {
+        "ar": "تخرجت في عام 2022.",
+        "de": "Ich habe im Jahr 2022 meinen Abschluss gemacht.",
+        "es": "Me gradué en 2022.",
+        "fr": "Je suis diplômé en 2022.",
+        "it": "Mi sono laureato nel 2022.",
+        "ru": "Я окончил учебу в 2022 году.",
+        "zh": "我于2022年毕业。",
+        "tr": "2022 yılında mezun oldum."
+      }
+    ),
+
+    // ========== العمل أثناء الدراسة ==========
+    LearningCard(
+      primaryText: "I worked in a pharmacy as a pharmacy assistant.",
+      translations: {
+        "ar": "عملت في صيدلية كمساعد صيدلي.",
+        "de": "Ich habe in einer Apotheke als Apothekerassistent gearbeitet.",
+        "es": "Trabajé en una farmacia como asistente de farmacia.",
+        "fr": "J'ai travaillé dans une pharmacie comme assistant pharmacien.",
+        "it": "Ho lavorato in una farmacia come assistente farmacista.",
+        "ru": "Я работал в аптеке помощником фармацевта.",
+        "zh": "我在药房担任药剂师助理。",
+        "tr": "Eczanede eczane asistanı olarak çalıştım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I sold medications and advised customers.",
+      translations: {
+        "ar": "كنت أبيع الأدوية وأنصح العملاء.",
+        "de": "Ich habe Medikamente verkauft und Kunden beraten.",
+        "es": "Vendía medicamentos y asesoraba a los clientes.",
+        "fr": "Je vendais des médicaments et conseillais les clients.",
+        "it": "Vendevo medicinali e consigliavo i clienti.",
+        "ru": "Я продавал лекарства и консультировал клиентов.",
+        "zh": "我销售药品并为客户提供建议。",
+        "tr": "İlaç sattım ve müşterilere danışmanlık yaptım."
+      }
+    ),
+
+    // ========== الاهتمامات والهوايات ==========
+    LearningCard(
+      primaryText: "I am interested in computer programs.",
+      translations: {
+        "ar": "أنا مهتم ببرامج الكمبيوتر.",
+        "de": "Ich interessiere mich für Computerprogramme.",
+        "es": "Estoy interesado en programas informáticos.",
+        "fr": "Je m'intéresse aux programmes informatiques.",
+        "it": "Sono interessato ai programmi informatici.",
+        "ru": "Я интересуюсь компьютерными программами.",
+        "zh": "我对计算机程序感兴趣。",
+        "tr": "Bilgisayar programlarına ilgi duyuyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am interested in sports, especially fitness.",
+      translations: {
+        "ar": "أنا مهتم بالرياضة وخاصة اللياقة البدنية.",
+        "de": "Ich interessiere mich für Sport, besonders für Fitness.",
+        "es": "Estoy interesado en los deportes, especialmente el fitness.",
+        "fr": "Je m'intéresse aux sports, en particulier au fitness.",
+        "it": "Sono interessato allo sport, soprattutto al fitness.",
+        "ru": "Я интересуюсь спортом, особенно фитнесом.",
+        "zh": "我对运动感兴趣，尤其是健身。",
+        "tr": "Sporla ilgileniyorum, özellikle fitness."
+      }
+    ),
+    LearningCard(
+      primaryText: "I go to the gym when I have time.",
+      translations: {
+        "ar": "أذهب إلى صالة الألعاب الرياضية عندما يكون لدي وقت.",
+        "de": "Ich gehe ins Fitnessstudio, wenn ich Zeit habe.",
+        "es": "Voy al gimnasio cuando tengo tiempo.",
+        "fr": "Je vais à la salle de sport quand j'ai le temps.",
+        "it": "Vado in palestra quando ho tempo.",
+        "ru": "Я хожу в спортзал, когда есть время.",
+        "zh": "有时间我就去健身房。",
+        "tr": "Zamanım olduğunda spor salonuna giderim."
+      }
+    ),
+    LearningCard(
+      primaryText: "I like to walk with my friends.",
+      translations: {
+        "ar": "أحب أن أمشي مع أصدقائي.",
+        "de": "Ich gehe gerne mit meinen Freunden spazieren.",
+        "es": "Me gusta caminar con mis amigos.",
+        "fr": "J'aime me promener avec mes amis.",
+        "it": "Mi piace camminare con i miei amici.",
+        "ru": "Мне нравится гулять с друзьями.",
+        "zh": "我喜欢和朋友一起散步。",
+        "tr": "Arkadaşlarımla yürümeyi severim."
+      }
+    ),
+    LearningCard(
+      primaryText: "In my free time, I listen to classical music.",
+      translations: {
+        "ar": "في وقت فراغي، أستمع إلى الموسيقى الكلاسيكية.",
+        "de": "In meiner Freizeit höre ich klassische Musik.",
+        "es": "En mi tiempo libre, escucho música clásica.",
+        "fr": "Pendant mon temps libre, j'écoute de la musique classique.",
+        "it": "Nel mio tempo libero, ascolto musica classica.",
+        "ru": "В свободное время я слушаю классическую музыку.",
+        "zh": "在我的空闲时间，我听古典音乐。",
+        "tr": "Boş zamanlarımda klasik müzik dinlerim."
+      }
+    ),
+    LearningCard(
+      primaryText: "I also like to watch old movies.",
+      translations: {
+        "ar": "كما أحب مشاهدة الأفلام القديمة.",
+        "de": "Ich sehe mir auch gerne alte Filme an.",
+        "es": "También me gusta ver películas antiguas.",
+        "fr": "J'aime aussi regarder de vieux films.",
+        "it": "Mi piace anche guardare vecchi film.",
+        "ru": "Мне также нравится смотреть старые фильмы.",
+        "zh": "我也喜欢看老电影。",
+        "tr": "Eski filmler izlemeyi de severim."
+      }
+    ),
+
+    // ========== نقاط القوة ==========
+    LearningCard(
+      primaryText: "I have good skills in dealing with people.",
+      translations: {
+        "ar": "لدي مهارات جيدة في التعامل مع الناس.",
+        "de": "Ich habe gute Kenntnisse im Umgang mit Menschen.",
+        "es": "Tengo buenas habilidades para tratar con las personas.",
+        "fr": "J'ai de bonnes compétences pour traiter avec les gens.",
+        "it": "Ho buone capacità nel trattare con le persone.",
+        "ru": "У меня хорошие навыки общения с людьми.",
+        "zh": "我有与人打交道的好技能。",
+        "tr": "İnsanlarla iletişim kurma konusunda iyi becerilerim var."
+      }
+    ),
+    LearningCard(
+      primaryText: "I always look for opportunities to learn and develop.",
+      translations: {
+        "ar": "أبحث دائما عن فرص للتعلم والتطوير.",
+        "de": "Ich suche immer nach Gelegenheiten, um zu lernen und mich weiterzuentwickeln.",
+        "es": "Siempre busco oportunidades para aprender y desarrollarme.",
+        "fr": "Je cherche toujours des opportunités pour apprendre et me développer.",
+        "it": "Cerco sempre opportunità per imparare e svilupparmi.",
+        "ru": "Я всегда ищу возможности учиться и развиваться.",
+        "zh": "我总是寻找学习和发展的机会。",
+        "tr": "Her zaman öğrenmek ve gelişmek için fırsatlar ararım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I have good knowledge of Excel and Word.",
+      translations: {
+        "ar": "لدي معرفة جيدة بـ Excel و Word.",
+        "de": "Ich verfüge über gute Kenntnisse in Excel und Word.",
+        "es": "Tengo buenos conocimientos de Excel y Word.",
+        "fr": "J'ai de bonnes connaissances en Excel et Word.",
+        "it": "Ho una buona conoscenza di Excel e Word.",
+        "ru": "У меня хорошие знания Excel и Word.",
+        "zh": "我精通Excel和Word。",
+        "tr": "Excel ve Word konusunda iyi bilgim var."
+      }
+    ),
+
+    // ========== نقاط الضعف ==========
+    LearningCard(
+      primaryText: "I am sometimes impatient.",
+      translations: {
+        "ar": "أنا أحيانا غير صبور.",
+        "de": "Ich bin manchmal ungeduldig.",
+        "es": "A veces soy impaciente.",
+        "fr": "Je suis parfois impatient.",
+        "it": "A volte sono impaziente.",
+        "ru": "Иногда я нетерпелив.",
+        "zh": "我有时不耐烦。",
+        "tr": "Bazen sabırsızım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am afraid of driving a car.",
+      translations: {
+        "ar": "أنا خائف من قيادة السيارة.",
+        "de": "Ich habe Angst, Auto zu fahren.",
+        "es": "Tengo miedo de conducir un coche.",
+        "fr": "J'ai peur de conduire une voiture.",
+        "it": "Ho paura di guidare una macchina.",
+        "ru": "Я боюсь водить машину.",
+        "zh": "我害怕开车。",
+        "tr": "Araba kullanmaktan korkuyorum."
+      }
+    ),
+
+    // ========== الأهداف ==========
+    LearningCard(
+      primaryText: "I want to be successful in my career.",
+      translations: {
+        "ar": "أريد أن أكون ناجحا في مسيرتي المهنية.",
+        "de": "Ich möchte in meinem Beruf erfolgreich sein.",
+        "es": "Quiero tener éxito en mi carrera profesional.",
+        "fr": "Je veux réussir dans ma carrière.",
+        "it": "Voglio avere successo nella mia carriera.",
+        "ru": "Я хочу добиться успеха в своей карьере.",
+        "zh": "我想在我的职业生涯中取得成功。",
+        "tr": "Kariyerimde başarılı olmak istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to learn several new skills.",
+      translations: {
+        "ar": "أريد تعلم عدة مهارات جديدة.",
+        "de": "Ich möchte mehrere neue Fähigkeiten lernen.",
+        "es": "Quiero aprender varias habilidades nuevas.",
+        "fr": "Je veux apprendre plusieurs nouvelles compétences.",
+        "it": "Voglio imparare diverse nuove abilità.",
+        "ru": "Я хочу освоить несколько новых навыков.",
+        "zh": "我想学习几种新技能。",
+        "tr": "Birkaç yeni beceri öğrenmek istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to be a successful team leader in five years.",
+      translations: {
+        "ar": "أريد أن أكون قائد فريق ناجح خلال خمس سنوات.",
+        "de": "In fünf Jahren möchte ich ein erfolgreicher Teamleiter sein.",
+        "es": "Quiero ser un líder de equipo exitoso en cinco años.",
+        "fr": "Je veux être un chef d'équipe performant dans cinq ans.",
+        "it": "Voglio essere un leader di squadra di successo tra cinque anni.",
+        "ru": "Через пять лет я хочу стать успешным руководителем команды.",
+        "zh": "我想在五年内成为一名成功的团队领导。",
+        "tr": "Beş yıl içinde başarılı bir takım lideri olmak istiyorum."
+      }
+    ),
+
+    // ========== لماذا ألمانيا واللغة الألمانية ==========
+    LearningCard(
+      primaryText: "I am interested in foreign languages, especially German.",
+      translations: {
+        "ar": "أنا مهتم باللغات الأجنبية وخاصة الألمانية.",
+        "de": "Ich interessiere mich für Fremdsprachen, besonders für Deutsch.",
+        "es": "Estoy interesado en idiomas extranjeros, especialmente en alemán.",
+        "fr": "Je m'intéresse aux langues étrangères, surtout à l'allemand.",
+        "it": "Sono interessato alle lingue straniere, soprattutto al tedesco.",
+        "ru": "Я интересуюсь иностранными языками, особенно немецким.",
+        "zh": "我对外语感兴趣，尤其是德语。",
+        "tr": "Yabancı dillere, özellikle Almancaya ilgi duyuyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to work with Germans.",
+      translations: {
+        "ar": "أريد العمل مع الألمان.",
+        "de": "Ich möchte mit Deutschen zusammenarbeiten.",
+        "es": "Quiero trabajar con alemanes.",
+        "fr": "Je veux travailler avec des Allemands.",
+        "it": "Voglio lavorare con i tedeschi.",
+        "ru": "Я хочу работать с немцами.",
+        "zh": "我想和德国人一起工作。",
+        "tr": "Almanlarla çalışmak istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "Germany has a strong economy and good education.",
+      translations: {
+        "ar": "ألمانيا لديها اقتصاد قوي وتعليم جيد.",
+        "de": "Deutschland hat eine starke Wirtschaft und gute Bildung.",
+        "es": "Alemania tiene una economía fuerte y buena educación.",
+        "fr": "L'Allemagne a une économie forte et une bonne éducation.",
+        "it": "La Germania ha un'economia forte e una buona istruzione.",
+        "ru": "У Германии сильная экономика и хорошее образование.",
+        "zh": "德国拥有强大的经济和良好的教育。",
+        "tr": "Almanya'nın güçlü bir ekonomisi ve iyi eğitimi var."
+      }
+    ),
+
+    // ========== كيف وصلت ==========
+    LearningCard(
+      primaryText: "I took a taxi to the bus station.",
+      translations: {
+        "ar": "أخذت سيارة أجرة إلى محطة الحافلات.",
+        "de": "Ich habe ein Taxi zum Busbahnhof genommen.",
+        "es": "Tomé un taxi hasta la estación de autobuses.",
+        "fr": "J'ai pris un taxi pour la gare routière.",
+        "it": "Ho preso un taxi per la stazione degli autobus.",
+        "ru": "Я взял такси до автовокзала.",
+        "zh": "我打车去了汽车站。",
+        "tr": "Otobüs terminaline taksiyle gittim."
+      }
+    ),
+    LearningCard(
+      primaryText: "Then I took the bus to Hurghada.",
+      translations: {
+        "ar": "ثم أخذت الحافلة إلى الغردقة.",
+        "de": "Danach habe ich den Bus nach Hurghada genommen.",
+        "es": "Luego tomé el autobús a Hurghada.",
+        "fr": "Ensuite, j'ai pris le bus pour Hurghada.",
+        "it": "Poi ho preso l'autobus per Hurghada.",
+        "ru": "Затем я сел на автобус до Хургады.",
+        "zh": "然后我坐巴士去了赫尔格达。",
+        "tr": "Sonra Hurghada'ya otobüsle gittim."
+      }
+    ),
+    LearningCard(
+      primaryText: "The journey took about five hours.",
+      translations: {
+        "ar": "استغرقت الرحلة حوالي خمس ساعات.",
+        "de": "Die Reise dauerte etwa fünf Stunden.",
+        "es": "El viaje duró unas cinco horas.",
+        "fr": "Le voyage a duré environ cinq heures.",
+        "it": "Il viaggio è durato circa cinque ore.",
+        "ru": "Поездка заняла около пяти часов.",
+        "zh": "旅程大约花了五个小时。",
+        "tr": "Yolculuk yaklaşık beş saat sürdü."
+      }
+    ),
+    LearningCard(
+      primaryText: "Finally, I arrived here.",
+      translations: {
+        "ar": "وأخيرا، وصلت إلى هنا.",
+        "de": "Endlich bin ich hier angekommen.",
+        "es": "Finalmente, llegué aquí.",
+        "fr": "Enfin, je suis arrivé ici.",
+        "it": "Finalmente, sono arrivato qui.",
+        "ru": "Наконец, я прибыл сюда.",
+        "zh": "最后，我到达了这里。",
+        "tr": "Sonunda buraya geldim."
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "مقابلة عمل - Interview",
+      cards: interviewCards,
+    );
+  }
+}
+
+
+
+
+
+
+/////////////////////////////
+////////////////////////
+
+
+class InterviewScreen2 extends StatelessWidget {
+  // ✅ جميع أسئلة وأجوبة المقابلة - جمل جديدة ومتنوعة
+  final List<LearningCard> interviewCards = const [
+    // ========== السؤال 1: تقديم النفس (جمل جديدة) ==========
+    LearningCard(
+      primaryText: "I am a hardworking and motivated person.",
+      translations: {
+        "ar": "أنا شخص مجتهد وذو دوافع عالية.",
+        "de": "Ich bin ein fleißiger und motivierter Mensch.",
+        "es": "Soy una persona trabajadora y motivada.",
+        "fr": "Je suis une personne travailleuse et motivée.",
+        "it": "Sono una persona laboriosa e motivata.",
+        "ru": "Я трудолюбивый и мотивированный человек.",
+        "zh": "我是一个勤奋且积极主动的人。",
+        "tr": "Çalışkan ve motive olmuş bir insanım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am fluent in Arabic and English.",
+      translations: {
+        "ar": "أنا أتقن اللغة العربية والإنجليزية بطلاقة.",
+        "de": "Ich spreche fließend Arabisch und Englisch.",
+        "es": "Hablo árabe e inglés con fluidez.",
+        "fr": "Je parle couramment l'arabe et l'anglais.",
+        "it": "Parlo correntemente arabo e inglese.",
+        "ru": "Я свободно говорю на арабском и английском.",
+        "zh": "我精通阿拉伯语和英语。",
+        "tr": "Arapça ve İngilizceyi akıcı bir şekilde konuşuyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am currently learning German.",
+      translations: {
+        "ar": "أنا أتعلم اللغة الألمانية حاليا.",
+        "de": "Ich lerne gerade Deutsch.",
+        "es": "Actualmente estoy aprendiendo alemán.",
+        "fr": "J'apprends actuellement l'allemand.",
+        "it": "Attualmente sto imparando il tedesco.",
+        "ru": "В настоящее время я изучаю немецкий язык.",
+        "zh": "我目前正在学习德语。",
+        "tr": "Şu anda Almanca öğreniyorum."
+      }
+    ),
+
+    // ========== الخبرة العملية (جمل جديدة) ==========
+    LearningCard(
+      primaryText: "I have experience in customer service.",
+      translations: {
+        "ar": "لدي خبرة في خدمة العملاء.",
+        "de": "Ich habe Erfahrung im Kundenservice.",
+        "es": "Tengo experiencia en atención al cliente.",
+        "fr": "J'ai de l'expérience dans le service client.",
+        "it": "Ho esperienza nel servizio clienti.",
+        "ru": "У меня есть опыт работы в обслуживании клиентов.",
+        "zh": "我有客户服务经验。",
+        "tr": "Müşteri hizmetlerinde deneyimim var."
+      }
+    ),
+    LearningCard(
+      primaryText: "I can work under pressure.",
+      translations: {
+        "ar": "أستطيع العمل تحت الضغط.",
+        "de": "Ich kann unter Druck arbeiten.",
+        "es": "Puedo trabajar bajo presión.",
+        "fr": "Je peux travailler sous pression.",
+        "it": "Posso lavorare sotto pressione.",
+        "ru": "Я могу работать в стрессовых условиях.",
+        "zh": "我能在压力下工作。",
+        "tr": "Baskı altında çalışabilirim."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am a good team player.",
+      translations: {
+        "ar": "أنا جيد في العمل الجماعي.",
+        "de": "Ich bin ein guter Teamplayer.",
+        "es": "Soy un buen jugador de equipo.",
+        "fr": "Je suis un bon joueur d'équipe.",
+        "it": "Sono un buon giocatore di squadra.",
+        "ru": "Я хороший командный игрок.",
+        "zh": "我是一个很好的团队合作者。",
+        "tr": "İyi bir takım oyuncusuyum."
+      }
+    ),
+
+    // ========== المهارات الشخصية (جمل جديدة) ==========
+    LearningCard(
+      primaryText: "I am flexible and adaptable.",
+      translations: {
+        "ar": "أنا مرن وقابل للتكيف.",
+        "de": "Ich bin flexibel und anpassungsfähig.",
+        "es": "Soy flexible y adaptable.",
+        "fr": "Je suis flexible et adaptable.",
+        "it": "Sono flessibile e adattabile.",
+        "ru": "Я гибкий и легко адаптируюсь.",
+        "zh": "我灵活且适应性强。",
+        "tr": "Esnek ve uyumluyum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I have good communication skills.",
+      translations: {
+        "ar": "لدي مهارات تواصل جيدة.",
+        "de": "Ich habe gute Kommunikationsfähigkeiten.",
+        "es": "Tengo buenas habilidades de comunicación.",
+        "fr": "J'ai de bonnes compétences en communication.",
+        "it": "Ho buone capacità di comunicazione.",
+        "ru": "У меня хорошие коммуникативные навыки.",
+        "zh": "我有良好的沟通技巧。",
+        "tr": "İyi iletişim becerilerim var."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am organized and punctual.",
+      translations: {
+        "ar": "أنا منظم ودقيق في المواعيد.",
+        "de": "Ich bin organisiert und pünktlich.",
+        "es": "Soy organizado y puntual.",
+        "fr": "Je suis organisé et ponctuel.",
+        "it": "Sono organizzato e puntuale.",
+        "ru": "Я организованный и пунктуальный.",
+        "zh": "我有条理且守时。",
+        "tr": "Düzenli ve dakikim."
+      }
+    ),
+
+    // ========== الأهداف المهنية (جمل جديدة) ==========
+    LearningCard(
+      primaryText: "I want to improve my German language skills.",
+      translations: {
+        "ar": "أريد تحسين مهاراتي في اللغة الألمانية.",
+        "de": "Ich möchte meine Deutschkenntnisse verbessern.",
+        "es": "Quiero mejorar mis habilidades en alemán.",
+        "fr": "Je veux améliorer mes compétences en allemand.",
+        "it": "Voglio migliorare le mie competenze in tedesco.",
+        "ru": "Я хочу улучшить свои знания немецкого языка.",
+        "zh": "我想提高我的德语水平。",
+        "tr": "Almanca becerilerimi geliştirmek istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to gain international work experience.",
+      translations: {
+        "ar": "أريد اكتساب خبرة عمل دولية.",
+        "de": "Ich möchte internationale Berufserfahrung sammeln.",
+        "es": "Quiero adquirir experiencia laboral internacional.",
+        "fr": "Je veux acquérir une expérience de travail internationale.",
+        "it": "Voglio acquisire esperienza lavorativa internazionale.",
+        "ru": "Я хочу получить международный опыт работы.",
+        "zh": "我想获得国际工作经验。",
+        "tr": "Uluslararası iş deneyimi kazanmak istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to build a successful career in Germany.",
+      translations: {
+        "ar": "أريد بناء مسيرة مهنية ناجحة في ألمانيا.",
+        "de": "Ich möchte eine erfolgreiche Karriere in Deutschland aufbauen.",
+        "es": "Quiero construir una carrera exitosa en Alemania.",
+        "fr": "Je veux construire une carrière réussie en Allemagne.",
+        "it": "Voglio costruire una carriera di successo in Germania.",
+        "ru": "Я хочу построить успешную карьеру в Германии.",
+        "zh": "我想在德国建立成功的职业生涯。",
+        "tr": "Almanya'da başarılı bir kariyer inşa etmek istiyorum."
+      }
+    ),
+
+    // ========== لماذا هذه الوظيفة (جمل جديدة) ==========
+    LearningCard(
+      primaryText: "Your company has an excellent reputation.",
+      translations: {
+        "ar": "شركتكم لديها سمعة ممتازة.",
+        "de": "Ihr Unternehmen hat einen ausgezeichneten Ruf.",
+        "es": "Su empresa tiene una excelente reputación.",
+        "fr": "Votre entreprise a une excellente réputation.",
+        "it": "La vostra azienda ha un'ottima reputazione.",
+        "ru": "У вашей компании отличная репутация.",
+        "zh": "贵公司享有卓越的声誉。",
+        "tr": "Şirketinizin mükemmel bir itibarı var."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to be part of a successful team.",
+      translations: {
+        "ar": "أريد أن أكون جزءا من فريق ناجح.",
+        "de": "Ich möchte Teil eines erfolgreichen Teams sein.",
+        "es": "Quiero ser parte de un equipo exitoso.",
+        "fr": "Je veux faire partie d'une équipe performante.",
+        "it": "Voglio far parte di una squadra di successo.",
+        "ru": "Я хочу быть частью успешной команды.",
+        "zh": "我想成为成功团队的一员。",
+        "tr": "Başarılı bir ekibin parçası olmak istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "This job is a great opportunity for me.",
+      translations: {
+        "ar": "هذه الوظيفة فرصة رائعة بالنسبة لي.",
+        "de": "Diese Stelle ist eine großartige Gelegenheit für mich.",
+        "es": "Este trabajo es una gran oportunidad para mí.",
+        "fr": "Ce poste est une excellente opportunité pour moi.",
+        "it": "Questo lavoro è una grande opportunità per me.",
+        "ru": "Эта работа - отличная возможность для меня.",
+        "zh": "这份工作对我来说是一个很好的机会。",
+        "tr": "Bu iş benim için harika bir fırsat."
+      }
+    ),
+
+    // ========== معلومات شخصية إضافية (جمل جديدة) ==========
+    LearningCard(
+      primaryText: "I am single and have no children.",
+      translations: {
+        "ar": "أنا أعزب وليس لدي أطفال.",
+        "de": "Ich bin ledig und habe keine Kinder.",
+        "es": "Soy soltero y no tengo hijos.",
+        "fr": "Je suis célibataire et je n'ai pas d'enfants.",
+        "it": "Sono single e non ho figli.",
+        "ru": "Я холост и не имею детей.",
+        "zh": "我单身，没有孩子。",
+        "tr": "Bekarım ve çocuğum yok."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am ready to relocate for this job.",
+      translations: {
+        "ar": "أنا مستعد للانتقال من أجل هذه الوظيفة.",
+        "de": "Ich bin bereit, für diesen Job umzuziehen.",
+        "es": "Estoy listo para mudarme por este trabajo.",
+        "fr": "Je suis prêt à déménager pour ce poste.",
+        "it": "Sono pronto a trasferirmi per questo lavoro.",
+        "ru": "Я готов переехать ради этой работы.",
+        "zh": "我准备好为这份工作搬家。",
+        "tr": "Bu iş için taşınmaya hazırım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am a non-smoker.",
+      translations: {
+        "ar": "أنا لا أدخن.",
+        "de": "Ich bin Nichtraucher.",
+        "es": "Soy no fumador.",
+        "fr": "Je ne fume pas.",
+        "it": "Sono un non fumatore.",
+        "ru": "Я не курю.",
+        "zh": "我不抽烟。",
+        "tr": "Sigara içmiyorum."
+      }
+    ),
+
+    // ========== السفر والمواصلات (جمل جديدة) ==========
+    LearningCard(
+      primaryText: "I don't have my own car.",
+      translations: {
+        "ar": "ليس لدي سيارة خاصة.",
+        "de": "Ich habe kein eigenes Auto.",
+        "es": "No tengo coche propio.",
+        "fr": "Je n'ai pas ma propre voiture.",
+        "it": "Non ho una mia macchina.",
+        "ru": "У меня нет своей машины.",
+        "zh": "我没有自己的车。",
+        "tr": "Kendi arabam yok."
+      }
+    ),
+    LearningCard(
+      primaryText: "I use public transportation.",
+      translations: {
+        "ar": "أستخدم وسائل النقل العام.",
+        "de": "Ich benutze öffentliche Verkehrsmittel.",
+        "es": "Uso el transporte público.",
+        "fr": "J'utilise les transports en commun.",
+        "it": "Utilizzo i mezzi pubblici.",
+        "ru": "Я пользуюсь общественным транспортом.",
+        "zh": "我使用公共交通工具。",
+        "tr": "Toplu taşıma kullanıyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I can work flexible hours.",
+      translations: {
+        "ar": "يمكنني العمل ساعات مرنة.",
+        "de": "Ich kann flexible Arbeitszeiten arbeiten.",
+        "es": "Puedo trabajar horas flexibles.",
+        "fr": "Je peux travailler à horaires flexibles.",
+        "it": "Posso lavorare con orari flessibili.",
+        "ru": "Я могу работать в гибком графике.",
+        "zh": "我可以灵活工作时间。",
+        "tr": "Esnek çalışma saatlerinde çalışabilirim."
+      }
+    ),
+
+    // ========== الاقتباسات والجمل التحفيزية ==========
+    LearningCard(
+      primaryText: "I believe that hard work pays off.",
+      translations: {
+        "ar": "أعتقد أن العمل الجاد يؤتي ثماره.",
+        "de": "Ich glaube, dass sich harte Arbeit auszahlt.",
+        "es": "Creo que el trabajo duro vale la pena.",
+        "fr": "Je crois que le travail acharné paie.",
+        "it": "Credo che il duro lavoro sia ripagato.",
+        "ru": "Я верю, что тяжелая работа окупается.",
+        "zh": "我相信努力工作会有回报。",
+        "tr": "Sıkı çalışmanın karşılığını verdiğine inanıyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am always ready for new challenges.",
+      translations: {
+        "ar": "أنا دائما مستعد للتحديات الجديدة.",
+        "de": "Ich bin immer bereit für neue Herausforderungen.",
+        "es": "Siempre estoy listo para nuevos desafíos.",
+        "fr": "Je suis toujours prêt pour de nouveaux défis.",
+        "it": "Sono sempre pronto per nuove sfide.",
+        "ru": "Я всегда готов к новым вызовам.",
+        "zh": "我总是准备好迎接新的挑战。",
+        "tr": "Her zaman yeni zorluklara hazırım."
+      }
+    ),
+    LearningCard(
+      primaryText: "Mistakes are opportunities to learn.",
+      translations: {
+        "ar": "الأخطاء هي فرص للتعلم.",
+        "de": "Fehler sind Gelegenheiten zum Lernen.",
+        "es": "Los errores son oportunidades para aprender.",
+        "fr": "Les erreurs sont des opportunités d'apprendre.",
+        "it": "Gli errori sono opportunità per imparare.",
+        "ru": "Ошибки - это возможности для обучения.",
+        "zh": "错误是学习的机会。",
+        "tr": "Hatalar öğrenme fırsatlarıdır."
+      }
+    ),
+
+    // ========== خاتمة المقابلة ==========
+    LearningCard(
+      primaryText: "Thank you for this opportunity.",
+      translations: {
+        "ar": "شكرا لكم على هذه الفرصة.",
+        "de": "Vielen Dank für diese Gelegenheit.",
+        "es": "Gracias por esta oportunidad.",
+        "fr": "Merci pour cette opportunité.",
+        "it": "Grazie per questa opportunità.",
+        "ru": "Спасибо за эту возможность.",
+        "zh": "谢谢你们给我这个机会。",
+        "tr": "Bu fırsat için teşekkür ederim."
+      }
+    ),
+    LearningCard(
+      primaryText: "I look forward to hearing from you.",
+      translations: {
+        "ar": "أتطلع إلى تلقي رد منكم.",
+        "de": "Ich freue mich auf Ihre Rückmeldung.",
+        "es": "Espero tener noticias suyas.",
+        "fr": "J'attends avec impatience de vos nouvelles.",
+        "it": "Non vedo l'ora di avere tue notizie.",
+        "ru": "С нетерпением жду вашего ответа.",
+        "zh": "我期待着您的回复。",
+        "tr": "Sizden haber bekliyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am confident I can do this job well.",
+      translations: {
+        "ar": "أنا واثق من أنني أستطيع القيام بهذه الوظيفة بشكل جيد.",
+        "de": "Ich bin zuversichtlich, dass ich diesen Job gut machen kann.",
+        "es": "Confío en que puedo hacer bien este trabajo.",
+        "fr": "Je suis confiant de pouvoir faire ce travail correctement.",
+        "it": "Sono fiducioso di poter svolgere bene questo lavoro.",
+        "ru": "Я уверен, что смогу хорошо выполнять эту работу.",
+        "zh": "我有信心能做好这份工作。",
+        "tr": "Bu işi iyi yapabileceğime güveniyorum."
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "مقابلة عمل - Interview (جمل إضافية)",
+      cards: interviewCards,
+    );
+  }
+}
+
+
+
+
+//////////////////
+///////////////
+/////////////////
+
+
+
+
+
+class InterviewScreen3 extends StatelessWidget {
+  // ✅ 30 جملة جديدة للمقابلة - مع 8 لغات
+  final List<LearningCard> interviewCards = const [
+    // ========== الجمل الأولى: عن النفس ==========
+    LearningCard(
+      primaryText: "I am a responsible and reliable person.",
+      translations: {
+        "ar": "أنا شخص مسؤول ويمكن الاعتماد علي.",
+        "de": "Ich bin eine verantwortungsbewusste und zuverlässige Person.",
+        "es": "Soy una persona responsable y confiable.",
+        "fr": "Je suis une personne responsable et fiable.",
+        "it": "Sono una persona responsabile e affidabile.",
+        "ru": "Я ответственный и надежный человек.",
+        "zh": "我是一个负责任且可靠的人。",
+        "tr": "Sorumlu ve güvenilir bir insanım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I respect all people regardless of their background.",
+      translations: {
+        "ar": "أحترم جميع الناس بغض النظر عن خلفياتهم.",
+        "de": "Ich respektiere alle Menschen unabhängig von ihrer Herkunft.",
+        "es": "Respeto a todas las personas sin importar su origen.",
+        "fr": "Je respecte toutes les personnes quelle que soit leur origine.",
+        "it": "Rispetto tutte le persone indipendentemente dalla loro origine.",
+        "ru": "Я уважаю всех людей независимо от их происхождения.",
+        "zh": "我尊重所有人，无论他们的背景如何。",
+        "tr": "Geçmişleri ne olursa olsun tüm insanlara saygı duyarım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am honest and trustworthy.",
+      translations: {
+        "ar": "أنا صادق وجدير بالثقة.",
+        "de": "Ich bin ehrlich und vertrauenswürdig.",
+        "es": "Soy honesto y digno de confianza.",
+        "fr": "Je suis honnête et digne de confiance.",
+        "it": "Sono onesto e affidabile.",
+        "ru": "Я честный и заслуживающий доверия.",
+        "zh": "我诚实守信。",
+        "tr": "Dürüst ve güvenilirim."
+      }
+    ),
+
+    // ========== عن العمل ==========
+    LearningCard(
+      primaryText: "I enjoy learning new things every day.",
+      translations: {
+        "ar": "أنا أستمتع بتعلم أشياء جديدة كل يوم.",
+        "de": "Ich lerne jeden Tag gerne neue Dinge.",
+        "es": "Disfruto aprender cosas nuevas cada día.",
+        "fr": "J'aime apprendre de nouvelles choses chaque jour.",
+        "it": "Mi piace imparare cose nuove ogni giorno.",
+        "ru": "Мне нравится узнавать новое каждый день.",
+        "zh": "我喜欢每天学习新东西。",
+        "tr": "Her gün yeni şeyler öğrenmekten hoşlanırım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am not afraid of making mistakes.",
+      translations: {
+        "ar": "أنا لا أخاف من ارتكاب الأخطاء.",
+        "de": "Ich habe keine Angst davor, Fehler zu machen.",
+        "es": "No tengo miedo de cometer errores.",
+        "fr": "Je n'ai pas peur de faire des erreurs.",
+        "it": "Non ho paura di commettere errori.",
+        "ru": "Я не боюсь совершать ошибки.",
+        "zh": "我不怕犯错误。",
+        "tr": "Hata yapmaktan korkmuyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I always try to improve myself.",
+      translations: {
+        "ar": "أحاول دائما تحسين نفسي.",
+        "de": "Ich versuche immer, mich zu verbessern.",
+        "es": "Siempre trato de mejorar.",
+        "fr": "J'essaie toujours de m'améliorer.",
+        "it": "Cerco sempre di migliorarmi.",
+        "ru": "Я всегда стараюсь совершенствоваться.",
+        "zh": "我总是努力提高自己。",
+        "tr": "Kendimi her zaman geliştirmeye çalışıyorum."
+      }
+    ),
+
+    // ========== عن اللغة الألمانية ==========
+    LearningCard(
+      primaryText: "German is a beautiful language.",
+      translations: {
+        "ar": "اللغة الألمانية لغة جميلة.",
+        "de": "Deutsch ist eine schöne Sprache.",
+        "es": "El alemán es un idioma hermoso.",
+        "fr": "L'allemand est une belle langue.",
+        "it": "Il tedesco è una bella lingua.",
+        "ru": "Немецкий - красивый язык.",
+        "zh": "德语是一门美丽的语言。",
+        "tr": "Almanca güzel bir dildir."
+      }
+    ),
+    LearningCard(
+      primaryText: "I study German every day.",
+      translations: {
+        "ar": "أنا أدرس اللغة الألمانية كل يوم.",
+        "de": "Ich lerne jeden Tag Deutsch.",
+        "es": "Estudio alemán todos los días.",
+        "fr": "J'étudie l'allemand tous les jours.",
+        "it": "Studio tedesco ogni giorno.",
+        "ru": "Я изучаю немецкий каждый день.",
+        "zh": "我每天学习德语。",
+        "tr": "Her gün Almanca çalışıyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to speak German fluently.",
+      translations: {
+        "ar": "أريد أن أتحدث الألمانية بطلاقة.",
+        "de": "Ich möchte fließend Deutsch sprechen.",
+        "es": "Quiero hablar alemán con fluidez.",
+        "fr": "Je veux parler allemand couramment.",
+        "it": "Voglio parlare tedesco fluentemente.",
+        "ru": "Я хочу свободно говорить по-немецки.",
+        "zh": "我想流利地说德语。",
+        "tr": "Akıcı Almanca konuşmak istiyorum."
+      }
+    ),
+
+    // ========== عن ألمانيا ==========
+    LearningCard(
+      primaryText: "Germany is a beautiful country.",
+      translations: {
+        "ar": "ألمانيا بلد جميل.",
+        "de": "Deutschland ist ein schönes Land.",
+        "es": "Alemania es un país hermoso.",
+        "fr": "L'Allemagne est un beau pays.",
+        "it": "La Germania è un bel paese.",
+        "ru": "Германия - красивая страна.",
+        "zh": "德国是一个美丽的国家。",
+        "tr": "Almanya güzel bir ülkedir."
+      }
+    ),
+    LearningCard(
+      primaryText: "I like German culture and traditions.",
+      translations: {
+        "ar": "أحب الثقافة والتقاليد الألمانية.",
+        "de": "Ich mag die deutsche Kultur und Traditionen.",
+        "es": "Me gusta la cultura y las tradiciones alemanas.",
+        "fr": "J'aime la culture et les traditions allemandes.",
+        "it": "Mi piace la cultura e le tradizioni tedesche.",
+        "ru": "Мне нравится немецкая культура и традиции.",
+        "zh": "我喜欢德国的文化和传统。",
+        "tr": "Alman kültürünü ve geleneklerini seviyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to visit Berlin one day.",
+      translations: {
+        "ar": "أريد زيارة برلين يوما ما.",
+        "de": "Ich möchte eines Tages Berlin besuchen.",
+        "es": "Quiero visitar Berlín algún día.",
+        "fr": "Je veux visiter Berlin un jour.",
+        "it": "Voglio visitare Berlino un giorno.",
+        "ru": "Я хочу однажды посетить Берлин.",
+        "zh": "我想有一天去柏林。",
+        "tr": "Bir gün Berlin'i ziyaret etmek istiyorum."
+      }
+    ),
+
+    // ========== عن الصحة واللياقة ==========
+    LearningCard(
+      primaryText: "Health is very important to me.",
+      translations: {
+        "ar": "الصحة مهمة جدا بالنسبة لي.",
+        "de": "Gesundheit ist mir sehr wichtig.",
+        "es": "La salud es muy importante para mí.",
+        "fr": "La santé est très importante pour moi.",
+        "it": "La salute è molto importante per me.",
+        "ru": "Здоровье очень важно для меня.",
+        "zh": "健康对我来说非常重要。",
+        "tr": "Sağlık benim için çok önemlidir."
+      }
+    ),
+    LearningCard(
+      primaryText: "I exercise three times a week.",
+      translations: {
+        "ar": "أمارس الرياضة ثلاث مرات في الأسبوع.",
+        "de": "Ich trainiere dreimal pro Woche.",
+        "es": "Hago ejercicio tres veces por semana.",
+        "fr": "Je fais de l'exercice trois fois par semaine.",
+        "it": "Mi alleno tre volte a settimana.",
+        "ru": "Я тренируюсь три раза в неделю.",
+        "zh": "我每周锻炼三次。",
+        "tr": "Haftada üç kez egzersiz yapıyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I eat healthy food every day.",
+      translations: {
+        "ar": "أنا أتناول طعاما صحيا كل يوم.",
+        "de": "Ich esse jeden Tag gesundes Essen.",
+        "es": "Como comida saludable todos los días.",
+        "fr": "Je mange sain tous les jours.",
+        "it": "Mangio cibo sano ogni giorno.",
+        "ru": "Я ем здоровую пищу каждый день.",
+        "zh": "我每天都吃健康的食物。",
+        "tr": "Her gün sağlıklı yemek yerim."
+      }
+    ),
+
+    // ========== عن الأسرة والأصدقاء ==========
+    LearningCard(
+      primaryText: "I have a small family.",
+      translations: {
+        "ar": "لدي عائلة صغيرة.",
+        "de": "Ich habe eine kleine Familie.",
+        "es": "Tengo una familia pequeña.",
+        "fr": "J'ai une petite famille.",
+        "it": "Ho una famiglia piccola.",
+        "ru": "У меня маленькая семья.",
+        "zh": "我有一个小家庭。",
+        "tr": "Küçük bir ailem var."
+      }
+    ),
+    LearningCard(
+      primaryText: "I love spending time with my friends.",
+      translations: {
+        "ar": "أحب قضاء الوقت مع أصدقائي.",
+        "de": "Ich verbringe gerne Zeit mit meinen Freunden.",
+        "es": "Me encanta pasar tiempo con mis amigos.",
+        "fr": "J'aime passer du temps avec mes amis.",
+        "it": "Adoro passare il tempo con i miei amici.",
+        "ru": "Я люблю проводить время с друзьями.",
+        "zh": "我喜欢和朋友在一起。",
+        "tr": "Arkadaşlarımla vakit geçirmeyi severim."
+      }
+    ),
+    LearningCard(
+      primaryText: "My family supports me in everything.",
+      translations: {
+        "ar": "عائلتي تدعمني في كل شيء.",
+        "de": "Meine Familie unterstützt mich in allem.",
+        "es": "Mi familia me apoya en todo.",
+        "fr": "Ma famille me soutient en tout.",
+        "it": "La mia famiglia mi sostiene in tutto.",
+        "ru": "Моя семья поддерживает меня во всем.",
+        "zh": "我的家人支持我的一切。",
+        "tr": "Ailem her konuda beni destekliyor."
+      }
+    ),
+
+    // ========== عن السفر ==========
+    LearningCard(
+      primaryText: "I love traveling to new places.",
+      translations: {
+        "ar": "أحب السفر إلى أماكن جديدة.",
+        "de": "Ich liebe es, an neue Orte zu reisen.",
+        "es": "Me encanta viajar a nuevos lugares.",
+        "fr": "J'adore voyager dans de nouveaux endroits.",
+        "it": "Adoro viaggiare verso nuovi posti.",
+        "ru": "Я люблю путешествовать в новые места.",
+        "zh": "我喜欢去新的地方旅行。",
+        "tr": "Yeni yerlere seyahat etmeyi severim."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to explore Europe.",
+      translations: {
+        "ar": "أريد استكشاف أوروبا.",
+        "de": "Ich möchte Europa erkunden.",
+        "es": "Quiero explorar Europa.",
+        "fr": "Je veux explorer l'Europe.",
+        "it": "Voglio esplorare l'Europa.",
+        "ru": "Я хочу исследовать Европу.",
+        "zh": "我想探索欧洲。",
+        "tr": "Avrupa'yı keşfetmek istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "Traveling makes me happy.",
+      translations: {
+        "ar": "السفر يجعلني سعيدا.",
+        "de": "Reisen macht mich glücklich.",
+        "es": "Viajar me hace feliz.",
+        "fr": "Voyager me rend heureux.",
+        "it": "Viaggiare mi rende felice.",
+        "ru": "Путешествия делают меня счастливым.",
+        "zh": "旅行让我快乐。",
+        "tr": "Seyahat etmek beni mutlu ediyor."
+      }
+    ),
+
+    // ========== عن التكنولوجيا ==========
+    LearningCard(
+      primaryText: "Technology is changing our world fast.",
+      translations: {
+        "ar": "التكنولوجيا تغير عالمنا بسرعة.",
+        "de": "Die Technologie verändert unsere Welt schnell.",
+        "es": "La tecnología está cambiando nuestro mundo rápidamente.",
+        "fr": "La technologie change notre monde rapidement.",
+        "it": "La tecnologia sta cambiando il nostro mondo rapidamente.",
+        "ru": "Технология быстро меняет наш мир.",
+        "zh": "科技正在快速改变我们的世界。",
+        "tr": "Teknoloji dünyamızı hızla değiştiriyor."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to learn programming.",
+      translations: {
+        "ar": "أريد تعلم البرمجة.",
+        "de": "Ich möchte Programmieren lernen.",
+        "es": "Quiero aprender programación.",
+        "fr": "Je veux apprendre la programmation.",
+        "it": "Voglio imparare la programmazione.",
+        "ru": "Я хочу научиться программировать.",
+        "zh": "我想学编程。",
+        "tr": "Programlama öğrenmek istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "Computers are very useful tools.",
+      translations: {
+        "ar": "أجهزة الكمبيوتر أدوات مفيدة جدا.",
+        "de": "Computer sind sehr nützliche Werkzeuge.",
+        "es": "Las computadoras son herramientas muy útiles.",
+        "fr": "Les ordinateurs sont des outils très utiles.",
+        "it": "I computer sono strumenti molto utili.",
+        "ru": "Компьютеры - очень полезные инструменты.",
+        "zh": "电脑是非常有用的工具。",
+        "tr": "Bilgisayarlar çok kullanışlı araçlardır."
+      }
+    ),
+
+    // ========== عن المستقبل ==========
+    LearningCard(
+      primaryText: "I am optimistic about the future.",
+      translations: {
+        "ar": "أنا متفائل بالمستقبل.",
+        "de": "Ich bin optimistisch für die Zukunft.",
+        "es": "Soy optimista sobre el futuro.",
+        "fr": "Je suis optimiste quant à l'avenir.",
+        "it": "Sono ottimista per il futuro.",
+        "ru": "Я оптимистично настроен на будущее.",
+        "zh": "我对未来持乐观态度。",
+        "tr": "Gelecek hakkında iyimserim."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to own my own business one day.",
+      translations: {
+        "ar": "أريد أن أمتلك عملي الخاص يوما ما.",
+        "de": "Ich möchte eines Tages mein eigenes Geschäft haben.",
+        "es": "Quiero tener mi propio negocio algún día.",
+        "fr": "Je veux posséder ma propre entreprise un jour.",
+        "it": "Voglio avere un'attività mia un giorno.",
+        "ru": "Я хочу однажды иметь свой бизнес.",
+        "zh": "我想有一天拥有自己的企业。",
+        "tr": "Bir gün kendi işime sahip olmak istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I will never stop learning.",
+      translations: {
+        "ar": "لن أتوقف عن التعلم أبدا.",
+        "de": "Ich werde nie aufhören zu lernen.",
+        "es": "Nunca dejaré de aprender.",
+        "fr": "Je n'arrêterai jamais d'apprendre.",
+        "it": "Non smetterò mai di imparare.",
+        "ru": "Я никогда не перестану учиться.",
+        "zh": "我永远不会停止学习。",
+        "tr": "Asla öğrenmeyi bırakmayacağım."
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "مقابلة عمل - Interview (جمل إضافية 3)",
+      cards: interviewCards,
+    );
+  }
+}
+
+
+
+
+
+
+///////////////////
+///////////////////////
+////////////////////////
+
+
+class InterviewScreen4 extends StatelessWidget {
+  // ✅ جمل جديدة عن أسباب التقديم على الشركة
+  final List<LearningCard> interviewCards = const [
+    // ========== لماذا تريد العمل معنا؟ ==========
+    LearningCard(
+      primaryText: "I chose your company because of its good reputation.",
+      translations: {
+        "ar": "اخترت شركتكم بسبب سمعتها الطيبة.",
+        "de": "Ich habe Ihr Unternehmen wegen seines guten Rufs gewählt.",
+        "es": "Elegí su empresa por su buena reputación.",
+        "fr": "J'ai choisi votre entreprise pour sa bonne réputation.",
+        "it": "Ho scelto la vostra azienda per la sua buona reputazione.",
+        "ru": "Я выбрал вашу компанию из-за ее хорошей репутации.",
+        "zh": "我选择贵公司是因为它的良好声誉。",
+        "tr": "İyi itibarı nedeniyle şirketinizi seçtim."
+      }
+    ),
+    LearningCard(
+      primaryText: "Your company offers great career opportunities.",
+      translations: {
+        "ar": "شركتكم تقدم فرص وظيفية رائعة.",
+        "de": "Ihr Unternehmen bietet großartige Karrieremöglichkeiten.",
+        "es": "Su empresa ofrece excelentes oportunidades profesionales.",
+        "fr": "Votre entreprise offre d'excellentes opportunités de carrière.",
+        "it": "La vostra azienda offre grandi opportunità di carriera.",
+        "ru": "Ваша компания предлагает отличные карьерные возможности.",
+        "zh": "贵公司提供了很好的职业机会。",
+        "tr": "Şirketiniz harika kariyer fırsatları sunuyor."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to grow professionally with your team.",
+      translations: {
+        "ar": "أريد أن أنمو مهنيا مع فريقكم.",
+        "de": "Ich möchte mit Ihrem Team beruflich wachsen.",
+        "es": "Quiero crecer profesionalmente con su equipo.",
+        "fr": "Je veux grandir professionnellement avec votre équipe.",
+        "it": "Voglio crescere professionalmente con il vostro team.",
+        "ru": "Я хочу профессионально расти с вашей командой.",
+        "zh": "我想和你们的团队一起专业成长。",
+        "tr": "Ekibinizle profesyonel olarak büyümek istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I admire your company's values and vision.",
+      translations: {
+        "ar": "أنا معجب بقيم شركتكم ورؤيتها.",
+        "de": "Ich bewundere die Werte und Vision Ihres Unternehmens.",
+        "es": "Admiro los valores y la visión de su empresa.",
+        "fr": "J'admire les valeurs et la vision de votre entreprise.",
+        "it": "Ammiro i valori e la visione della vostra azienda.",
+        "ru": "Я восхищаюсь ценностями и видением вашей компании.",
+        "zh": "我钦佩贵公司的价值观和愿景。",
+        "tr": "Şirketinizin değerlerine ve vizyonuna hayranım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to be part of a successful team like yours.",
+      translations: {
+        "ar": "أريد أن أكون جزءا من فريق ناجح مثل فريقكم.",
+        "de": "Ich möchte Teil eines erfolgreichen Teams wie Ihres sein.",
+        "es": "Quiero ser parte de un equipo exitoso como el suyo.",
+        "fr": "Je veux faire partie d'une équipe performante comme la vôtre.",
+        "it": "Voglio far parte di un team di successo come il vostro.",
+        "ru": "Я хочу быть частью успешной команды, как ваша.",
+        "zh": "我想成为像你们这样成功的团队的一员。",
+        "tr": "Sizin gibi başarılı bir ekibin parçası olmak istiyorum."
+      }
+    ),
+
+    // ========== لماذا تركت العمل القديم؟ ==========
+    LearningCard(
+      primaryText: "I left my old job to find new challenges.",
+      translations: {
+        "ar": "تركت وظيفتي القديمة لأجد تحديات جديدة.",
+        "de": "Ich habe meinen alten Job verlassen, um neue Herausforderungen zu finden.",
+        "es": "Dejé mi antiguo trabajo para encontrar nuevos desafíos.",
+        "fr": "J'ai quitté mon ancien emploi pour trouver de nouveaux défis.",
+        "it": "Ho lasciato il mio vecchio lavoro per trovare nuove sfide.",
+        "ru": "Я ушел с прежней работы, чтобы найти новые задачи.",
+        "zh": "我离开旧工作是为了寻找新的挑战。",
+        "tr": "Yeni zorluklar bulmak için eski işimden ayrıldım."
+      }
+    ),
+    LearningCard(
+      primaryText: "There was no room for growth in my previous job.",
+      translations: {
+        "ar": "لم يكن هناك مجال للنمو في وظيفتي السابقة.",
+        "de": "Es gab keinen Raum für Wachstum in meinem vorherigen Job.",
+        "es": "No había espacio para crecer en mi trabajo anterior.",
+        "fr": "Il n'y avait pas de place pour grandir dans mon ancien emploi.",
+        "it": "Non c'era spazio per crescere nel mio precedente lavoro.",
+        "ru": "В моей предыдущей работе не было места для роста.",
+        "zh": "我以前的工作没有成长的空间。",
+        "tr": "Önceki işimde büyüme alanı yoktu."
+      }
+    ),
+    LearningCard(
+      primaryText: "I wanted a job that matches my skills better.",
+      translations: {
+        "ar": "أردت وظيفة تتناسب بشكل أفضل مع مهاراتي.",
+        "de": "Ich wollte einen Job, der besser zu meinen Fähigkeiten passt.",
+        "es": "Quería un trabajo que se adaptara mejor a mis habilidades.",
+        "fr": "Je voulais un emploi qui correspond mieux à mes compétences.",
+        "it": "Volevo un lavoro che corrispondesse meglio alle mie capacità.",
+        "ru": "Я хотел работу, которая лучше соответствует моим навыкам.",
+        "zh": "我想要一份更符合我技能的工作。",
+        "tr": "Yeteneklerime daha uygun bir iş istedim."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am looking for a better work environment.",
+      translations: {
+        "ar": "أنا أبحث عن بيئة عمل أفضل.",
+        "de": "Ich suche ein besseres Arbeitsumfeld.",
+        "es": "Estoy buscando un mejor ambiente de trabajo.",
+        "fr": "Je cherche un meilleur environnement de travail.",
+        "it": "Sto cercando un ambiente di lavoro migliore.",
+        "ru": "Я ищу лучшую рабочую среду.",
+        "zh": "我正在寻找更好的工作环境。",
+        "tr": "Daha iyi bir çalışma ortamı arıyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "My previous job did not appreciate my efforts.",
+      translations: {
+        "ar": "وظيفتي السابقة لم تقدر جهودي.",
+        "de": "Mein vorheriger Job hat meine Bemühungen nicht geschätzt.",
+        "es": "Mi trabajo anterior no apreciaba mis esfuerzos.",
+        "fr": "Mon ancien emploi n'appréciait pas mes efforts.",
+        "it": "Il mio precedente lavoro non apprezzava i miei sforzi.",
+        "ru": "Моя предыдущая работа не ценила мои усилия.",
+        "zh": "我以前的工作不欣赏我的努力。",
+        "tr": "Önceki işim çabalarımı takdir etmedi."
+      }
+    ),
+
+    // ========== كم سنة خبرة؟ ==========
+    LearningCard(
+      primaryText: "I have three years of work experience.",
+      translations: {
+        "ar": "لدي ثلاث سنوات من الخبرة العملية.",
+        "de": "Ich habe drei Jahre Berufserfahrung.",
+        "es": "Tengo tres años de experiencia laboral.",
+        "fr": "J'ai trois ans d'expérience professionnelle.",
+        "it": "Ho tre anni di esperienza lavorativa.",
+        "ru": "У меня три года опыта работы.",
+        "zh": "我有三年的工作经验。",
+        "tr": "Üç yıllık iş tecrübem var."
+      }
+    ),
+    LearningCard(
+      primaryText: "I gained valuable experience in customer service.",
+      translations: {
+        "ar": "اكتسبت خبرة قيمة في خدمة العملاء.",
+        "de": "Ich habe wertvolle Erfahrungen im Kundenservice gesammelt.",
+        "es": "Adquirí valiosa experiencia en atención al cliente.",
+        "fr": "J'ai acquis une expérience précieuse dans le service client.",
+        "it": "Ho acquisito una preziosa esperienza nel servizio clienti.",
+        "ru": "Я приобрел ценный опыт в обслуживании клиентов.",
+        "zh": "我在客户服务方面获得了宝贵的经验。",
+        "tr": "Müşteri hizmetlerinde değerli deneyim kazandım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I worked in my field for two years.",
+      translations: {
+        "ar": "عملت في مجالي لمدة سنتين.",
+        "de": "Ich habe zwei Jahre in meinem Bereich gearbeitet.",
+        "es": "Trabajé en mi campo durante dos años.",
+        "fr": "J'ai travaillé dans mon domaine pendant deux ans.",
+        "it": "Ho lavorato nel mio campo per due anni.",
+        "ru": "Я работал в своей области два года.",
+        "zh": "我在我的领域工作了两年。",
+        "tr": "Alanımda iki yıl çalıştım."
+      }
+    ),
+    LearningCard(
+      primaryText: "My experience has taught me many things.",
+      translations: {
+        "ar": "خبرتي علمتني أشياء كثيرة.",
+        "de": "Meine Erfahrung hat mich viele Dinge gelehrt.",
+        "es": "Mi experiencia me ha enseñado muchas cosas.",
+        "fr": "Mon expérience m'a appris beaucoup de choses.",
+        "it": "La mia esperienza mi ha insegnato molte cose.",
+        "ru": "Мой опыт научил меня многому.",
+        "zh": "我的经验教会了我很多东西。",
+        "tr": "Deneyimim bana birçok şey öğretti."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am confident in my skills and experience.",
+      translations: {
+        "ar": "أنا واثق من مهاراتي وخبراتي.",
+        "de": "Ich bin zuversichtlich in meine Fähigkeiten und Erfahrungen.",
+        "es": "Tengo confianza en mis habilidades y experiencia.",
+        "fr": "J'ai confiance en mes compétences et mon expérience.",
+        "it": "Sono fiducioso nelle mie capacità ed esperienza.",
+        "ru": "Я уверен в своих навыках и опыте.",
+        "zh": "我对自己的技能和经验充满信心。",
+        "tr": "Yeteneklerime ve deneyimime güveniyorum."
+      }
+    ),
+
+    // ========== هل عملت باللغة من قبل؟ ==========
+    LearningCard(
+      primaryText: "I have worked using English before.",
+      translations: {
+        "ar": "لقد عملت باستخدام اللغة الإنجليزية من قبل.",
+        "de": "Ich habe schon einmal auf Englisch gearbeitet.",
+        "es": "He trabajado usando inglés antes.",
+        "fr": "J'ai déjà travaillé en utilisant l'anglais.",
+        "it": "Ho già lavorato usando l'inglese.",
+        "ru": "Я уже работал на английском языке.",
+        "zh": "我以前用过英语工作。",
+        "tr": "Daha önce İngilizce kullanarak çalıştım."
+      }
+    ),
+    LearningCard(
+      primaryText: "I used German with some customers at work.",
+      translations: {
+        "ar": "استخدمت اللغة الألمانية مع بعض العملاء في العمل.",
+        "de": "Ich habe auf der Arbeit mit einigen Kunden Deutsch gesprochen.",
+        "es": "Usé alemán con algunos clientes en el trabajo.",
+        "fr": "J'ai utilisé l'allemand avec certains clients au travail.",
+        "it": "Ho usato il tedesco con alcuni clienti al lavoro.",
+        "ru": "Я использовал немецкий с некоторыми клиентами на работе.",
+        "zh": "我在工作中和一些客户使用德语。",
+        "tr": "İş yerinde bazı müşterilerle Almanca kullandım."
+      }
+    ),
+    LearningCard(
+      primaryText: "Language was not required in my previous job.",
+      translations: {
+        "ar": "اللغة لم تكن مطلوبة في وظيفتي السابقة.",
+        "de": "Sprache war in meinem vorherigen Job nicht erforderlich.",
+        "es": "El idioma no era necesario en mi trabajo anterior.",
+        "fr": "La langue n'était pas exigée dans mon précédent emploi.",
+        "it": "La lingua non era richiesta nel mio precedente lavoro.",
+        "ru": "Язык не требовался на моей предыдущей работе.",
+        "zh": "我以前的工作不需要语言。",
+        "tr": "Önceki işimde dil gerekli değildi."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am ready to use German professionally now.",
+      translations: {
+        "ar": "أنا مستعد لاستخدام اللغة الألمنية بشكل احترافي الآن.",
+        "de": "Ich bin jetzt bereit, Deutsch professionell zu verwenden.",
+        "es": "Estoy listo para usar alemán profesionalmente ahora.",
+        "fr": "Je suis prêt à utiliser l'allemand professionnellement maintenant.",
+        "it": "Sono pronto a usare il tedesco professionalmente ora.",
+        "ru": "Я готов профессионально использовать немецкий язык сейчас.",
+        "zh": "我现在准备专业地使用德语。",
+        "tr": "Şimdi profesyonelce Almanca kullanmaya hazırım."
+      }
+    ),
+
+    // ========== لماذا أحببت هذا المجال؟ ==========
+    LearningCard(
+      primaryText: "I love this field because it is always changing.",
+      translations: {
+        "ar": "أحب هذا المجال لأنه يتغير دائما.",
+        "de": "Ich liebe dieses Feld, weil es sich ständig verändert.",
+        "es": "Amo este campo porque siempre está cambiando.",
+        "fr": "J'aime ce domaine parce qu'il change toujours.",
+        "it": "Amo questo campo perché cambia sempre.",
+        "ru": "Мне нравится эта область, потому что она постоянно меняется.",
+        "zh": "我喜欢这个领域，因为它总是在变化。",
+        "tr": "Bu alanı seviyorum çünkü sürekli değişiyor."
+      }
+    ),
+    LearningCard(
+      primaryText: "I feel passionate about this industry.",
+      translations: {
+        "ar": "أشعر بشغف تجاه هذه الصناعة.",
+        "de": "Ich habe eine Leidenschaft für diese Branche.",
+        "es": "Siento pasión por esta industria.",
+        "fr": "Je suis passionné par cette industrie.",
+        "it": "Sono appassionato di questo settore.",
+        "ru": "Я увлечен этой отраслью.",
+        "zh": "我对这个行业充满热情。",
+        "tr": "Bu sektöre karşı tutkuluyum."
+      }
+    ),
+    LearningCard(
+      primaryText: "This field matches my interests perfectly.",
+      translations: {
+        "ar": "هذا المجال يتناسب مع اهتماماتي بشكل مثالي.",
+        "de": "Dieses Feld passt perfekt zu meinen Interessen.",
+        "es": "Este campo coincide perfectamente con mis intereses.",
+        "fr": "Ce domaine correspond parfaitement à mes intérêts.",
+        "it": "Questo campo corrisponde perfettamente ai miei interessi.",
+        "ru": "Эта область идеально соответствует моим интересам.",
+        "zh": "这个领域非常符合我的兴趣。",
+        "tr": "Bu alan ilgi alanlarıma mükemmel şekilde uyuyor."
+      }
+    ),
+    LearningCard(
+      primaryText: "I enjoy solving problems in this field.",
+      translations: {
+        "ar": "أنا أستمتع بحل المشاكل في هذا المجال.",
+        "de": "Ich löse gerne Probleme in diesem Bereich.",
+        "es": "Disfruto resolviendo problemas en este campo.",
+        "fr": "J'aime résoudre des problèmes dans ce domaine.",
+        "it": "Mi piace risolvere i problemi in questo campo.",
+        "ru": "Мне нравится решать проблемы в этой области.",
+        "zh": "我喜欢在这个领域解决问题。",
+        "tr": "Bu alandaki sorunları çözmekten zevk alıyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "This field gives me energy and motivation.",
+      translations: {
+        "ar": "هذا المجال يعطيني الطاقة والدافعية.",
+        "de": "Dieses Feld gibt mir Energie und Motivation.",
+        "es": "Este campo me da energía y motivación.",
+        "fr": "Ce domaine me donne de l'énergie et de la motivation.",
+        "it": "Questo campo mi dà energia e motivazione.",
+        "ru": "Эта область дает мне энергию и мотивацию.",
+        "zh": "这个领域给我能量和动力。",
+        "tr": "Bu alan bana enerji ve motivasyon veriyor."
+      }
+    ),
+    LearningCard(
+      primaryText: "I have loved this job since I was young.",
+      translations: {
+        "ar": "أنا أحب هذه الوظيفة منذ أن كنت صغيرا.",
+        "de": "Ich liebe diesen Job, seit ich jung war.",
+        "es": "He amado este trabajo desde que era joven.",
+        "fr": "J'aime ce métier depuis mon plus jeune âge.",
+        "it": "Amo questo lavoro fin da quando ero giovane.",
+        "ru": "Я люблю эту работу с детства.",
+        "zh": "我从小就喜欢这份工作。",
+        "tr": "Bu işi küçüklüğümden beri seviyorum."
+      }
+    ),
+
+    // ========== أمثلة إضافية ==========
+    LearningCard(
+      primaryText: "I believe your company is the right place for me.",
+      translations: {
+        "ar": "أعتقد أن شركتكم هي المكان المناسب لي.",
+        "de": "Ich glaube, Ihr Unternehmen ist der richtige Ort für mich.",
+        "es": "Creo que su empresa es el lugar adecuado para mí.",
+        "fr": "Je crois que votre entreprise est le bon endroit pour moi.",
+        "it": "Credo che la vostra azienda sia il posto giusto per me.",
+        "ru": "Я считаю, что ваша компания - подходящее место для меня.",
+        "zh": "我相信贵公司是适合我的地方。",
+        "tr": "Şirketinizin benim için doğru yer olduğuna inanıyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I want to contribute to your company's success.",
+      translations: {
+        "ar": "أريد المساهمة في نجاح شركتكم.",
+        "de": "Ich möchte zum Erfolg Ihres Unternehmens beitragen.",
+        "es": "Quiero contribuir al éxito de su empresa.",
+        "fr": "Je veux contribuer au succès de votre entreprise.",
+        "it": "Voglio contribuire al successo della vostra azienda.",
+        "ru": "Я хочу внести вклад в успех вашей компании.",
+        "zh": "我想为贵公司的成功做出贡献。",
+        "tr": "Şirketinizin başarısına katkıda bulunmak istiyorum."
+      }
+    ),
+    LearningCard(
+      primaryText: "I am excited to start working with you.",
+      translations: {
+        "ar": "أنا متحمس لبدء العمل معكم.",
+        "de": "Ich freue mich darauf, mit Ihnen zu arbeiten.",
+        "es": "Estoy emocionado de comenzar a trabajar con ustedes.",
+        "fr": "Je suis excité de commencer à travailler avec vous.",
+        "it": "Sono entusiasta di iniziare a lavorare con voi.",
+        "ru": "Я рад начать работать с вами.",
+        "zh": "我很高兴能开始与你们一起工作。",
+        "tr": "Sizinle çalışmaya başlamak için heyecanlıyım."
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LearningCardsScreen(
+      categoryTitle: "مقابلة عمل - أسباب التقديم والخبرة",
+      cards: interviewCards,
+    );
+  }
+}
+
+
+
+
