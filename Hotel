@@ -1,0 +1,1532 @@
+class HotelDialogue1Screen extends StatelessWidget {
+  final List<ItemCard> dialogue = const [
+    // ========== المحادثة الأولى: الحجز في الفندق (30+ جملة) ==========
+    ItemCard(
+      english: "Good morning! I would like to book a room, please.",
+      translations: {
+        "ar": "صباح الخير! أود حجز غرفة من فضلك.",
+        "de": "Guten Morgen! Ich möchte bitte ein Zimmer reservieren.",
+        "es": "¡Buenos días! Me gustaría reservar una habitación, por favor.",
+        "fr": "Bonjour! Je voudrais réserver une chambre, s'il vous plaît.",
+        "it": "Buongiorno! Vorrei prenotare una camera, per favore.",
+        "ru": "Доброе утро! Я хотел бы забронировать номер, пожалуйста.",
+        "zh": "早上好！我想预订一个房间。",
+        "tr": "Günaydın! Bir oda rezervasyonu yapmak istiyorum lütfen."
+      }
+    ),
+    ItemCard(
+      english: "Of course, sir. What type of room do you prefer?",
+      translations: {
+        "ar": "بالتأكيد يا سيد. ما نوع الغرفة التي تفضلها؟",
+        "de": "Natürlich, mein Herr. Welche Art von Zimmer bevorzugen Sie?",
+        "es": "Por supuesto, señor. ¿Qué tipo de habitación prefiere?",
+        "fr": "Bien sûr, monsieur. Quel type de chambre préférez-vous?",
+        "it": "Certamente, signore. Che tipo di camera preferisci?",
+        "ru": "Конечно, сэр. Какой тип номера вы предпочитаете?",
+        "zh": "当然可以，先生。您喜欢什么样的房间？",
+        "tr": "Tabii ki efendim. Ne tür bir oda tercih edersiniz?"
+      }
+    ),
+    ItemCard(
+      english: "I'd like a double room with a sea view, please.",
+      translations: {
+        "ar": "أريد غرفة مزدوجة مع إطلالة على البحر من فضلك.",
+        "de": "Ich hätte gerne ein Doppelzimmer mit Meerblick, bitte.",
+        "es": "Me gustaría una habitación doble con vista al mar, por favor.",
+        "fr": "Je voudrais une chambre double avec vue sur la mer, s'il vous plaît.",
+        "it": "Vorrei una camera doppia con vista sul mare, per favore.",
+        "ru": "Я хотел бы двухместный номер с видом на море, пожалуйста.",
+        "zh": "我想要一间海景双人房。",
+        "tr": "Deniz manzaralı bir çift kişilik oda istiyorum lütfen."
+      }
+    ),
+    ItemCard(
+      english: "Excellent choice. For how many nights?",
+      translations: {
+        "ar": "اختيار ممتاز. كم عدد الليالي؟",
+        "de": "Ausgezeichnete Wahl. Für wie viele Nächte?",
+        "es": "Excelente elección. ¿Por cuántas noches?",
+        "fr": "Excellent choix. Pour combien de nuits?",
+        "it": "Eccellente scelta. Per quante notti?",
+        "ru": "Отличный выбор. На сколько ночей?",
+        "zh": "好选择。住几个晚上？",
+        "tr": "Mükemmel seçim. Kaç gecelik?"
+      }
+    ),
+    ItemCard(
+      english: "We will stay for three nights, from Friday to Monday.",
+      translations: {
+        "ar": "سوف نقيم لمدة ثلاث ليال، من الجمعة إلى الاثنين.",
+        "de": "Wir werden drei Nächte bleiben, von Freitag bis Montag.",
+        "es": "Nos quedaremos tres noches, de viernes a lunes.",
+        "fr": "Nous resterons trois nuits, du vendredi au lundi.",
+        "it": "Resteremo per tre notti, da venerdì a lunedì.",
+        "ru": "Мы останемся на три ночи, с пятницы по понедельник.",
+        "zh": "我们将住三个晚上，从周五到周一。",
+        "tr": "Cuma'dan Pazartesi'ye kadar üç gece kalacağız."
+      }
+    ),
+    ItemCard(
+      english: "Do you need a single or double bed?",
+      translations: {
+        "ar": "هل تحتاج سرير فردي أم مزدوج؟",
+        "de": "Benötigen Sie ein Einzel- oder Doppelbett?",
+        "es": "¿Necesita cama individual o doble?",
+        "fr": "Avez-vous besoin d'un lit simple ou double?",
+        "it": "Hai bisogno di un letto singolo o matrimoniale?",
+        "ru": "Вам нужна односпальная или двуспальная кровать?",
+        "zh": "您需要单人床还是双人床？",
+        "tr": "Tek kişilik mi yoksa çift kişilik yatak mı istiyorsunuz?"
+      }
+    ),
+    ItemCard(
+      english: "A double bed, please. We are a couple.",
+      translations: {
+        "ar": "سرير مزدوج من فضلك. نحن زوجان.",
+        "de": "Ein Doppelbett, bitte. Wir sind ein Paar.",
+        "es": "Una cama doble, por favor. Somos una pareja.",
+        "fr": "Un lit double, s'il vous plaît. Nous sommes un couple.",
+        "it": "Un letto matrimoniale, per favore. Siamo una coppia.",
+        "ru": "Двуспальную кровать, пожалуйста. Мы пара.",
+        "zh": "双人床。我们是一对夫妇。",
+        "tr": "Çift kişilik yatak lütfen. Biz bir çiftiz."
+      }
+    ),
+    ItemCard(
+      english: "Would you like breakfast included?",
+      translations: {
+        "ar": "هل ترغب في تضمين وجبة الإفطار؟",
+        "de": "Möchten Sie Frühstück inklusive?",
+        "es": "¿Le gustaría que incluyera el desayuno?",
+        "fr": "Souhaitez-vous que le petit-déjeuner soit inclus?",
+        "it": "Vorresti la colazione inclusa?",
+        "ru": "Вы хотели бы включить завтрак?",
+        "zh": "您想要包含早餐吗？",
+        "tr": "Kahvaltı dahil olsun ister misiniz?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, please. Breakfast is important for us.",
+      translations: {
+        "ar": "نعم من فضلك. الإفطار مهم بالنسبة لنا.",
+        "de": "Ja, bitte. Frühstück ist wichtig für uns.",
+        "es": "Sí, por favor. El desayuno es importante para nosotros.",
+        "fr": "Oui, s'il vous plaît. Le petit-déjeuner est important pour nous.",
+        "it": "Sì, per favore. La colazione è importante per noi.",
+        "ru": "Да, пожалуйста. Завтрак важен для нас.",
+        "zh": "是的。早餐对我们很重要。",
+        "tr": "Evet lütfen. Kahvaltı bizim için önemli."
+      }
+    ),
+    ItemCard(
+      english: "What is the price per night?",
+      translations: {
+        "ar": "ما هو سعر الليلة الواحدة؟",
+        "de": "Was ist der Preis pro Nacht?",
+        "es": "¿Cuál es el precio por noche?",
+        "fr": "Quel est le prix par nuit?",
+        "it": "Qual è il prezzo per notte?",
+        "ru": "Какова цена за ночь?",
+        "zh": "每晚的价格是多少？",
+        "tr": "Gecelik fiyatı nedir?"
+      }
+    ),
+    ItemCard(
+      english: "The double room with sea view is 120 euros per night.",
+      translations: {
+        "ar": "الغرفة المزدوجة مع إطلالة على البحر 120 يورو في الليلة.",
+        "de": "Das Doppelzimmer mit Meerblick kostet 120 Euro pro Nacht.",
+        "es": "La habitación doble con vista al mar cuesta 120 euros por noche.",
+        "fr": "La chambre double avec vue sur la mer coûte 120 euros par nuit.",
+        "it": "La camera doppia con vista mare costa 120 euro a notte.",
+        "ru": "Двухместный номер с видом на море стоит 120 евро за ночь.",
+        "zh": "海景双人房每晚120欧元。",
+        "tr": "Deniz manzaralı çift kişilik oda gecelik 120 euro."
+      }
+    ),
+    ItemCard(
+      english: "That includes breakfast, correct?",
+      translations: {
+        "ar": "هذا يشمل الإفطار، أليس كذلك؟",
+        "de": "Das inkludiert Frühstück, richtig?",
+        "es": "Eso incluye desayuno, ¿correcto?",
+        "fr": "Cela inclut le petit-déjeuner, n'est-ce pas?",
+        "it": "Questo include la colazione, giusto?",
+        "ru": "Это включает завтрак, верно?",
+        "zh": "那包括早餐，对吗？",
+        "tr": "Bu kahvaltıyı içeriyor, değil mi?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, breakfast is included in the price.",
+      translations: {
+        "ar": "نعم، الإفطار مشمول في السعر.",
+        "de": "Ja, das Frühstück ist im Preis inbegriffen.",
+        "es": "Sí, el desayuno está incluido en el precio.",
+        "fr": "Oui, le petit-déjeuner est inclus dans le prix.",
+        "it": "Sì, la colazione è inclusa nel prezzo.",
+        "ru": "Да, завтрак включен в цену.",
+        "zh": "是的，早餐包含在价格中。",
+        "tr": "Evet, kahvaltı fiyata dahildir."
+      }
+    ),
+    ItemCard(
+      english: "Great! I'll take it. Can I see the room first?",
+      translations: {
+        "ar": "رائع! سآخذها. هل يمكنني رؤية الغرفة أولا؟",
+        "de": "Großartig! Ich nehme es. Kann ich zuerst das Zimmer sehen?",
+        "es": "¡Genial! La tomaré. ¿Puedo ver la habitación primero?",
+        "fr": "Super! Je la prends. Puis-je voir la chambre d'abord?",
+        "it": "Ottimo! La prendo. Posso vedere prima la camera?",
+        "ru": "Отлично! Я беру. Могу я сначала посмотреть номер?",
+        "zh": "太好了！我就要它。我能先看看房间吗？",
+        "tr": "Harika! Alıyorum. Önce odayı görebilir miyim?"
+      }
+    ),
+    ItemCard(
+      english: "Of course. I'll show you a similar room on the fifth floor.",
+      translations: {
+        "ar": "بالتأكيد. سأريكم غرفة مماثلة في الطابق الخامس.",
+        "de": "Natürlich. Ich zeige Ihnen ein ähnliches Zimmer im fünften Stock.",
+        "es": "Por supuesto. Le mostraré una habitación similar en el quinto piso.",
+        "fr": "Bien sûr. Je vais vous montrer une chambre similaire au cinquième étage.",
+        "it": "Certamente. Ti mostrerò una stanza simile al quinto piano.",
+        "ru": "Конечно. Я покажу вам похожий номер на пятом этаже.",
+        "zh": "当然。我带您去看五楼一间类似的房间。",
+        "tr": "Tabii ki. Size beşinci katta benzer bir oda göstereceğim."
+      }
+    ),
+    ItemCard(
+      english: "The room is beautiful and very clean.",
+      translations: {
+        "ar": "الغرفة جميلة ونظيفة جدا.",
+        "de": "Das Zimmer ist schön und sehr sauber.",
+        "es": "La habitación es hermosa y muy limpia.",
+        "fr": "La chambre est belle et très propre.",
+        "it": "La stanza è bella e molto pulita.",
+        "ru": "Номер красивый и очень чистый.",
+        "zh": "房间漂亮又干净。",
+        "tr": "Oda güzel ve çok temiz."
+      }
+    ),
+    ItemCard(
+      english: "The view from the window is amazing!",
+      translations: {
+        "ar": "المنظر من النافذة رائع!",
+        "de": "Die Aussicht aus dem Fenster ist atemberaubend!",
+        "es": "¡La vista desde la ventana es increíble!",
+        "fr": "La vue depuis la fenêtre est incroyable!",
+        "it": "La vista dalla finestra è fantastica!",
+        "ru": "Вид из окна потрясающий!",
+        "zh": "窗外的景色太棒了！",
+        "tr": "Pencereden manzara harika!"
+      }
+    ),
+    ItemCard(
+      english: "I'm glad you like it. Shall I proceed with the booking?",
+      translations: {
+        "ar": "أنا سعيد لأنك أحببته. هل تابع الحجز؟",
+        "de": "Ich freue mich, dass es Ihnen gefällt. Soll ich mit der Buchung fortfahren?",
+        "es": "Me alegra que le guste. ¿Procedo con la reserva?",
+        "fr": "Je suis heureux que cela vous plaise. Dois-je procéder à la réservation?",
+        "it": "Sono felice che ti piaccia. Devo procedere con la prenotazione?",
+        "ru": "Я рад, что вам нравится. Мне продолжить бронирование?",
+        "zh": "很高兴您喜欢。我继续预订吗？",
+        "tr": "Beğenmenize sevindim. Rezervasyonla devam edeyim mi?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, please. I'll pay with my credit card.",
+      translations: {
+        "ar": "نعم من فضلك. سأدفع ببطاقة الائتمان الخاصة بي.",
+        "de": "Ja, bitte. Ich werde mit meiner Kreditkarte bezahlen.",
+        "es": "Sí, por favor. Pagaré con mi tarjeta de crédito.",
+        "fr": "Oui, s'il vous plaît. Je paierai avec ma carte de crédit.",
+        "it": "Sì, per favore. Pagherò con la mia carta di credito.",
+        "ru": "Да, пожалуйста. Я заплачу своей кредитной картой.",
+        "zh": "好的。我用信用卡支付。",
+        "tr": "Evet lütfen. Kredi kartımla ödeyeceğim."
+      }
+    ),
+    ItemCard(
+      english: "May I have your name and contact information?",
+      translations: {
+        "ar": "هل يمكنني الحصول على اسمك ومعلومات الاتصال بك؟",
+        "de": "Kann ich Ihren Namen und Ihre Kontaktdaten haben?",
+        "es": "¿Puedo tener su nombre e información de contacto?",
+        "fr": "Puis-je avoir votre nom et vos coordonnées?",
+        "it": "Posso avere il tuo nome e le tue informazioni di contatto?",
+        "ru": "Могу я узнать ваше имя и контактные данные?",
+        "zh": "可以给我您的姓名和联系方式吗？",
+        "tr": "Adınızı ve iletişim bilgilerinizi alabilir miyim?"
+      }
+    ),
+    ItemCard(
+      english: "My name is Ahmed. Here is my phone number.",
+      translations: {
+        "ar": "اسمي أحمد. هذا هو رقم هاتفي.",
+        "de": "Mein Name ist Ahmed. Hier ist meine Telefonnummer.",
+        "es": "Mi nombre es Ahmed. Aquí está mi número de teléfono.",
+        "fr": "Je m'appelle Ahmed. Voici mon numéro de téléphone.",
+        "it": "Mi chiamo Ahmed. Ecco il mio numero di telefono.",
+        "ru": "Меня зовут Ахмед. Вот мой номер телефона.",
+        "zh": "我叫艾哈迈德。这是我的电话号码。",
+        "tr": "Adım Ahmed. İşte telefon numaram."
+      }
+    ),
+    ItemCard(
+      english: "Perfect. Your booking is confirmed. Here is your confirmation number.",
+      translations: {
+        "ar": "ممتاز. تم تأكيد حجزك. هذا هو رقم تأكيد الحجز الخاص بك.",
+        "de": "Perfekt. Ihre Buchung ist bestätigt. Hier ist Ihre Bestätigungsnummer.",
+        "es": "Perfecto. Su reserva está confirmada. Aquí está su número de confirmación.",
+        "fr": "Parfait. Votre réservation est confirmée. Voici votre numéro de confirmation.",
+        "it": "Perfetto. La tua prenotazione è confermata. Ecco il tuo numero di conferma.",
+        "ru": "Отлично. Ваше бронирование подтверждено. Вот ваш номер подтверждения.",
+        "zh": "完美。您的预订已确认。这是您的确认号码。",
+        "tr": "Mükemmel. Rezervasyonunuz onaylandı. İşte onay numaranız."
+      }
+    ),
+    ItemCard(
+      english: "Thank you very much. What time is check-in?",
+      translations: {
+        "ar": "شكرا جزيلا. ما هو وقت تسجيل الوصول؟",
+        "de": "Vielen Dank. Wann ist Check-in?",
+        "es": "Muchas gracias. ¿A qué hora es el check-in?",
+        "fr": "Merci beaucoup. À quelle heure est l'enregistrement?",
+        "it": "Grazie mille. A che ora è il check-in?",
+        "ru": "Большое спасибо. Во сколько заезд?",
+        "zh": "非常感谢。入住时间是什么时候？",
+        "tr": "Çok teşekkür ederim. Check-in saati nedir?"
+      }
+    ),
+    ItemCard(
+      english: "Check-in is from 2 PM. Check-out is at 12 PM.",
+      translations: {
+        "ar": "تسجيل الوصول من الساعة 2 مساءً. وقت المغادرة هو الساعة 12 ظهرا.",
+        "de": "Check-in ist ab 14 Uhr. Check-out ist um 12 Uhr mittags.",
+        "es": "El check-in es a partir de las 2 PM. El check-out es a las 12 PM.",
+        "fr": "L'enregistrement se fait à partir de 14h. Le départ est à 12h.",
+        "it": "Il check-in è dalle 14:00. Il check-out è alle 12:00.",
+        "ru": "Заезд с 14:00. Выезд в 12:00.",
+        "zh": "下午2点开始办理入住。退房时间是中午12点。",
+        "tr": "Check-in saat 14:00'ten itibaren. Check-out saat 12:00'dedir."
+      }
+    ),
+    ItemCard(
+      english: "Is there free Wi-Fi in the room?",
+      translations: {
+        "ar": "هل هناك وا فاي مجاني في الغرفة؟",
+        "de": "Gibt es kostenloses WLAN im Zimmer?",
+        "es": "¿Hay Wi-Fi gratis en la habitación?",
+        "fr": "Y a-t-il une connexion Wi-Fi gratuite dans la chambre?",
+        "it": "C'è Wi-Fi gratuito in camera?",
+        "ru": "Есть ли в номере бесплатный Wi-Fi?",
+        "zh": "房间里有免费无线网络吗？",
+        "tr": "Odada ücretsiz Wi-Fi var mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, all our rooms have free high-speed Wi-Fi.",
+      translations: {
+        "ar": "نعم، جميع غرفنا بها واي فاي مجاني عالي السرعة.",
+        "de": "Ja, alle unsere Zimmer haben kostenloses High-Speed-WLAN.",
+        "es": "Sí, todas nuestras habitaciones tienen Wi-Fi gratis de alta velocidad.",
+        "fr": "Oui, toutes nos chambres ont une connexion Wi-Fi gratuite à haut débit.",
+        "it": "Sì, tutte le nostre camere hanno Wi-Fi gratuito ad alta velocità.",
+        "ru": "Да, во всех наших номерах есть бесплатный высокоскоростной Wi-Fi.",
+        "zh": "是的，我们所有的房间都有免费的高速无线网络。",
+        "tr": "Evet, tüm odalarımızda ücretsiz yüksek hızlı Wi-Fi vardır."
+      }
+    ),
+    ItemCard(
+      english: "Is parking available at the hotel?",
+      translations: {
+        "ar": "هل تتوفر مواقف للسيارات في الفندق؟",
+        "de": "Gibt es Parkplätze im Hotel?",
+        "es": "¿Hay estacionamiento disponible en el hotel?",
+        "fr": "Y a-t-il un parking disponible à l'hôtel?",
+        "it": "C'è parcheggio disponibile in hotel?",
+        "ru": "Есть ли парковка в отеле?",
+        "zh": "酒店有停车位吗？",
+        "tr": "Otelde otopark var mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, we have free parking for our guests.",
+      translations: {
+        "ar": "نعم، لدينا موقف سيارات مجاني للنزلاء.",
+        "de": "Ja, wir haben kostenlose Parkplätze für unsere Gäste.",
+        "es": "Sí, tenemos estacionamiento gratuito para nuestros huéspedes.",
+        "fr": "Oui, nous avons un parking gratuit pour nos clients.",
+        "it": "Sì, abbiamo un parcheggio gratuito per i nostri ospiti.",
+        "ru": "Да, у нас есть бесплатная парковка для гостей.",
+        "zh": "是的，我们为客人提供免费停车位。",
+        "tr": "Evet, misafirlerimiz için ücretsiz otoparkımız var."
+      }
+    ),
+    ItemCard(
+      english: "Perfect. Thank you for your help. See you on Friday!",
+      translations: {
+        "ar": "ممتاز. شكرا لمساعدتك. أراك يوم الجمعة!",
+        "de": "Perfekt. Danke für Ihre Hilfe. Wir sehen uns am Freitag!",
+        "es": "Perfecto. Gracias por su ayuda. ¡Nos vemos el viernes!",
+        "fr": "Parfait. Merci pour votre aide. À vendredi!",
+        "it": "Perfetto. Grazie per il vostro aiuto. Ci vediamo venerdì!",
+        "ru": "Отлично. Спасибо за помощь. Увидимся в пятницу!",
+        "zh": "完美。谢谢您的帮助。周五见！",
+        "tr": "Mükemmel. Yardımınız için teşekkür ederim. Cuma günü görüşürüz!"
+      }
+    ),
+    ItemCard(
+      english: "You're welcome. We look forward to welcoming you!",
+      translations: {
+        "ar": "على الرحب والسعة. نحن نتطلع إلى الترحيب بك!",
+        "de": "Gern geschehen. Wir freuen uns auf Sie!",
+        "es": "De nada. ¡Esperamos darle la bienvenida!",
+        "fr": "Je vous en prie. Nous avons hâte de vous accueillir!",
+        "it": "Prego. Non vediamo l'ora di darti il benvenuto!",
+        "ru": "Пожалуйста. Мы с нетерпением ждем вас!",
+        "zh": "不客气。我们期待着欢迎您！",
+        "tr": "Rica ederim. Sizi ağırlamak için sabırsızlanıyoruz!"
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "محادثة الفندق 1 - الحجز",
+      items: dialogue,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+///////////////////////////
+/////////////////////////
+////////////////////////////
+
+
+
+
+
+
+class HotelDialogue2Screen extends StatelessWidget {
+  final List<ItemCard> dialogue = const [
+    // ========== المحادثة الثانية: تسجيل الوصول والاستقبال (30+ جملة) ==========
+    ItemCard(
+      english: "Good evening! I have a reservation under the name Ahmed.",
+      translations: {
+        "ar": "مساء الخير! لدي حجز باسم أحمد.",
+        "de": "Guten Abend! Ich habe eine Reservierung auf den Namen Ahmed.",
+        "es": "¡Buenas noches! Tengo una reserva a nombre de Ahmed.",
+        "fr": "Bonsoir! J'ai une réservation au nom d'Ahmed.",
+        "it": "Buonasera! Ho una prenotazione a nome Ahmed.",
+        "ru": "Добрый вечер! У меня есть бронь на имя Ахмед.",
+        "zh": "晚上好！我有艾哈迈德名字的预订。",
+        "tr": "İyi akşamlar! Ahmed adına bir rezervasyonum var."
+      }
+    ),
+    ItemCard(
+      english: "Welcome to our hotel, Mr. Ahmed. Let me check your reservation.",
+      translations: {
+        "ar": "مرحبا بكم في فندقنا سيد أحمد. دعني أتحقق من حجزك.",
+        "de": "Willkommen in unserem Hotel, Herr Ahmed. Lassen Sie mich Ihre Reservierung überprüfen.",
+        "es": "Bienvenido a nuestro hotel, Sr. Ahmed. Déjeme verificar su reserva.",
+        "fr": "Bienvenue dans notre hôtel, M. Ahmed. Laissez-moi vérifier votre réservation.",
+        "it": "Benvenuto nel nostro hotel, signor Ahmed. Lasciami controllare la tua prenotazione.",
+        "ru": "Добро пожаловать в наш отель, мистер Ахмед. Позвольте мне проверить ваше бронирование.",
+        "zh": "欢迎来到我们的酒店，艾哈迈德先生。让我查一下您的预订。",
+        "tr": "Otelimize hoş geldiniz Bay Ahmed. Rezervasyonunuzu kontrol edeyim."
+      }
+    ),
+    ItemCard(
+      english: "Yes, I see it. A double room with sea view for three nights.",
+      translations: {
+        "ar": "نعم، أراها. غرفة مزدوجة مع إطلالة على البحر لمدة ثلاث ليال.",
+        "de": "Ja, ich sehe es. Ein Doppelzimmer mit Meerblick für drei Nächte.",
+        "es": "Sí, la veo. Una habitación doble con vista al mar por tres noches.",
+        "fr": "Oui, je le vois. Une chambre double avec vue sur la mer pour trois nuits.",
+        "it": "Sì, la vedo. Una camera doppia con vista mare per tre notti.",
+        "ru": "Да, я вижу. Двухместный номер с видом на море на три ночи.",
+        "zh": "是的，我看到了。海景双人房，住三晚。",
+        "tr": "Evet görüyorum. Üç gecelik deniz manzaralı çift kişilik oda."
+      }
+    ),
+    ItemCard(
+      english: "Yes, that's correct. Could I see my room key?",
+      translations: {
+        "ar": "نعم، هذا صحيح. هل يمكنني رؤية مفتاح غرفتي؟",
+        "de": "Ja, das ist richtig. Könnte ich meinen Zimmerschlüssel sehen?",
+        "es": "Sí, es correcto. ¿Podría ver la llave de mi habitación?",
+        "fr": "Oui, c'est exact. Puis-je voir la clé de ma chambre?",
+        "it": "Sì, è corretto. Potrei vedere la chiave della mia camera?",
+        "ru": "Да, верно. Могу я увидеть ключ от моего номера?",
+        "zh": "是的，没错。我能看一下我的房间钥匙吗？",
+        "tr": "Evet, doğru. Odamın anahtarını görebilir miyim?"
+      }
+    ),
+    ItemCard(
+      english: "Of course. Here is your key card. Room 512 on the fifth floor.",
+      translations: {
+        "ar": "بالتأكيد. هذه بطاقة المفتاح الخاصة بك. الغرفة 512 في الطابق الخامس.",
+        "de": "Natürlich. Hier ist Ihre Schlüsselkarte. Zimmer 512 im fünften Stock.",
+        "es": "Por supuesto. Aquí está su tarjeta de llave. Habitación 512 en el quinto piso.",
+        "fr": "Bien sûr. Voici votre carte-clé. Chambre 512 au cinquième étage.",
+        "it": "Certamente. Ecco la tua chiave magnetica. Camera 512 al quinto piano.",
+        "ru": "Конечно. Вот ваша ключ-карта. Номер 512 на пятом этаже.",
+        "zh": "当然。这是您的钥匙卡。五楼512房间。",
+        "tr": "Tabii ki. İşte anahtar kartınız. Beşinci katta 512 numaralı oda."
+      }
+    ),
+    ItemCard(
+      english: "Is there a restaurant in the hotel?",
+      translations: {
+        "ar": "هل يوجد مطعم في الفندق؟",
+        "de": "Gibt es ein Restaurant im Hotel?",
+        "es": "¿Hay un restaurante en el hotel?",
+        "fr": "Y a-t-il un restaurant dans l'hôtel?",
+        "it": "C'è un ristorante in hotel?",
+        "ru": "В отеле есть ресторан?",
+        "zh": "酒店里有餐厅吗？",
+        "tr": "Otelde restoran var mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, on the ground floor. Breakfast is served from 7 to 10 AM.",
+      translations: {
+        "ar": "نعم، في الطابق الأرضي. يتم تقديم الإفطار من 7 إلى 10 صباحا.",
+        "de": "Ja, im Erdgeschoss. Das Frühstück wird von 7 bis 10 Uhr serviert.",
+        "es": "Sí, en la planta baja. El desayuno se sirve de 7 a 10 AM.",
+        "fr": "Oui, au rez-de-chaussée. Le petit-déjeuner est servi de 7h à 10h.",
+        "it": "Sì, al piano terra. La colazione viene servita dalle 7 alle 10.",
+        "ru": "Да, на первом этаже. Завтрак подается с 7 до 10 утра.",
+        "zh": "有的，在一楼。早餐供应时间为早上7点到10点。",
+        "tr": "Evet, zemin katta. Kahvaltı saat 7'den 10'a kadar servis edilir."
+      }
+    ),
+    ItemCard(
+      english: "Is the restaurant open for lunch and dinner?",
+      translations: {
+        "ar": "هل المطعم مفتوح للغداء والعشاء؟",
+        "de": "Ist das Restaurant zum Mittag- und Abendessen geöffnet?",
+        "es": "¿El restaurante está abierto para el almuerzo y la cena?",
+        "fr": "Le restaurant est-il ouvert pour le déjeuner et le dîner?",
+        "it": "Il ristorante è aperto per pranzo e cena?",
+        "ru": "Ресторан открыт для обеда и ужина?",
+        "zh": "餐厅午餐和晚餐营业吗？",
+        "tr": "Restoran öğle ve akşam yemekleri için açık mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, it's open from 12 PM to 10 PM daily.",
+      translations: {
+        "ar": "نعم، إنه مفتوح من الساعة 12 ظهرا حتى 10 مساء يوميا.",
+        "de": "Ja, es ist täglich von 12 bis 22 Uhr geöffnet.",
+        "es": "Sí, está abierto de 12 PM a 10 PM diariamente.",
+        "fr": "Oui, il est ouvert de 12h à 22h tous les jours.",
+        "it": "Sì, è aperto dalle 12:00 alle 22:00 tutti i giorni.",
+        "ru": "Да, он открыт ежедневно с 12 до 22 часов.",
+        "zh": "是的，每天从中午12点到晚上10点营业。",
+        "tr": "Evet, her gün 12:00 - 22:00 saatleri arasında açıktır."
+      }
+    ),
+    ItemCard(
+      english: "Do you have a swimming pool?",
+      translations: {
+        "ar": "هل لديكم مسبح؟",
+        "de": "Haben Sie einen Swimmingpool?",
+        "es": "¿Tienen piscina?",
+        "fr": "Avez-vous une piscine?",
+        "it": "Avete una piscina?",
+        "ru": "У вас есть бассейн?",
+        "zh": "你们有游泳池吗？",
+        "tr": "Yüzme havuzunuz var mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, on the roof. It's open from 8 AM to 8 PM.",
+      translations: {
+        "ar": "نعم، على السطح. إنه مفتوح من 8 صباحا إلى 8 مساء.",
+        "de": "Ja, auf dem Dach. Es ist von 8 bis 20 Uhr geöffnet.",
+        "es": "Sí, en la azotea. Está abierto de 8 AM a 8 PM.",
+        "fr": "Oui, sur le toit. Il est ouvert de 8h à 20h.",
+        "it": "Sì, sul tetto. È aperto dalle 8:00 alle 20:00.",
+        "ru": "Да, на крыше. Он открыт с 8 утра до 8 вечера.",
+        "zh": "是的，在屋顶上。开放时间为早上8点到晚上8点。",
+        "tr": "Evet, çatıda. Sabah 8'den akşam 8'e kadar açıktır."
+      }
+    ),
+    ItemCard(
+      english: "Is the pool heated?",
+      translations: {
+        "ar": "هل المسبح ساخن؟",
+        "de": "Ist der Pool beheizt?",
+        "es": "¿La piscina está climatizada?",
+        "fr": "La piscine est-elle chauffée?",
+        "it": "La piscina è riscaldata?",
+        "ru": "Бассейн подогревается?",
+        "zh": "游泳池是恒温的吗？",
+        "tr": "Havuz ısıtmalı mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, it's a heated indoor pool.",
+      translations: {
+        "ar": "نعم، إنه مسبح داخلي ساخن.",
+        "de": "Ja, es ist ein beheizter Innenpool.",
+        "es": "Sí, es una piscina cubierta climatizada.",
+        "fr": "Oui, c'est une piscine intérieure chauffée.",
+        "it": "Sì, è una piscina coperta riscaldata.",
+        "ru": "Да, это подогреваемый крытый бассейн.",
+        "zh": "是的，这是一个恒温室内游泳池。",
+        "tr": "Evet, ısıtmalı bir kapalı havuzdur."
+      }
+    ),
+    ItemCard(
+      english: "Do you have a gym or fitness center?",
+      translations: {
+        "ar": "هل لديكم صالة ألعاب رياضية أو مركز لياقة بدنية؟",
+        "de": "Haben Sie ein Fitnessstudio oder ein Fitnesscenter?",
+        "es": "¿Tienen gimnasio o centro de fitness?",
+        "fr": "Avez-vous une salle de sport ou un centre de fitness?",
+        "it": "Avete una palestra o un centro fitness?",
+        "ru": "У вас есть тренажерный зал или фитнес-центр?",
+        "zh": "你们有健身房或健身中心吗？",
+        "tr": "Spor salonunuz veya fitness merkeziniz var mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, our fitness center is on the first floor, open 24/7.",
+      translations: {
+        "ar": "نعم، مركز اللياقة البدنية لدينا في الطابق الأول، مفتوح 24/7.",
+        "de": "Ja, unser Fitnesscenter befindet sich im ersten Stock und ist rund um die Uhr geöffnet.",
+        "es": "Sí, nuestro centro de fitness está en el primer piso, abierto 24/7.",
+        "fr": "Oui, notre centre de fitness est au premier étage, ouvert 24h/24 et 7j/7.",
+        "it": "Sì, il nostro centro fitness è al primo piano, aperto 24 ore su 24, 7 giorni su 7.",
+        "ru": "Да, наш фитнес-центр находится на первом этаже, открыт круглосуточно.",
+        "zh": "是的，我们的健身中心在一楼，全天候开放。",
+        "tr": "Evet, fitness merkezimiz birinci katta, 7/24 açıktır."
+      }
+    ),
+    ItemCard(
+      english: "That's great. I like to exercise in the morning.",
+      translations: {
+        "ar": "هذا رائع. أحب ممارسة الرياضة في الصباح.",
+        "de": "Das ist großartig. Ich treibe gerne morgens Sport.",
+        "es": "Eso es genial. Me gusta hacer ejercicio por la mañana.",
+        "fr": "C'est génial. J'aime faire de l'exercice le matin.",
+        "it": "È fantastico. Mi piace fare esercizio al mattino.",
+        "ru": "Это здорово. Я люблю заниматься спортом по утрам.",
+        "zh": "太好了。我喜欢早上锻炼。",
+        "tr": "Bu harika. Sabahları egzersiz yapmayı severim."
+      }
+    ),
+    ItemCard(
+      english: "What time does the pool close?",
+      translations: {
+        "ar": "في أي وقت يغلق المسبح؟",
+        "de": "Wann schließt der Pool?",
+        "es": "¿A qué hora cierra la piscina?",
+        "fr": "À quelle heure ferme la piscine?",
+        "it": "A che ora chiude la piscina?",
+        "ru": "Во сколько закрывается бассейн?",
+        "zh": "游泳池几点关门？",
+        "tr": "Havuz saat kaçta kapanıyor?"
+      }
+    ),
+    ItemCard(
+      english: "The pool closes at 8 PM, but the gym is open all night.",
+      translations: {
+        "ar": "المسبح يغلق الساعة 8 مساء، لكن صالة الألعاب الرياضية مفتوحة طوال الليل.",
+        "de": "Der Pool schließt um 20 Uhr, aber das Fitnessstudio ist die ganze Nacht geöffnet.",
+        "es": "La piscina cierra a las 8 PM, pero el gimnasio está abierto toda la noche.",
+        "fr": "La piscine ferme à 20h, mais la salle de sport est ouverte toute la nuit.",
+        "it": "La piscina chiude alle 20:00, ma la palestra è aperta tutta la notte.",
+        "ru": "Бассейн закрывается в 20:00, но тренажерный зал открыт всю ночь.",
+        "zh": "游泳池晚上8点关门，但健身房整夜开放。",
+        "tr": "Havuz saat 20:00'de kapanır, ancak spor salonu tüm gece açıktır."
+      }
+    ),
+    ItemCard(
+      english: "Is breakfast included in the room price?",
+      translations: {
+        "ar": "هل الإفطار مشمول في سعر الغرفة؟",
+        "de": "Ist das Frühstück im Zimmerpreis enthalten?",
+        "es": "¿El desayuno está incluido en el precio de la habitación?",
+        "fr": "Le petit-déjeuner est-il inclus dans le prix de la chambre?",
+        "it": "La colazione è inclusa nel prezzo della camera?",
+        "ru": "Завтрак включен в стоимость номера?",
+        "zh": "早餐包含在房费里吗？",
+        "tr": "Kahvaltı oda fiyatına dahil mi?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, as you requested during the booking. It's a buffet breakfast.",
+      translations: {
+        "ar": "نعم، كما طلبت أثناء الحجز. إنه إفطار بوفيه.",
+        "de": "Ja, wie Sie bei der Buchung gewünscht haben. Es ist ein Frühstücksbuffet.",
+        "es": "Sí, como solicitó durante la reserva. Es un desayuno buffet.",
+        "fr": "Oui, comme vous l'avez demandé lors de la réservation. C'est un petit-déjeuner buffet.",
+        "it": "Sì, come richiesto durante la prenotazione. È una colazione a buffet.",
+        "ru": "Да, как вы просили при бронировании. Это завтрак шведский стол.",
+        "zh": "是的，如您在预订时所要求的。这是自助早餐。",
+        "tr": "Evet, rezervasyon sırasında talep ettiğiniz gibi. Açık büfe kahvaltıdır."
+      }
+    ),
+    ItemCard(
+      english: "Great. I'm looking forward to trying it.",
+      translations: {
+        "ar": "رائع. أنا أتطلع إلى تجربتها.",
+        "de": "Großartig. Ich freue mich darauf, es zu probieren.",
+        "es": "Genial. Estoy deseando probarlo.",
+        "fr": "Super. J'ai hâte de l'essayer.",
+        "it": "Ottimo. Non vedo l'ora di provarlo.",
+        "ru": "Отлично. С нетерпением жду, чтобы попробовать.",
+        "zh": "太好了。我期待着尝试。",
+        "tr": "Harika. Denemek için sabırsızlanıyorum."
+      }
+    ),
+    ItemCard(
+      english: "Can I order room service?",
+      translations: {
+        "ar": "هل يمكنني طلب خدمة الغرف؟",
+        "de": "Kann ich den Zimmerservice bestellen?",
+        "es": "¿Puedo pedir servicio a la habitación?",
+        "fr": "Puis-je commander le service d'étage?",
+        "it": "Posso ordinare il servizio in camera?",
+        "ru": "Могу ли я заказать обслуживание номеров?",
+        "zh": "我可以点客房服务吗？",
+        "tr": "Oda servisi sipariş edebilir miyim?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, you can order from the menu in your room. It's available 24 hours.",
+      translations: {
+        "ar": "نعم، يمكنك الطلب من القائمة في غرفتك. إنه متاح على مدار 24 ساعة.",
+        "de": "Ja, Sie können aus der Speisekarte in Ihrem Zimmer bestellen. Es ist rund um die Uhr verfügbar.",
+        "es": "Sí, puede pedir desde el menú en su habitación. Está disponible 24 horas.",
+        "fr": "Oui, vous pouvez commander à partir du menu dans votre chambre. Il est disponible 24 heures sur 24.",
+        "it": "Sì, puoi ordinare dal menu nella tua camera. È disponibile 24 ore su 24.",
+        "ru": "Да, вы можете заказать из меню в вашем номере. Он доступен круглосуточно.",
+        "zh": "是的，您可以从房间的菜单点餐。全天24小时可用。",
+        "tr": "Evet, odanızdaki menüden sipariş verebilirsiniz. 7/24 mevcuttur."
+      }
+    ),
+    ItemCard(
+      english: "One more question: Is there a safe in the room?",
+      translations: {
+        "ar": "سؤال آخر: هل توجد خزنة في الغرفة؟",
+        "de": "Eine Frage noch: Gibt es einen Safe im Zimmer?",
+        "es": "Una pregunta más: ¿Hay una caja fuerte en la habitación?",
+        "fr": "Une dernière question: Y a-t-il un coffre-fort dans la chambre?",
+        "it": "Un'ultima domanda: c'è una cassaforte in camera?",
+        "ru": "Еще один вопрос: есть ли в номере сейф?",
+        "zh": "还有一个问题：房间里有保险箱吗？",
+        "tr": "Bir soru daha: Odada kasa var mı?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, every room has a digital safe for your valuables.",
+      translations: {
+        "ar": "نعم، كل غرفة بها خزنة رقمية للأشياء الثمينة الخاصة بك.",
+        "de": "Ja, jedes Zimmer verfügt über einen digitalen Safe für Ihre Wertsachen.",
+        "es": "Sí, cada habitación tiene una caja fuerte digital para sus objetos de valor.",
+        "fr": "Oui, chaque chambre dispose d'un coffre-fort numérique pour vos objets de valeur.",
+        "it": "Sì, ogni camera ha una cassaforte digitale per i tuoi oggetti di valore.",
+        "ru": "Да, в каждом номере есть цифровой сейф для ваших ценностей.",
+        "zh": "是的，每个房间都有数字保险箱存放您的贵重物品。",
+        "tr": "Evet, her odada değerli eşyalarınız için dijital bir kasa vardır."
+      }
+    ),
+    ItemCard(
+      english: "Thank you for all the information. I'm going to my room now.",
+      translations: {
+        "ar": "شكرا لك على كل المعلومات. سأذهب إلى غرفتي الآن.",
+        "de": "Danke für all die Informationen. Ich gehe jetzt in mein Zimmer.",
+        "es": "Gracias por toda la información. Me voy a mi habitación ahora.",
+        "fr": "Merci pour toutes ces informations. Je vais dans ma chambre maintenant.",
+        "it": "Grazie per tutte le informazioni. Ora vado nella mia camera.",
+        "ru": "Спасибо за всю информацию. Я сейчас пойду в свой номер.",
+        "zh": "谢谢您提供的信息。我现在要去我的房间了。",
+        "tr": "Tüm bilgiler için teşekkür ederim. Şimdi odama gidiyorum."
+      }
+    ),
+    ItemCard(
+      english: "Enjoy your stay. If you need anything, just dial 0 from your room phone.",
+      translations: {
+        "ar": "استمتع بإقامتك. إذا احتجت أي شيء، فقط اطلب 0 من هاتف غرفتك.",
+        "de": "Genießen Sie Ihren Aufenthalt. Wenn Sie etwas brauchen, wählen Sie einfach 0 vom Telefon in Ihrem Zimmer aus.",
+        "es": "Disfrute su estancia. Si necesita algo, solo marque 0 desde el teléfono de su habitación.",
+        "fr": "Bon séjour. Si vous avez besoin de quoi que ce soit, composez simplement le 0 depuis le téléphone de votre chambre.",
+        "it": "Goditi il tuo soggiorno. Se hai bisogno di qualcosa, componi semplicemente lo 0 dal telefono della tua camera.",
+        "ru": "Наслаждайтесь вашим пребыванием. Если вам что-то понадобится, просто наберите 0 с телефона в номере.",
+        "zh": "祝您住宿愉快。如果您需要任何东西，只需从房间电话拨0即可。",
+        "tr": "Konaklamanızın tadını çıkarın. Herhangi bir şeye ihtiyacınız olursa, oda telefonunuzdan sadece 0'ı tuşlayın."
+      }
+    ),
+    ItemCard(
+      english: "Thank you. Have a good evening!",
+      translations: {
+        "ar": "شكرا لك. أتمنى لك مساء الخير!",
+        "de": "Danke. Einen schönen Abend noch!",
+        "es": "Gracias. ¡Que tenga una buena noche!",
+        "fr": "Merci. Bonne soirée!",
+        "it": "Grazie. Buona serata!",
+        "ru": "Спасибо. Хорошего вечера!",
+        "zh": "谢谢。祝您晚上愉快！",
+        "tr": "Teşekkür ederim. İyi akşamlar!"
+      }
+    ),
+    ItemCard(
+      english: "You're welcome. Good night!",
+      translations: {
+        "ar": "على الرحب والسعة. تصبح على خير!",
+        "de": "Gern geschehen. Gute Nacht!",
+        "es": "De nada. ¡Buenas noches!",
+        "fr": "Je vous en prie. Bonne nuit!",
+        "it": "Prego. Buona notte!",
+        "ru": "Пожалуйста. Спокойной ночи!",
+        "zh": "不客气。晚安！",
+        "tr": "Rica ederim. İyi geceler!"
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "محادثة الفندق 2 - تسجيل الوصول",
+      items: dialogue,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+//////////////////////
+///////////////////
+////////////////////////
+
+
+
+class HotelDialogue3Screen extends StatelessWidget {
+  final List<ItemCard> dialogue = const [
+    // ========== المحادثة الثالثة: مشكلة وطلب خدمة (30+ جملة) ==========
+    ItemCard(
+      english: "Hello, reception. There's a problem with my room.",
+      translations: {
+        "ar": "مرحبا، مكتب الاستقبال. هناك مشكلة في غرفتي.",
+        "de": "Hallo, Rezeption. Es gibt ein Problem mit meinem Zimmer.",
+        "es": "Hola, recepción. Hay un problema con mi habitación.",
+        "fr": "Bonjour, réception. Il y a un problème avec ma chambre.",
+        "it": "Ciao, reception. C'è un problema con la mia camera.",
+        "ru": "Здравствуйте, ресепшн. У меня проблема с номером.",
+        "zh": "你好，前台。我的房间有问题。",
+        "tr": "Merhaba resepsiyon. Odamla ilgili bir sorun var."
+      }
+    ),
+    ItemCard(
+      english: "I'm sorry to hear that, Mr. Ahmed. What seems to be the problem?",
+      translations: {
+        "ar": "أنا آسف لسماع ذلك سيد أحمد. ما هي المشكلة؟",
+        "de": "Das tut mir leid, Herr Ahmed. Was scheint das Problem zu sein?",
+        "es": "Lamento escuchar eso, Sr. Ahmed. ¿Cuál parece ser el problema?",
+        "fr": "Je suis désolé d'apprendre cela, M. Ahmed. Quel semble être le problème?",
+        "it": "Mi dispiace sentirlo, signor Ahmed. Quale sembra essere il problema?",
+        "ru": "Мне жаль это слышать, мистер Ахмед. В чем проблема?",
+        "zh": "很抱歉听到这个消息，艾哈迈德先生。有什么问题？",
+        "tr": "Bunu duyduğuma üzüldüm Bay Ahmed. Sorun ne gibi görünüyor?"
+      }
+    ),
+    ItemCard(
+      english: "The air conditioning isn't working properly. It's too hot in here.",
+      translations: {
+        "ar": "مكيف الهواء لا يعمل بشكل صحيح. الجو حار جدا هنا.",
+        "de": "Die Klimaanlage funktioniert nicht richtig. Es ist zu heiß hier drin.",
+        "es": "El aire acondicionado no funciona correctamente. Hace demasiado calor aquí.",
+        "fr": "La climatisation ne fonctionne pas correctement. Il fait trop chaud ici.",
+        "it": "Il condizionatore non funziona correttamente. Fa troppo caldo qui.",
+        "ru": "Кондиционер работает неправильно. Здесь слишком жарко.",
+        "zh": "空调不能正常工作。这里太热了。",
+        "tr": "Klima düzgün çalışmıyor. Burası çok sıcak."
+      }
+    ),
+    ItemCard(
+      english: "I apologize for the inconvenience. I'll send maintenance right away.",
+      translations: {
+        "ar": "أعتذر عن الإزعاج. سأرسل الصيانة على الفور.",
+        "de": "Ich entschuldige mich für die Unannehmlichkeiten. Ich schicke sofort den Wartungsdienst.",
+        "es": "Me disculpo por las molestias. Enviaré mantenimiento de inmediato.",
+        "fr": "Je m'excuse pour le dérangement. J'envoie la maintenance tout de suite.",
+        "it": "Mi scuso per il disagio. Mando subito la manutenzione.",
+        "ru": "Приношу извинения за неудобства. Я немедленно отправлю обслуживание.",
+        "zh": "给您带来不便，我深表歉意。我马上派人来维修。",
+        "tr": "Rahatsızlık için özür dilerim. Hemen bakım göndereceğim."
+      }
+    ),
+    ItemCard(
+      english: "Also, the TV remote is missing from my room.",
+      translations: {
+        "ar": "أيضا، جهاز التحكم عن بعد الخاص بالتلفزيون مفقود من غرفتي.",
+        "de": "Außerdem fehlt die TV-Fernbedienung in meinem Zimmer.",
+        "es": "Además, falta el control remoto del televisor en mi habitación.",
+        "fr": "De plus, la télécommande de la télévision manque dans ma chambre.",
+        "it": "Inoltre, manca il telecomando della TV nella mia stanza.",
+        "ru": "Кроме того, в моем номере отсутствует пульт дистанционного управления телевизором.",
+        "zh": "另外，我房间里的电视遥控器不见了。",
+        "tr": "Ayrıca, odamda TV kumandası eksik."
+      }
+    ),
+    ItemCard(
+      english: "I'll have housekeeping bring you a new remote control.",
+      translations: {
+        "ar": "سأطلب من التدبير المنزلي أن يحضر لك جهاز تحكم عن بعد جديد.",
+        "de": "Ich werde den Hausservice bitten, Ihnen eine neue Fernbedienung zu bringen.",
+        "es": "Pediré al servicio de limpieza que le traiga un nuevo control remoto.",
+        "fr": "Je vais demander à la femme de chambre de vous apporter une nouvelle télécommande.",
+        "it": "Chiederò alle pulizie di portarti un nuovo telecomando.",
+        "ru": "Я попрошу горничную принести вам новый пульт дистанционного управления.",
+        "zh": "我会让客房服务员给您送一个新的遥控器。",
+        "tr": "Kat hizmetlerinden size yeni bir uzaktan kumanda getirmesini isteyeceğim."
+      }
+    ),
+    ItemCard(
+      english: "When will maintenance arrive? I'm very uncomfortable.",
+      translations: {
+        "ar": "متى سيصل الصيانة؟ أنا غير مرتاح جدا.",
+        "de": "Wann kommt der Wartungsdienst? Ich fühle mich sehr unwohl.",
+        "es": "¿Cuándo llegará el mantenimiento? Estoy muy incómodo.",
+        "fr": "Quand la maintenance arrivera-t-elle? Je suis très mal à l'aise.",
+        "it": "Quando arriverà la manutenzione? Sono molto a disagio.",
+        "ru": "Когда придет обслуживание? Мне очень некомфортно.",
+        "zh": "维修人员什么时候到？我很不舒服。",
+        "tr": "Bakım ne zaman gelecek? Çok rahatsızım."
+      }
+    ),
+    ItemCard(
+      english: "He should be there within ten minutes. I'm very sorry.",
+      translations: {
+        "ar": "يجب أن يكون هناك في غضون عشر دقائق. أنا آسف جدا.",
+        "de": "Er sollte innerhalb von zehn Minuten dort sein. Es tut mir sehr leid.",
+        "es": "Debería estar allí en diez minutos. Lo siento mucho.",
+        "fr": "Il devrait être là dans les dix minutes. Je suis vraiment désolé.",
+        "it": "Dovrebbe essere lì entro dieci minuti. Mi dispiace molto.",
+        "ru": "Он должен быть там в течение десяти минут. Мне очень жаль.",
+        "zh": "他应该在十分钟内到。非常抱歉。",
+        "tr": "On dakika içinde orada olmalı. Çok üzgünüm."
+      }
+    ),
+    ItemCard(
+      english: "Can you send someone to fix the AC now?",
+      translations: {
+        "ar": "هل يمكنك إرسال شخص ما لإصلاح المكيف الآن؟",
+        "de": "Können Sie jetzt jemanden schicken, um die Klimaanlage zu reparieren?",
+        "es": "¿Puede enviar a alguien para arreglar el aire acondicionado ahora?",
+        "fr": "Pouvez-vous envoyer quelqu'un pour réparer la climatisation maintenant?",
+        "it": "Puoi mandare qualcuno a riparare il condizionatore ora?",
+        "ru": "Вы можете сейчас отправить кого-нибудь починить кондиционер?",
+        "zh": "你现在能派人来修空调吗？",
+        "tr": "Şimdi klimayı tamir etmesi için birini gönderebilir misiniz?"
+      }
+    ),
+    ItemCard(
+      english: "Of course. I'll inform them it's urgent.",
+      translations: {
+        "ar": "بالتأكيد. سأخبرهم أنها عاجلة.",
+        "de": "Natürlich. Ich werde ihnen mitteilen, dass es dringend ist.",
+        "es": "Por supuesto. Les informaré que es urgente.",
+        "fr": "Bien sûr. Je les informerai que c'est urgent.",
+        "it": "Certamente. Li informerò che è urgente.",
+        "ru": "Конечно. Я сообщу им, что это срочно.",
+        "zh": "当然。我会告诉他们这是紧急情况。",
+        "tr": "Tabii ki. Acil olduğunu bildireceğim."
+      }
+    ),
+    ItemCard(
+      english: "Thank you. Also, the bathroom sink is clogged.",
+      translations: {
+        "ar": "شكرا لك. أيضا، حوض الحمام مسدود.",
+        "de": "Danke. Außerdem ist das Waschbecken im Badezimmer verstopft.",
+        "es": "Gracias. También, el lavabo del baño está tapado.",
+        "fr": "Merci. De plus, le lavabo de la salle de bain est bouché.",
+        "it": "Grazie. Inoltre, il lavandino del bagno è intasato.",
+        "ru": "Спасибо. Кроме того, раковина в ванной забита.",
+        "zh": "谢谢。还有，浴室的洗手池堵了。",
+        "tr": "Teşekkür ederim. Ayrıca, banyo lavabosu tıkalı."
+      }
+    ),
+    ItemCard(
+      english: "I'll add that to the service request as well. Anything else?",
+      translations: {
+        "ar": "سأضيف ذلك إلى طلب الخدمة أيضا. أي شيء آخر؟",
+        "de": "Das füge ich ebenfalls der Serviceanfrage hinzu. Sonst noch etwas?",
+        "es": "Agregaré eso a la solicitud de servicio también. ¿Algo más?",
+        "fr": "Je vais également ajouter cela à la demande de service. Autre chose?",
+        "it": "Aggiungerò anche questo alla richiesta di servizio. Qualcos'altro?",
+        "ru": "Я также добавлю это в заявку на обслуживание. Что-нибудь еще?",
+        "zh": "我也会把它加到服务请求里。还有什么吗？",
+        "tr": "Bunu da servis talebine ekleyeceğim. Başka bir şey var mı?"
+      }
+    ),
+    ItemCard(
+      english: "The water pressure in the shower is very low.",
+      translations: {
+        "ar": "ضغط الماء في الدش منخفض جدا.",
+        "de": "Der Wasserdruck in der Dusche ist sehr niedrig.",
+        "es": "La presión del agua en la ducha es muy baja.",
+        "fr": "La pression de l'eau dans la douche est très faible.",
+        "it": "La pressione dell'acqua nella doccia è molto bassa.",
+        "ru": "Напор воды в душе очень низкий.",
+        "zh": "淋浴的水压很低。",
+        "tr": "Duşta su basıncı çok düşük."
+      }
+    ),
+    ItemCard(
+      english: "We'll have a plumber check that too. I promise to resolve all issues quickly.",
+      translations: {
+        "ar": "سنجعل سباك يتحقق من ذلك أيضا. أعد بحل جميع المشكلات بسرعة.",
+        "de": "Wir werden das auch von einem Klempner überprüfen lassen. Ich verspreche, alle Probleme schnell zu lösen.",
+        "es": "Haremos que un fontanero revise eso también. Prometo resolver todos los problemas rápidamente.",
+        "fr": "Nous ferons également vérifier cela par un plombier. Je promets de résoudre tous les problèmes rapidement.",
+        "it": "Faremo controllare anche questo da un idraulico. Prometto di risolvere tutti i problemi rapidamente.",
+        "ru": "Мы попросим сантехника проверить и это. Обещаю быстро решить все проблемы.",
+        "zh": "我们也会让水管工检查一下。我保证尽快解决所有问题。",
+        "tr": "Bunu da bir tesisatçıya kontrol ettireceğiz. Tüm sorunları hızlıca çözeceğime söz veriyorum."
+      }
+    ),
+    ItemCard(
+      english: "The maintenance team is at your door now, Mr. Ahmed.",
+      translations: {
+        "ar": "فريق الصيانة على بابك الآن سيد أحمد.",
+        "de": "Das Wartungsteam ist jetzt an Ihrer Tür, Herr Ahmed.",
+        "es": "El equipo de mantenimiento está en su puerta ahora, Sr. Ahmed.",
+        "fr": "L'équipe de maintenance est à votre porte maintenant, M. Ahmed.",
+        "it": "La squadra di manutenzione è alla tua porta ora, signor Ahmed.",
+        "ru": "Служба обслуживания сейчас у вашей двери, мистер Ахмед.",
+        "zh": "维修人员现在在您的门口，艾哈迈德先生。",
+        "tr": "Bakım ekibi şu an kapınızda Bay Ahmed."
+      }
+    ),
+    ItemCard(
+      english: "Great. I'll let them in. Thank you for your quick response.",
+      translations: {
+        "ar": "رائع. سأسمح لهم بالدخول. شكرا لك على ردك السريع.",
+        "de": "Großartig. Ich lasse sie rein. Danke für Ihre schnelle Reaktion.",
+        "es": "Genial. Los dejaré entrar. Gracias por su rápida respuesta.",
+        "fr": "Super. Je les laisse entrer. Merci pour votre réponse rapide.",
+        "it": "Ottimo. Li faccio entrare. Grazie per la tua rapida risposta.",
+        "ru": "Отлично. Я впущу их. Спасибо за быстрый ответ.",
+        "zh": "太好了。我会让他们进来的。谢谢您的快速回应。",
+        "tr": "Harika. İçeri alacağım. Hızlı yanıtınız için teşekkür ederim."
+      }
+    ),
+    ItemCard(
+      english: "After the maintenance team finishes, please let me know if everything is okay.",
+      translations: {
+        "ar": "بعد أن ينتهي فريق الصيانة، يرجى إعلامي إذا كان كل شيء على ما يرام.",
+        "de": "Nachdem das Wartungsteam fertig ist, lassen Sie mich bitte wissen, ob alles in Ordnung ist.",
+        "es": "Después de que el equipo de mantenimiento termine, por favor avíseme si todo está bien.",
+        "fr": "Une fois l'équipe de maintenance terminée, veuillez me faire savoir si tout va bien.",
+        "it": "Dopo che la squadra di manutenzione ha finito, per favore fatemi sapere se tutto è a posto.",
+        "ru": "После того как обслуживание закончится, пожалуйста, сообщите мне, все ли в порядке.",
+        "zh": "维修人员完成后，请告知我一切是否正常。",
+        "tr": "Bakım ekibi işini bitirdikten sonra, lütfen her şeyin yolunda olup olmadığını bana bildirin."
+      }
+    ),
+    ItemCard(
+      english: "The AC is working now. Thank you very much.",
+      translations: {
+        "ar": "المكيف يعمل الآن. شكرا جزيلا.",
+        "de": "Die Klimaanlage funktioniert jetzt. Vielen Dank.",
+        "es": "El aire acondicionado funciona ahora. Muchas gracias.",
+        "fr": "La climatisation fonctionne maintenant. Merci beaucoup.",
+        "it": "Il condizionatore ora funziona. Grazie mille.",
+        "ru": "Кондиционер теперь работает. Большое спасибо.",
+        "zh": "空调现在能用了。非常感谢。",
+        "tr": "Klima şimdi çalışıyor. Çok teşekkür ederim."
+      }
+    ),
+    ItemCard(
+      english: "I'm glad to hear that. Is the sink and water pressure fixed too?",
+      translations: {
+        "ar": "أنا سعيد لسماع ذلك. هل تم إصلاح الحوض وضغط الماء أيضا؟",
+        "de": "Das freut mich zu hören. Sind das Waschbecken und der Wasserdruck auch repariert?",
+        "es": "Me alegra escuchar eso. ¿También se arreglaron el lavabo y la presión del agua?",
+        "fr": "Je suis heureux de l'entendre. Le lavabo et la pression de l'eau sont-ils également réparés?",
+        "it": "Sono felice di sentirlo. Anche il lavandino e la pressione dell'acqua sono stati riparati?",
+        "ru": "Рад это слышать. Раковина и напор воды тоже исправлены?",
+        "zh": "很高兴听到这个。洗手池和水压也修好了吗？",
+        "tr": "Bunu duyduğuma sevindim. Lavabo ve su basıncı da düzeltildi mi?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, everything is fixed. The technician did a great job.",
+      translations: {
+        "ar": "نعم، تم إصلاح كل شيء. قام الفني بعمل رائع.",
+        "de": "Ja, alles ist repariert. Der Techniker hat einen großartigen Job gemacht.",
+        "es": "Sí, todo está arreglado. El técnico hizo un gran trabajo.",
+        "fr": "Oui, tout est réparé. Le technicien a fait un excellent travail.",
+        "it": "Sì, tutto è riparato. Il tecnico ha fatto un ottimo lavoro.",
+        "ru": "Да, все исправлено. Техник отлично поработал.",
+        "zh": "是的，一切都修好了。技术人员做得很好。",
+        "tr": "Evet, her şey düzeltildi. Teknisyen harika bir iş çıkardı."
+      }
+    ),
+    ItemCard(
+      english: "Thank you for your patience and understanding.",
+      translations: {
+        "ar": "شكرا لك على صبرك وتفهمك.",
+        "de": "Danke für Ihre Geduld und Ihr Verständnis.",
+        "es": "Gracias por su paciencia y comprensión.",
+        "fr": "Merci pour votre patience et votre compréhension.",
+        "it": "Grazie per la tua pazienza e comprensione.",
+        "ru": "Спасибо за ваше терпение и понимание.",
+        "zh": "谢谢您的耐心和理解。",
+        "tr": "Sabrınız ve anlayışınız için teşekkür ederim."
+      }
+    ),
+    ItemCard(
+      english: "No problem. I appreciate your help. Everything is perfect now.",
+      translations: {
+        "ar": "لا مشكلة. أنا أقدر مساعدتك. كل شيء مثالي الآن.",
+        "de": "Kein Problem. Ich schätze Ihre Hilfe. Jetzt ist alles perfekt.",
+        "es": "No hay problema. Aprecio su ayuda. Todo es perfecto ahora.",
+        "fr": "Pas de problème. J'apprécie votre aide. Tout est parfait maintenant.",
+        "it": "Nessun problema. Apprezzo il tuo aiuto. Ora è tutto perfetto.",
+        "ru": "Нет проблем. Я ценю вашу помощь. Теперь все идеально.",
+        "zh": "没问题。感谢您的帮助。现在一切都完美了。",
+        "tr": "Sorun değil. Yardımınız için minnettarım. Şimdi her şey mükemmel."
+      }
+    ),
+    ItemCard(
+      english: "Is there anything else I can do for you today?",
+      translations: {
+        "ar": "هل هناك أي شيء آخر يمكنني فعله لك اليوم؟",
+        "de": "Kann ich heute noch etwas für Sie tun?",
+        "es": "¿Hay algo más que pueda hacer por usted hoy?",
+        "fr": "Y a-t-il autre chose que je puisse faire pour vous aujourd'hui?",
+        "it": "C'è qualcos'altro che posso fare per te oggi?",
+        "ru": "Могу ли я сделать для вас что-нибудь еще сегодня?",
+        "zh": "今天还有什么我能为您做的吗？",
+        "tr": "Bugün sizin için yapabileceğim başka bir şey var mı?"
+      }
+    ),
+    ItemCard(
+      english: "No, thank you. You've been very helpful. Have a great day!",
+      translations: {
+        "ar": "لا، شكرا لك. لقد كنت مفيدا جدا. أتمنى لك يومًا عظيمًا!",
+        "de": "Nein, danke. Sie waren sehr hilfreich. Ich wünsche Ihnen einen schönen Tag!",
+        "es": "No, gracias. Ha sido muy útil. ¡Que tenga un gran día!",
+        "fr": "Non, merci. Vous avez été très utile. Passez une excellente journée!",
+        "it": "No, grazie. Sei stato molto utile. Buona giornata!",
+        "ru": "Нет, спасибо. Вы были очень полезны. Хорошего дня!",
+        "zh": "不用了，谢谢。您帮了大忙。祝您有美好的一天！",
+        "tr": "Hayır teşekkürler. Çok yardımcı oldunuz. İyi günler!"
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "محادثة الفندق 3 - مشكلة وطلب خدمة",
+      items: dialogue,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
+
+
+
+///////////////////
+/
+///////////////////////
+
+
+
+
+
+
+
+class HotelDialogue4Screen extends StatelessWidget {
+  final List<ItemCard> dialogue = const [
+    // ========== المحادثة الرابعة: المغادرة والدفع (30+ جملة) ==========
+    ItemCard(
+      english: "Good morning. I'd like to check out, please.",
+      translations: {
+        "ar": "صباح الخير. أود إنهاء إقامتي من فضلك.",
+        "de": "Guten Morgen. Ich möchte bitte auschecken.",
+        "es": "Buenos días. Me gustaría hacer el check-out, por favor.",
+        "fr": "Bonjour. Je voudrais faire mon check-out, s'il vous plaît.",
+        "it": "Buongiorno. Vorrei fare il check-out, per favore.",
+        "ru": "Доброе утро. Я хотел бы выписаться, пожалуйста.",
+        "zh": "早上好。我想办理退房。",
+        "tr": "Günaydın. Çıkış yapmak istiyorum lütfen."
+      }
+    ),
+    ItemCard(
+      english: "Good morning, Mr. Ahmed. I hope you had a pleasant stay.",
+      translations: {
+        "ar": "صباح الخير سيد أحمد. أتمنى أن تكون إقامتك ممتعة.",
+        "de": "Guten Morgen, Herr Ahmed. Ich hoffe, Sie hatten einen angenehmen Aufenthalt.",
+        "es": "Buenos días, Sr. Ahmed. Espero que haya tenido una estancia agradable.",
+        "fr": "Bonjour, M. Ahmed. J'espère que vous avez passé un agréable séjour.",
+        "it": "Buongiorno, signor Ahmed. Spero che il tuo soggiorno sia stato piacevole.",
+        "ru": "Доброе утро, мистер Ахмед. Надеюсь, вы хорошо провели время.",
+        "zh": "早上好，艾哈迈德先生。希望您住得愉快。",
+        "tr": "Günaydın Bay Ahmed. Umarım konaklamanız keyifli olmuştur."
+      }
+    ),
+    ItemCard(
+      english: "Yes, overall it was very good. The room was comfortable.",
+      translations: {
+        "ar": "نعم، بشكل عام كانت جيدة جدا. كانت الغرفة مريحة.",
+        "de": "Ja, insgesamt war es sehr gut. Das Zimmer war komfortabel.",
+        "es": "Sí, en general fue muy bueno. La habitación era cómoda.",
+        "fr": "Oui, dans l'ensemble c'était très bien. La chambre était confortable.",
+        "it": "Sì, nel complesso è stato molto buono. La camera era confortevole.",
+        "ru": "Да, в целом было очень хорошо. Номер был удобным.",
+        "zh": "是的，总体来说非常好。房间很舒适。",
+        "tr": "Evet, genel olarak çok iyiydi. Oda rahattı."
+      }
+    ),
+    ItemCard(
+      english: "I'm glad to hear that. Here is your final bill, sir.",
+      translations: {
+        "ar": "أنا سعيد لسماع ذلك. هذه هي فاتورتك النهائية يا سيد.",
+        "de": "Das freut mich zu hören. Hier ist Ihre endgültige Rechnung, mein Herr.",
+        "es": "Me alegra escuchar eso. Aquí está su factura final, señor.",
+        "fr": "Je suis heureux de l'entendre. Voici votre facture finale, monsieur.",
+        "it": "Sono felice di sentirlo. Ecco il tuo conto finale, signore.",
+        "ru": "Рад это слышать. Вот ваш окончательный счет, сэр.",
+        "zh": "很高兴听到这个。先生，这是您的最终账单。",
+        "tr": "Bunu duyduğuma sevindim. İşte son faturanız efendim."
+      }
+    ),
+    ItemCard(
+      english: "Let me review the charges. Three nights, breakfast included.",
+      translations: {
+        "ar": "دعني أراجع الرسوم. ثلاث ليال، إفطار شامل.",
+        "de": "Lassen Sie mich die Gebühren überprüfen. Drei Nächte, Frühstück inbegriffen.",
+        "es": "Déjame revisar los cargos. Tres noches, desayuno incluido.",
+        "fr": "Laissez-moi vérifier les frais. Trois nuits, petit-déjeuner inclus.",
+        "it": "Lasciami rivedere le spese. Tre notti, colazione inclusa.",
+        "ru": "Позвольте мне проверить расходы. Три ночи, завтрак включен.",
+        "zh": "让我核对一下费用。三晚，含早餐。",
+        "tr": "Ücretleri incelememe izin verin. Üç gece, kahvaltı dahil."
+      }
+    ),
+    ItemCard(
+      english: "That's correct. The total amount is 360 euros.",
+      translations: {
+        "ar": "هذا صحيح. المبلغ الإجمالي 360 يورو.",
+        "de": "Das ist richtig. Der Gesamtbetrag beträgt 360 Euro.",
+        "es": "Eso es correcto. El monto total es de 360 euros.",
+        "fr": "C'est exact. Le montant total est de 360 euros.",
+        "it": "È corretto. L'importo totale è di 360 euro.",
+        "ru": "Это верно. Общая сумма составляет 360 евро.",
+        "zh": "没错。总额是360欧元。",
+        "tr": "Bu doğru. Toplam tutar 360 euro."
+      }
+    ),
+    ItemCard(
+      english: "Did you use any extra services from the minibar?",
+      translations: {
+        "ar": "هل استخدمت أي خدمات إضافية من الثلاجة الصغيرة؟",
+        "de": "Haben Sie zusätzliche Dienstleistungen aus der Minibar in Anspruch genommen?",
+        "es": "¿Usó algún servicio adicional del minibar?",
+        "fr": "Avez-vous utilisé des services supplémentaires du minibar?",
+        "it": "Hai usato servizi extra dal minibar?",
+        "ru": "Вы пользовались дополнительными услугами из мини-бара?",
+        "zh": "您使用过迷你吧的任何额外服务吗？",
+        "tr": "Minibardan herhangi bir ek hizmet kullandınız mı?"
+      }
+    ),
+    ItemCard(
+      english: "No, I didn't take anything from the minibar.",
+      translations: {
+        "ar": "لا، لم آخذ أي شيء من الثلاجة الصغيرة.",
+        "de": "Nein, ich habe nichts aus der Minibar genommen.",
+        "es": "No, no tomé nada del minibar.",
+        "fr": "Non, je n'ai rien pris du minibar.",
+        "it": "No, non ho preso niente dal minibar.",
+        "ru": "Нет, я ничего не брал из мини-бара.",
+        "zh": "没有，我没有从迷你吧拿任何东西。",
+        "tr": "Hayır, minibardan hiçbir şey almadım."
+      }
+    ),
+    ItemCard(
+      english: "Perfect. Your bill is ready. Would you like to pay by card or cash?",
+      translations: {
+        "ar": "ممتاز. فاتورتك جاهزة. هل تريد الدفع ببطاقة أم نقدا؟",
+        "de": "Perfekt. Ihre Rechnung ist fertig. Möchten Sie mit Karte oder bar bezahlen?",
+        "es": "Perfecto. Su factura está lista. ¿Desea pagar con tarjeta o en efectivo?",
+        "fr": "Parfait. Votre facture est prête. Souhaitez-vous payer par carte ou en espèces?",
+        "it": "Perfetto. Il tuo conto è pronto. Vuoi pagare con carta o in contanti?",
+        "ru": "Отлично. Ваш счет готов. Вы хотите заплатить картой или наличными?",
+        "zh": "完美。您的账单已准备好。您想刷卡还是付现金？",
+        "tr": "Mükemmel. Faturanız hazır. Kartla mı yoksa nakit mi ödemek istersiniz?"
+      }
+    ),
+    ItemCard(
+      english: "I'll pay by credit card, please. Here it is.",
+      translations: {
+        "ar": "سأدفع ببطاقة الائتمان من فضلك. ها هي ذي.",
+        "de": "Ich zahle bitte mit Kreditkarte. Hier ist sie.",
+        "es": "Pagaré con tarjeta de crédito, por favor. Aquí está.",
+        "fr": "Je paierai par carte de crédit, s'il vous plaît. La voici.",
+        "it": "Pagherò con carta di credito, per favore. Eccola.",
+        "ru": "Я заплачу кредитной картой, пожалуйста. Вот она.",
+        "zh": "我用信用卡支付。给您。",
+        "tr": "Kredi kartıyla ödeyeceğim lütfen. İşte burada."
+      }
+    ),
+    ItemCard(
+      english: "Thank you. Please enter your PIN.",
+      translations: {
+        "ar": "شكرا لك. الرجاء إدخال الرقم السري الخاص بك.",
+        "de": "Danke. Bitte geben Sie Ihre PIN ein.",
+        "es": "Gracias. Por favor, introduzca su PIN.",
+        "fr": "Merci. Veuillez saisir votre code PIN.",
+        "it": "Grazie. Inserisci il tuo PIN.",
+        "ru": "Спасибо. Пожалуйста, введите ваш PIN-код.",
+        "zh": "谢谢。请输入您的密码。",
+        "tr": "Teşekkür ederim. Lütfen PIN'inizi girin."
+      }
+    ),
+    ItemCard(
+      english: "Done. Here's your receipt. Would you like a printed copy?",
+      translations: {
+        "ar": "تم. هذه إيصالك. هل تريد نسخة مطبوعة؟",
+        "de": "Erledigt. Hier ist Ihre Quittung. Möchten Sie eine gedruckte Kopie?",
+        "es": "Listo. Aquí está su recibo. ¿Le gustaría una copia impresa?",
+        "fr": "Fait. Voici votre reçu. Souhaitez-vous une copie imprimée?",
+        "it": "Fatto. Ecco la tua ricevuta. Vorresti una copia stampata?",
+        "ru": "Готово. Вот ваш чек. Хотите распечатанную копию?",
+        "zh": "好了。这是您的收据。您想要打印版吗？",
+        "tr": "Tamam. İşte fişiniz. Basılı bir kopya ister misiniz?"
+      }
+    ),
+    ItemCard(
+      english: "Yes, please. I need it for my records.",
+      translations: {
+        "ar": "نعم من فضلك. أحتاجها لسجلاتي.",
+        "de": "Ja, bitte. Ich brauche es für meine Unterlagen.",
+        "es": "Sí, por favor. Lo necesito para mis registros.",
+        "fr": "Oui, s'il vous plaît. J'en ai besoin pour mes dossiers.",
+        "it": "Sì, per favore. Mi serve per i miei registri.",
+        "ru": "Да, пожалуйста. Мне это нужно для моих записей.",
+        "zh": "是的。我需要它作为记录。",
+        "tr": "Evet lütfen. Kayıtlarım için buna ihtiyacım var."
+      }
+    ),
+    ItemCard(
+      english: "Here you are. Is there anything else I can help you with?",
+      translations: {
+        "ar": "تفضل. هل هناك أي شيء آخر يمكنني مساعدتك به؟",
+        "de": "Bitte sehr. Kann ich Ihnen sonst noch helfen?",
+        "es": "Aquí tiene. ¿Hay algo más en lo que pueda ayudarle?",
+        "fr": "Voilà. Puis-je vous aider avec autre chose?",
+        "it": "Ecco a lei. Posso aiutarti con qualcos'altro?",
+        "ru": "Пожалуйста. Могу ли я помочь вам с чем-то еще?",
+        "zh": "给您。还有什么我能帮您的吗？",
+        "tr": "Buyurun. Başka bir konuda yardımcı olabilir miyim?"
+      }
+    ),
+    ItemCard(
+      english: "No, thank you. Could you please call a taxi for me?",
+      translations: {
+        "ar": "لا، شكرا لك. هل يمكنك من فضلك استدعاء سيارة أجرة لي؟",
+        "de": "Nein, danke. Könnten Sie bitte ein Taxi für mich rufen?",
+        "es": "No, gracias. ¿Podría llamarme un taxi, por favor?",
+        "fr": "Non, merci. Pourriez-vous s'il vous plaît appeler un taxi pour moi?",
+        "it": "No, grazie. Potresti chiamarmi un taxi per favore?",
+        "ru": "Нет, спасибо. Не могли бы вы вызвать мне такси?",
+        "zh": "不用了，谢谢。能帮我叫一辆出租车吗？",
+        "tr": "Hayır teşekkürler. Benim için bir taksi çağırabilir misiniz lütfen?"
+      }
+    ),
+    ItemCard(
+      english: "Of course. Where would you like to go?",
+      translations: {
+        "ar": "بالتأكيد. أين تريد أن تذهب؟",
+        "de": "Natürlich. Wohin möchten Sie?",
+        "es": "Por supuesto. ¿A dónde le gustaría ir?",
+        "fr": "Bien sûr. Où souhaitez-vous aller?",
+        "it": "Certamente. Dove vorresti andare?",
+        "ru": "Конечно. Куда вы хотите поехать?",
+        "zh": "当然。您想去哪里？",
+        "tr": "Tabii ki. Nereye gitmek istiyorsunuz?"
+      }
+    ),
+    ItemCard(
+      english: "To the airport, please. My flight is at 2 PM.",
+      translations: {
+        "ar": "إلى المطار من فضلك. رحلتي في الساعة 2 ظهرا.",
+        "de": "Zum Flughafen, bitte. Mein Flug geht um 14 Uhr.",
+        "es": "Al aeropuerto, por favor. Mi vuelo es a las 2 PM.",
+        "fr": "À l'aéroport, s'il vous plaît. Mon vol est à 14h.",
+        "it": "All'aeroporto, per favore. Il mio volo è alle 14:00.",
+        "ru": "В аэропорт, пожалуйста. Мой рейс в 14:00.",
+        "zh": "去机场。我的航班是下午2点。",
+        "tr": "Havalimanına lütfen. Uçağım saat 14:00'te."
+      }
+    ),
+    ItemCard(
+      english: "The taxi will be here in five minutes. Is that okay?",
+      translations: {
+        "ar": "ستكون سيارة الأجرة هنا في غضون خمس دقائق. هل هذا مقبول؟",
+        "de": "Das Taxi ist in fünf Minuten hier. Ist das in Ordnung?",
+        "es": "El taxi estará aquí en cinco minutos. ¿Está bien?",
+        "fr": "Le taxi sera là dans cinq minutes. Est-ce que ça vous va?",
+        "it": "Il taxi sarà qui in cinque minuti. Va bene?",
+        "ru": "Такси будет здесь через пять минут. Это нормально?",
+        "zh": "出租车五分钟后到。可以吗？",
+        "tr": "Taksi beş dakika içinde burada olacak. Sorun değil mi?"
+      }
+    ),
+    ItemCard(
+      english: "Perfect. I'll wait in the lobby.",
+      translations: {
+        "ar": "ممتاز. سأنتظر في الردهة.",
+        "de": "Perfekt. Ich werde in der Lobby warten.",
+        "es": "Perfecto. Esperaré en el vestíbulo.",
+        "fr": "Parfait. J'attendrai dans le hall.",
+        "it": "Perfetto. Aspetterò nella hall.",
+        "ru": "Отлично. Я подожду в холле.",
+        "zh": "完美。我在大厅等。",
+        "tr": "Mükemmel. Lobide bekleyeceğim."
+      }
+    ),
+    ItemCard(
+      english: "I hope you enjoyed your stay with us, Mr. Ahmed.",
+      translations: {
+        "ar": "أتمنى أن تكون استمتعت بإقامتك معنا سيد أحمد.",
+        "de": "Ich hoffe, Sie haben Ihren Aufenthalt bei uns genossen, Herr Ahmed.",
+        "es": "Espero que haya disfrutado su estancia con nosotros, Sr. Ahmed.",
+        "fr": "J'espère que vous avez apprécié votre séjour chez nous, M. Ahmed.",
+        "it": "Spero che tu abbia apprezzato il tuo soggiorno con noi, signor Ahmed.",
+        "ru": "Надеюсь, вам понравилось пребывание у нас, мистер Ахмед.",
+        "zh": "希望您在我们这里住得愉快，艾哈迈德先生。",
+        "tr": "Umarım bizdeki konaklamanızdan keyif almışsınızdır Bay Ahmed."
+      }
+    ),
+    ItemCard(
+      english: "Yes, it was a great experience. The staff was very friendly.",
+      translations: {
+        "ar": "نعم، كانت تجربة رائعة. كان الموظفون ودودين للغاية.",
+        "de": "Ja, es war eine großartige Erfahrung. Das Personal war sehr freundlich.",
+        "es": "Sí, fue una gran experiencia. El personal fue muy amable.",
+        "fr": "Oui, ce fut une excellente expérience. Le personnel était très sympathique.",
+        "it": "Sì, è stata un'ottima esperienza. Il personale era molto amichevole.",
+        "ru": "Да, это был отличный опыт. Персонал был очень дружелюбен.",
+        "zh": "是的，这是一次很棒的经历。工作人员非常友好。",
+        "tr": "Evet, harika bir deneyimdi. Personel çok arkadaş canlısıydı."
+      }
+    ),
+    ItemCard(
+      english: "Thank you for your kind words. We hope to see you again.",
+      translations: {
+        "ar": "شكرا لك على كلماتك اللطيفة. نأمل أن نراك مرة أخرى.",
+        "de": "Danke für Ihre freundlichen Worte. Wir hoffen, Sie wiederzusehen.",
+        "es": "Gracias por sus amables palabras. Esperamos volver a verle.",
+        "fr": "Merci pour vos aimables paroles. Nous espérons vous revoir.",
+        "it": "Grazie per le tue gentili parole. Speriamo di rivederti.",
+        "ru": "Спасибо за ваши добрые слова. Надеемся увидеть вас снова.",
+        "zh": "谢谢您的夸奖。我们希望能再次见到您。",
+        "tr": "Nazik sözleriniz için teşekkür ederim. Sizi tekrar görmeyi umuyoruz."
+      }
+    ),
+    ItemCard(
+      english: "I'll definitely come back next time I'm in town.",
+      translations: {
+        "ar": "سأعود بالتأكيد في المرة القادمة التي أكون فيها في المدينة.",
+        "de": "Ich werde auf jeden Fall wiederkommen, wenn ich das nächste Mal in der Stadt bin.",
+        "es": "Definitivamente volveré la próxima vez que esté en la ciudad.",
+        "fr": "Je reviendrai certainement la prochaine fois que je serai en ville.",
+        "it": "Tornerò sicuramente la prossima volta che sarò in città.",
+        "ru": "Я обязательно вернусь в следующий раз, когда буду в городе.",
+        "zh": "下次我来城里一定会再来的。",
+        "tr": "Şehre bir daha geldiğimde kesinlikle geri döneceğim."
+      }
+    ),
+    ItemCard(
+      english: "That's wonderful to hear. Safe travels, Mr. Ahmed!",
+      translations: {
+        "ar": "هذا رائع لسماع ذلك. رحلات آمنة سيد أحمد!",
+        "de": "Das ist schön zu hören. Gute Reise, Herr Ahmed!",
+        "es": "Es maravilloso escuchar eso. ¡Buen viaje, Sr. Ahmed!",
+        "fr": "C'est merveilleux à entendre. Bon voyage, M. Ahmed!",
+        "it": "È meraviglioso sentirlo. Buon viaggio, signor Ahmed!",
+        "ru": "Это замечательно слышать. Счастливого пути, мистер Ахмед!",
+        "zh": "很高兴听到这个。旅途平安，艾哈迈德先生！",
+        "tr": "Bunu duymak harika. İyi yolculuklar Bay Ahmed!"
+      }
+    ),
+    ItemCard(
+      english: "Thank you. The taxi is here. Goodbye and take care!",
+      translations: {
+        "ar": "شكرا لك. سيارة الأجرة هنا. وداعا واعتني بنفسك!",
+        "de": "Danke. Das Taxi ist da. Auf Wiedersehen und passen Sie auf sich auf!",
+        "es": "Gracias. El taxi está aquí. ¡Adiós y cuídese!",
+        "fr": "Merci. Le taxi est là. Au revoir et prenez soin de vous!",
+        "it": "Grazie. Il taxi è qui. Arrivederci e abbi cura di te!",
+        "ru": "Спасибо. Такси здесь. До свидания и берегите себя!",
+        "zh": "谢谢。出租车来了。再见，保重！",
+        "tr": "Teşekkür ederim. Taksi geldi. Hoşça kalın ve kendinize iyi bakın!"
+      }
+    ),
+    ItemCard(
+      english: "You're welcome. Goodbye and come back soon!",
+      translations: {
+        "ar": "على الرحب والسعة. وداعا وعود قريبا!",
+        "de": "Gern geschehen. Auf Wiedersehen und kommen Sie bald wieder!",
+        "es": "De nada. ¡Adiós y vuelva pronto!",
+        "fr": "Je vous en prie. Au revoir et revenez bientôt!",
+        "it": "Prego. Arrivederci e torna presto!",
+        "ru": "Пожалуйста. До свидания и возвращайтесь скорее!",
+        "zh": "不客气。再见，欢迎再来！",
+        "tr": "Rica ederim. Hoşça kalın ve yakında tekrar gelin!"
+      }
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GenericListScreen(
+      title: "محادثة الفندق 4 - المغادرة والدفع",
+      items: dialogue,
+      secondaryColor: const Color(0xFF203A43),
+      primaryColor: const Color(0xFF2C5364),
+    );
+  }
+}
+
+
+
+
